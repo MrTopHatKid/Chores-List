@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weekly Chore Chart</title>
+<style>
+:root{--bg:#f3f5f9;--card:#fff;--text:#172033;--muted:#64748b;--line:#dfe5ef;--accent:#3659d9;--green:#16845b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}[hidden]{display:none!important}
+header{background:#172554;color:#fff;padding:16px}header .wrap,main{max-width:1000px;margin:auto}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+h1{margin:0;font-size:clamp(1.4rem,4vw,1.9rem)}header p{margin:2px 0 0;color:#dbeafe;font-size:.9rem}
+.me{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.me label{color:#dbeafe;font-weight:600}.me select{width:auto;min-width:150px;font-weight:650}
+main{padding:16px 14px 40px}
+.card,.person,.task{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:0 2px 8px #17255408}
+input,select,button{font:inherit}
+input[type=text],input[type=number],input[type=password],input[type=date],select{width:100%;min-width:0;border:1px solid #cbd5e1;border-radius:8px;padding:9px;background:#fff;color:var(--text)}
+input[type=checkbox]{width:24px;height:24px;accent-color:var(--green);cursor:pointer;margin:0}input[type=checkbox]:disabled{cursor:not-allowed;opacity:.5}
+button{border:0;border-radius:9px;padding:10px 14px;background:var(--accent);color:#fff;font-weight:650;cursor:pointer}button:disabled{opacity:.55;cursor:not-allowed}
+button.secondary{background:#e8edff;color:#233c9c}button.danger{background:#fee2e2;color:#991b1b}button.ghost{background:#ffffff26;color:#fff}button.small{padding:6px 11px;font-size:.85rem}button.good{background:var(--green)}
+button:focus-visible,input:focus,select:focus{outline:2px solid #93a9ff;outline-offset:1px}
+.progress-track{height:12px;background:#e7ebf3;border-radius:99px;overflow:hidden;margin:10px 0}#progressBar{height:100%;width:0;background:var(--green);transition:width .25s}
+.status{padding:10px 12px;border-radius:10px;background:#e8f7ef;color:#11643f}.status.warn{background:#fff3dc;color:#7a4b00}
+.people{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:14px 0}
+.person{cursor:pointer;text-align:left;color:inherit;padding:12px;font-weight:400}.person.active{border:2px solid var(--accent);background:#f5f8ff}
+.person h3{font-size:.95rem;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.person .points{font-size:1.5rem;font-weight:750}.person .meta{font-size:.78rem;color:var(--muted)}.person .money{font-size:.85rem;font-weight:700;color:#8a4b05;margin-top:2px}
+.tabs{display:flex;gap:6px;margin:18px 0 12px;border-bottom:2px solid var(--line);overflow-x:auto}
+.tab{background:none;color:var(--muted);border-radius:9px 9px 0 0;padding:10px 16px;white-space:nowrap}.tab.active{background:#fff;color:var(--accent);box-shadow:inset 0 -3px 0 var(--accent)}
+.section-title{font-size:1.05rem;font-weight:700;margin:16px 0 8px}.hint{font-size:.88rem;color:var(--muted);margin:4px 0 10px}
+.task-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.task{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center}.task.completed{opacity:.75}.task.completed .task-name{text-decoration:line-through}
+.task-name{font-weight:650}.task-desc{font-size:.82rem;color:var(--muted);margin-top:2px}.task-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.task .acts{display:flex;flex-direction:column;gap:6px}
+.pill{display:inline-block;border-radius:99px;padding:2px 9px;font-size:.75rem;background:#e8edff;color:#273c9b;white-space:nowrap}.pill.pay{background:#fff0d9;color:#8a4b05}.pill.who{background:#e6f6ee;color:#11643f}.pill.none{background:#f1f5f9;color:#64748b}.pill.done{background:#e6f6ee;color:#11643f}
+.empty{padding:22px;text-align:center;color:var(--muted);background:#fff;border:1px dashed var(--line);border-radius:14px}
+.tablewrap{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;font-size:.88rem}th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}th{background:#f8fafc;color:var(--muted);font-weight:650;font-size:.78rem}td.num,th.num{text-align:right}tr.voided td{text-decoration:line-through;color:#94a3b8}tr:last-child td{border-bottom:0}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#172554;color:#fff;padding:10px 16px;border-radius:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:80;max-width:92vw;text-align:center}.toast.show{opacity:1}.toast.err{background:#b42335}.toast.ok{background:#16845b}
+.overlay{position:fixed;inset:0;background:#0f172a88;display:none;z-index:20}.overlay.open{display:block}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(720px,100%);background:var(--bg);z-index:30;transform:translateX(100%);visibility:hidden;transition:transform .22s,visibility .22s;display:flex;flex-direction:column}.drawer.open{transform:none;visibility:visible}
+.drawer-head{background:#172554;color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}.drawer-head h2{margin:0;font-size:1.15rem}
+.drawer-body{overflow-y:auto;padding:14px;flex:1}
+.atabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px}.atab{background:#e8edff;color:#233c9c;padding:8px 12px;font-size:.88rem}.atab.active{background:var(--accent);color:#fff}
+.field{display:flex;flex-direction:column;gap:4px;margin:8px 0}.field label,.lbl{font-size:.82rem;color:var(--muted)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.admin-card{margin-bottom:10px}.full{grid-column:1/-1}.check{display:flex;align-items:center;gap:8px}
+.modal-wrap{position:fixed;inset:0;background:#0f172acc;display:flex;align-items:center;justify-content:center;padding:14px;z-index:60}
+.modal{background:#fff;border-radius:16px;padding:18px;width:min(460px,100%);max-height:92vh;overflow-y:auto}.modal h3{margin:0 0 6px}
+.paybox{background:#fff8eb;border:1px solid #f4d9a7;border-radius:12px;padding:12px;margin:12px 0;color:#75440b}.paybox .big{font-size:1.6rem;font-weight:800}
+.quick{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px}.stat .l{font-size:.75rem;color:var(--muted)}.stat .v{font-size:1.3rem;font-weight:750}
+@media(max-width:800px){.people{grid-template-columns:repeat(2,minmax(0,1fr))}.task-list{grid-template-columns:1fr}.stat-grid{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="bar">
+  <div><h1>Weekly Chore Chart</h1><p id="weekLabel"></p></div>
+  <div class="me"><label for="meSelect">I am:</label><select id="meSelect"></select><button class="ghost" id="menuBtn" type="button">&#9881; Admin</button></div>
+</div></div></header>
+<main>
+  <section class="card"><div class="bar"><strong id="progressText"></strong><span class="pill" id="myProgress"></span></div>
+    <div class="progress-track"><div id="progressBar"></div></div><div id="overallStatus" class="status warn"></div></section>
+  <div class="people" id="people"></div>
+  <div class="tabs">
+    <button class="tab active" type="button" data-tab="mine">My chores</button>
+    <button class="tab" type="button" data-tab="all">All chores</button>
+    <button class="tab" type="button" data-tab="paid">Paid jobs &amp; earnings</button>
+  </div>
+  <div id="tabContent"></div>
+</main>
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Admin menu">
+  <div class="drawer-head"><h2>&#9881; Admin menu</h2><button class="ghost small" id="closeMenu" type="button">Close</button></div>
+  <div class="drawer-body" id="drawerBody"></div>
+</aside>
+<div class="modal-wrap" id="modalWrap" hidden><div class="modal" id="modal" role="dialog" aria-modal="true"></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<input type="file" id="importFile" accept=".json,application/json" hidden>
+
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+<script>
+(function(){
+"use strict";
+const $=id=>document.getElementById(id);
+const DEFAULT_DB={"meta": {"updatedAt": 0}, "settings": {"rateCents": 2000, "startPoints": -10, "defaultQuota": 4, "paidPointMode": "points", "currency": "$", "weekNo": 1, "weekId": "w1", "weekStart": "2026-10-19", "autoReset": false, "resetWeekday": 1, "adminPinHash": ""}, "members": {"m1": {"name": "Person 1", "quota": 4}, "m2": {"name": "Person 2", "quota": 4}, "m3": {"name": "Person 3", "quota": 4}, "m4": {"name": "Person 4", "quota": 4}, "m5": {"name": "Person 5", "quota": 4}}, "tasks": {"t01": {"name": "Upstairs towels, bath mat and cloths", "desc": "Wash and replace towels, bath mat and cleaning cloths.", "kind": "regular", "points": 2, "max": 1, "active": true, "order": 1}, "t02": {"name": "Kitchen counters and table", "desc": "Wipe and sanitize counters and dining table.", "kind": "regular", "points": 2, "max": 1, "active": true, "order": 2}, "t03": {"name": "Downstairs hallway", "desc": "Tidy and vacuum/sweep the hallway.", "kind": "regular", "points": 2, "max": 1, "active": true, "order": 3}, "t04": {"name": "Upstairs hallway", "desc": "Tidy and vacuum/sweep the hallway.", "kind": "regular", "points": 2, "max": 1, "active": true, "order": 4}, "t05": {"name": "Air fryers, microwave and toaster", "desc": "Clean appliance interiors/exteriors as appropriate; unplug toaster first.", "kind": "regular", "points": 3, "max": 1, "active": true, "order": 5}, "t06": {"name": "Stove, fridge exterior and kitchen island", "desc": "Clean the stovetop and wipe the fridge exterior and island.", "kind": "regular", "points": 3, "max": 1, "active": true, "order": 6}, "t07": {"name": "Kitchen floor", "desc": "Sweep and mop.", "kind": "regular", "points": 3, "max": 1, "active": true, "order": 7}, "t08": {"name": "Brush the dog", "desc": "Brush coat and tidy up loose fur.", "kind": "regular", "points": 2, "max": 1, "active": true, "order": 8}, "t09": {"name": "Pick up dog poop", "desc": "Collect waste from the yard and dispose of it safely.", "kind": "regular", "points": 3, "max": 1, "active": true, "order": 9}, "t10": {"name": "Clean the fridge", "desc": "Remove expired food and wipe shelves and drawers.", "kind": "regular", "points": 5, "max": 1, "active": true, "order": 10}, "t11": {"name": "Dishes", "desc": "Wash dishes that need handwashing and tidy the sink.", "kind": "regular", "points": 3, "max": 1, "active": true, "order": 11}, "t12": {"name": "Middle flight of stairs", "desc": "Clear items and vacuum/sweep the stairs.", "kind": "regular", "points": 3, "max": 1, "active": true, "order": 12}, "t13": {"name": "Upstairs bathroom", "desc": "Clean toilet, sink and counter; tidy up and replace toilet paper.", "kind": "regular", "points": 4, "max": 1, "active": true, "order": 13}, "t14": {"name": "Downstairs bathroom", "desc": "Clean toilet, sink and counter; tidy up and replace toilet paper.", "kind": "regular", "points": 4, "max": 1, "active": true, "order": 14}, "t15": {"name": "Bathtub / shower", "desc": "Scrub the tub/shower and rinse away residue.", "kind": "regular", "points": 4, "max": 1, "active": true, "order": 15}, "t16": {"name": "Laundry machines and top", "desc": "Wipe washer/dryer exteriors and the top surface.", "kind": "regular", "points": 3, "max": 1, "active": true, "order": 16}, "t17": {"name": "Take out garbage and recycling", "desc": "Take household bins to the appropriate collection area.", "kind": "regular", "points": 2, "max": 1, "active": true, "order": 17}, "t18": {"name": "Collect indoor garbage", "desc": "Empty garbage bins throughout the house and replace liners as needed.", "kind": "regular", "points": 3, "max": 1, "active": true, "order": 18}, "t19": {"name": "Load the dishwasher", "desc": "Load dirty dishes and start it if appropriate.", "kind": "regular", "points": 2, "max": 1, "active": true, "order": 19}, "t20": {"name": "Unload the dishwasher", "desc": "Put clean dishes away.", "kind": "regular", "points": 2, "max": 1, "active": true, "order": 20}, "t21": {"name": "All bathroom mirrors", "desc": "Clean mirrors without leaving streaks.", "kind": "regular", "points": 2, "max": 1, "active": true, "order": 21}, "t22": {"name": "Dust shared areas", "desc": "Dust tables and surfaces in the main hallway and the hallway toward the downstairs bathroom.", "kind": "regular", "points": 4, "max": 1, "active": true, "order": 22}, "t23": {"name": "Windows and sliding door", "desc": "Clean accessible windows and focus on the sliding glass door.", "kind": "regular", "points": 4, "max": 1, "active": true, "order": 23}, "t24": {"name": "Rake / collect leaves", "desc": "Seasonal yard cleanup.", "kind": "paid", "points": 4, "max": 1, "active": true, "order": 24}, "t25": {"name": "Shovel snow", "desc": "Clear snow from agreed paths and entrance.", "kind": "paid", "points": 5, "max": 1, "active": true, "order": 25}, "t26": {"name": "Mow the lawn", "desc": "Mow lawn when needed and conditions allow.", "kind": "paid", "points": 5, "max": 1, "active": true, "order": 26}, "t27": {"name": "Pull weeds", "desc": "Pull weeds from agreed garden/yard areas.", "kind": "paid", "points": 3, "max": 1, "active": true, "order": 27}, "t28": {"name": "Trim hedges", "desc": "Trim hedges where safe and appropriate.", "kind": "paid", "points": 4, "max": 1, "active": true, "order": 28}}, "completions": {}};
+const STORE="choreChartDB", ME_KEY="choreMe", BK_KEY="choreLastBackup";
+const lsGet=k=>{try{return localStorage.getItem(k)}catch(e){return null}};
+const lsSet=(k,v)=>{try{localStorage.setItem(k,v);return true}catch(e){return false}};
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function toast(m,t){const e=$("toast");e.textContent=m;e.className="toast show "+(t||"");clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove("show"),t==="err"?5000:2200)}
+const fmtMin=m=>{m=Number(m)||0;const h=Math.floor(m/60),r=m%60;return h?(r?h+"h "+r+"m":h+"h"):r+"m"};
+const fmtDate=s=>{if(!s)return"";const a=s.split("-").map(Number);return new Date(a[0],a[1]-1,a[2]).toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"})};
+const fmtDT=ms=>new Date(ms).toLocaleString(undefined,{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});
+const isoDate=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+const weekTarget=w=>{const d=new Date();d.setDate(d.getDate()-((((d.getDay()+6)%7)+1-w+7)%7));return isoDate(d)};
+const clone=o=>JSON.parse(JSON.stringify(o));
+
+/* ---------- data: localStorage, seeded from database.json ---------- */
+let D=null, me=lsGet(ME_KEY)||"", tab="mine", histFilter="all", adminTab="summary", unlocked=false, recFilter={member:"",kind:"",scope:"week"}, busy=new Set();
+function valid(d){return d&&d.settings&&d.members&&d.tasks&&d.settings.weekId}
+function load(){try{const s=lsGet(STORE);if(s){const d=JSON.parse(s);if(valid(d)){d.completions=d.completions||{};d.meta=d.meta||{updatedAt:0};return d}}}catch(e){}return clone(DEFAULT_DB)}
+function save(){D.meta.updatedAt=Date.now();if(!lsSet(STORE,JSON.stringify(D)))toast("Could not save in this browser (storage full or blocked).","err")}
+D=load();
+
+const S=()=>D.settings;
+const members=()=>Object.keys(D.members).sort().map(k=>Object.assign({id:k},D.members[k]));
+const tasks=()=>Object.keys(D.tasks).map(k=>Object.assign({id:k},D.tasks[k])).sort((a,b)=>(a.order||0)-(b.order||0));
+const comps=()=>Object.keys(D.completions).map(k=>Object.assign({key:k},D.completions[k])).sort((a,b)=>b.at-a.at);
+const mname=id=>D.members[id]?D.members[id].name:"Unknown";
+const who=c=>D.members[c.member]?D.members[c.member].name:c.memberName;
+const money=c=>S().currency+((Number(c)||0)/100).toFixed(2);
+const payFor=(m,rc)=>Math.round(m*rc/60);
+const claimOf=t=>t.claim&&t.claim.week===S().weekId?t.claim.member:null;
+const weekComps=()=>comps().filter(c=>c.week===S().weekId&&!c.voided);
+const countFor=id=>weekComps().filter(c=>c.task===id).length;
+const regTasks=()=>tasks().filter(t=>t.active&&t.kind==="regular");
+function totals(){
+  const wk=weekComps(),all=comps().filter(c=>!c.voided&&c.kind==="paid"),sum=(a,f)=>a.reduce((x,c)=>x+(Number(c[f])||0),0);
+  return members().map(m=>{const mine=wk.filter(c=>c.member===m.id),wp=mine.filter(c=>c.kind==="paid"),ap=all.filter(c=>c.member===m.id);
+    return{id:m.id,points:S().startPoints+sum(mine,"points"),regDone:mine.filter(c=>c.kind==="regular").length,assigned:regTasks().filter(t=>claimOf(t)===m.id).length,
+      weekEarn:sum(wp,"paymentCents"),weekMin:sum(wp,"minutes"),weekJobs:wp.length,allEarn:sum(ap,"paymentCents"),allMin:sum(ap,"minutes"),allJobs:ap.length}});
+}
+function maybeRoll(){const s=S();if(!s.autoReset)return;const t=weekTarget(s.resetWeekday);if(t>s.weekStart){s.weekNo++;s.weekId="w"+s.weekNo;s.weekStart=t;save()}}
+maybeRoll();
+
+/* ---------- main render ---------- */
+function renderAll(){renderMe();renderProgress();renderPeople();renderTab();if($("drawer").classList.contains("open")&&unlocked&&(adminTab==="summary"||adminTab==="records"))renderAdmin()}
+function renderMe(){$("meSelect").innerHTML='<option value="">Choose your name…</option>'+members().map(m=>'<option value="'+m.id+'"'+(me===m.id?" selected":"")+'>'+esc(m.name)+'</option>').join("")}
+function renderProgress(){
+  $("weekLabel").textContent="Week of "+fmtDate(S().weekStart);
+  const reg=regTasks(),total=reg.length,done=reg.filter(t=>countFor(t.id)>=t.max).length;
+  $("progressText").textContent=done+" of "+total+" household chores complete";
+  $("progressBar").style.width=(total?done/total*100:0)+"%";
+  const un=reg.filter(t=>!claimOf(t)&&countFor(t.id)<t.max).length,st=$("overallStatus");
+  if(total&&done===total){st.className="status";st.textContent="All regular chores are done. Great work, everyone!"}
+  else if(un>0){st.className="status warn";st.textContent=un+(un===1?" chore is":" chores are")+" still unclaimed. Open “My chores” to pick some up."}
+  else{st.className="status warn";st.textContent=(total-done)+(total-done===1?" chore":" chores")+" left to finish."}
+  if(me!==""&&D.members[me]){const mine=reg.filter(t=>claimOf(t)===me);$("myProgress").textContent="You: "+mine.filter(t=>countFor(t.id)>=t.max).length+"/"+mine.length+" done";$("myProgress").hidden=false}else $("myProgress").hidden=true;
+}
+function renderPeople(){const T=totals();$("people").innerHTML=members().map((m,i)=>'<button type="button" class="person'+(me===m.id?" active":"")+'" data-pick="'+m.id+'"><h3>'+esc(m.name)+'</h3><div class="points">'+T[i].points+' pts</div><div class="meta">'+T[i].regDone+'/'+T[i].assigned+' chores done</div><div class="money">'+money(T[i].weekEarn)+' this week</div><div class="meta">'+money(T[i].allEarn)+' total paid</div></button>').join("")}
+function taskCard(t){
+  const paid=t.kind==="paid",owner=claimOf(t),mine=me!==""&&owner===me,cnt=countFor(t.id),done=cnt>=t.max;
+  const whoP=!owner?'<span class="pill none">Unclaimed</span>':'<span class="pill who">'+(mine?"You":esc(mname(owner)))+'</span>';
+  const pts=(paid&&S().paidPointMode==="zero")?"":'<span class="pill">'+t.points+(t.points===1?" pt":" pts")+'</span>';
+  const kind=paid?'<span class="pill pay">Paid · '+money(S().rateCents)+'/hr</span>':'<span class="pill">Required</span>';
+  const count=t.max>1?'<span class="pill">'+cnt+'/'+t.max+' done</span>':"";
+  const earned=paid?weekComps().filter(c=>c.task===t.id).reduce((a,c)=>a+c.paymentCents,0):0;
+  let lead,acts="";
+  if(!paid&&t.max===1)lead='<input type="checkbox" data-done="'+t.id+'" aria-label="Mark '+esc(t.name)+' complete"'+(done?" checked":"")+(mine?"":" disabled")+'>';
+  else lead='<span style="width:24px;display:inline-block;text-align:center">'+(done?"✔":"")+'</span>';
+  if(!owner&&!done)acts+='<button type="button" class="small" data-claim="'+t.id+'">Claim</button>';
+  if(mine&&!done&&(paid||t.max>1))acts+='<button type="button" class="small good" data-complete="'+t.id+'">'+(paid?"Complete…":"Mark done")+'</button>';
+  if(mine&&cnt===0)acts+='<button type="button" class="small secondary" data-release="'+t.id+'">Give up</button>';
+  if(mine&&!paid&&t.max>1&&cnt>0)acts+='<button type="button" class="small secondary" data-undo="'+t.id+'">Undo last</button>';
+  return '<article class="task'+(done?" completed":"")+'">'+lead+'<div><div class="task-name">'+esc(t.name)+'</div><div class="task-desc">'+esc(t.desc||"")+'</div><div class="task-meta">'+whoP+kind+pts+count+(earned>0?'<span class="pill done">Earned '+money(earned)+'</span>':"")+'</div></div><div class="acts">'+acts+'</div></article>';
+}
+const list=a=>a.length?'<div class="task-list">'+a.map(taskCard).join("")+'</div>':"";
+function renderTab(){
+  document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));
+  const reg=regTasks(),paid=tasks().filter(t=>t.active&&t.kind==="paid");let h="";
+  if(tab==="mine"){
+    if(me==="")h='<div class="empty">Pick your name in the “I am” box at the top to see and complete your chores.</div>';
+    else{const mine=reg.filter(t=>claimOf(t)===me),open=reg.filter(t=>!claimOf(t)&&countFor(t.id)<t.max);
+      h+='<div class="section-title">Your chores ('+mine.length+')</div>'+(mine.length?list(mine):'<div class="empty">You have no chores yet. Claim some below.</div>');
+      h+='<div class="section-title">Available to claim ('+open.length+')</div>'+(open.length?'<p class="hint">Tap Claim to take a chore.</p>'+list(open):'<div class="empty">Every chore has been claimed.</div>');
+      const mp=paid.filter(t=>claimOf(t)===me);if(mp.length)h+='<div class="section-title">Your paid jobs</div>'+list(mp)}
+  }else if(tab==="all"){
+    h+='<p class="hint">Everyone’s chores at a glance. You can only complete your own.</p>';
+    members().forEach(m=>{const L=reg.filter(t=>claimOf(t)===m.id);if(L.length)h+='<div class="section-title">'+esc(m.name)+' ('+L.filter(t=>countFor(t.id)>=t.max).length+'/'+L.length+')</div>'+list(L)});
+    const un=reg.filter(t=>!claimOf(t));if(un.length)h+='<div class="section-title">Unclaimed ('+un.length+')</div>'+list(un);
+  }else h+='<p class="hint">Optional extra jobs. Pay = time worked × hourly rate (currently <strong>'+money(S().rateCents)+'/hour</strong>). Claim a job, do it, then tap Complete… and enter your time.</p>'+(paid.length?list(paid):'<div class="empty">No paid jobs right now.</div>')+earningsHTML();
+  $("tabContent").innerHTML=h;
+}
+function earningsHTML(){
+  const T=totals();
+  let h='<div class="row" style="justify-content:space-between;margin-top:16px"><div class="section-title" style="margin:0">Paid-task earnings breakdown</div><button type="button" class="secondary small" id="dlPaid">⬇ Download Excel</button></div><div class="tablewrap" style="margin-top:8px"><table><thead><tr><th>Member</th><th class="num">Jobs (week)</th><th class="num">Time (week)</th><th class="num">Earned (week)</th><th class="num">Jobs (all)</th><th class="num">Time (all)</th><th class="num">Earned (all)</th></tr></thead><tbody>';
+  T.forEach(t=>{h+='<tr><td>'+esc(mname(t.id))+'</td><td class="num">'+t.weekJobs+'</td><td class="num">'+fmtMin(t.weekMin)+'</td><td class="num">'+money(t.weekEarn)+'</td><td class="num">'+t.allJobs+'</td><td class="num">'+fmtMin(t.allMin)+'</td><td class="num"><strong>'+money(t.allEarn)+'</strong></td></tr>'});
+  h+='</tbody></table></div><div class="row" style="margin-top:16px;justify-content:space-between"><div class="section-title" style="margin:0">Paid-task history</div><select id="histFilter" style="width:auto"><option value="all">Everyone</option>'+members().map(m=>'<option value="'+m.id+'"'+(histFilter===m.id?" selected":"")+'>'+esc(m.name)+'</option>').join("")+'</select></div>';
+  const rows=comps().filter(c=>c.kind==="paid"&&!c.voided&&(histFilter==="all"||c.member===histFilter)).slice(0,60);
+  h+=rows.length?'<div class="tablewrap" style="margin-top:8px"><table><thead><tr><th>Date</th><th>Who</th><th>Task</th><th class="num">Time</th><th class="num">Rate used</th><th class="num">Paid</th></tr></thead><tbody>'+rows.map(c=>'<tr><td>'+fmtDT(c.at)+'</td><td>'+esc(who(c))+'</td><td>'+esc(c.taskName)+'</td><td class="num">'+fmtMin(c.minutes)+'</td><td class="num">'+money(c.rateCents)+'/hr</td><td class="num"><strong>'+money(c.paymentCents)+'</strong></td></tr>').join("")+'</tbody></table></div>':'<div class="empty" style="margin-top:8px">No paid jobs completed yet.</div>';
+  return h;
+}
+
+/* ---------- member actions ---------- */
+const needMe=()=>{if(me===""||!D.members[me]){toast("Choose your name first.","err");return false}return true};
+function freeSlot(t){for(let i=1;i<=t.max;i++)if(!D.completions[S().weekId+"_"+t.id+"_s"+i])return i;return 0}
+function addCompletion(t,minutes){
+  const slot=freeSlot(t);if(!slot){toast("All completion slots for this task are used this week.","err");return null}
+  const s=S(),rec={member:me,memberName:D.members[me].name,task:t.id,taskName:t.name,kind:t.kind,week:s.weekId,weekStart:s.weekStart,slot:"s"+slot,points:(t.kind==="paid"&&s.paidPointMode==="zero")?0:t.points,at:Date.now()};
+  if(t.kind==="paid"){rec.minutes=minutes;rec.rateCents=s.rateCents;rec.paymentCents=payFor(minutes,s.rateCents)}
+  D.completions[s.weekId+"_"+t.id+"_s"+slot]=rec;save();return rec;
+}
+function undoLatest(id){const c=weekComps().filter(c=>c.task===id&&c.member===me)[0];if(!c)return;if(c.kind!=="regular"){toast("Paid completions can only be changed by the admin.","err");return}delete D.completions[c.key];save();toast("Undone","ok")}
+function completeRegular(t){if(!needMe())return;const r=addCompletion(t,null);if(r)toast("Saved ✔ +"+r.points+" pts for “"+t.name+"”","ok")}
+document.addEventListener("click",e=>{
+  const t=e.target.closest("[data-claim],[data-release],[data-complete],[data-undo],[data-pick],.tab,#dlPaid");if(!t)return;const d=t.dataset;
+  if(t.id==="dlPaid"){downloadExcel(false);return}
+  if(d.claim){if(!needMe())return;D.tasks[d.claim].claim={member:me,week:S().weekId};save();toast("Claimed","ok");renderAll()}
+  else if(d.release){delete D.tasks[d.release].claim;save();toast("Released","ok");renderAll()}
+  else if(d.undo){undoLatest(d.undo);renderAll()}
+  else if(d.complete){const task=tasks().find(x=>x.id===d.complete);if(task.kind==="paid")openPayModal(task);else{completeRegular(task);renderAll()}}
+  else if(d.pick!==undefined){me=d.pick;lsSet(ME_KEY,me);renderAll()}
+  else if(t.classList.contains("tab")){tab=t.dataset.tab;renderTab()}
+});
+document.addEventListener("change",e=>{
+  const el=e.target;
+  if(el.id==="meSelect"){me=el.value;lsSet(ME_KEY,me);renderAll()}
+  else if(el.id==="histFilter"){histFilter=el.value;renderTab()}
+  else if(el.dataset&&el.dataset.done){const t=tasks().find(x=>x.id===el.dataset.done);if(el.checked)completeRegular(t);else undoLatest(t.id);renderAll()}
+});
+
+/* ---------- modal + paid completion ---------- */
+let modalClose=null;
+function openModal(h,cancel){$("modal").innerHTML=h;$("modalWrap").hidden=false;modalClose=cancel||null}
+function closeModal(){$("modalWrap").hidden=true;$("modal").innerHTML=""}
+$("modalWrap").addEventListener("mousedown",e=>{if(e.target.id==="modalWrap")closeModal()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){if(!$("modalWrap").hidden)closeModal();else if($("drawer").classList.contains("open"))closeMenu()}});
+function openPayModal(task){
+  if(!needMe())return;const rc=S().rateCents;
+  openModal('<h3>Complete: '+esc(task.name)+'</h3><p class="hint">How long did it take? Pay = time worked × '+money(rc)+' per hour.</p>'+
+   '<div class="grid2"><div class="field"><label for="payH">Hours</label><input type="number" id="payH" min="0" max="12" step="1" value="0" inputmode="numeric"></div><div class="field"><label for="payM">Minutes</label><input type="number" id="payM" min="0" max="59" step="1" value="0" inputmode="numeric"></div></div>'+
+   '<div class="quick"><button type="button" class="secondary small" data-q="15">15 min</button><button type="button" class="secondary small" data-q="30">30 min</button><button type="button" class="secondary small" data-q="45">45 min</button><button type="button" class="secondary small" data-q="60">1 hr</button><button type="button" class="secondary small" data-q="120">2 hr</button></div>'+
+   '<div class="paybox"><div id="payTime"></div><div class="big" id="payAmt"></div><div class="lbl" id="payNote"></div></div>'+
+   '<div class="row"><button type="button" class="good" id="payOk" disabled>Confirm &amp; save</button><button type="button" class="secondary" id="payNo">Cancel</button></div>');
+  const H=$("payH"),M=$("payM"),ok=$("payOk");let sent=false;
+  const mins=()=>Math.max(0,Math.floor(Number(H.value)||0))*60+Math.max(0,Math.floor(Number(M.value)||0));
+  const upd=()=>{const m=mins(),v=m>=1&&m<=720&&Number(M.value)<60&&Number(H.value)>=0&&Number(M.value)>=0;$("payTime").textContent="Time worked: "+fmtMin(m);$("payAmt").textContent=money(payFor(m,rc));$("payNote").textContent=v?"Rate: "+money(rc)+"/hr":(m>720?"Maximum is 12 hours per entry.":"Enter at least 1 minute (minutes: 0–59).");ok.disabled=!v||sent};
+  H.oninput=M.oninput=upd;
+  document.querySelectorAll("[data-q]").forEach(b=>b.onclick=()=>{const q=+b.dataset.q;H.value=Math.floor(q/60);M.value=q%60;upd()});
+  $("payNo").onclick=closeModal;
+  ok.onclick=()=>{if(sent)return;sent=true;ok.disabled=true;const r=addCompletion(task,mins());closeModal();if(r)toast("Saved ✔ "+fmtMin(r.minutes)+" × "+money(r.rateCents)+"/hr = "+money(r.paymentCents),"ok");renderAll()};
+  upd();H.focus();
+}
+
+/* ---------- admin menu (PIN optional) ---------- */
+async function sha(s){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));return Array.from(new Uint8Array(b),x=>x.toString(16).padStart(2,"0")).join("")}
+async function openMenu(){
+  if(S().adminPinHash&&!unlocked){const p=prompt("Admin PIN:");if(p===null)return;if(await sha(p)!==S().adminPinHash){alert("Wrong PIN.");return}}
+  unlocked=true;$("drawer").classList.add("open");$("overlay").classList.add("open");renderAdmin();
+}
+function closeMenu(){$("drawer").classList.remove("open");$("overlay").classList.remove("open");unlocked=false;renderAll()}
+$("menuBtn").addEventListener("click",openMenu);$("closeMenu").addEventListener("click",closeMenu);$("overlay").addEventListener("click",closeMenu);
+function renderAdmin(){
+  const tabs=[["summary","Summary"],["settings","Settings"],["people","People"],["chores","Chores"],["records","Records"],["data","Data & backup"]];
+  $("drawerBody").innerHTML='<div class="atabs">'+tabs.map(t=>'<button type="button" class="atab'+(adminTab===t[0]?" active":"")+'" data-atab="'+t[0]+'">'+t[1]+'</button>').join("")+'</div><div id="adminPane"></div>';
+  ({summary:aSummary,settings:aSettings,people:aPeople,chores:aChores,records:aRecords,data:aData})[adminTab]($("adminPane"));
+}
+$("drawerBody").addEventListener("click",e=>{const b=e.target.closest("[data-atab]");if(b){adminTab=b.dataset.atab;renderAdmin()}});
+
+function aSummary(p){
+  const T=totals(),reg=regTasks(),done=reg.filter(t=>countFor(t.id)>=t.max).length;
+  const wp=T.reduce((a,t)=>a+t.weekEarn,0),ap=T.reduce((a,t)=>a+t.allEarn,0),wm=T.reduce((a,t)=>a+t.weekMin,0);
+  p.innerHTML='<div class="stat-grid"><div class="stat"><div class="l">Chores done this week</div><div class="v">'+done+' / '+reg.length+'</div></div><div class="stat"><div class="l">Paid this week</div><div class="v">'+money(wp)+'</div></div><div class="stat"><div class="l">Paid all-time</div><div class="v">'+money(ap)+'</div></div><div class="stat"><div class="l">Paid time this week</div><div class="v">'+fmtMin(wm)+'</div></div><div class="stat"><div class="l">Hourly rate</div><div class="v">'+money(S().rateCents)+'</div></div><div class="stat"><div class="l">Week started</div><div class="v" style="font-size:1rem">'+fmtDate(S().weekStart)+'</div></div></div>'+
+   '<div class="tablewrap"><table><thead><tr><th>Member</th><th class="num">Points</th><th class="num">Chores</th><th class="num">Paid (wk)</th><th class="num">Paid (all)</th></tr></thead><tbody>'+T.map(t=>'<tr><td>'+esc(mname(t.id))+'</td><td class="num">'+t.points+'</td><td class="num">'+t.regDone+'/'+t.assigned+'</td><td class="num">'+money(t.weekEarn)+'</td><td class="num">'+money(t.allEarn)+'</td></tr>').join("")+'</tbody></table></div>'+
+   '<div class="section-title">Weekly actions</div><div class="row"><button type="button" id="balBtn">Balance assignments</button><button type="button" class="danger" id="newWeek">Start new week now</button></div><p class="hint">A new week clears everyone’s claims and weekly points. All records and earnings are kept.</p>';
+  $("balBtn").onclick=()=>{if(!confirm("Assign all unclaimed chores fairly based on each person’s target?"))return;const full=confirm("Also re-balance chores already assigned (only ones with no completion yet this week)?\n\nOK = re-balance.  Cancel = only assign unclaimed.");balance(full);save();renderAll();toast("Assignments balanced ✔","ok")};
+  $("newWeek").onclick=()=>{if(!confirm("Start a new week now? Claims are cleared and weekly points reset. Records and earnings are kept."))return;const s=S();s.weekNo++;s.weekId="w"+s.weekNo;s.weekStart=isoDate(new Date());save();renderAll();toast("New week started ✔","ok")};
+}
+function balance(re){
+  const wid=S().weekId,cnt={},reg=regTasks();members().forEach(m=>cnt[m.id]=0);
+  const locked=t=>Object.values(D.completions).some(c=>c.task===t.id&&c.week===wid);
+  reg.forEach(t=>{const o=claimOf(t);if(o&&(!re||locked(t)))cnt[o]++});
+  reg.filter(t=>!claimOf(t)||(re&&!locked(t))).sort((a,b)=>b.points-a.points||a.order-b.order).forEach(t=>{
+    let best=null,bk=null;members().forEach(m=>{const k=[cnt[m.id]>=m.quota?1:0,cnt[m.id]/Math.max(m.quota,1),cnt[m.id]];if(!bk||k[0]<bk[0]||(k[0]===bk[0]&&(k[1]<bk[1]||(k[1]===bk[1]&&k[2]<bk[2])))){best=m.id;bk=k}});
+    D.tasks[t.id].claim={member:best,week:wid};cnt[best]++});
+}
+function aSettings(p){
+  const s=S();
+  p.innerHTML='<form class="card" id="setForm"><div class="grid2">'+
+   '<div class="field"><label>Hourly rate for paid tasks ('+esc(s.currency)+' per hour)</label><input type="number" name="rate" min="0.01" max="1000" step="0.01" required value="'+(s.rateCents/100).toFixed(2)+'"></div>'+
+   '<div class="field"><label>Currency symbol</label><input type="text" name="currency" maxlength="4" required value="'+esc(s.currency)+'"></div>'+
+   '<div class="field"><label>Starting points per person each week</label><input type="number" name="startPoints" step="1" required value="'+s.startPoints+'"></div>'+
+   '<div class="field"><label>Default chores per person (target)</label><input type="number" name="defaultQuota" min="0" max="50" required value="'+s.defaultQuota+'"></div>'+
+   '<div class="field"><label>Paid-task points</label><select name="paidPointMode"><option value="points"'+(s.paidPointMode==="points"?" selected":"")+'>Use each paid task’s point value</option><option value="zero"'+(s.paidPointMode==="zero"?" selected":"")+'>No points (payment only)</option></select></div>'+
+   '<div class="field"><label>Week starts on</label><select name="resetWeekday">'+["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"].map((d,i)=>'<option value="'+(i+1)+'"'+(s.resetWeekday===i+1?" selected":"")+'>'+d+'</option>').join("")+'</select></div>'+
+   '<div class="field full"><label class="check"><input type="checkbox" name="autoReset"'+(s.autoReset?" checked":"")+'> Start a new week automatically</label></div></div>'+
+   '<p class="hint">A new hourly rate applies only to <strong>future</strong> paid completions; saved records keep the rate they used.</p><button type="submit">Save settings</button></form>';
+  $("setForm").onsubmit=ev=>{ev.preventDefault();const f=ev.target.elements,rc=Math.round(Number(f.rate.value)*100);
+    if(rc!==s.rateCents&&!confirm("Change the hourly rate from "+money(s.rateCents)+" to "+money(rc)+"? This only affects future paid tasks."))return;
+    if(Number(f.defaultQuota.value)!==s.defaultQuota)members().forEach(m=>D.members[m.id].quota=Number(f.defaultQuota.value));
+    Object.assign(s,{rateCents:rc,currency:f.currency.value.trim()||"$",startPoints:Number(f.startPoints.value),defaultQuota:Number(f.defaultQuota.value),paidPointMode:f.paidPointMode.value,resetWeekday:Number(f.resetWeekday.value),autoReset:f.autoReset.checked});
+    save();renderAll();toast("Settings saved ✔","ok")};
+}
+function aPeople(p){
+  p.innerHTML='<p class="hint">Names show everywhere (old records keep the name they were saved with).</p>'+members().map(m=>'<form class="card admin-card" data-member="'+m.id+'"><div class="grid2"><div class="field"><label>Member '+m.id.slice(1)+' name</label><input type="text" name="name" maxlength="40" required value="'+esc(m.name)+'"></div><div class="field"><label>Chore target</label><input type="number" name="quota" min="0" max="50" value="'+m.quota+'"></div></div><button type="submit" class="small">Save</button></form>').join("");
+  p.onsubmit=ev=>{const f=ev.target;if(!f.dataset.member)return;ev.preventDefault();const e=f.elements;D.members[f.dataset.member]={name:e.name.value.trim(),quota:Number(e.quota.value)};save();renderAll();toast("Saved ✔","ok")};
+}
+function taskForm(t){
+  const n=!t;t=t||{id:"",name:"",desc:"",kind:"regular",points:2,max:1,active:true};
+  return '<form class="card admin-card" data-task="'+t.id+'"><div class="grid2"><div class="field full"><label>'+(n?"New chore name":"Name")+'</label><input type="text" name="name" maxlength="80" required value="'+esc(t.name)+'"></div>'+
+   '<div class="field full"><label>Description</label><input type="text" name="desc" maxlength="300" value="'+esc(t.desc||"")+'"></div>'+
+   '<div class="field"><label>Type</label><select name="kind"><option value="regular"'+(t.kind==="regular"?" selected":"")+'>Regular (required, unpaid)</option><option value="paid"'+(t.kind==="paid"?" selected":"")+'>Paid (optional, hourly)</option></select></div>'+
+   '<div class="field"><label>Points</label><input type="number" name="points" min="0" max="100" value="'+t.points+'"></div>'+
+   '<div class="field"><label>Max completions per week</label><input type="number" name="max" min="1" max="20" value="'+t.max+'"></div>'+
+   (n?'':'<div class="field"><label>Assigned to (this week)</label><select name="assigned"><option value="">Unassigned</option>'+members().map(m=>'<option value="'+m.id+'"'+(claimOf(t)===m.id?" selected":"")+'>'+esc(m.name)+'</option>').join("")+'</select></div>')+
+   '<div class="field"><label class="check"><input type="checkbox" name="active"'+(t.active?" checked":"")+'> Active (visible to everyone)</label></div></div>'+
+   '<div class="row"><button type="submit" class="small">'+(n?"Add chore":"Save")+'</button>'+(n?"":'<button type="button" class="small danger" data-deltask="'+t.id+'">Delete</button>')+'</div></form>';
+}
+function aChores(p){
+  p.innerHTML='<div class="section-title" style="margin-top:0">Add a chore</div>'+taskForm(null)+'<div class="section-title">Existing chores ('+tasks().length+')</div><p class="hint">Deleting a chore never deletes past records.</p>'+tasks().map(taskForm).join("");
+  p.onsubmit=ev=>{const f=ev.target;if(f.dataset.task===undefined)return;ev.preventDefault();const e=f.elements;
+    const id=f.dataset.task||("t"+Date.now().toString(36)),old=D.tasks[id]||{};
+    const rec={name:e.name.value.trim(),desc:e.desc.value.trim(),kind:e.kind.value,points:Number(e.points.value),max:Number(e.max.value),active:e.active.checked,order:old.order||(Math.max(0,...tasks().map(t=>t.order||0))+1)};
+    if(old.claim&&old.claim.week===S().weekId)rec.claim=old.claim;
+    if(e.assigned){if(e.assigned.value==="")delete rec.claim;else if(!rec.claim||rec.claim.member!==e.assigned.value)rec.claim={member:e.assigned.value,week:S().weekId}}
+    D.tasks[id]=rec;save();renderAll();aChores($("adminPane"));toast("Saved ✔","ok")};
+  p.onclick=ev=>{const b=ev.target.closest("[data-deltask]");if(!b)return;const t=D.tasks[b.dataset.deltask];if(!confirm("Delete “"+t.name+"”? Past records are kept. (Untick Active to just hide it.)"))return;delete D.tasks[b.dataset.deltask];save();renderAll();aChores($("adminPane"))};
+}
+function aRecords(p){
+  const f=recFilter,rows=comps().filter(c=>(f.scope==="all"||c.week===S().weekId)&&(!f.member||c.member===f.member)&&(!f.kind||c.kind===f.kind)),shown=rows.slice(0,200);
+  p.innerHTML='<div class="grid3"><div class="field"><label>Show</label><select id="rfScope"><option value="week"'+(f.scope==="week"?" selected":"")+'>This week</option><option value="all"'+(f.scope==="all"?" selected":"")+'>All time</option></select></div><div class="field"><label>Member</label><select id="rfMember"><option value="">Everyone</option>'+members().map(m=>'<option value="'+m.id+'"'+(m.id===f.member?" selected":"")+'>'+esc(m.name)+'</option>').join("")+'</select></div><div class="field"><label>Type</label><select id="rfKind"><option value="">All</option><option value="regular"'+(f.kind==="regular"?" selected":"")+'>Regular</option><option value="paid"'+(f.kind==="paid"?" selected":"")+'>Paid</option></select></div></div>'+
+   '<p class="hint">'+rows.length+' record(s). Voiding keeps the record (struck through) and can be reversed.</p>'+
+   (shown.length?'<div class="tablewrap"><table><thead><tr><th>When</th><th>Member</th><th>Task</th><th class="num">Pts</th><th class="num">Time</th><th class="num">Rate</th><th class="num">Paid</th><th></th></tr></thead><tbody>'+shown.map(c=>'<tr class="'+(c.voided?"voided":"")+'"><td>'+fmtDT(c.at)+'</td><td>'+esc(who(c))+'</td><td>'+esc(c.taskName)+'</td><td class="num">'+c.points+'</td><td class="num">'+(c.minutes?fmtMin(c.minutes):"–")+'</td><td class="num">'+(c.rateCents!=null?money(c.rateCents):"–")+'</td><td class="num">'+(c.paymentCents!=null?money(c.paymentCents):"–")+'</td><td>'+(c.voided?'<button type="button" class="small secondary" data-restore="'+c.key+'">Restore</button>':'<button type="button" class="small secondary" data-edit="'+c.key+'">Edit</button> <button type="button" class="small secondary" data-void="'+c.key+'">Void</button>')+' <button type="button" class="small danger" data-del="'+c.key+'">Delete</button></td></tr>').join("")+'</tbody></table></div>':'<div class="empty">No records match.</div>');
+  const re=()=>{recFilter={scope:$("rfScope").value,member:$("rfMember").value,kind:$("rfKind").value};aRecords($("adminPane"))};
+  ["rfScope","rfMember","rfKind"].forEach(id=>$(id).onchange=re);
+  p.onclick=ev=>{const b=ev.target.closest("[data-void],[data-restore],[data-edit],[data-del]");if(!b)return;const d=b.dataset;
+    if(d.void){const why=prompt("Why are you voiding this record? (optional)");if(why===null)return;Object.assign(D.completions[d.void],{voided:true,voidReason:why||"Voided by admin"});save();renderAll();aRecords($("adminPane"))}
+    else if(d.restore){delete D.completions[d.restore].voided;delete D.completions[d.restore].voidReason;save();renderAll();aRecords($("adminPane"))}
+    else if(d.del){if(!confirm("Permanently delete this record? (Voiding is safer.)"))return;delete D.completions[d.del];save();renderAll();aRecords($("adminPane"))}
+    else if(d.edit)editRecord(d.edit)};
+}
+function editRecord(key){
+  const c=D.completions[key],paid=c.kind==="paid";
+  openModal('<h3>Edit record</h3><p class="hint">'+esc(who(c))+' · '+esc(c.taskName)+' · '+fmtDT(c.at)+'</p><form id="recForm">'+
+   (paid?'<div class="grid2"><div class="field"><label>Hours</label><input type="number" name="h" min="0" max="12" value="'+Math.floor(c.minutes/60)+'"></div><div class="field"><label>Minutes</label><input type="number" name="m" min="0" max="59" value="'+(c.minutes%60)+'"></div></div><div class="field"><label>Hourly rate used</label><input type="number" name="rate" min="0.01" max="1000" step="0.01" value="'+(c.rateCents/100).toFixed(2)+'"></div><div class="paybox"><div class="lbl">New payment</div><div class="big" id="recPay"></div></div>':"")+
+   '<div class="field"><label>Points awarded</label><input type="number" name="points" step="1" value="'+c.points+'"></div><div class="row"><button type="submit">Save correction</button><button type="button" class="secondary" id="recNo">Cancel</button></div></form>');
+  const f=$("recForm"),e=f.elements,calc=()=>({m:(Number(e.h.value)||0)*60+(Number(e.m.value)||0),rc:Math.round(Number(e.rate.value)*100)});
+  const show=()=>{if(paid){const k=calc();$("recPay").textContent=money(payFor(k.m,k.rc))}};if(paid){f.oninput=show;show()}
+  $("recNo").onclick=closeModal;
+  f.onsubmit=ev=>{ev.preventDefault();c.points=Number(e.points.value);c.edited=true;if(paid){const k=calc();if(k.m<1||k.m>720){toast("Time must be 1 minute to 12 hours.","err");return}c.minutes=k.m;c.rateCents=k.rc;c.paymentCents=payFor(k.m,k.rc)}save();closeModal();renderAll();toast("Correction saved ✔","ok")};
+}
+
+/* ---------- data: database.json + Excel ---------- */
+function download(parts,name,type){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob(parts,{type}));a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+function exportJson(){const d=clone(D);d.meta.updatedAt=Date.now();download([JSON.stringify(d,null,2)],"database.json","application/json");lsSet(BK_KEY,String(Date.now()))}
+function downloadExcel(full){
+  if(!window.XLSX){toast("The Excel library didn’t load (needs internet). Use database.json instead.","err");return}
+  const T=totals(),wb=XLSX.utils.book_new(),c2=c=>(Number(c)||0)/100;
+  const add=(n,rows,w)=>{const ws=XLSX.utils.aoa_to_sheet(rows);ws["!cols"]=w.map(x=>({wch:x}));XLSX.utils.book_append_sheet(wb,ws,n)};
+  if(full)add("Summary",[["Member","Points (this week)","Chores done","Chores assigned","Paid jobs (week)","Paid hours (week)","Earned (week)","Paid jobs (all)","Paid hours (all)","Earned (all)"]].concat(T.map(t=>[mname(t.id),t.points,t.regDone,t.assigned,t.weekJobs,+(t.weekMin/60).toFixed(2),c2(t.weekEarn),t.allJobs,+(t.allMin/60).toFixed(2),c2(t.allEarn)])),[16,16,12,14,14,14,13,13,13,13]);
+  add("Paid earnings",[["Member","Jobs (week)","Hours (week)","Earned (week)","Jobs (all time)","Hours (all time)","Earned (all time)"]].concat(T.map(t=>[mname(t.id),t.weekJobs,+(t.weekMin/60).toFixed(2),c2(t.weekEarn),t.allJobs,+(t.allMin/60).toFixed(2),c2(t.allEarn)])),[16,12,13,13,15,16,16]);
+  add("Paid history",[["Completed","Member","Task","Minutes","Hours","Hourly rate","Payment","Status","Void reason"]].concat(comps().filter(c=>c.kind==="paid").map(c=>[new Date(c.at).toLocaleString(),who(c),c.taskName,c.minutes,+(c.minutes/60).toFixed(2),c2(c.rateCents),c2(c.paymentCents),c.voided?"Voided":"Active",c.voidReason||""])),[20,16,28,9,8,11,10,9,24]);
+  if(full){
+    add("All records",[["Completed","Week start","Member","Task","Type","Points","Minutes","Hourly rate","Payment","Status","Void reason"]].concat(comps().map(c=>[new Date(c.at).toLocaleString(),c.weekStart,who(c),c.taskName,c.kind,c.points,c.minutes==null?"":c.minutes,c.rateCents==null?"":c2(c.rateCents),c.paymentCents==null?"":c2(c.paymentCents),c.voided?"Voided":"Active",c.voidReason||""])),[20,12,16,28,9,7,9,11,10,9,24]);
+    add("Chores",[["Name","Type","Points","Max per week","Active","Claimed by (this week)","Description"]].concat(tasks().map(t=>[t.name,t.kind,t.points,t.max,t.active?"Yes":"No",claimOf(t)?mname(claimOf(t)):"",t.desc||""])),[34,9,8,12,8,20,50]);
+  }
+  XLSX.writeFile(wb,(full?"chore-chart-":"paid-earnings-")+isoDate(new Date())+".xlsx");
+}
+function aData(p){
+  const last=Number(lsGet(BK_KEY))||0,days=last?Math.floor((Date.now()-last)/864e5):null;
+  p.innerHTML=(days===null||days>=7?'<div class="status warn" style="margin-bottom:10px">'+(days===null?"No backup downloaded from this browser yet.":"Last backup was "+days+" days ago.")+' Download database.json below.</div>':'<div class="status" style="margin-bottom:10px">Last backup: '+(days===0?"today":days+" day(s) ago")+'.</div>')+
+   '<div class="card"><h3 style="margin-top:0">Your data</h3><p class="hint">Everything is stored in <b>this browser</b> and starts from <code>database.json</code>. Different devices do not sync automatically — move data with the buttons below.</p><div class="row"><button type="button" id="exJson">⬇ Download database.json</button><button type="button" class="secondary" id="exXlsx">⬇ Excel (.xlsx)</button><button type="button" class="secondary" id="imJson">⬆ Import database.json…</button></div></div>'+
+   '<div class="card" style="margin-top:10px"><h3 style="margin-top:0">Share with the household</h3><p class="hint">To give everyone the latest data: download database.json, upload it next to index.html on your site (replace the old one), and others tap “Load shared file”. The page also offers this automatically when the shared file is newer than what’s in the browser.</p><button type="button" class="secondary" id="loadShared">Load shared database.json from the site</button></div>'+
+   '<div class="card" style="margin-top:10px"><h3 style="margin-top:0">Admin PIN</h3><p class="hint">Optional. Keeps casual users out of this menu. It is a light lock only: anyone technical with access to this browser could bypass it.</p><div class="row"><input type="password" id="pinIn" placeholder="New PIN (blank = none)" style="max-width:220px"><button type="button" class="secondary" id="pinSave">Save PIN</button></div></div>'+
+   '<div class="card" style="margin-top:10px"><h3 style="margin-top:0">Danger zone</h3><button type="button" class="danger" id="wipe">Erase this browser’s data and reload database.json</button></div>';
+  $("exJson").onclick=()=>{exportJson();toast("database.json downloaded","ok");aData($("adminPane"))};
+  $("exXlsx").onclick=()=>downloadExcel(true);
+  $("imJson").onclick=()=>$("importFile").click();
+  $("loadShared").onclick=()=>loadShared(true);
+  $("pinSave").onclick=async()=>{const v=$("pinIn").value.trim();S().adminPinHash=v?await sha(v):"";save();$("pinIn").value="";toast(v?"PIN saved":"PIN removed","ok")};
+  $("wipe").onclick=()=>{if(!confirm("Erase ALL data in this browser? Download database.json first if you need it."))return;try{localStorage.removeItem(STORE)}catch(e){}location.reload()};
+}
+$("importFile").addEventListener("change",e=>{
+  const f=e.target.files[0];e.target.value="";if(!f)return;const r=new FileReader();
+  r.onload=()=>{let d;try{d=JSON.parse(r.result)}catch(_){toast("That file isn’t valid JSON.","err");return}
+    if(!valid(d)){toast("That doesn’t look like a chore-chart database.json.","err");return}
+    if(!confirm("Replace ALL data in this browser with this file ("+Object.keys(d.completions||{}).length+" records)?\n\nA backup of the current data will be downloaded first."))return;
+    exportJson();d.completions=d.completions||{};d.meta=d.meta||{updatedAt:Date.now()};D=d;save();renderAll();renderAdmin();toast("Data imported ✔","ok")};
+  r.readAsText(f);
+});
+async function loadShared(manual){
+  try{const res=await fetch("database.json?"+Date.now(),{cache:"no-store"});if(!res.ok)throw 0;const d=await res.json();if(!valid(d))throw 0;
+    const newer=(d.meta&&d.meta.updatedAt||0)>(D.meta.updatedAt||0);
+    if(!manual&&!newer)return;
+    if(manual&&!newer&&!confirm("The shared file isn’t newer than your data. Replace your data with it anyway?"))return;
+    if(!confirm((manual?"":"A newer shared database.json was found on the site.\n\n")+"Replace the data in this browser with the shared file? (Your current data is downloaded as a backup first.)"))return;
+    exportJson();d.completions=d.completions||{};D=d;lsSet(STORE,JSON.stringify(D));renderAll();if($("drawer").classList.contains("open"))renderAdmin();toast("Shared data loaded ✔","ok")}
+  catch(e){if(manual)toast("Couldn’t load database.json from the site (it only works when the page is hosted, not opened from a file).","err")}
+}
+
+renderAll();
+if(location.protocol.startsWith("http")&&lsGet(STORE))loadShared(false);
+})();
+</script>
+</body>
+</html>
