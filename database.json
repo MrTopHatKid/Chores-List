@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792860790375
+    "updatedAt": 1792860794771
   },
   "settings": {
     "rateCents": 2000,
@@ -606,6 +606,18 @@
       "kind": "regular",
       "points": 3,
       "at": 1792860790375
+    },
+    "96c1231d-e381-4310-9602-f828e53fc665": {
+      "requestId": "96c1231d-e381-4310-9602-f828e53fc665",
+      "task": "t19",
+      "taskName": "Load the dishwasher",
+      "member": "m1",
+      "memberName": "The Muffin Man",
+      "week": "w1",
+      "weekStart": "2026-10-19",
+      "kind": "regular",
+      "points": 2,
+      "at": 1792860794771
     }
   }
 }
