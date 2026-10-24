@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883540699,
+    "updatedAt": 1792883583755,
     "schemaVersion": 2
   },
   "settings": {
@@ -190,10 +190,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m5",
+        "member": "m4",
         "week": "w1",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "selected"
       }
     },
     "t08": {
@@ -542,7 +542,8 @@
     "m3": [],
     "m4": [
       "t06",
-      "t14"
+      "t14",
+      "t07"
     ],
     "m5": []
   },
@@ -562,6 +563,10 @@
       "t14": {
         "member": "m4",
         "kind": "selected"
+      },
+      "t07": {
+        "member": "m4",
+        "kind": "selected"
       }
     },
     "2026-10-26": {
@@ -570,6 +575,10 @@
         "kind": "selected"
       },
       "t14": {
+        "member": "m4",
+        "kind": "selected"
+      },
+      "t07": {
         "member": "m4",
         "kind": "selected"
       }
@@ -644,11 +653,11 @@
         "t07": {
           "task": "t07",
           "taskName": "Kitchen floor",
-          "member": "m5",
+          "member": "m4",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "selected",
           "completed": 0
         },
         "t08": {
@@ -831,13 +840,13 @@
     "minimum:w1:m3": {
       "message": "AW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883540699,
+      "at": 1792883583755,
       "resolved": false
     },
     "minimum:w1:m5": {
       "message": "MW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883540699,
+      "at": 1792883583755,
       "resolved": false
     }
   },
@@ -884,7 +893,7 @@
       "selected": [
         "t06",
         "t14",
-        null,
+        "t07",
         null
       ],
       "bonus": []
@@ -3853,6 +3862,88 @@
           "path": "/alerts/minimum:w1:m5/at",
           "before": 1792883482474,
           "after": 1792883540699
+        }
+      ]
+    },
+    {
+      "id": "3c6e2664-3bd5-4cec-bb5a-9a10d9fd4628",
+      "at": 1792883583755,
+      "actor": "m4",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t07/claim/member",
+          "before": "m5",
+          "after": "m4"
+        },
+        {
+          "path": "/tasks/t07/claim/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/preferences/m4",
+          "before": [
+            "t06",
+            "t14"
+          ],
+          "after": [
+            "t06",
+            "t14",
+            "t07"
+          ]
+        },
+        {
+          "path": "/slotLayout/m4/selected",
+          "before": [
+            "t06",
+            "t14",
+            null,
+            null
+          ],
+          "after": [
+            "t06",
+            "t14",
+            "t07",
+            null
+          ]
+        },
+        {
+          "path": "/plans/2026-10-19/t07",
+          "added": true,
+          "after": {
+            "member": "m4",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-26/t07",
+          "added": true,
+          "after": {
+            "member": "m4",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w1/assignments/t07/member",
+          "before": "m5",
+          "after": "m4"
+        },
+        {
+          "path": "/weeks/w1/assignments/t07/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/alerts/minimum:w1:m3/at",
+          "before": 1792883540699,
+          "after": 1792883583755
+        },
+        {
+          "path": "/alerts/minimum:w1:m5/at",
+          "before": 1792883540699,
+          "after": 1792883583755
         }
       ]
     }
