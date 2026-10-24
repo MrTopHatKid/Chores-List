@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792872995737,
+    "updatedAt": 1792872999868,
     "schemaVersion": 2
   },
   "settings": {
@@ -755,7 +755,8 @@
       "weekStart": "2026-10-19",
       "kind": "regular",
       "points": 2,
-      "at": 1792860794771
+      "at": 1792860794771,
+      "voided": true
     },
     "95916230-3f20-405b-912f-1a2b0d8863ae": {
       "requestId": "95916230-3f20-405b-912f-1a2b0d8863ae",
@@ -4390,6 +4391,20 @@
       "changes": [
         {
           "path": "/completions/532662ed-7413-4baa-aa3a-eda325bcd354/voided",
+          "added": true,
+          "after": true
+        }
+      ]
+    },
+    {
+      "id": "c8e19b42-b556-43a3-9ea1-53b83e52c3c1",
+      "at": 1792872999868,
+      "actor": "m3",
+      "admin": true,
+      "action": "correct record",
+      "changes": [
+        {
+          "path": "/completions/96c1231d-e381-4310-9602-f828e53fc665/voided",
           "added": true,
           "after": true
         }
