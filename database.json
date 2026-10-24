@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883747593,
+    "updatedAt": 1792883750149,
     "schemaVersion": 2
   },
   "settings": {
@@ -388,10 +388,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m4",
+        "member": "m1",
         "week": "w1",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "selected"
       }
     },
     "t19": {
@@ -539,7 +539,8 @@
   "preferences": {
     "m1": [
       "t15",
-      "t03"
+      "t03",
+      "t18"
     ],
     "m2": [
       "t08",
@@ -585,6 +586,10 @@
         "kind": "selected"
       },
       "t03": {
+        "member": "m1",
+        "kind": "selected"
+      },
+      "t18": {
         "member": "m1",
         "kind": "selected"
       },
@@ -659,6 +664,10 @@
         "kind": "selected"
       },
       "t03": {
+        "member": "m1",
+        "kind": "selected"
+      },
+      "t18": {
         "member": "m1",
         "kind": "selected"
       },
@@ -903,11 +912,11 @@
         "t18": {
           "task": "t18",
           "taskName": "Collect indoor garbage",
-          "member": "m4",
+          "member": "m1",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "selected",
           "completed": 0
         },
         "t20": {
@@ -976,19 +985,19 @@
     "minimum:w1:m4": {
       "message": "MK is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883482474,
+      "at": 1792883750149,
       "resolved": false
     },
     "minimum:w1:m3": {
       "message": "AW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883747593,
+      "at": 1792883750149,
       "resolved": false
     },
     "minimum:w1:m5": {
       "message": "MW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883747593,
+      "at": 1792883750149,
       "resolved": false
     }
   },
@@ -1020,7 +1029,7 @@
       "selected": [
         "t15",
         "t03",
-        null
+        "t18"
       ],
       "bonus": []
     },
@@ -5227,6 +5236,91 @@
           "path": "/alerts/minimum:w1:m5/at",
           "before": 1792883744851,
           "after": 1792883747593
+        }
+      ]
+    },
+    {
+      "id": "19e1f65c-deee-4ce9-aa73-73076f82cf20",
+      "at": 1792883750149,
+      "actor": "m1",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t18/claim/member",
+          "before": "m4",
+          "after": "m1"
+        },
+        {
+          "path": "/tasks/t18/claim/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/preferences/m1",
+          "before": [
+            "t15",
+            "t03"
+          ],
+          "after": [
+            "t15",
+            "t03",
+            "t18"
+          ]
+        },
+        {
+          "path": "/slotLayout/m1/selected",
+          "before": [
+            "t15",
+            "t03",
+            null
+          ],
+          "after": [
+            "t15",
+            "t03",
+            "t18"
+          ]
+        },
+        {
+          "path": "/plans/2026-10-19/t18",
+          "added": true,
+          "after": {
+            "member": "m1",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-26/t18",
+          "added": true,
+          "after": {
+            "member": "m1",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w1/assignments/t18/member",
+          "before": "m4",
+          "after": "m1"
+        },
+        {
+          "path": "/weeks/w1/assignments/t18/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/alerts/minimum:w1:m4/at",
+          "before": 1792883482474,
+          "after": 1792883750149
+        },
+        {
+          "path": "/alerts/minimum:w1:m3/at",
+          "before": 1792883747593,
+          "after": 1792883750149
+        },
+        {
+          "path": "/alerts/minimum:w1:m5/at",
+          "before": 1792883747593,
+          "after": 1792883750149
         }
       ]
     }
