@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792855185304
+    "updatedAt": 1792855739023
   },
   "settings": {
     "rateCents": 2000,
@@ -365,6 +365,18 @@
       "rateCents": 2000,
       "paymentCents": 4000,
       "voided": true
+    },
+    "e4a2f0b0-ed7c-4220-bc32-092c4365bfe0": {
+      "requestId": "e4a2f0b0-ed7c-4220-bc32-092c4365bfe0",
+      "task": "t17",
+      "taskName": "Take out garbage and recycling",
+      "member": "m3",
+      "memberName": "Person 3",
+      "week": "w1",
+      "weekStart": "2026-10-19",
+      "kind": "regular",
+      "points": 2,
+      "at": 1792855739023
     }
   }
 }
