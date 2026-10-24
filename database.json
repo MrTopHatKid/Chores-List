@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792882142264,
+    "updatedAt": 1792882247749,
     "schemaVersion": 2
   },
   "settings": {
@@ -1692,19 +1692,19 @@
     "minimum:w3:m5": {
       "message": "MW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792881710588,
+      "at": 1792882247748,
       "resolved": false
     },
     "minimum:w3:m3": {
       "message": "AW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792881710588,
+      "at": 1792882247748,
       "resolved": false
     },
     "minimum:w3:m4": {
       "message": "MK is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792881710588,
+      "at": 1792882247748,
       "resolved": false
     }
   },
@@ -39446,6 +39446,30 @@
           "removed": true
         }
       ]
+    },
+    {
+      "id": "0b02fe3c-b3f5-469f-a4b3-c0cc4e26b3f2",
+      "at": 1792882247749,
+      "actor": "m4",
+      "admin": true,
+      "action": "admin apply chosen tasks",
+      "changes": [
+        {
+          "path": "/alerts/minimum:w3:m5/at",
+          "before": 1792881710588,
+          "after": 1792882247748
+        },
+        {
+          "path": "/alerts/minimum:w3:m3/at",
+          "before": 1792881710588,
+          "after": 1792882247748
+        },
+        {
+          "path": "/alerts/minimum:w3:m4/at",
+          "before": 1792881710588,
+          "after": 1792882247748
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -41392,8 +41416,8 @@
     }
   ],
   "lastChosenTaskApplication": {
-    "at": 1792881710588,
-    "actor": "m5",
+    "at": 1792882247748,
+    "actor": "m4",
     "week": "w3",
     "weekStart": "2026-10-24",
     "report": {
