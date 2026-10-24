@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792860760372
+    "updatedAt": 1792860763024
   },
   "settings": {
     "rateCents": 2000,
@@ -550,6 +550,18 @@
       "kind": "regular",
       "points": 3,
       "at": 1792860757495
+    },
+    "e3725404-f58e-4f66-b3c2-7447544d00fe": {
+      "requestId": "e3725404-f58e-4f66-b3c2-7447544d00fe",
+      "task": "t20",
+      "taskName": "Unload the dishwasher",
+      "member": "m5",
+      "memberName": "Ma",
+      "week": "w1",
+      "weekStart": "2026-10-19",
+      "kind": "regular",
+      "points": 2,
+      "at": 1792860763024
     }
   }
 }
