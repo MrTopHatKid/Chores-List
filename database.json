@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792882348993,
+    "updatedAt": 1792882362751,
     "schemaVersion": 2
   },
   "settings": {
@@ -1705,19 +1705,19 @@
     "minimum:w3:m5": {
       "message": "MW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792882247748,
+      "at": 1792882362751,
       "resolved": false
     },
     "minimum:w3:m3": {
       "message": "AW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792882247748,
+      "at": 1792882362751,
       "resolved": false
     },
     "minimum:w3:m4": {
       "message": "MK is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792882247748,
+      "at": 1792882362751,
       "resolved": false
     }
   },
@@ -39532,6 +39532,30 @@
           "after": 1
         }
       ]
+    },
+    {
+      "id": "8dade70c-f0a7-4dc7-812b-7c6c22a1316b",
+      "at": 1792882362751,
+      "actor": "m3",
+      "admin": true,
+      "action": "admin apply chosen tasks",
+      "changes": [
+        {
+          "path": "/alerts/minimum:w3:m5/at",
+          "before": 1792882247748,
+          "after": 1792882362751
+        },
+        {
+          "path": "/alerts/minimum:w3:m3/at",
+          "before": 1792882247748,
+          "after": 1792882362751
+        },
+        {
+          "path": "/alerts/minimum:w3:m4/at",
+          "before": 1792882247748,
+          "after": 1792882362751
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -41478,8 +41502,8 @@
     }
   ],
   "lastChosenTaskApplication": {
-    "at": 1792882247748,
-    "actor": "m4",
+    "at": 1792882362751,
+    "actor": "m3",
     "week": "w3",
     "weekStart": "2026-10-24",
     "report": {
