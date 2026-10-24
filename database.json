@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792860740141
+    "updatedAt": 1792860742156
   },
   "settings": {
     "rateCents": 2000,
@@ -490,6 +490,18 @@
       "kind": "regular",
       "points": 3,
       "at": 1792860737206
+    },
+    "b61c36e4-b61e-44c5-ae09-000cc0cbdb29": {
+      "requestId": "b61c36e4-b61e-44c5-ae09-000cc0cbdb29",
+      "task": "t05",
+      "taskName": "Air fryers, microwave and toaster",
+      "member": "m4",
+      "memberName": "Mr",
+      "week": "w1",
+      "weekStart": "2026-10-19",
+      "kind": "regular",
+      "points": 3,
+      "at": 1792860742156
     }
   }
 }
