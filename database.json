@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792875489469,
+    "updatedAt": 1792875491889,
     "schemaVersion": 2
   },
   "settings": {
@@ -887,6 +887,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1792875489469
+    },
+    "284a68a9-2542-4714-8fd3-33a50104e7ee": {
+      "requestId": "284a68a9-2542-4714-8fd3-33a50104e7ee",
+      "task": "t01",
+      "taskName": "Upstairs towels, bath mat and cloths",
+      "member": "m3",
+      "memberName": "AW",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792875491889
     }
   },
   "pointLedger": {
@@ -1277,7 +1289,7 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
+          "completed": 1
         },
         "t02": {
           "task": "t02",
@@ -7635,6 +7647,36 @@
         },
         {
           "path": "/weeks/w3/assignments/t05/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "00bbaa82-a093-4489-811d-2cb3ace94623",
+      "at": 1792875491889,
+      "actor": "m3",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/284a68a9-2542-4714-8fd3-33a50104e7ee",
+          "added": true,
+          "after": {
+            "requestId": "284a68a9-2542-4714-8fd3-33a50104e7ee",
+            "task": "t01",
+            "taskName": "Upstairs towels, bath mat and cloths",
+            "member": "m3",
+            "memberName": "AW",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792875491889
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t01/completed",
           "before": 0,
           "after": 1
         }
@@ -16325,6 +16367,12 @@
       },
       {
         "at": 1792875489469,
+        "actor": "m3",
+        "action": "complete chore",
+        "week": "w3"
+      },
+      {
+        "at": 1792875491889,
         "actor": "m3",
         "action": "complete chore",
         "week": "w3"
