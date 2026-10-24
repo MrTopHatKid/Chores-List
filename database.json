@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792860755305
+    "updatedAt": 1792860757495
   },
   "settings": {
     "rateCents": 2000,
@@ -534,6 +534,18 @@
       "kind": "regular",
       "points": 3,
       "at": 1792860752999
+    },
+    "3211d68d-cc88-4436-afd7-35ec20615278": {
+      "requestId": "3211d68d-cc88-4436-afd7-35ec20615278",
+      "task": "t09",
+      "taskName": "Pick up dog poop",
+      "member": "m5",
+      "memberName": "Ma",
+      "week": "w1",
+      "weekStart": "2026-10-19",
+      "kind": "regular",
+      "points": 3,
+      "at": 1792860757495
     }
   }
 }
