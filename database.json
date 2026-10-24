@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792884431727,
+    "updatedAt": 1792884871097,
     "schemaVersion": 2
   },
   "settings": {
@@ -985,19 +985,19 @@
     "minimum:w1:m4": {
       "message": "MK is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792884431726,
+      "at": 1792884871097,
       "resolved": false
     },
     "minimum:w1:m3": {
       "message": "AW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792884431726,
+      "at": 1792884871097,
       "resolved": false
     },
     "minimum:w1:m5": {
       "message": "MW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792884431726,
+      "at": 1792884871097,
       "resolved": false
     }
   },
@@ -5415,6 +5415,30 @@
           "after": 1792884431726
         }
       ]
+    },
+    {
+      "id": "2eb00fad-afe2-4ce6-9e4d-b6bf2af9489b",
+      "at": 1792884871097,
+      "actor": "m4",
+      "admin": true,
+      "action": "admin apply chosen tasks",
+      "changes": [
+        {
+          "path": "/alerts/minimum:w1:m4/at",
+          "before": 1792884431726,
+          "after": 1792884871097
+        },
+        {
+          "path": "/alerts/minimum:w1:m3/at",
+          "before": 1792884431726,
+          "after": 1792884871097
+        },
+        {
+          "path": "/alerts/minimum:w1:m5/at",
+          "before": 1792884431726,
+          "after": 1792884871097
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -5956,8 +5980,8 @@
   "schemaVersion": 2,
   "commitmentRulesVersion": 3,
   "lastChosenTaskApplication": {
-    "at": 1792883764159,
-    "actor": "m3",
+    "at": 1792884871097,
+    "actor": "m4",
     "week": "w1",
     "weekStart": "2026-10-19",
     "report": {
