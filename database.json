@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792875484250,
+    "updatedAt": 1792875486487,
     "schemaVersion": 2
   },
   "settings": {
@@ -863,6 +863,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1792875484250
+    },
+    "9e99347c-4bfd-4d7e-a938-7ab28a57d405": {
+      "requestId": "9e99347c-4bfd-4d7e-a938-7ab28a57d405",
+      "task": "t18",
+      "taskName": "Collect indoor garbage",
+      "member": "m1",
+      "memberName": "The Muffin Man",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792875486487
     }
   },
   "pointLedger": {
@@ -1413,7 +1425,7 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
+          "completed": 1
         },
         "t19": {
           "task": "t19",
@@ -7551,6 +7563,36 @@
         },
         {
           "path": "/weeks/w3/assignments/t04/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "0060d58a-2b06-4b13-a8fb-7b68663c1db3",
+      "at": 1792875486487,
+      "actor": "m1",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/9e99347c-4bfd-4d7e-a938-7ab28a57d405",
+          "added": true,
+          "after": {
+            "requestId": "9e99347c-4bfd-4d7e-a938-7ab28a57d405",
+            "task": "t18",
+            "taskName": "Collect indoor garbage",
+            "member": "m1",
+            "memberName": "The Muffin Man",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792875486487
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t18/completed",
           "before": 0,
           "after": 1
         }
@@ -16229,6 +16271,12 @@
       },
       {
         "at": 1792875484250,
+        "actor": "m1",
+        "action": "complete chore",
+        "week": "w3"
+      },
+      {
+        "at": 1792875486487,
         "actor": "m1",
         "action": "complete chore",
         "week": "w3"
