@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792872771032,
+    "updatedAt": 1792872773091,
     "schemaVersion": 2
   },
   "settings": {
@@ -803,6 +803,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1792872771031
+    },
+    "430b811e-3a42-4d59-997b-484e21b33a06": {
+      "requestId": "430b811e-3a42-4d59-997b-484e21b33a06",
+      "task": "t10",
+      "taskName": "Clean the fridge",
+      "member": "m5",
+      "memberName": "MW",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792872773090
     }
   },
   "pointLedger": {
@@ -1141,7 +1153,7 @@
           "required": 1,
           "workload": 2,
           "kind": "automatic",
-          "completed": 0
+          "completed": 1
         },
         "t12": {
           "task": "t12",
@@ -4173,6 +4185,36 @@
         },
         {
           "path": "/weeks/w3/assignments/t06/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "2fe08582-7718-403c-bc44-1b9bc433058b",
+      "at": 1792872773091,
+      "actor": "m5",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/430b811e-3a42-4d59-997b-484e21b33a06",
+          "added": true,
+          "after": {
+            "requestId": "430b811e-3a42-4d59-997b-484e21b33a06",
+            "task": "t10",
+            "taskName": "Clean the fridge",
+            "member": "m5",
+            "memberName": "MW",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792872773090
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t10/completed",
           "before": 0,
           "after": 1
         }
