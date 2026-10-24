@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792875500860,
+    "updatedAt": 1792875502843,
     "schemaVersion": 2
   },
   "settings": {
@@ -947,6 +947,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1792875500860
+    },
+    "485d6ecb-4416-4713-a64d-d946a6475d9e": {
+      "requestId": "485d6ecb-4416-4713-a64d-d946a6475d9e",
+      "task": "t12",
+      "taskName": "Middle flight of stairs",
+      "member": "m2",
+      "memberName": "KI",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792875502843
     }
   },
   "pointLedger": {
@@ -1437,7 +1449,7 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
+          "completed": 1
         },
         "t13": {
           "task": "t13",
@@ -7845,6 +7857,36 @@
         },
         {
           "path": "/weeks/w3/assignments/t17/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "ff2a0d6a-e463-4457-a1da-8beb169497d1",
+      "at": 1792875502843,
+      "actor": "m2",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/485d6ecb-4416-4713-a64d-d946a6475d9e",
+          "added": true,
+          "after": {
+            "requestId": "485d6ecb-4416-4713-a64d-d946a6475d9e",
+            "task": "t12",
+            "taskName": "Middle flight of stairs",
+            "member": "m2",
+            "memberName": "KI",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792875502843
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t12/completed",
           "before": 0,
           "after": 1
         }
@@ -16565,6 +16607,12 @@
       },
       {
         "at": 1792875500860,
+        "actor": "m2",
+        "action": "complete chore",
+        "week": "w3"
+      },
+      {
+        "at": 1792875502843,
         "actor": "m2",
         "action": "complete chore",
         "week": "w3"
