@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792853552773
+    "updatedAt": 1792855185304
   },
   "settings": {
     "rateCents": 2000,
@@ -12,7 +12,8 @@
     "weekId": "w1",
     "weekStart": "2026-10-19",
     "autoReset": false,
-    "resetWeekday": 1
+    "resetWeekday": 1,
+    "assignedWeek": "w1"
   },
   "members": {
     "m1": {
@@ -91,7 +92,12 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 4
+      "order": 4,
+      "claim": {
+        "member": "m1",
+        "week": "w1",
+        "mandatory": true
+      }
     },
     "t05": {
       "name": "Air fryers, microwave and toaster",
@@ -154,7 +160,12 @@
       "points": 3,
       "max": 1,
       "active": true,
-      "order": 11
+      "order": 11,
+      "claim": {
+        "member": "m4",
+        "week": "w1",
+        "mandatory": true
+      }
     },
     "t12": {
       "name": "Middle flight of stairs",
@@ -199,7 +210,12 @@
       "points": 3,
       "max": 1,
       "active": true,
-      "order": 16
+      "order": 16,
+      "claim": {
+        "member": "m5",
+        "week": "w1",
+        "mandatory": true
+      }
     },
     "t17": {
       "name": "Take out garbage and recycling",
@@ -208,7 +224,12 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 17
+      "order": 17,
+      "claim": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true
+      }
     },
     "t18": {
       "name": "Collect indoor garbage",
@@ -226,7 +247,12 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 19
+      "order": 19,
+      "claim": {
+        "member": "m2",
+        "week": "w1",
+        "mandatory": true
+      }
     },
     "t20": {
       "name": "Unload the dishwasher",
