@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792876891998,
+    "updatedAt": 1792876914578,
     "schemaVersion": 2
   },
   "settings": {
@@ -16,7 +16,9 @@
     "resetWeekday": 1,
     "assignedWeek": "w3",
     "timezone": "America/Toronto",
-    "requiredTasks": {},
+    "requiredTasks": {
+      "m1": 3
+    },
     "autoWeek": true,
     "weekStartDay": 1,
     "deadlineHour": 0
@@ -22523,6 +22525,20 @@
             "events": []
           },
           "removed": true
+        }
+      ]
+    },
+    {
+      "id": "d870c794-7588-461d-a0c0-a0079fb4f8c5",
+      "at": 1792876914578,
+      "actor": "m2",
+      "admin": true,
+      "action": "edit person",
+      "changes": [
+        {
+          "path": "/settings/requiredTasks/m1",
+          "added": true,
+          "after": 3
         }
       ]
     }
