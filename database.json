@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792860783133
+    "updatedAt": 1792860787520
   },
   "settings": {
     "rateCents": 2000,
@@ -260,7 +260,11 @@
       "points": 3,
       "max": 1,
       "active": true,
-      "order": 18
+      "order": 18,
+      "claim": {
+        "member": "m2",
+        "week": "w1"
+      }
     },
     "t19": {
       "name": "Load the dishwasher",
