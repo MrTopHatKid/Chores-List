@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792875229652,
+    "updatedAt": 1792875244176,
     "schemaVersion": 2
   },
   "settings": {
@@ -18,7 +18,7 @@
     "timezone": "America/Toronto",
     "requiredTasks": {},
     "autoWeek": true,
-    "weekStartDay": 7
+    "weekStartDay": 1
   },
   "members": {
     "m1": {
@@ -7481,6 +7481,20 @@
               "kind": "selected"
             }
           }
+        }
+      ]
+    },
+    {
+      "id": "6ffbb9e2-a334-4302-8bfc-0b3a64ffed03",
+      "at": 1792875244176,
+      "actor": "m4",
+      "admin": true,
+      "action": "settings",
+      "changes": [
+        {
+          "path": "/settings/weekStartDay",
+          "before": 7,
+          "after": 1
         }
       ]
     }
