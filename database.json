@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792878014570,
+    "updatedAt": 1792878022088,
     "schemaVersion": 2
   },
   "settings": {
@@ -86,10 +86,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m3",
+        "member": "m4",
         "week": "w4",
         "mandatory": true,
-        "kind": "selected"
+        "kind": "automatic"
       }
     },
     "t02": {
@@ -212,7 +212,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m5",
+        "member": "m3",
         "week": "w4",
         "mandatory": true,
         "kind": "automatic"
@@ -266,7 +266,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m3",
+        "member": "m5",
         "week": "w4",
         "mandatory": true,
         "kind": "automatic"
@@ -1165,10 +1165,6 @@
         "member": "m2",
         "kind": "selected"
       },
-      "t01": {
-        "member": "m3",
-        "kind": "selected"
-      },
       "t05": {
         "member": "m3",
         "kind": "selected"
@@ -1181,10 +1177,6 @@
         "member": "m3",
         "kind": "selected"
       },
-      "t14": {
-        "member": "m4",
-        "kind": "selected"
-      },
       "t02": {
         "member": "m4",
         "kind": "selected"
@@ -1194,6 +1186,10 @@
         "kind": "selected"
       },
       "t06": {
+        "member": "m4",
+        "kind": "selected"
+      },
+      "t14": {
         "member": "m4",
         "kind": "selected"
       },
@@ -1604,11 +1600,11 @@
         "t01": {
           "task": "t01",
           "taskName": "Upstairs towels, bath mat and cloths",
-          "member": "m3",
+          "member": "m4",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "selected",
+          "kind": "automatic",
           "completed": 0
         },
         "t02": {
@@ -1674,7 +1670,7 @@
         "t08": {
           "task": "t08",
           "taskName": "Brush the dog",
-          "member": "m5",
+          "member": "m3",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -1704,7 +1700,7 @@
         "t12": {
           "task": "t12",
           "taskName": "Middle flight of stairs",
-          "member": "m3",
+          "member": "m5",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -2281,19 +2277,19 @@
     "minimum:w4:m3": {
       "message": "AW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w4",
-      "at": 1792877891615,
+      "at": 1792878022088,
       "resolved": false
     },
     "minimum:w4:m4": {
       "message": "MK is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w4",
-      "at": 1792877891615,
+      "at": 1792878022088,
       "resolved": false
     },
     "minimum:w4:m5": {
       "message": "MW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w4",
-      "at": 1792877891615,
+      "at": 1792878022088,
       "resolved": false
     }
   },
@@ -25377,6 +25373,78 @@
           }
         }
       ]
+    },
+    {
+      "id": "e63d0c00-7fb5-4fef-9f48-33fb8d4434e0",
+      "at": 1792878022088,
+      "actor": "m4",
+      "admin": true,
+      "action": "admin apply chosen tasks",
+      "changes": [
+        {
+          "path": "/tasks/t01/claim/member",
+          "before": "m3",
+          "after": "m4"
+        },
+        {
+          "path": "/tasks/t01/claim/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/tasks/t08/claim/member",
+          "before": "m5",
+          "after": "m3"
+        },
+        {
+          "path": "/tasks/t12/claim/member",
+          "before": "m3",
+          "after": "m5"
+        },
+        {
+          "path": "/plans/2026-10-26/t01",
+          "before": {
+            "member": "m3",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w4/assignments/t01/member",
+          "before": "m3",
+          "after": "m4"
+        },
+        {
+          "path": "/weeks/w4/assignments/t01/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/weeks/w4/assignments/t08/member",
+          "before": "m5",
+          "after": "m3"
+        },
+        {
+          "path": "/weeks/w4/assignments/t12/member",
+          "before": "m3",
+          "after": "m5"
+        },
+        {
+          "path": "/alerts/minimum:w4:m3/at",
+          "before": 1792877891615,
+          "after": 1792878022088
+        },
+        {
+          "path": "/alerts/minimum:w4:m4/at",
+          "before": 1792877891615,
+          "after": 1792878022088
+        },
+        {
+          "path": "/alerts/minimum:w4:m5/at",
+          "before": 1792877891615,
+          "after": 1792878022088
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -26259,6 +26327,63 @@
       "reason": "Admin applied saved chosen tasks",
       "at": 1792877891616,
       "actor": "m1"
+    },
+    {
+      "week": "w4",
+      "task": "t01",
+      "before": {
+        "member": "m3",
+        "week": "w4",
+        "mandatory": true,
+        "kind": "selected"
+      },
+      "after": {
+        "member": "m4",
+        "week": "w4",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792878022088,
+      "actor": "m4"
+    },
+    {
+      "week": "w4",
+      "task": "t08",
+      "before": {
+        "member": "m5",
+        "week": "w4",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m3",
+        "week": "w4",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792878022088,
+      "actor": "m4"
+    },
+    {
+      "week": "w4",
+      "task": "t12",
+      "before": {
+        "member": "m3",
+        "week": "w4",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m5",
+        "week": "w4",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792878022088,
+      "actor": "m4"
     }
   ],
   "exceptions": {
@@ -26602,14 +26727,14 @@
     }
   ],
   "lastChosenTaskApplication": {
-    "at": 1792877891616,
-    "actor": "m1",
+    "at": 1792878022088,
+    "actor": "m4",
     "week": "w4",
     "weekStart": "2026-10-26",
     "report": {
-      "chosen": 18,
+      "chosen": 17,
       "startedPreserved": 0,
-      "automatic": 2,
+      "automatic": 3,
       "unassigned": 0,
       "conflicts": [],
       "notDue": [],
@@ -50412,6 +50537,19 @@
         "actor": "m4",
         "action": "save task preference",
         "week": "w4"
+      },
+      {
+        "at": 1792878022088,
+        "actor": "m4",
+        "action": "applied saved choices",
+        "week": "w4",
+        "chosen": 17,
+        "startedPreserved": 0,
+        "automatic": 3,
+        "unassigned": 0,
+        "conflicts": [],
+        "notDue": [],
+        "vacationSkipped": []
       }
     ],
     "lastAction": "Advanced 1 week"
