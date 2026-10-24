@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792855739023
+    "updatedAt": 1792855743651
   },
   "settings": {
     "rateCents": 2000,
@@ -74,7 +74,11 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 2
+      "order": 2,
+      "claim": {
+        "member": "m3",
+        "week": "w1"
+      }
     },
     "t03": {
       "name": "Downstairs hallway",
