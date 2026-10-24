@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792881872237,
+    "updatedAt": 1792882026512,
     "schemaVersion": 2
   },
   "settings": {
@@ -3241,19 +3241,19 @@
     "minimum:w5:m3": {
       "message": "AW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w5",
-      "at": 1792881863076,
+      "at": 1792882026511,
       "resolved": false
     },
     "minimum:w5:m4": {
       "message": "MK is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w5",
-      "at": 1792881863076,
+      "at": 1792882026511,
       "resolved": false
     },
     "minimum:w5:m5": {
       "message": "MW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w5",
-      "at": 1792881863076,
+      "at": 1792882026511,
       "resolved": false
     }
   },
@@ -37282,6 +37282,30 @@
       "admin": true,
       "action": "new week",
       "changes": []
+    },
+    {
+      "id": "4a4fe3d9-1a50-414e-8bc8-ee2145b71b17",
+      "at": 1792882026512,
+      "actor": "m4",
+      "admin": true,
+      "action": "re-roll mandatory chores",
+      "changes": [
+        {
+          "path": "/alerts/minimum:w5:m3/at",
+          "before": 1792881863076,
+          "after": 1792882026511
+        },
+        {
+          "path": "/alerts/minimum:w5:m4/at",
+          "before": 1792881863076,
+          "after": 1792882026511
+        },
+        {
+          "path": "/alerts/minimum:w5:m5/at",
+          "before": 1792881863076,
+          "after": 1792882026511
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -74382,6 +74406,12 @@
         "at": 1792881872236,
         "actor": "m3",
         "action": "new week",
+        "week": "w5"
+      },
+      {
+        "at": 1792882026511,
+        "actor": "m4",
+        "action": "re-roll mandatory chores",
         "week": "w5"
       }
     ],
