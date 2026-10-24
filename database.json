@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792860799636
+    "updatedAt": 1792860802137
   },
   "settings": {
     "rateCents": 2000,
@@ -622,6 +622,18 @@
       "kind": "regular",
       "points": 2,
       "at": 1792860794771
+    },
+    "95916230-3f20-405b-912f-1a2b0d8863ae": {
+      "requestId": "95916230-3f20-405b-912f-1a2b0d8863ae",
+      "task": "t22",
+      "taskName": "Dust shared areas",
+      "member": "m1",
+      "memberName": "The Muffin Man",
+      "week": "w1",
+      "weekStart": "2026-10-19",
+      "kind": "regular",
+      "points": 4,
+      "at": 1792860802137
     }
   }
 }
