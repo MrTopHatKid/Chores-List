@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792872209003,
+    "updatedAt": 1792872251233,
     "schemaVersion": 2
   },
   "settings": {
@@ -888,7 +888,9 @@
   "bonusPreferences": {
     "m1": [],
     "m2": [],
-    "m3": [],
+    "m3": [
+      "t19"
+    ],
     "m4": [],
     "m5": []
   },
@@ -927,6 +929,10 @@
       "t16": {
         "member": "m3",
         "kind": "selected"
+      },
+      "t19": {
+        "member": "m3",
+        "kind": "bonus"
       }
     }
   },
@@ -3081,6 +3087,40 @@
           }
         }
       ]
+    },
+    {
+      "id": "a777aff0-1f92-44c1-92f4-42806e1b0f30",
+      "at": 1792872251233,
+      "actor": "m3",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/bonusPreferences/m3",
+          "before": [],
+          "after": [
+            "t19"
+          ]
+        },
+        {
+          "path": "/slotLayout/m3",
+          "added": true,
+          "after": {
+            "selected": [],
+            "bonus": [
+              "t19"
+            ]
+          }
+        },
+        {
+          "path": "/plans/2026-10-26/t19",
+          "added": true,
+          "after": {
+            "member": "m3",
+            "kind": "bonus"
+          }
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -3112,5 +3152,12 @@
   "bonusSlotEnabled": {
     "m3": true
   },
-  "slotLayout": {}
+  "slotLayout": {
+    "m3": {
+      "selected": [],
+      "bonus": [
+        "t19"
+      ]
+    }
+  }
 }
