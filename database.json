@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792858587005
+    "updatedAt": 1792859670014
   },
   "settings": {
     "rateCents": 2000,
@@ -386,6 +386,18 @@
       "points": 2,
       "at": 1792855746276,
       "voided": true
+    },
+    "532662ed-7413-4baa-aa3a-eda325bcd354": {
+      "requestId": "532662ed-7413-4baa-aa3a-eda325bcd354",
+      "task": "t14",
+      "taskName": "Downstairs bathroom",
+      "member": "m3",
+      "memberName": "A",
+      "week": "w1",
+      "weekStart": "2026-10-19",
+      "kind": "regular",
+      "points": 4,
+      "at": 1792859670014
     }
   }
 }
