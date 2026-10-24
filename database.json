@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792876215000,
+    "updatedAt": 1792876297849,
     "schemaVersion": 2
   },
   "settings": {
@@ -875,6 +875,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1792876215000
+    },
+    "56526d40-31f7-45e1-bff5-fb4a319d97ff": {
+      "requestId": "56526d40-31f7-45e1-bff5-fb4a319d97ff",
+      "task": "t03",
+      "taskName": "Downstairs hallway",
+      "member": "m2",
+      "memberName": "KI",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792876297848
     }
   },
   "pointLedger": {
@@ -1285,7 +1297,7 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
+          "completed": 1
         },
         "t04": {
           "task": "t04",
@@ -12568,6 +12580,36 @@
         },
         {
           "path": "/weeks/w3/assignments/t05/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "c08a3aff-fa8d-49c3-a0af-40fb86698c2d",
+      "at": 1792876297849,
+      "actor": "m2",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/56526d40-31f7-45e1-bff5-fb4a319d97ff",
+          "added": true,
+          "after": {
+            "requestId": "56526d40-31f7-45e1-bff5-fb4a319d97ff",
+            "task": "t03",
+            "taskName": "Downstairs hallway",
+            "member": "m2",
+            "memberName": "KI",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792876297848
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t03/completed",
           "before": 0,
           "after": 1
         }
