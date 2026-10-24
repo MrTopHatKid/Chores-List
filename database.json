@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792865393802
+    "updatedAt": 1792865398464
   },
   "settings": {
     "rateCents": 2000,
@@ -131,7 +131,11 @@
       "points": 3,
       "max": 1,
       "active": true,
-      "order": 7
+      "order": 7,
+      "claim": {
+        "member": "m5",
+        "week": "w3"
+      }
     },
     "t08": {
       "name": "Brush the dog",
