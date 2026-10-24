@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883287868,
+    "updatedAt": 1792883304788,
     "schemaVersion": 2
   },
   "settings": {
@@ -405,7 +405,7 @@
       "archived": true
     },
     "t20": {
-      "name": "Unload the dishwasher",
+      "name": "Load the dishwasher & Unload the dishwasher",
       "desc": "Load dirty dishes and start it if appropriate & Put clean dishes away.",
       "kind": "regular",
       "points": 2,
@@ -739,7 +739,7 @@
         },
         "t20": {
           "task": "t20",
-          "taskName": "Unload the dishwasher",
+          "taskName": "Load the dishwasher & Unload the dishwasher",
           "member": "m3",
           "difficulty": "Medium",
           "required": 1,
@@ -801,19 +801,19 @@
     "minimum:w1:m4": {
       "message": "Person 4 is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883287868,
+      "at": 1792883304788,
       "resolved": false
     },
     "minimum:w1:m3": {
       "message": "Person 3 is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883287868,
+      "at": 1792883304788,
       "resolved": false
     },
     "minimum:w1:m5": {
       "message": "Person 5 is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883287868,
+      "at": 1792883304788,
       "resolved": false
     }
   },
@@ -1792,6 +1792,40 @@
           "path": "/alerts/minimum:w1:m5/at",
           "before": 1792883279931,
           "after": 1792883287868
+        }
+      ]
+    },
+    {
+      "id": "806b9555-78f1-46c4-aa72-a9b4901220c1",
+      "at": 1792883304788,
+      "actor": "m2",
+      "admin": true,
+      "action": "edit chore",
+      "changes": [
+        {
+          "path": "/tasks/t20/name",
+          "before": "Unload the dishwasher",
+          "after": "Load the dishwasher & Unload the dishwasher"
+        },
+        {
+          "path": "/weeks/w1/assignments/t20/taskName",
+          "before": "Unload the dishwasher",
+          "after": "Load the dishwasher & Unload the dishwasher"
+        },
+        {
+          "path": "/alerts/minimum:w1:m4/at",
+          "before": 1792883287868,
+          "after": 1792883304788
+        },
+        {
+          "path": "/alerts/minimum:w1:m3/at",
+          "before": 1792883287868,
+          "after": 1792883304788
+        },
+        {
+          "path": "/alerts/minimum:w1:m5/at",
+          "before": 1792883287868,
+          "after": 1792883304788
         }
       ]
     }
