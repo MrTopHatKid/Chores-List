@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792860802137
+    "updatedAt": 1792860825196
   },
   "settings": {
     "rateCents": 2000,
@@ -178,7 +178,11 @@
       "points": 5,
       "max": 1,
       "active": true,
-      "order": 10
+      "order": 10,
+      "claim": {
+        "member": "m1",
+        "week": "w1"
+      }
     },
     "t12": {
       "name": "Middle flight of stairs",
