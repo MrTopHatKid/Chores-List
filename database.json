@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792860872637
+    "updatedAt": 1792860887517
   },
   "settings": {
     "rateCents": 2000,
@@ -8,12 +8,12 @@
     "defaultQuota": 4,
     "paidPointMode": "points",
     "currency": "$",
-    "weekNo": 1,
-    "weekId": "w1",
-    "weekStart": "2026-10-19",
+    "weekNo": 2,
+    "weekId": "w2",
+    "weekStart": "2026-10-24",
     "autoReset": false,
     "resetWeekday": 1,
-    "assignedWeek": "w1"
+    "assignedWeek": "w2"
   },
   "members": {
     "m1": {
@@ -65,11 +65,7 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 1,
-      "claim": {
-        "member": "m3",
-        "week": "w1"
-      }
+      "order": 1
     },
     "t02": {
       "name": "Kitchen counters and table",
@@ -78,11 +74,7 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 2,
-      "claim": {
-        "member": "m3",
-        "week": "w1"
-      }
+      "order": 2
     },
     "t03": {
       "name": "Downstairs hallway",
@@ -91,11 +83,7 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 3,
-      "claim": {
-        "member": "m3",
-        "week": "w1"
-      }
+      "order": 3
     },
     "t04": {
       "name": "Upstairs hallway",
@@ -104,11 +92,7 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 4,
-      "claim": {
-        "member": "m4",
-        "week": "w1"
-      }
+      "order": 4
     },
     "t05": {
       "name": "Air fryers, microwave and toaster",
@@ -117,11 +101,7 @@
       "points": 3,
       "max": 1,
       "active": true,
-      "order": 5,
-      "claim": {
-        "member": "m4",
-        "week": "w1"
-      }
+      "order": 5
     },
     "t06": {
       "name": "Stove, fridge exterior and kitchen island",
@@ -130,11 +110,7 @@
       "points": 3,
       "max": 1,
       "active": true,
-      "order": 6,
-      "claim": {
-        "member": "m4",
-        "week": "w1"
-      }
+      "order": 6
     },
     "t07": {
       "name": "Kitchen floor",
@@ -143,11 +119,7 @@
       "points": 3,
       "max": 1,
       "active": true,
-      "order": 7,
-      "claim": {
-        "member": "m5",
-        "week": "w1"
-      }
+      "order": 7
     },
     "t08": {
       "name": "Brush the dog",
@@ -156,7 +128,12 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 8
+      "order": 8,
+      "claim": {
+        "member": "m3",
+        "week": "w2",
+        "mandatory": true
+      }
     },
     "t09": {
       "name": "Pick up dog poop",
@@ -167,8 +144,9 @@
       "active": true,
       "order": 9,
       "claim": {
-        "member": "m5",
-        "week": "w1"
+        "member": "m1",
+        "week": "w2",
+        "mandatory": true
       }
     },
     "t10": {
@@ -178,11 +156,7 @@
       "points": 5,
       "max": 1,
       "active": true,
-      "order": 10,
-      "claim": {
-        "member": "m1",
-        "week": "w1"
-      }
+      "order": 10
     },
     "t12": {
       "name": "Middle flight of stairs",
@@ -191,12 +165,7 @@
       "points": 3,
       "max": 1,
       "active": true,
-      "order": 12,
-      "claim": {
-        "member": "m5",
-        "week": "w1",
-        "mandatory": true
-      }
+      "order": 12
     },
     "t13": {
       "name": "Upstairs bathroom",
@@ -205,11 +174,7 @@
       "points": 4,
       "max": 1,
       "active": true,
-      "order": 13,
-      "claim": {
-        "member": "m2",
-        "week": "w1"
-      }
+      "order": 13
     },
     "t14": {
       "name": "Downstairs bathroom",
@@ -218,12 +183,7 @@
       "points": 4,
       "max": 1,
       "active": true,
-      "order": 14,
-      "claim": {
-        "member": "m3",
-        "week": "w1",
-        "mandatory": true
-      }
+      "order": 14
     },
     "t15": {
       "name": "Bathtub / shower",
@@ -232,7 +192,12 @@
       "points": 4,
       "max": 1,
       "active": true,
-      "order": 15
+      "order": 15,
+      "claim": {
+        "member": "m2",
+        "week": "w2",
+        "mandatory": true
+      }
     },
     "t16": {
       "name": "Laundry machines and top",
@@ -241,12 +206,7 @@
       "points": 3,
       "max": 1,
       "active": true,
-      "order": 16,
-      "claim": {
-        "member": "m2",
-        "week": "w1",
-        "mandatory": true
-      }
+      "order": 16
     },
     "t17": {
       "name": "Take out garbage and recycling",
@@ -255,7 +215,12 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 17
+      "order": 17,
+      "claim": {
+        "member": "m4",
+        "week": "w2",
+        "mandatory": true
+      }
     },
     "t18": {
       "name": "Collect indoor garbage",
@@ -264,11 +229,7 @@
       "points": 3,
       "max": 1,
       "active": true,
-      "order": 18,
-      "claim": {
-        "member": "m2",
-        "week": "w1"
-      }
+      "order": 18
     },
     "t19": {
       "name": "Load the dishwasher",
@@ -277,12 +238,7 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 19,
-      "claim": {
-        "member": "m1",
-        "week": "w1",
-        "mandatory": true
-      }
+      "order": 19
     },
     "t20": {
       "name": "Unload the dishwasher",
@@ -291,11 +247,7 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 20,
-      "claim": {
-        "member": "m5",
-        "week": "w1"
-      }
+      "order": 20
     },
     "t21": {
       "name": "All bathroom mirrors",
@@ -304,12 +256,7 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 21,
-      "claim": {
-        "member": "m4",
-        "week": "w1",
-        "mandatory": true
-      }
+      "order": 21
     },
     "t22": {
       "name": "Dust shared areas",
@@ -318,11 +265,7 @@
       "points": 4,
       "max": 1,
       "active": true,
-      "order": 22,
-      "claim": {
-        "member": "m1",
-        "week": "w1"
-      }
+      "order": 22
     },
     "t23": {
       "name": "Windows and sliding door",
@@ -331,7 +274,12 @@
       "points": 4,
       "max": 1,
       "active": true,
-      "order": 23
+      "order": 23,
+      "claim": {
+        "member": "m5",
+        "week": "w2",
+        "mandatory": true
+      }
     },
     "t24": {
       "name": "Rake / collect leaves",
