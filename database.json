@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792855743651
+    "updatedAt": 1792855746276
   },
   "settings": {
     "rateCents": 2000,
@@ -381,6 +381,18 @@
       "kind": "regular",
       "points": 2,
       "at": 1792855739023
+    },
+    "af2fb962-3cf3-4884-a8fd-a835ea6d3409": {
+      "requestId": "af2fb962-3cf3-4884-a8fd-a835ea6d3409",
+      "task": "t02",
+      "taskName": "Kitchen counters and table",
+      "member": "m3",
+      "memberName": "Person 3",
+      "week": "w1",
+      "weekStart": "2026-10-19",
+      "kind": "regular",
+      "points": 2,
+      "at": 1792855746276
     }
   }
 }
