@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792875502843,
+    "updatedAt": 1792875505213,
     "schemaVersion": 2
   },
   "settings": {
@@ -959,6 +959,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1792875502843
+    },
+    "9599f854-6439-473d-b8e4-9cd1354f99de": {
+      "requestId": "9599f854-6439-473d-b8e4-9cd1354f99de",
+      "task": "t22",
+      "taskName": "Dust shared areas",
+      "member": "m2",
+      "memberName": "KI",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792875505213
     }
   },
   "pointLedger": {
@@ -1529,7 +1541,7 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
+          "completed": 1
         },
         "t23": {
           "task": "t23",
@@ -7887,6 +7899,36 @@
         },
         {
           "path": "/weeks/w3/assignments/t12/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "00679d23-3fd5-4433-8dae-ba68f2215265",
+      "at": 1792875505213,
+      "actor": "m2",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/9599f854-6439-473d-b8e4-9cd1354f99de",
+          "added": true,
+          "after": {
+            "requestId": "9599f854-6439-473d-b8e4-9cd1354f99de",
+            "task": "t22",
+            "taskName": "Dust shared areas",
+            "member": "m2",
+            "memberName": "KI",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792875505213
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t22/completed",
           "before": 0,
           "after": 1
         }
@@ -16613,6 +16655,12 @@
       },
       {
         "at": 1792875502843,
+        "actor": "m2",
+        "action": "complete chore",
+        "week": "w3"
+      },
+      {
+        "at": 1792875505213,
         "actor": "m2",
         "action": "complete chore",
         "week": "w3"
