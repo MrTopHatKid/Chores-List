@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792879178749,
+    "updatedAt": 1792879240249,
     "schemaVersion": 2
   },
   "settings": {
@@ -41,7 +41,8 @@
         "from": "",
         "to": ""
       },
-      "excludeFromRandom": true
+      "excludeFromRandom": true,
+      "chosenOnly": true
     },
     "m3": {
       "name": "AW",
@@ -210,7 +211,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m2",
+        "member": "m3",
         "week": "w3",
         "mandatory": true,
         "kind": "automatic"
@@ -1381,7 +1382,7 @@
         "t08": {
           "task": "t08",
           "taskName": "Brush the dog",
-          "member": "m2",
+          "member": "m3",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -1529,7 +1530,7 @@
       "generated": true,
       "closed": false,
       "generatedAt": 1792871256429,
-      "minimumSlots": 4,
+      "minimumSlots": 5,
       "remainder": 0
     }
   },
@@ -1672,6 +1673,12 @@
       "message": "The Muffin Man is below the 3-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
       "at": 1792878810320,
+      "resolved": false
+    },
+    "minimum:w3:m5": {
+      "message": "MW is below the 5-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
+      "week": "w3",
+      "at": 1792879240249,
       "resolved": false
     }
   },
@@ -30856,6 +30863,45 @@
           "after": "m2"
         }
       ]
+    },
+    {
+      "id": "5e7355a5-66ea-47fc-aa00-244582899098",
+      "at": 1792879240249,
+      "actor": "m2",
+      "admin": true,
+      "action": "edit person",
+      "changes": [
+        {
+          "path": "/tasks/t08/claim/member",
+          "before": "m2",
+          "after": "m3"
+        },
+        {
+          "path": "/members/m2/chosenOnly",
+          "added": true,
+          "after": true
+        },
+        {
+          "path": "/weeks/w3/assignments/t08/member",
+          "before": "m2",
+          "after": "m3"
+        },
+        {
+          "path": "/weeks/w3/minimumSlots",
+          "before": 4,
+          "after": 5
+        },
+        {
+          "path": "/alerts/minimum:w3:m5",
+          "added": true,
+          "after": {
+            "message": "MW is below the 5-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
+            "week": "w3",
+            "at": 1792879240249,
+            "resolved": false
+          }
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -32081,6 +32127,37 @@
       "reason": "Admin applied saved chosen tasks",
       "at": 1792879178749,
       "actor": "m4"
+    },
+    {
+      "week": "w3",
+      "task": "t08",
+      "before": {
+        "member": "m2",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "vacation exclusion",
+      "at": 1792879240248
+    },
+    {
+      "week": "w3",
+      "task": "t08",
+      "before": {
+        "member": "m2",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m3",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "edit person",
+      "at": 1792879240249,
+      "actor": "m2"
     }
   ],
   "exceptions": {
