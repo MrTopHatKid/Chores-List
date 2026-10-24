@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792855746276
+    "updatedAt": 1792855967912
   },
   "settings": {
     "rateCents": 2000,
@@ -156,20 +156,6 @@
       "max": 1,
       "active": true,
       "order": 10
-    },
-    "t11": {
-      "name": "Dishes",
-      "desc": "Wash dishes that need handwashing and tidy the sink.",
-      "kind": "regular",
-      "points": 3,
-      "max": 1,
-      "active": true,
-      "order": 11,
-      "claim": {
-        "member": "m4",
-        "week": "w1",
-        "mandatory": true
-      }
     },
     "t12": {
       "name": "Middle flight of stairs",
