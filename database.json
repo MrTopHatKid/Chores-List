@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792877053297,
+    "updatedAt": 1792877131804,
     "schemaVersion": 2
   },
   "settings": {
@@ -22815,6 +22815,14 @@
           "after": "automatic"
         }
       ]
+    },
+    {
+      "id": "481271d3-e6a0-4648-a4fc-0bd860b46936",
+      "at": 1792877131804,
+      "actor": "m2",
+      "admin": true,
+      "action": "re-roll mandatory chores",
+      "changes": []
     }
   ],
   "vacationHistory": [],
