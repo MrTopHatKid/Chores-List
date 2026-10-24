@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792860750190
+    "updatedAt": 1792860752999
   },
   "settings": {
     "rateCents": 2000,
@@ -518,6 +518,18 @@
       "kind": "regular",
       "points": 3,
       "at": 1792860747157
+    },
+    "96ef4e9b-6ebd-4ffd-9b3e-28b54a4e47e9": {
+      "requestId": "96ef4e9b-6ebd-4ffd-9b3e-28b54a4e47e9",
+      "task": "t07",
+      "taskName": "Kitchen floor",
+      "member": "m5",
+      "memberName": "Ma",
+      "week": "w1",
+      "weekStart": "2026-10-19",
+      "kind": "regular",
+      "points": 3,
+      "at": 1792860752999
     }
   }
 }
