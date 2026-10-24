@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792872983946,
+    "updatedAt": 1792872987605,
     "schemaVersion": 2
   },
   "settings": {
@@ -778,7 +778,8 @@
       "weekStart": "2026-10-19",
       "kind": "regular",
       "points": 5,
-      "at": 1792860827723
+      "at": 1792860827723,
+      "voided": true
     },
     "d867d050-657e-4b05-97fe-939194aaede7": {
       "requestId": "d867d050-657e-4b05-97fe-939194aaede7",
@@ -4327,6 +4328,20 @@
           "path": "/weeks/w3/assignments/t06/completed",
           "before": 1,
           "after": 0
+        }
+      ]
+    },
+    {
+      "id": "8b73f581-aebc-44b7-b91b-5d9e4b3de4c6",
+      "at": 1792872987605,
+      "actor": "m3",
+      "admin": true,
+      "action": "correct record",
+      "changes": [
+        {
+          "path": "/completions/f83e6cda-45e8-4e9a-8de8-d16fdaf00e5f/voided",
+          "added": true,
+          "after": true
         }
       ]
     }
