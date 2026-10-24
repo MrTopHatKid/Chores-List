@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883480462,
+    "updatedAt": 1792883482474,
     "schemaVersion": 2
   },
   "settings": {
@@ -539,9 +539,7 @@
   "preferences": {
     "m1": [],
     "m2": [],
-    "m3": [
-      "t12"
-    ],
+    "m3": [],
     "m4": [],
     "m5": []
   },
@@ -553,18 +551,8 @@
     "m5": []
   },
   "plans": {
-    "2026-10-19": {
-      "t12": {
-        "member": "m3",
-        "kind": "selected"
-      }
-    },
-    "2026-10-26": {
-      "t12": {
-        "member": "m3",
-        "kind": "selected"
-      }
-    }
+    "2026-10-19": {},
+    "2026-10-26": {}
   },
   "weeks": {
     "w1": {
@@ -816,7 +804,7 @@
     "minimum:w1:m4": {
       "message": "MK is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883480462,
+      "at": 1792883482474,
       "resolved": false
     },
     "minimum:w1:m3": {
@@ -828,7 +816,7 @@
     "minimum:w1:m5": {
       "message": "MW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883480462,
+      "at": 1792883482474,
       "resolved": false
     }
   },
@@ -867,7 +855,7 @@
         null,
         null,
         null,
-        "t12"
+        null
       ],
       "bonus": []
     }
@@ -3314,6 +3302,63 @@
           "path": "/alerts/minimum:w1:m5/at",
           "before": 1792883478433,
           "after": 1792883480462
+        }
+      ]
+    },
+    {
+      "id": "8d446c7c-f011-465b-9193-b91105ffc7a6",
+      "at": 1792883482474,
+      "actor": "m3",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/preferences/m3",
+          "before": [
+            "t12"
+          ],
+          "after": []
+        },
+        {
+          "path": "/slotLayout/m3/selected",
+          "before": [
+            null,
+            null,
+            null,
+            "t12"
+          ],
+          "after": [
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "path": "/plans/2026-10-19/t12",
+          "before": {
+            "member": "m3",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-10-26/t12",
+          "before": {
+            "member": "m3",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/alerts/minimum:w1:m4/at",
+          "before": 1792883480462,
+          "after": 1792883482474
+        },
+        {
+          "path": "/alerts/minimum:w1:m5/at",
+          "before": 1792883480462,
+          "after": 1792883482474
         }
       ]
     }
