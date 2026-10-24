@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792853506675
+    "updatedAt": 1792853509369
   },
   "settings": {
     "rateCents": 2000,
@@ -345,7 +345,8 @@
       "at": 1792853276886,
       "minutes": 120,
       "rateCents": 2000,
-      "paymentCents": 4000
+      "paymentCents": 4000,
+      "voided": true
     }
   }
 }
