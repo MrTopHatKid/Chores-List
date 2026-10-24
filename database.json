@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792876305244,
+    "updatedAt": 1792876491826,
     "schemaVersion": 2
   },
   "settings": {
@@ -899,6 +899,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1792876305244
+    },
+    "7ecfe37b-2de3-4389-a5b6-ac1c8e992d95": {
+      "requestId": "7ecfe37b-2de3-4389-a5b6-ac1c8e992d95",
+      "task": "t17",
+      "taskName": "Take out garbage and recycling",
+      "member": "m2",
+      "memberName": "KI",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792876491825
     }
   },
   "pointLedger": {
@@ -1439,7 +1451,7 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
+          "completed": 1
         },
         "t18": {
           "task": "t18",
@@ -12652,6 +12664,36 @@
         },
         {
           "path": "/weeks/w3/assignments/t12/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "5028d9b7-aeef-48ae-8440-87b5046e44c3",
+      "at": 1792876491826,
+      "actor": "m2",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/7ecfe37b-2de3-4389-a5b6-ac1c8e992d95",
+          "added": true,
+          "after": {
+            "requestId": "7ecfe37b-2de3-4389-a5b6-ac1c8e992d95",
+            "task": "t17",
+            "taskName": "Take out garbage and recycling",
+            "member": "m2",
+            "memberName": "KI",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792876491825
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t17/completed",
           "before": 0,
           "after": 1
         }
