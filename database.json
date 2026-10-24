@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792876919286,
+    "updatedAt": 1792876991978,
     "schemaVersion": 2
   },
   "settings": {
@@ -866,7 +866,8 @@
       "weekStart": "2026-10-24",
       "kind": "regular",
       "difficulty": "Medium",
-      "at": 1792876205023
+      "at": 1792876205023,
+      "voided": true
     },
     "8a9e6769-ee00-4ad2-97b4-5a7c0b030f8b": {
       "requestId": "8a9e6769-ee00-4ad2-97b4-5a7c0b030f8b",
@@ -1317,7 +1318,7 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 1
+          "completed": 0
         },
         "t02": {
           "task": "t02",
@@ -22554,6 +22555,25 @@
           "path": "/settings/requiredTasks/m2",
           "added": true,
           "after": 3
+        }
+      ]
+    },
+    {
+      "id": "133f1be7-86db-4192-8377-a7aa26804ac7",
+      "at": 1792876991978,
+      "actor": "m1",
+      "admin": true,
+      "action": "correct record",
+      "changes": [
+        {
+          "path": "/completions/0299542f-f4d2-471f-a12f-d6cb7c7a5c20/voided",
+          "added": true,
+          "after": true
+        },
+        {
+          "path": "/weeks/w3/assignments/t01/completed",
+          "before": 1,
+          "after": 0
         }
       ]
     }
