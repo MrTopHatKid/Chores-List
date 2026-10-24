@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792882499889,
+    "updatedAt": 1792882502606,
     "schemaVersion": 2
   },
   "settings": {
@@ -1719,7 +1719,7 @@
       "message": "MK is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
       "at": 1792882450814,
-      "resolved": false
+      "resolved": true
     }
   },
   "audit": [
@@ -39700,6 +39700,20 @@
       "changes": [
         {
           "path": "/alerts/minimum:w3:m3/resolved",
+          "before": false,
+          "after": true
+        }
+      ]
+    },
+    {
+      "id": "3ed2de4c-a675-4243-915d-71ba69c89457",
+      "at": 1792882502606,
+      "actor": "m3",
+      "admin": true,
+      "action": "review alert",
+      "changes": [
+        {
+          "path": "/alerts/minimum:w3:m4/resolved",
           "before": false,
           "after": true
         }
