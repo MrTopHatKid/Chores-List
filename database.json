@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792871498968,
+    "updatedAt": 1792871525013,
     "schemaVersion": 2
   },
   "settings": {
@@ -883,7 +883,8 @@
     "m2": [],
     "m3": [
       "t01",
-      "t05"
+      "t05",
+      "t13"
     ],
     "m4": [],
     "m5": []
@@ -903,6 +904,10 @@
         "kind": "selected"
       },
       "t05": {
+        "member": "m3",
+        "kind": "selected"
+      },
+      "t13": {
         "member": "m3",
         "kind": "selected"
       }
@@ -2779,6 +2784,70 @@
                 "kind": "selected"
               },
               "t05": {
+                "member": "m3",
+                "kind": "selected"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "2b1770ed-1b8b-4421-bc97-a4fd0d50291a",
+      "at": 1792871525013,
+      "actor": "m3",
+      "admin": false,
+      "action": "save task preference",
+      "changes": {
+        "preferences": {
+          "before": {
+            "m1": [],
+            "m2": [],
+            "m3": [
+              "t01",
+              "t05"
+            ],
+            "m4": [],
+            "m5": []
+          },
+          "after": {
+            "m1": [],
+            "m2": [],
+            "m3": [
+              "t01",
+              "t05",
+              "t13"
+            ],
+            "m4": [],
+            "m5": []
+          }
+        },
+        "plans": {
+          "before": {
+            "2026-10-24": {},
+            "2026-10-26": {
+              "t01": {
+                "member": "m3",
+                "kind": "selected"
+              },
+              "t05": {
+                "member": "m3",
+                "kind": "selected"
+              }
+            }
+          },
+          "after": {
+            "2026-10-24": {},
+            "2026-10-26": {
+              "t01": {
+                "member": "m3",
+                "kind": "selected"
+              },
+              "t05": {
+                "member": "m3",
+                "kind": "selected"
+              },
+              "t13": {
                 "member": "m3",
                 "kind": "selected"
               }
