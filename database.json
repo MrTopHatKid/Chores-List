@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792865403562
+    "updatedAt": 1792867274708
   },
   "settings": {
     "rateCents": 2000,
@@ -607,5 +607,92 @@
       "points": 5,
       "at": 1792860827723
     }
+  },
+  "pointLedger": {
+    "version": 1,
+    "events": {
+      "opening:m1": {
+        "member": "m1",
+        "type": "opening",
+        "amount": -10,
+        "at": 1792867274708,
+        "date": "2026-10-24",
+        "week": "w3",
+        "note": "Balance when point carryover was enabled"
+      },
+      "opening:m2": {
+        "member": "m2",
+        "type": "opening",
+        "amount": -10,
+        "at": 1792867274708,
+        "date": "2026-10-24",
+        "week": "w3",
+        "note": "Balance when point carryover was enabled"
+      },
+      "opening:m3": {
+        "member": "m3",
+        "type": "opening",
+        "amount": -10,
+        "at": 1792867274708,
+        "date": "2026-10-24",
+        "week": "w3",
+        "note": "Balance when point carryover was enabled"
+      },
+      "opening:m4": {
+        "member": "m4",
+        "type": "opening",
+        "amount": -10,
+        "at": 1792867274708,
+        "date": "2026-10-24",
+        "week": "w3",
+        "note": "Balance when point carryover was enabled"
+      },
+      "opening:m5": {
+        "member": "m5",
+        "type": "opening",
+        "amount": -10,
+        "at": 1792867274708,
+        "date": "2026-10-24",
+        "week": "w3",
+        "note": "Balance when point carryover was enabled"
+      }
+    },
+    "installedWeek": "w3",
+    "installedAt": 1792867274708,
+    "settledWeeks": {
+      "w3": true
+    },
+    "vacationPeriods": [],
+    "legacyTasks": [
+      "e5530493-c825-47e3-9a05-331db7d35b25",
+      "8d0d8df1-b519-43c7-b9ed-ccb368b8eb5a",
+      "e4a2f0b0-ed7c-4220-bc32-092c4365bfe0",
+      "af2fb962-3cf3-4884-a8fd-a835ea6d3409",
+      "532662ed-7413-4baa-aa3a-eda325bcd354",
+      "cd3b23bb-ad85-4ab6-8ca3-1e3f62f95837",
+      "0671c241-f993-4435-a70b-7e72d55f8008",
+      "e3b9d39e-75a9-4006-b945-42b8298ae862",
+      "280ac6ef-ccc2-4a3b-b545-cf68231052f7",
+      "31544932-fccb-44dd-81d8-fcfa8e48735a",
+      "f06fab6b-ab15-4f55-9501-0aea5630100b",
+      "b61c36e4-b61e-44c5-ae09-000cc0cbdb29",
+      "9b28bac3-7bcd-4e71-8f2b-913553737ad6",
+      "96ef4e9b-6ebd-4ffd-9b3e-28b54a4e47e9",
+      "3211d68d-cc88-4436-afd7-35ec20615278",
+      "e3725404-f58e-4f66-b3c2-7447544d00fe",
+      "a08514cc-8c85-4f5e-9c33-0a12b3949acf",
+      "f034f39b-9dee-4cae-996e-d0a912d5cd19",
+      "cbff9f4d-1799-4ced-8d1a-0ae8abfa5582",
+      "96c1231d-e381-4310-9602-f828e53fc665",
+      "95916230-3f20-405b-912f-1a2b0d8863ae",
+      "f83e6cda-45e8-4e9a-8de8-d16fdaf00e5f"
+    ],
+    "weeks": {
+      "w3": {
+        "number": 3,
+        "start": "2026-10-24"
+      }
+    },
+    "persisted": true
   }
 }
