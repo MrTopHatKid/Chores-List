@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883583755,
+    "updatedAt": 1792883590363,
     "schemaVersion": 2
   },
   "settings": {
@@ -100,10 +100,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m5",
+        "member": "m4",
         "week": "w1",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "selected"
       }
     },
     "t03": {
@@ -543,7 +543,8 @@
     "m4": [
       "t06",
       "t14",
-      "t07"
+      "t07",
+      "t02"
     ],
     "m5": []
   },
@@ -567,6 +568,10 @@
       "t07": {
         "member": "m4",
         "kind": "selected"
+      },
+      "t02": {
+        "member": "m4",
+        "kind": "selected"
       }
     },
     "2026-10-26": {
@@ -579,6 +584,10 @@
         "kind": "selected"
       },
       "t07": {
+        "member": "m4",
+        "kind": "selected"
+      },
+      "t02": {
         "member": "m4",
         "kind": "selected"
       }
@@ -603,11 +612,11 @@
         "t02": {
           "task": "t02",
           "taskName": "Kitchen counters and table",
-          "member": "m5",
+          "member": "m4",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "selected",
           "completed": 0
         },
         "t03": {
@@ -840,13 +849,13 @@
     "minimum:w1:m3": {
       "message": "AW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883583755,
+      "at": 1792883590363,
       "resolved": false
     },
     "minimum:w1:m5": {
       "message": "MW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883583755,
+      "at": 1792883590363,
       "resolved": false
     }
   },
@@ -894,7 +903,7 @@
         "t06",
         "t14",
         "t07",
-        null
+        "t02"
       ],
       "bonus": []
     }
@@ -3944,6 +3953,90 @@
           "path": "/alerts/minimum:w1:m5/at",
           "before": 1792883540699,
           "after": 1792883583755
+        }
+      ]
+    },
+    {
+      "id": "3114d06d-7d4a-4817-869a-85865c34e169",
+      "at": 1792883590363,
+      "actor": "m4",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t02/claim/member",
+          "before": "m5",
+          "after": "m4"
+        },
+        {
+          "path": "/tasks/t02/claim/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/preferences/m4",
+          "before": [
+            "t06",
+            "t14",
+            "t07"
+          ],
+          "after": [
+            "t06",
+            "t14",
+            "t07",
+            "t02"
+          ]
+        },
+        {
+          "path": "/slotLayout/m4/selected",
+          "before": [
+            "t06",
+            "t14",
+            "t07",
+            null
+          ],
+          "after": [
+            "t06",
+            "t14",
+            "t07",
+            "t02"
+          ]
+        },
+        {
+          "path": "/plans/2026-10-19/t02",
+          "added": true,
+          "after": {
+            "member": "m4",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-26/t02",
+          "added": true,
+          "after": {
+            "member": "m4",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w1/assignments/t02/member",
+          "before": "m5",
+          "after": "m4"
+        },
+        {
+          "path": "/weeks/w1/assignments/t02/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/alerts/minimum:w1:m3/at",
+          "before": 1792883583755,
+          "after": 1792883590363
+        },
+        {
+          "path": "/alerts/minimum:w1:m5/at",
+          "before": 1792883583755,
+          "after": 1792883590363
         }
       ]
     }
