@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792865349281
+    "updatedAt": 1792865393802
   },
   "settings": {
     "rateCents": 2000,
@@ -118,7 +118,11 @@
       "points": 3,
       "max": 1,
       "active": true,
-      "order": 6
+      "order": 6,
+      "claim": {
+        "member": "m5",
+        "week": "w3"
+      }
     },
     "t07": {
       "name": "Kitchen floor",
