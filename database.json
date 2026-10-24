@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792860717306
+    "updatedAt": 1792860722922
   },
   "settings": {
     "rateCents": 2000,
@@ -442,6 +442,18 @@
       "kind": "regular",
       "points": 2,
       "at": 1792860717306
+    },
+    "280ac6ef-ccc2-4a3b-b545-cf68231052f7": {
+      "requestId": "280ac6ef-ccc2-4a3b-b545-cf68231052f7",
+      "task": "t21",
+      "taskName": "All bathroom mirrors",
+      "member": "m4",
+      "memberName": "Mr",
+      "week": "w1",
+      "weekStart": "2026-10-19",
+      "kind": "regular",
+      "points": 2,
+      "at": 1792860722922
     }
   }
 }
