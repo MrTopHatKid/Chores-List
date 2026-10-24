@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883528766,
+    "updatedAt": 1792883540699,
     "schemaVersion": 2
   },
   "settings": {
@@ -316,10 +316,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m5",
+        "member": "m4",
         "week": "w1",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "selected"
       }
     },
     "t15": {
@@ -541,7 +541,8 @@
     "m2": [],
     "m3": [],
     "m4": [
-      "t06"
+      "t06",
+      "t14"
     ],
     "m5": []
   },
@@ -557,10 +558,18 @@
       "t06": {
         "member": "m4",
         "kind": "selected"
+      },
+      "t14": {
+        "member": "m4",
+        "kind": "selected"
       }
     },
     "2026-10-26": {
       "t06": {
+        "member": "m4",
+        "kind": "selected"
+      },
+      "t14": {
         "member": "m4",
         "kind": "selected"
       }
@@ -705,11 +714,11 @@
         "t14": {
           "task": "t14",
           "taskName": "Downstairs bathroom",
-          "member": "m5",
+          "member": "m4",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "selected",
           "completed": 0
         },
         "t15": {
@@ -822,13 +831,13 @@
     "minimum:w1:m3": {
       "message": "AW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883528765,
+      "at": 1792883540699,
       "resolved": false
     },
     "minimum:w1:m5": {
       "message": "MW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883482474,
+      "at": 1792883540699,
       "resolved": false
     }
   },
@@ -874,7 +883,7 @@
     "m4": {
       "selected": [
         "t06",
-        null,
+        "t14",
         null,
         null
       ],
@@ -3764,6 +3773,86 @@
           "path": "/alerts/minimum:w1:m3/at",
           "before": 1792883348768,
           "after": 1792883528765
+        }
+      ]
+    },
+    {
+      "id": "cafb7174-fb93-47bb-81f4-040e5dfe955c",
+      "at": 1792883540699,
+      "actor": "m4",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t14/claim/member",
+          "before": "m5",
+          "after": "m4"
+        },
+        {
+          "path": "/tasks/t14/claim/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/preferences/m4",
+          "before": [
+            "t06"
+          ],
+          "after": [
+            "t06",
+            "t14"
+          ]
+        },
+        {
+          "path": "/slotLayout/m4/selected",
+          "before": [
+            "t06",
+            null,
+            null,
+            null
+          ],
+          "after": [
+            "t06",
+            "t14",
+            null,
+            null
+          ]
+        },
+        {
+          "path": "/plans/2026-10-19/t14",
+          "added": true,
+          "after": {
+            "member": "m4",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-26/t14",
+          "added": true,
+          "after": {
+            "member": "m4",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w1/assignments/t14/member",
+          "before": "m5",
+          "after": "m4"
+        },
+        {
+          "path": "/weeks/w1/assignments/t14/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/alerts/minimum:w1:m3/at",
+          "before": 1792883528765,
+          "after": 1792883540699
+        },
+        {
+          "path": "/alerts/minimum:w1:m5/at",
+          "before": 1792883482474,
+          "after": 1792883540699
         }
       ]
     }
