@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792882502606,
+    "updatedAt": 1792882813493,
     "schemaVersion": 2
   },
   "settings": {
@@ -1706,20 +1706,20 @@
     "minimum:w3:m5": {
       "message": "MW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792882450814,
-      "resolved": true
+      "at": 1792882813493,
+      "resolved": false
     },
     "minimum:w3:m3": {
       "message": "AW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792882450814,
-      "resolved": true
+      "at": 1792882813493,
+      "resolved": false
     },
     "minimum:w3:m4": {
       "message": "MK is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792882450814,
-      "resolved": true
+      "at": 1792882813493,
+      "resolved": false
     }
   },
   "audit": [
@@ -39718,6 +39718,45 @@
           "after": true
         }
       ]
+    },
+    {
+      "id": "6f3018c0-6e8f-41f8-a9c8-4e2573cb885b",
+      "at": 1792882813493,
+      "actor": "m3",
+      "admin": true,
+      "action": "admin apply chosen tasks",
+      "changes": [
+        {
+          "path": "/alerts/minimum:w3:m5/at",
+          "before": 1792882450814,
+          "after": 1792882813493
+        },
+        {
+          "path": "/alerts/minimum:w3:m5/resolved",
+          "before": true,
+          "after": false
+        },
+        {
+          "path": "/alerts/minimum:w3:m3/at",
+          "before": 1792882450814,
+          "after": 1792882813493
+        },
+        {
+          "path": "/alerts/minimum:w3:m3/resolved",
+          "before": true,
+          "after": false
+        },
+        {
+          "path": "/alerts/minimum:w3:m4/at",
+          "before": 1792882450814,
+          "after": 1792882813493
+        },
+        {
+          "path": "/alerts/minimum:w3:m4/resolved",
+          "before": true,
+          "after": false
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -41664,7 +41703,7 @@
     }
   ],
   "lastChosenTaskApplication": {
-    "at": 1792882450814,
+    "at": 1792882813493,
     "actor": "m3",
     "week": "w3",
     "weekStart": "2026-10-24",
