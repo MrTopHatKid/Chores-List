@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792860734720
+    "updatedAt": 1792860737206
   },
   "settings": {
     "rateCents": 2000,
@@ -474,6 +474,18 @@
       "kind": "regular",
       "points": 2,
       "at": 1792860729333
+    },
+    "f06fab6b-ab15-4f55-9501-0aea5630100b": {
+      "requestId": "f06fab6b-ab15-4f55-9501-0aea5630100b",
+      "task": "t06",
+      "taskName": "Stove, fridge exterior and kitchen island",
+      "member": "m4",
+      "memberName": "Mr",
+      "week": "w1",
+      "weekStart": "2026-10-19",
+      "kind": "regular",
+      "points": 3,
+      "at": 1792860737206
     }
   }
 }
