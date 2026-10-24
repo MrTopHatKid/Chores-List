@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792880878708,
+    "updatedAt": 1792881071009,
     "schemaVersion": 2
   },
   "settings": {
@@ -213,7 +213,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m5",
+        "member": "m3",
         "week": "w3",
         "mandatory": true,
         "kind": "automatic"
@@ -1384,7 +1384,7 @@
         "t08": {
           "task": "t08",
           "taskName": "Brush the dog",
-          "member": "m5",
+          "member": "m3",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -1680,19 +1680,19 @@
     "minimum:w3:m5": {
       "message": "MW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792880878707,
+      "at": 1792881071009,
       "resolved": false
     },
     "minimum:w3:m3": {
       "message": "AW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792880878707,
+      "at": 1792881071009,
       "resolved": false
     },
     "minimum:w3:m4": {
       "message": "MK is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792880878707,
+      "at": 1792881071009,
       "resolved": false
     }
   },
@@ -33020,6 +33020,40 @@
           "after": 1792880878707
         }
       ]
+    },
+    {
+      "id": "864056a5-85e0-4425-a843-d604115e16fb",
+      "at": 1792881071009,
+      "actor": "m5",
+      "admin": true,
+      "action": "admin apply chosen tasks",
+      "changes": [
+        {
+          "path": "/tasks/t08/claim/member",
+          "before": "m5",
+          "after": "m3"
+        },
+        {
+          "path": "/weeks/w3/assignments/t08/member",
+          "before": "m5",
+          "after": "m3"
+        },
+        {
+          "path": "/alerts/minimum:w3:m5/at",
+          "before": 1792880878707,
+          "after": 1792881071009
+        },
+        {
+          "path": "/alerts/minimum:w3:m3/at",
+          "before": 1792880878707,
+          "after": 1792881071009
+        },
+        {
+          "path": "/alerts/minimum:w3:m4/at",
+          "before": 1792880878707,
+          "after": 1792881071009
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -34295,6 +34329,25 @@
       "reason": "Admin applied saved chosen tasks",
       "at": 1792880878708,
       "actor": "m3"
+    },
+    {
+      "week": "w3",
+      "task": "t08",
+      "before": {
+        "member": "m5",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m3",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792881071009,
+      "actor": "m5"
     }
   ],
   "exceptions": {
@@ -34831,8 +34884,8 @@
     }
   ],
   "lastChosenTaskApplication": {
-    "at": 1792880878708,
-    "actor": "m3",
+    "at": 1792881071009,
+    "actor": "m5",
     "week": "w3",
     "weekStart": "2026-10-24",
     "report": {
