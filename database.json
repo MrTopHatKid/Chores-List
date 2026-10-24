@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792879076104,
+    "updatedAt": 1792879128457,
     "schemaVersion": 2
   },
   "settings": {
@@ -267,7 +267,7 @@
         "member": "m4",
         "week": "w3",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "bonus"
       }
     },
     "t13": {
@@ -1061,11 +1061,17 @@
     "m1": [],
     "m2": [],
     "m3": [],
-    "m4": [],
+    "m4": [
+      "t12"
+    ],
     "m5": []
   },
   "plans": {
     "2026-10-24": {
+      "t12": {
+        "member": "m4",
+        "kind": "bonus"
+      },
       "t18": {
         "member": "m1",
         "kind": "selected"
@@ -1140,6 +1146,10 @@
       }
     },
     "2026-10-26": {
+      "t12": {
+        "member": "m4",
+        "kind": "bonus"
+      },
       "t18": {
         "member": "m1",
         "kind": "selected"
@@ -1239,10 +1249,6 @@
         "kind": "selected"
       },
       "t17": {
-        "member": "m2",
-        "kind": "selected"
-      },
-      "t12": {
         "member": "m2",
         "kind": "selected"
       },
@@ -1409,7 +1415,7 @@
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "bonus",
           "completed": 0
         },
         "t13": {
@@ -1517,7 +1523,9 @@
           "category": "admin_exception"
         }
       },
-      "bonusUsers": [],
+      "bonusUsers": [
+        "m4"
+      ],
       "generated": true,
       "closed": false,
       "generatedAt": 1792871256429,
@@ -30751,6 +30759,84 @@
           "after": 4
         }
       ]
+    },
+    {
+      "id": "bb46660f-a8ce-491c-b683-19500b852566",
+      "at": 1792879128457,
+      "actor": "m4",
+      "admin": false,
+      "action": "request permanent bonus",
+      "changes": [
+        {
+          "path": "/tasks/t12/claim/kind",
+          "before": "automatic",
+          "after": "bonus"
+        },
+        {
+          "path": "/bonusPreferences/m4",
+          "before": [],
+          "after": [
+            "t12"
+          ]
+        },
+        {
+          "path": "/bonusRequests/d17814bf-7ab4-49d9-8ea0-fb4a860c6893",
+          "added": true,
+          "after": {
+            "id": "d17814bf-7ab4-49d9-8ea0-fb4a860c6893",
+            "task": "t12",
+            "member": "m4",
+            "status": "assigned",
+            "requestedAt": 1792879128456,
+            "assignedAt": 1792879128456
+          }
+        },
+        {
+          "path": "/permanentBonus/t12",
+          "added": true,
+          "after": {
+            "member": "m4",
+            "request": "d17814bf-7ab4-49d9-8ea0-fb4a860c6893",
+            "createdAt": 1792879128456
+          }
+        },
+        {
+          "path": "/plans/2026-10-24/t12",
+          "added": true,
+          "after": {
+            "member": "m4",
+            "kind": "bonus"
+          }
+        },
+        {
+          "path": "/plans/2026-10-26/t12",
+          "added": true,
+          "after": {
+            "member": "m4",
+            "kind": "bonus"
+          }
+        },
+        {
+          "path": "/plans/2026-10-25/t12",
+          "before": {
+            "member": "m2",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w3/assignments/t12/kind",
+          "before": "automatic",
+          "after": "bonus"
+        },
+        {
+          "path": "/weeks/w3/bonusUsers",
+          "before": [],
+          "after": [
+            "m4"
+          ]
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -32511,7 +32597,22 @@
     "lastRestoredAt": 1792878593211,
     "lastRestoredId": "test-71e457e9-dbb8-4355-b7f0-1778e7ccaaaa"
   },
-  "permanentBonus": {},
-  "bonusRequests": {},
+  "permanentBonus": {
+    "t12": {
+      "member": "m4",
+      "request": "d17814bf-7ab4-49d9-8ea0-fb4a860c6893",
+      "createdAt": 1792879128456
+    }
+  },
+  "bonusRequests": {
+    "d17814bf-7ab4-49d9-8ea0-fb4a860c6893": {
+      "id": "d17814bf-7ab4-49d9-8ea0-fb4a860c6893",
+      "task": "t12",
+      "member": "m4",
+      "status": "assigned",
+      "requestedAt": 1792879128456,
+      "assignedAt": 1792879128456
+    }
+  },
   "commitmentRulesVersion": 3
 }
