@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792872791233,
+    "updatedAt": 1792872977845,
     "schemaVersion": 2
   },
   "settings": {
@@ -826,7 +826,8 @@
       "weekStart": "2026-10-24",
       "kind": "regular",
       "difficulty": "Medium",
-      "at": 1792872775363
+      "at": 1792872775363,
+      "voided": true
     }
   },
   "pointLedger": {
@@ -1135,7 +1136,7 @@
           "required": 1,
           "workload": 2,
           "kind": "legacy",
-          "completed": 1
+          "completed": 0
         },
         "t08": {
           "task": "t08",
@@ -4269,6 +4270,25 @@
       "admin": true,
       "action": "new week",
       "changes": []
+    },
+    {
+      "id": "057f0f54-d6f7-48aa-80fc-b8e0fad56050",
+      "at": 1792872977845,
+      "actor": "m3",
+      "admin": true,
+      "action": "correct record",
+      "changes": [
+        {
+          "path": "/completions/7047fb1a-cd37-4566-9d89-bb6181da17a6/voided",
+          "added": true,
+          "after": true
+        },
+        {
+          "path": "/weeks/w3/assignments/t07/completed",
+          "before": 1,
+          "after": 0
+        }
+      ]
     }
   ],
   "vacationHistory": [],
