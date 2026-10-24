@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792852931130
+    "updatedAt": 1792853266370
   },
   "settings": {
     "rateCents": 2000,
@@ -275,7 +275,11 @@
       "points": 4,
       "max": 1,
       "active": true,
-      "order": 24
+      "order": 24,
+      "claim": {
+        "member": "m4",
+        "week": "w1"
+      }
     },
     "t25": {
       "name": "Shovel snow",
