@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883750149,
+    "updatedAt": 1792883764159,
     "schemaVersion": 2
   },
   "settings": {
@@ -226,7 +226,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m3",
+        "member": "m5",
         "week": "w1",
         "mandatory": true,
         "kind": "automatic"
@@ -280,7 +280,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m4",
+        "member": "m3",
         "week": "w1",
         "mandatory": true,
         "kind": "automatic"
@@ -822,7 +822,7 @@
         "t09": {
           "task": "t09",
           "taskName": "Pick up dog poop",
-          "member": "m3",
+          "member": "m5",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -852,7 +852,7 @@
         "t12": {
           "task": "t12",
           "taskName": "Middle flight of stairs",
-          "member": "m4",
+          "member": "m3",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -985,19 +985,19 @@
     "minimum:w1:m4": {
       "message": "MK is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883750149,
+      "at": 1792883764159,
       "resolved": false
     },
     "minimum:w1:m3": {
       "message": "AW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883750149,
+      "at": 1792883764159,
       "resolved": false
     },
     "minimum:w1:m5": {
       "message": "MW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883750149,
+      "at": 1792883764159,
       "resolved": false
     }
   },
@@ -5323,6 +5323,50 @@
           "after": 1792883750149
         }
       ]
+    },
+    {
+      "id": "38764741-234f-415d-bc93-d3de215929b5",
+      "at": 1792883764159,
+      "actor": "m3",
+      "admin": true,
+      "action": "admin apply chosen tasks",
+      "changes": [
+        {
+          "path": "/tasks/t09/claim/member",
+          "before": "m3",
+          "after": "m5"
+        },
+        {
+          "path": "/tasks/t12/claim/member",
+          "before": "m4",
+          "after": "m3"
+        },
+        {
+          "path": "/weeks/w1/assignments/t09/member",
+          "before": "m3",
+          "after": "m5"
+        },
+        {
+          "path": "/weeks/w1/assignments/t12/member",
+          "before": "m4",
+          "after": "m3"
+        },
+        {
+          "path": "/alerts/minimum:w1:m4/at",
+          "before": 1792883750149,
+          "after": 1792883764159
+        },
+        {
+          "path": "/alerts/minimum:w1:m3/at",
+          "before": 1792883750149,
+          "after": 1792883764159
+        },
+        {
+          "path": "/alerts/minimum:w1:m5/at",
+          "before": 1792883750149,
+          "after": 1792883764159
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -5810,6 +5854,44 @@
       "reason": "take bonus chore",
       "at": 1792883628700,
       "actor": "m4"
+    },
+    {
+      "week": "w1",
+      "task": "t09",
+      "before": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m5",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883764159,
+      "actor": "m3"
+    },
+    {
+      "week": "w1",
+      "task": "t12",
+      "before": {
+        "member": "m4",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883764159,
+      "actor": "m3"
     }
   ],
   "permanentBonus": {
@@ -5826,14 +5908,14 @@
   "schemaVersion": 2,
   "commitmentRulesVersion": 3,
   "lastChosenTaskApplication": {
-    "at": 1792883508386,
-    "actor": "m5",
+    "at": 1792883764159,
+    "actor": "m3",
     "week": "w1",
     "weekStart": "2026-10-19",
     "report": {
-      "chosen": 0,
+      "chosen": 19,
       "startedPreserved": 0,
-      "automatic": 21,
+      "automatic": 2,
       "unassigned": 0,
       "conflicts": [],
       "notDue": [],
