@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792882450815,
+    "updatedAt": 1792882491262,
     "schemaVersion": 2
   },
   "settings": {
@@ -1695,7 +1695,7 @@
       "message": "KI is below the 4-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
       "at": 1792873063316,
-      "resolved": false
+      "resolved": true
     },
     "minimum:w3:m1": {
       "message": "The Muffin Man is below the 3-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
@@ -39646,6 +39646,20 @@
           "path": "/alerts/minimum:w3:m4/at",
           "before": 1792882445878,
           "after": 1792882450814
+        }
+      ]
+    },
+    {
+      "id": "6aa92481-b7be-4721-bf58-2b9718aefdb9",
+      "at": 1792882491262,
+      "actor": "m3",
+      "admin": true,
+      "action": "review alert",
+      "changes": [
+        {
+          "path": "/alerts/minimum:w3:m2/resolved",
+          "before": false,
+          "after": true
         }
       ]
     }
