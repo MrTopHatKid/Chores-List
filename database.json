@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792877136259,
+    "updatedAt": 1792877164914,
     "schemaVersion": 2
   },
   "settings": {
@@ -22831,6 +22831,14 @@
       "admin": true,
       "action": "new week",
       "changes": []
+    },
+    {
+      "id": "c478bbea-a325-4fd0-a4ee-8ed37b04bb19",
+      "at": 1792877164914,
+      "actor": "m2",
+      "admin": true,
+      "action": "admin apply chosen tasks",
+      "changes": []
     }
   ],
   "vacationHistory": [],
@@ -23680,7 +23688,7 @@
     }
   ],
   "lastChosenTaskApplication": {
-    "at": 1792877053297,
+    "at": 1792877164913,
     "actor": "m2",
     "week": "w3",
     "weekStart": "2026-10-24",
