@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792875498601,
+    "updatedAt": 1792875500860,
     "schemaVersion": 2
   },
   "settings": {
@@ -935,6 +935,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1792875498600
+    },
+    "282e7133-f657-4a63-981e-315f4798e149": {
+      "requestId": "282e7133-f657-4a63-981e-315f4798e149",
+      "task": "t17",
+      "taskName": "Take out garbage and recycling",
+      "member": "m2",
+      "memberName": "KI",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792875500860
     }
   },
   "pointLedger": {
@@ -1475,7 +1487,7 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
+          "completed": 1
         },
         "t18": {
           "task": "t18",
@@ -7803,6 +7815,36 @@
         },
         {
           "path": "/weeks/w3/assignments/t03/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "8b49c15f-f7b4-43a2-ba24-b2df66e5ab2f",
+      "at": 1792875500860,
+      "actor": "m2",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/282e7133-f657-4a63-981e-315f4798e149",
+          "added": true,
+          "after": {
+            "requestId": "282e7133-f657-4a63-981e-315f4798e149",
+            "task": "t17",
+            "taskName": "Take out garbage and recycling",
+            "member": "m2",
+            "memberName": "KI",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792875500860
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t17/completed",
           "before": 0,
           "after": 1
         }
@@ -16517,6 +16559,12 @@
       },
       {
         "at": 1792875498600,
+        "actor": "m2",
+        "action": "complete chore",
+        "week": "w3"
+      },
+      {
+        "at": 1792875500860,
         "actor": "m2",
         "action": "complete chore",
         "week": "w3"
