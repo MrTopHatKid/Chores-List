@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792859672362
+    "updatedAt": 1792860709507
   },
   "settings": {
     "rateCents": 2000,
@@ -65,7 +65,11 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 1
+      "order": 1,
+      "claim": {
+        "member": "m3",
+        "week": "w1"
+      }
     },
     "t02": {
       "name": "Kitchen counters and table",
