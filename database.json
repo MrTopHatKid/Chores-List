@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883690207,
+    "updatedAt": 1792883696565,
     "schemaVersion": 2
   },
   "settings": {
@@ -419,10 +419,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m4",
+        "member": "m5",
         "week": "w1",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "selected"
       }
     },
     "t21": {
@@ -552,7 +552,8 @@
       "t02"
     ],
     "m5": [
-      "t11"
+      "t11",
+      "t20"
     ]
   },
   "bonusPreferences": {
@@ -605,6 +606,10 @@
       "t11": {
         "member": "m5",
         "kind": "selected"
+      },
+      "t20": {
+        "member": "m5",
+        "kind": "selected"
       }
     },
     "2026-10-26": {
@@ -645,6 +650,10 @@
         "kind": "selected"
       },
       "t11": {
+        "member": "m5",
+        "kind": "selected"
+      },
+      "t20": {
         "member": "m5",
         "kind": "selected"
       }
@@ -839,11 +848,11 @@
         "t20": {
           "task": "t20",
           "taskName": "Load the dishwasher & Unload the dishwasher",
-          "member": "m4",
+          "member": "m5",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "selected",
           "completed": 0
         },
         "t22": {
@@ -914,7 +923,7 @@
     "minimum:w1:m5": {
       "message": "MW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883690207,
+      "at": 1792883696564,
       "resolved": false
     }
   },
@@ -971,7 +980,7 @@
     "m5": {
       "selected": [
         "t11",
-        null,
+        "t20",
         null,
         null
       ],
@@ -4541,6 +4550,81 @@
           "path": "/alerts/minimum:w1:m5/at",
           "before": 1792883679073,
           "after": 1792883690207
+        }
+      ]
+    },
+    {
+      "id": "fc3ef679-d7d1-4ce8-968b-c81462edbe69",
+      "at": 1792883696565,
+      "actor": "m5",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t20/claim/member",
+          "before": "m4",
+          "after": "m5"
+        },
+        {
+          "path": "/tasks/t20/claim/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/preferences/m5",
+          "before": [
+            "t11"
+          ],
+          "after": [
+            "t11",
+            "t20"
+          ]
+        },
+        {
+          "path": "/slotLayout/m5/selected",
+          "before": [
+            "t11",
+            null,
+            null,
+            null
+          ],
+          "after": [
+            "t11",
+            "t20",
+            null,
+            null
+          ]
+        },
+        {
+          "path": "/plans/2026-10-19/t20",
+          "added": true,
+          "after": {
+            "member": "m5",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-26/t20",
+          "added": true,
+          "after": {
+            "member": "m5",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w1/assignments/t20/member",
+          "before": "m4",
+          "after": "m5"
+        },
+        {
+          "path": "/weeks/w1/assignments/t20/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/alerts/minimum:w1:m5/at",
+          "before": 1792883690207,
+          "after": 1792883696564
         }
       ]
     }
