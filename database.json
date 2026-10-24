@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792878476730,
+    "updatedAt": 1792878482184,
     "schemaVersion": 2
   },
   "settings": {
@@ -31,7 +31,8 @@
       "vacation": {
         "from": "",
         "to": ""
-      }
+      },
+      "excludeFromRandom": false
     },
     "m2": {
       "name": "KI",
@@ -39,7 +40,8 @@
       "vacation": {
         "from": "",
         "to": ""
-      }
+      },
+      "excludeFromRandom": false
     },
     "m3": {
       "name": "AW",
@@ -47,7 +49,8 @@
       "vacation": {
         "from": "",
         "to": ""
-      }
+      },
+      "excludeFromRandom": false
     },
     "m4": {
       "name": "MK",
@@ -55,7 +58,8 @@
       "vacation": {
         "from": "",
         "to": ""
-      }
+      },
+      "excludeFromRandom": false
     },
     "m5": {
       "name": "MW",
@@ -63,7 +67,8 @@
       "vacation": {
         "from": "",
         "to": ""
-      }
+      },
+      "excludeFromRandom": false
     }
   },
   "tasks": {
@@ -205,7 +210,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m2",
+        "member": "m1",
         "week": "w3",
         "mandatory": true,
         "kind": "automatic"
@@ -259,7 +264,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m1",
+        "member": "m2",
         "week": "w3",
         "mandatory": true,
         "kind": "automatic"
@@ -1370,7 +1375,7 @@
         "t08": {
           "task": "t08",
           "taskName": "Brush the dog",
-          "member": "m2",
+          "member": "m1",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -1400,7 +1405,7 @@
         "t12": {
           "task": "t12",
           "taskName": "Middle flight of stairs",
-          "member": "m1",
+          "member": "m2",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -26039,6 +26044,35 @@
           "removed": true
         }
       ]
+    },
+    {
+      "id": "60cd6ddd-5258-4a4f-9bab-2887dd7f29b0",
+      "at": 1792878482184,
+      "actor": "m4",
+      "admin": true,
+      "action": "admin apply chosen tasks",
+      "changes": [
+        {
+          "path": "/tasks/t08/claim/member",
+          "before": "m2",
+          "after": "m1"
+        },
+        {
+          "path": "/tasks/t12/claim/member",
+          "before": "m1",
+          "after": "m2"
+        },
+        {
+          "path": "/weeks/w3/assignments/t08/member",
+          "before": "m2",
+          "after": "m1"
+        },
+        {
+          "path": "/weeks/w3/assignments/t12/member",
+          "before": "m1",
+          "after": "m2"
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -26545,6 +26579,44 @@
       "reason": "Admin applied saved chosen tasks",
       "at": 1792877053297,
       "actor": "m2"
+    },
+    {
+      "week": "w3",
+      "task": "t08",
+      "before": {
+        "member": "m2",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m1",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792878482183,
+      "actor": "m4"
+    },
+    {
+      "week": "w3",
+      "task": "t12",
+      "before": {
+        "member": "m1",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m2",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792878482183,
+      "actor": "m4"
     }
   ],
   "exceptions": {
@@ -27019,8 +27091,8 @@
     }
   ],
   "lastChosenTaskApplication": {
-    "at": 1792877164913,
-    "actor": "m2",
+    "at": 1792878482183,
+    "actor": "m4",
     "week": "w3",
     "weekStart": "2026-10-24",
     "report": {
@@ -27037,5 +27109,6 @@
     "active": false,
     "lastRestoredAt": 1792878476729,
     "lastRestoredId": "test-dba46511-a8d9-42d5-885e-a71cdd8ffd83"
-  }
+  },
+  "taskRequests": {}
 }
