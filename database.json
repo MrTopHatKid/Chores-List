@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792881623559,
+    "updatedAt": 1792881627814,
     "schemaVersion": 2
   },
   "settings": {
@@ -33186,6 +33186,14 @@
     {
       "id": "d1cdc9b0-3038-4ebf-97c1-a5452ffede55",
       "at": 1792881623559,
+      "actor": "m4",
+      "admin": true,
+      "action": "new week",
+      "changes": []
+    },
+    {
+      "id": "5ce34c5e-425a-41d7-be96-440481b173f7",
+      "at": 1792881627814,
       "actor": "m4",
       "admin": true,
       "action": "new week",
