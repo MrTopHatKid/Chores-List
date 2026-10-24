@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792871448914,
+    "updatedAt": 1792871498968,
     "schemaVersion": 2
   },
   "settings": {
@@ -882,7 +882,8 @@
     "m1": [],
     "m2": [],
     "m3": [
-      "t01"
+      "t01",
+      "t05"
     ],
     "m4": [],
     "m5": []
@@ -898,6 +899,10 @@
     "2026-10-24": {},
     "2026-10-26": {
       "t01": {
+        "member": "m3",
+        "kind": "selected"
+      },
+      "t05": {
         "member": "m3",
         "kind": "selected"
       }
@@ -2720,6 +2725,60 @@
             "2026-10-24": {},
             "2026-10-26": {
               "t01": {
+                "member": "m3",
+                "kind": "selected"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "20e95b9c-5897-468d-a56e-e2d852947d3d",
+      "at": 1792871498968,
+      "actor": "m3",
+      "admin": false,
+      "action": "save task preference",
+      "changes": {
+        "preferences": {
+          "before": {
+            "m1": [],
+            "m2": [],
+            "m3": [
+              "t01"
+            ],
+            "m4": [],
+            "m5": []
+          },
+          "after": {
+            "m1": [],
+            "m2": [],
+            "m3": [
+              "t01",
+              "t05"
+            ],
+            "m4": [],
+            "m5": []
+          }
+        },
+        "plans": {
+          "before": {
+            "2026-10-24": {},
+            "2026-10-26": {
+              "t01": {
+                "member": "m3",
+                "kind": "selected"
+              }
+            }
+          },
+          "after": {
+            "2026-10-24": {},
+            "2026-10-26": {
+              "t01": {
+                "member": "m3",
+                "kind": "selected"
+              },
+              "t05": {
                 "member": "m3",
                 "kind": "selected"
               }
