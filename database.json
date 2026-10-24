@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792879308883,
+    "updatedAt": 1792879696328,
     "schemaVersion": 2
   },
   "settings": {
@@ -71,7 +71,7 @@
         "to": ""
       },
       "excludeFromRandom": false,
-      "chosenOnly": false
+      "chosenOnly": true
     }
   },
   "tasks": {
@@ -1532,8 +1532,8 @@
       "generated": true,
       "closed": false,
       "generatedAt": 1792871256429,
-      "minimumSlots": 6,
-      "remainder": 2
+      "minimumSlots": 10,
+      "remainder": 0
     }
   },
   "incomplete": {
@@ -1684,15 +1684,15 @@
       "resolved": false
     },
     "minimum:w3:m3": {
-      "message": "AW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
+      "message": "AW is below the 10-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792879308883,
+      "at": 1792879696328,
       "resolved": false
     },
     "minimum:w3:m4": {
-      "message": "MK is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
+      "message": "MK is below the 10-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792879308883,
+      "at": 1792879696328,
       "resolved": false
     }
   },
@@ -31085,6 +31085,50 @@
           "path": "/alerts/minimum:w3:m4/at",
           "before": 1792879306448,
           "after": 1792879308883
+        }
+      ]
+    },
+    {
+      "id": "2ceb97f1-731a-4b86-a064-adaef2cbc727",
+      "at": 1792879696328,
+      "actor": "m5",
+      "admin": false,
+      "action": "random exclusion",
+      "changes": [
+        {
+          "path": "/members/m5/chosenOnly",
+          "before": false,
+          "after": true
+        },
+        {
+          "path": "/weeks/w3/minimumSlots",
+          "before": 6,
+          "after": 10
+        },
+        {
+          "path": "/weeks/w3/remainder",
+          "before": 2,
+          "after": 0
+        },
+        {
+          "path": "/alerts/minimum:w3:m3/message",
+          "before": "AW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
+          "after": "AW is below the 10-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override."
+        },
+        {
+          "path": "/alerts/minimum:w3:m3/at",
+          "before": 1792879308883,
+          "after": 1792879696328
+        },
+        {
+          "path": "/alerts/minimum:w3:m4/message",
+          "before": "MK is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
+          "after": "MK is below the 10-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override."
+        },
+        {
+          "path": "/alerts/minimum:w3:m4/at",
+          "before": 1792879308883,
+          "after": 1792879696328
         }
       ]
     }
