@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792873032328,
+    "updatedAt": 1792873052437,
     "schemaVersion": 2
   },
   "settings": {
@@ -4604,6 +4604,14 @@
           "after": true
         }
       ]
+    },
+    {
+      "id": "33643232-4c67-4494-85db-4d6d9842a41d",
+      "at": 1792873052437,
+      "actor": "m2",
+      "admin": true,
+      "action": "new week",
+      "changes": []
     }
   ],
   "vacationHistory": [],
