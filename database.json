@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792872773091,
+    "updatedAt": 1792872775363,
     "schemaVersion": 2
   },
   "settings": {
@@ -815,6 +815,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1792872773090
+    },
+    "7047fb1a-cd37-4566-9d89-bb6181da17a6": {
+      "requestId": "7047fb1a-cd37-4566-9d89-bb6181da17a6",
+      "task": "t07",
+      "taskName": "Kitchen floor",
+      "member": "m5",
+      "memberName": "MW",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792872775363
     }
   },
   "pointLedger": {
@@ -1123,7 +1135,7 @@
           "required": 1,
           "workload": 2,
           "kind": "legacy",
-          "completed": 0
+          "completed": 1
         },
         "t08": {
           "task": "t08",
@@ -4215,6 +4227,36 @@
         },
         {
           "path": "/weeks/w3/assignments/t10/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "f8059a61-12ab-4334-9e84-9739a052e6bc",
+      "at": 1792872775363,
+      "actor": "m5",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/7047fb1a-cd37-4566-9d89-bb6181da17a6",
+          "added": true,
+          "after": {
+            "requestId": "7047fb1a-cd37-4566-9d89-bb6181da17a6",
+            "task": "t07",
+            "taskName": "Kitchen floor",
+            "member": "m5",
+            "memberName": "MW",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792872775363
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t07/completed",
           "before": 0,
           "after": 1
         }
