@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792875505213,
+    "updatedAt": 1792875512354,
     "schemaVersion": 2
   },
   "settings": {
@@ -971,6 +971,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1792875505213
+    },
+    "01e358e3-7286-433f-9936-aae2fced926d": {
+      "requestId": "01e358e3-7286-433f-9936-aae2fced926d",
+      "task": "t06",
+      "taskName": "Stove, fridge exterior and kitchen island",
+      "member": "m4",
+      "memberName": "MK",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792875512353
     }
   },
   "pointLedger": {
@@ -1411,7 +1423,7 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
+          "completed": 1
         },
         "t07": {
           "task": "t07",
@@ -7929,6 +7941,36 @@
         },
         {
           "path": "/weeks/w3/assignments/t22/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "182e76f3-a1df-40ac-834f-bdb1ac9a054b",
+      "at": 1792875512354,
+      "actor": "m4",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/01e358e3-7286-433f-9936-aae2fced926d",
+          "added": true,
+          "after": {
+            "requestId": "01e358e3-7286-433f-9936-aae2fced926d",
+            "task": "t06",
+            "taskName": "Stove, fridge exterior and kitchen island",
+            "member": "m4",
+            "memberName": "MK",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792875512353
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t06/completed",
           "before": 0,
           "after": 1
         }
@@ -16662,6 +16704,12 @@
       {
         "at": 1792875505213,
         "actor": "m2",
+        "action": "complete chore",
+        "week": "w3"
+      },
+      {
+        "at": 1792875512353,
+        "actor": "m4",
         "action": "complete chore",
         "week": "w3"
       }
