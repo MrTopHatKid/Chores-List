@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792871372513,
+    "updatedAt": 1792871380040,
     "schemaVersion": 2
   },
   "settings": {
@@ -35,7 +35,7 @@
       }
     },
     "m3": {
-      "name": "A",
+      "name": "AW",
       "quota": 4,
       "vacation": {
         "from": "",
@@ -2273,6 +2273,101 @@
             },
             "m3": {
               "name": "A",
+              "quota": 4,
+              "vacation": {
+                "from": "",
+                "to": ""
+              }
+            },
+            "m4": {
+              "name": "Mr",
+              "quota": 4,
+              "vacation": {
+                "from": "",
+                "to": ""
+              }
+            },
+            "m5": {
+              "name": "Ma",
+              "quota": 4,
+              "vacation": {
+                "from": "",
+                "to": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "81860813-f496-4ba4-bd5d-845d8deeddee",
+      "at": 1792871380040,
+      "actor": "m5",
+      "admin": true,
+      "action": "edit person",
+      "changes": {
+        "members": {
+          "before": {
+            "m1": {
+              "name": "The Muffin Man",
+              "quota": 4,
+              "vacation": {
+                "from": "",
+                "to": ""
+              }
+            },
+            "m2": {
+              "name": "Ki",
+              "quota": 4,
+              "vacation": {
+                "from": "",
+                "to": ""
+              }
+            },
+            "m3": {
+              "name": "A",
+              "quota": 4,
+              "vacation": {
+                "from": "",
+                "to": ""
+              }
+            },
+            "m4": {
+              "name": "Mr",
+              "quota": 4,
+              "vacation": {
+                "from": "",
+                "to": ""
+              }
+            },
+            "m5": {
+              "name": "Ma",
+              "quota": 4,
+              "vacation": {
+                "from": "",
+                "to": ""
+              }
+            }
+          },
+          "after": {
+            "m1": {
+              "name": "The Muffin Man",
+              "quota": 4,
+              "vacation": {
+                "from": "",
+                "to": ""
+              }
+            },
+            "m2": {
+              "name": "Ki",
+              "quota": 4,
+              "vacation": {
+                "from": "",
+                "to": ""
+              }
+            },
+            "m3": {
+              "name": "AW",
               "quota": 4,
               "vacation": {
                 "from": "",
