@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792879128457,
+    "updatedAt": 1792879178749,
     "schemaVersion": 2
   },
   "settings": {
@@ -210,7 +210,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m4",
+        "member": "m2",
         "week": "w3",
         "mandatory": true,
         "kind": "automatic"
@@ -1381,7 +1381,7 @@
         "t08": {
           "task": "t08",
           "taskName": "Brush the dog",
-          "member": "m4",
+          "member": "m2",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -30837,6 +30837,25 @@
           ]
         }
       ]
+    },
+    {
+      "id": "28e70271-bf53-4213-87ce-951d7b642890",
+      "at": 1792879178749,
+      "actor": "m4",
+      "admin": true,
+      "action": "admin apply chosen tasks",
+      "changes": [
+        {
+          "path": "/tasks/t08/claim/member",
+          "before": "m4",
+          "after": "m2"
+        },
+        {
+          "path": "/weeks/w3/assignments/t08/member",
+          "before": "m4",
+          "after": "m2"
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -32043,6 +32062,25 @@
       "reason": "Admin applied saved chosen tasks",
       "at": 1792878784244,
       "actor": "m1"
+    },
+    {
+      "week": "w3",
+      "task": "t08",
+      "before": {
+        "member": "m4",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m2",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792879178749,
+      "actor": "m4"
     }
   ],
   "exceptions": {
@@ -32552,43 +32590,18 @@
     }
   ],
   "lastChosenTaskApplication": {
-    "at": 1792878784244,
-    "actor": "m1",
+    "at": 1792879178749,
+    "actor": "m4",
     "week": "w3",
     "weekStart": "2026-10-24",
     "report": {
-      "chosen": 12,
+      "chosen": 19,
       "startedPreserved": 0,
-      "automatic": 8,
+      "automatic": 1,
       "unassigned": 0,
       "conflicts": [],
       "notDue": [],
-      "vacationSkipped": [
-        {
-          "task": "t18",
-          "member": "m1"
-        },
-        {
-          "task": "t04",
-          "member": "m1"
-        },
-        {
-          "task": "t23",
-          "member": "m1"
-        },
-        {
-          "task": "t22",
-          "member": "m2"
-        },
-        {
-          "task": "t03",
-          "member": "m2"
-        },
-        {
-          "task": "t17",
-          "member": "m2"
-        }
-      ]
+      "vacationSkipped": []
     }
   },
   "taskRequests": {},
