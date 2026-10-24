@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883446829,
+    "updatedAt": 1792883450062,
     "schemaVersion": 2
   },
   "settings": {
@@ -539,7 +539,6 @@
   "preferences": {
     "m1": [],
     "m2": [
-      "t15",
       "t08",
       "t03"
     ],
@@ -561,10 +560,6 @@
   },
   "plans": {
     "2026-10-19": {
-      "t15": {
-        "member": "m2",
-        "kind": "selected"
-      },
       "t08": {
         "member": "m2",
         "kind": "selected"
@@ -591,10 +586,6 @@
       }
     },
     "2026-10-26": {
-      "t15": {
-        "member": "m2",
-        "kind": "selected"
-      },
       "t08": {
         "member": "m2",
         "kind": "selected"
@@ -871,7 +862,7 @@
     "minimum:w1:m4": {
       "message": "MK is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883446829,
+      "at": 1792883450062,
       "resolved": false
     },
     "minimum:w1:m3": {
@@ -883,7 +874,7 @@
     "minimum:w1:m5": {
       "message": "MW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883446829,
+      "at": 1792883450062,
       "resolved": false
     }
   },
@@ -903,7 +894,7 @@
   "slotLayout": {
     "m2": {
       "selected": [
-        "t15",
+        null,
         "t08",
         "t03"
       ],
@@ -3010,6 +3001,66 @@
           "path": "/alerts/minimum:w1:m5/at",
           "before": 1792883444586,
           "after": 1792883446829
+        }
+      ]
+    },
+    {
+      "id": "0da60be5-cc05-4c37-9053-c11386c67f50",
+      "at": 1792883450062,
+      "actor": "m2",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/preferences/m2",
+          "before": [
+            "t15",
+            "t08",
+            "t03"
+          ],
+          "after": [
+            "t08",
+            "t03"
+          ]
+        },
+        {
+          "path": "/slotLayout/m2/selected",
+          "before": [
+            "t15",
+            "t08",
+            "t03"
+          ],
+          "after": [
+            null,
+            "t08",
+            "t03"
+          ]
+        },
+        {
+          "path": "/plans/2026-10-19/t15",
+          "before": {
+            "member": "m2",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-10-26/t15",
+          "before": {
+            "member": "m2",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/alerts/minimum:w1:m4/at",
+          "before": 1792883446829,
+          "after": 1792883450062
+        },
+        {
+          "path": "/alerts/minimum:w1:m5/at",
+          "before": 1792883446829,
+          "after": 1792883450062
         }
       ]
     }
