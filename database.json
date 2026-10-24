@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792875196839,
+    "updatedAt": 1792875229652,
     "schemaVersion": 2
   },
   "settings": {
@@ -16,7 +16,9 @@
     "resetWeekday": 1,
     "assignedWeek": "w3",
     "timezone": "America/Toronto",
-    "requiredTasks": {}
+    "requiredTasks": {},
+    "autoWeek": true,
+    "weekStartDay": 7
   },
   "members": {
     "m1": {
@@ -1139,6 +1141,88 @@
       },
       "t23": {
         "member": "m1",
+        "kind": "selected"
+      }
+    },
+    "2026-10-25": {
+      "t18": {
+        "member": "m1",
+        "kind": "selected"
+      },
+      "t08": {
+        "member": "m1",
+        "kind": "selected"
+      },
+      "t04": {
+        "member": "m1",
+        "kind": "selected"
+      },
+      "t23": {
+        "member": "m1",
+        "kind": "selected"
+      },
+      "t22": {
+        "member": "m2",
+        "kind": "selected"
+      },
+      "t03": {
+        "member": "m2",
+        "kind": "selected"
+      },
+      "t17": {
+        "member": "m2",
+        "kind": "selected"
+      },
+      "t12": {
+        "member": "m2",
+        "kind": "selected"
+      },
+      "t01": {
+        "member": "m3",
+        "kind": "selected"
+      },
+      "t05": {
+        "member": "m3",
+        "kind": "selected"
+      },
+      "t13": {
+        "member": "m3",
+        "kind": "selected"
+      },
+      "t16": {
+        "member": "m3",
+        "kind": "selected"
+      },
+      "t14": {
+        "member": "m4",
+        "kind": "selected"
+      },
+      "t02": {
+        "member": "m4",
+        "kind": "selected"
+      },
+      "t10": {
+        "member": "m4",
+        "kind": "selected"
+      },
+      "t06": {
+        "member": "m4",
+        "kind": "selected"
+      },
+      "t15": {
+        "member": "m5",
+        "kind": "selected"
+      },
+      "t19": {
+        "member": "m5",
+        "kind": "selected"
+      },
+      "t07": {
+        "member": "m5",
+        "kind": "selected"
+      },
+      "t09": {
+        "member": "m5",
         "kind": "selected"
       }
     }
@@ -7292,6 +7376,111 @@
           "path": "/weeks/w3/assignments/t23/kind",
           "before": "automatic",
           "after": "selected"
+        }
+      ]
+    },
+    {
+      "id": "1b2ed5d8-4aae-4d45-aa6d-f76cf3468b25",
+      "at": 1792875229652,
+      "actor": "m4",
+      "admin": true,
+      "action": "settings",
+      "changes": [
+        {
+          "path": "/settings/autoWeek",
+          "added": true,
+          "after": true
+        },
+        {
+          "path": "/settings/weekStartDay",
+          "added": true,
+          "after": 7
+        },
+        {
+          "path": "/plans/2026-10-25",
+          "added": true,
+          "after": {
+            "t18": {
+              "member": "m1",
+              "kind": "selected"
+            },
+            "t08": {
+              "member": "m1",
+              "kind": "selected"
+            },
+            "t04": {
+              "member": "m1",
+              "kind": "selected"
+            },
+            "t23": {
+              "member": "m1",
+              "kind": "selected"
+            },
+            "t22": {
+              "member": "m2",
+              "kind": "selected"
+            },
+            "t03": {
+              "member": "m2",
+              "kind": "selected"
+            },
+            "t17": {
+              "member": "m2",
+              "kind": "selected"
+            },
+            "t12": {
+              "member": "m2",
+              "kind": "selected"
+            },
+            "t01": {
+              "member": "m3",
+              "kind": "selected"
+            },
+            "t05": {
+              "member": "m3",
+              "kind": "selected"
+            },
+            "t13": {
+              "member": "m3",
+              "kind": "selected"
+            },
+            "t16": {
+              "member": "m3",
+              "kind": "selected"
+            },
+            "t14": {
+              "member": "m4",
+              "kind": "selected"
+            },
+            "t02": {
+              "member": "m4",
+              "kind": "selected"
+            },
+            "t10": {
+              "member": "m4",
+              "kind": "selected"
+            },
+            "t06": {
+              "member": "m4",
+              "kind": "selected"
+            },
+            "t15": {
+              "member": "m5",
+              "kind": "selected"
+            },
+            "t19": {
+              "member": "m5",
+              "kind": "selected"
+            },
+            "t07": {
+              "member": "m5",
+              "kind": "selected"
+            },
+            "t09": {
+              "member": "m5",
+              "kind": "selected"
+            }
+          }
         }
       ]
     }
