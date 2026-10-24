@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792882440358,
+    "updatedAt": 1792882445879,
     "schemaVersion": 2
   },
   "settings": {
@@ -1706,19 +1706,19 @@
     "minimum:w3:m5": {
       "message": "MW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792882440358,
+      "at": 1792882445878,
       "resolved": false
     },
     "minimum:w3:m3": {
       "message": "AW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792882440358,
+      "at": 1792882445878,
       "resolved": false
     },
     "minimum:w3:m4": {
       "message": "MK is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792882440358,
+      "at": 1792882445878,
       "resolved": false
     }
   },
@@ -39598,6 +39598,30 @@
           "path": "/alerts/minimum:w3:m4/at",
           "before": 1792882362751,
           "after": 1792882440358
+        }
+      ]
+    },
+    {
+      "id": "279e8fd4-1ec0-4b43-aed5-f3a7598b1563",
+      "at": 1792882445879,
+      "actor": "m3",
+      "admin": true,
+      "action": "re-roll mandatory chores",
+      "changes": [
+        {
+          "path": "/alerts/minimum:w3:m5/at",
+          "before": 1792882440358,
+          "after": 1792882445878
+        },
+        {
+          "path": "/alerts/minimum:w3:m3/at",
+          "before": 1792882440358,
+          "after": 1792882445878
+        },
+        {
+          "path": "/alerts/minimum:w3:m4/at",
+          "before": 1792882440358,
+          "after": 1792882445878
         }
       ]
     }
