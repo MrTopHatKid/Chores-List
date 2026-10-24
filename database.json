@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792872620591,
+    "updatedAt": 1792872623079,
     "schemaVersion": 2
   },
   "settings": {
@@ -871,7 +871,8 @@
   "preferences": {
     "m1": [],
     "m2": [
-      "t22"
+      "t22",
+      "t03"
     ],
     "m3": [
       "t01",
@@ -972,6 +973,10 @@
         "kind": "selected"
       },
       "t22": {
+        "member": "m2",
+        "kind": "selected"
+      },
+      "t03": {
         "member": "m2",
         "kind": "selected"
       }
@@ -3756,6 +3761,48 @@
           }
         }
       ]
+    },
+    {
+      "id": "f8c1b84b-c87d-4649-848f-284c13ee317d",
+      "at": 1792872623079,
+      "actor": "m2",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/preferences/m2",
+          "before": [
+            "t22"
+          ],
+          "after": [
+            "t22",
+            "t03"
+          ]
+        },
+        {
+          "path": "/slotLayout/m2/selected",
+          "before": [
+            "t22",
+            null,
+            null,
+            null
+          ],
+          "after": [
+            "t22",
+            "t03",
+            null,
+            null
+          ]
+        },
+        {
+          "path": "/plans/2026-10-26/t03",
+          "added": true,
+          "after": {
+            "member": "m2",
+            "kind": "selected"
+          }
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -3891,7 +3938,7 @@
     "m2": {
       "selected": [
         "t22",
-        null,
+        "t03",
         null,
         null
       ],
