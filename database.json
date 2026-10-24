@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883508387,
+    "updatedAt": 1792883528766,
     "schemaVersion": 2
   },
   "settings": {
@@ -172,10 +172,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m3",
+        "member": "m4",
         "week": "w1",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "selected"
       }
     },
     "t07": {
@@ -540,7 +540,9 @@
     "m1": [],
     "m2": [],
     "m3": [],
-    "m4": [],
+    "m4": [
+      "t06"
+    ],
     "m5": []
   },
   "bonusPreferences": {
@@ -551,8 +553,18 @@
     "m5": []
   },
   "plans": {
-    "2026-10-19": {},
-    "2026-10-26": {}
+    "2026-10-19": {
+      "t06": {
+        "member": "m4",
+        "kind": "selected"
+      }
+    },
+    "2026-10-26": {
+      "t06": {
+        "member": "m4",
+        "kind": "selected"
+      }
+    }
   },
   "weeks": {
     "w1": {
@@ -613,11 +625,11 @@
         "t06": {
           "task": "t06",
           "taskName": "Stove, fridge exterior and kitchen island",
-          "member": "m3",
+          "member": "m4",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "selected",
           "completed": 0
         },
         "t07": {
@@ -808,9 +820,9 @@
       "resolved": false
     },
     "minimum:w1:m3": {
-      "message": "Person 3 is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
+      "message": "AW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883348768,
+      "at": 1792883528765,
       "resolved": false
     },
     "minimum:w1:m5": {
@@ -853,6 +865,15 @@
     "m3": {
       "selected": [
         null,
+        null,
+        null,
+        null
+      ],
+      "bonus": []
+    },
+    "m4": {
+      "selected": [
+        "t06",
         null,
         null,
         null
@@ -3668,6 +3689,81 @@
           "path": "/weeks/w1/assignments/t23/member",
           "before": "m3",
           "after": "m5"
+        }
+      ]
+    },
+    {
+      "id": "1f496cc9-d3a1-4f83-8b18-852b0f452741",
+      "at": 1792883528766,
+      "actor": "m4",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t06/claim/member",
+          "before": "m3",
+          "after": "m4"
+        },
+        {
+          "path": "/tasks/t06/claim/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/preferences/m4",
+          "before": [],
+          "after": [
+            "t06"
+          ]
+        },
+        {
+          "path": "/slotLayout/m4",
+          "added": true,
+          "after": {
+            "selected": [
+              "t06",
+              null,
+              null,
+              null
+            ],
+            "bonus": []
+          }
+        },
+        {
+          "path": "/plans/2026-10-19/t06",
+          "added": true,
+          "after": {
+            "member": "m4",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-26/t06",
+          "added": true,
+          "after": {
+            "member": "m4",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w1/assignments/t06/member",
+          "before": "m3",
+          "after": "m4"
+        },
+        {
+          "path": "/weeks/w1/assignments/t06/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/alerts/minimum:w1:m3/message",
+          "before": "Person 3 is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
+          "after": "AW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override."
+        },
+        {
+          "path": "/alerts/minimum:w1:m3/at",
+          "before": 1792883348768,
+          "after": 1792883528765
         }
       ]
     }
