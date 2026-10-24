@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792881071009,
+    "updatedAt": 1792881088336,
     "schemaVersion": 2
   },
   "settings": {
@@ -1044,8 +1044,7 @@
     "m3": [
       "t01",
       "t05",
-      "t13",
-      "t16"
+      "t13"
     ],
     "m4": [
       "t14",
@@ -1108,10 +1107,6 @@
         "kind": "selected"
       },
       "t13": {
-        "member": "m3",
-        "kind": "selected"
-      },
-      "t16": {
         "member": "m3",
         "kind": "selected"
       },
@@ -1186,10 +1181,6 @@
         "kind": "selected"
       },
       "t13": {
-        "member": "m3",
-        "kind": "selected"
-      },
-      "t16": {
         "member": "m3",
         "kind": "selected"
       },
@@ -1680,19 +1671,19 @@
     "minimum:w3:m5": {
       "message": "MW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792881071009,
+      "at": 1792881088335,
       "resolved": false
     },
     "minimum:w3:m3": {
       "message": "AW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792881071009,
+      "at": 1792881088335,
       "resolved": false
     },
     "minimum:w3:m4": {
       "message": "MK is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792881071009,
+      "at": 1792881088335,
       "resolved": false
     }
   },
@@ -33052,6 +33043,60 @@
           "path": "/alerts/minimum:w3:m4/at",
           "before": 1792880878707,
           "after": 1792881071009
+        }
+      ]
+    },
+    {
+      "id": "53cd530a-b6e9-40aa-8ad7-f8011e17a800",
+      "at": 1792881088336,
+      "actor": "m3",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/preferences/m3",
+          "before": [
+            "t01",
+            "t05",
+            "t13",
+            "t16"
+          ],
+          "after": [
+            "t01",
+            "t05",
+            "t13"
+          ]
+        },
+        {
+          "path": "/plans/2026-10-24/t16",
+          "before": {
+            "member": "m3",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-10-26/t16",
+          "before": {
+            "member": "m3",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/alerts/minimum:w3:m5/at",
+          "before": 1792881071009,
+          "after": 1792881088335
+        },
+        {
+          "path": "/alerts/minimum:w3:m3/at",
+          "before": 1792881071009,
+          "after": 1792881088335
+        },
+        {
+          "path": "/alerts/minimum:w3:m4/at",
+          "before": 1792881071009,
+          "after": 1792881088335
         }
       ]
     }
