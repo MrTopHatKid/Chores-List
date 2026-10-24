@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792876491826,
+    "updatedAt": 1792876494153,
     "schemaVersion": 2
   },
   "settings": {
@@ -911,6 +911,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1792876491825
+    },
+    "949d6241-94a1-493d-b5a9-6f3f8006cfa3": {
+      "requestId": "949d6241-94a1-493d-b5a9-6f3f8006cfa3",
+      "task": "t22",
+      "taskName": "Dust shared areas",
+      "member": "m2",
+      "memberName": "KI",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792876494152
     }
   },
   "pointLedger": {
@@ -1481,7 +1493,7 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
+          "completed": 1
         },
         "t23": {
           "task": "t23",
@@ -12694,6 +12706,36 @@
         },
         {
           "path": "/weeks/w3/assignments/t17/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "6c048ed1-08cb-4406-bf63-847a3e9a2e48",
+      "at": 1792876494153,
+      "actor": "m2",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/949d6241-94a1-493d-b5a9-6f3f8006cfa3",
+          "added": true,
+          "after": {
+            "requestId": "949d6241-94a1-493d-b5a9-6f3f8006cfa3",
+            "task": "t22",
+            "taskName": "Dust shared areas",
+            "member": "m2",
+            "memberName": "KI",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792876494152
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t22/completed",
           "before": 0,
           "after": 1
         }
