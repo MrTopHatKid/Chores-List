@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792875479283,
+    "updatedAt": 1792875484250,
     "schemaVersion": 2
   },
   "settings": {
@@ -851,6 +851,18 @@
       "difficulty": "Medium",
       "at": 1792872775363,
       "voided": true
+    },
+    "6e6edd57-3f3c-4c03-96c8-d39bada64693": {
+      "requestId": "6e6edd57-3f3c-4c03-96c8-d39bada64693",
+      "task": "t04",
+      "taskName": "Upstairs hallway",
+      "member": "m1",
+      "memberName": "The Muffin Man",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792875484250
     }
   },
   "pointLedger": {
@@ -1271,7 +1283,7 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
+          "completed": 1
         },
         "t05": {
           "task": "t05",
@@ -7513,6 +7525,36 @@
       "admin": true,
       "action": "admin testing start",
       "changes": []
+    },
+    {
+      "id": "e4ac18ad-5a4a-4faa-bdc7-035815c49491",
+      "at": 1792875484250,
+      "actor": "m1",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/6e6edd57-3f3c-4c03-96c8-d39bada64693",
+          "added": true,
+          "after": {
+            "requestId": "6e6edd57-3f3c-4c03-96c8-d39bada64693",
+            "task": "t04",
+            "taskName": "Upstairs hallway",
+            "member": "m1",
+            "memberName": "The Muffin Man",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792875484250
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t04/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -16184,6 +16226,12 @@
         "action": "snapshot created",
         "week": "w3",
         "date": "2026-10-24"
+      },
+      {
+        "at": 1792875484250,
+        "actor": "m1",
+        "action": "complete chore",
+        "week": "w3"
       }
     ]
   },
