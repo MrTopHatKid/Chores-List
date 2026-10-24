@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792853266370
+    "updatedAt": 1792853276886
   },
   "settings": {
     "rateCents": 2000,
@@ -330,6 +330,21 @@
       "kind": "regular",
       "points": 2,
       "at": 1792852931130
+    },
+    "8d0d8df1-b519-43c7-b9ed-ccb368b8eb5a": {
+      "requestId": "8d0d8df1-b519-43c7-b9ed-ccb368b8eb5a",
+      "task": "t24",
+      "taskName": "Rake / collect leaves",
+      "member": "m4",
+      "memberName": "Person 4",
+      "week": "w1",
+      "weekStart": "2026-10-19",
+      "kind": "paid",
+      "points": 4,
+      "at": 1792853276886,
+      "minutes": 120,
+      "rateCents": 2000,
+      "paymentCents": 4000
     }
   }
 }
