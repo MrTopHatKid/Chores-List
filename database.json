@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792875526515,
+    "updatedAt": 1792875892615,
     "schemaVersion": 2
   },
   "settings": {
@@ -1933,9 +1933,17 @@
       "difficulty": "Medium",
       "required": 1,
       "completed": 0,
-      "status": "outstanding",
+      "status": "forgiven",
       "category": "missed_active",
-      "events": []
+      "events": [
+        {
+          "at": 1792875892614,
+          "status": "forgiven",
+          "note": "Bulk forgiven by admin",
+          "member": "",
+          "actor": "m5"
+        }
+      ]
     },
     "w3:t08": {
       "id": "w3:t08",
@@ -1948,9 +1956,17 @@
       "difficulty": "Medium",
       "required": 1,
       "completed": 0,
-      "status": "outstanding",
+      "status": "forgiven",
       "category": "missed_active",
-      "events": []
+      "events": [
+        {
+          "at": 1792875892614,
+          "status": "forgiven",
+          "note": "Bulk forgiven by admin",
+          "member": "",
+          "actor": "m5"
+        }
+      ]
     },
     "w3:t09": {
       "id": "w3:t09",
@@ -1963,9 +1979,17 @@
       "difficulty": "Medium",
       "required": 1,
       "completed": 0,
-      "status": "outstanding",
+      "status": "forgiven",
       "category": "missed_active",
-      "events": []
+      "events": [
+        {
+          "at": 1792875892614,
+          "status": "forgiven",
+          "note": "Bulk forgiven by admin",
+          "member": "",
+          "actor": "m5"
+        }
+      ]
     },
     "w3:t15": {
       "id": "w3:t15",
@@ -1978,9 +2002,17 @@
       "difficulty": "Medium",
       "required": 1,
       "completed": 0,
-      "status": "outstanding",
+      "status": "forgiven",
       "category": "missed_active",
-      "events": []
+      "events": [
+        {
+          "at": 1792875892614,
+          "status": "forgiven",
+          "note": "Bulk forgiven by admin",
+          "member": "",
+          "actor": "m5"
+        }
+      ]
     },
     "w3:t19": {
       "id": "w3:t19",
@@ -1993,9 +2025,17 @@
       "difficulty": "Medium",
       "required": 1,
       "completed": 0,
-      "status": "outstanding",
+      "status": "forgiven",
       "category": "missed_active",
-      "events": []
+      "events": [
+        {
+          "at": 1792875892614,
+          "status": "forgiven",
+          "note": "Bulk forgiven by admin",
+          "member": "",
+          "actor": "m5"
+        }
+      ]
     },
     "w3:t23": {
       "id": "w3:t23",
@@ -2008,9 +2048,17 @@
       "difficulty": "Medium",
       "required": 1,
       "completed": 0,
-      "status": "outstanding",
+      "status": "forgiven",
       "category": "missed_active",
-      "events": []
+      "events": [
+        {
+          "at": 1792875892614,
+          "status": "forgiven",
+          "note": "Bulk forgiven by admin",
+          "member": "",
+          "actor": "m5"
+        }
+      ]
     },
     "w3:excluded:t20": {
       "id": "w3:excluded:t20",
@@ -9104,6 +9152,123 @@
             "reason": "Archived by admin",
             "events": []
           }
+        }
+      ]
+    },
+    {
+      "id": "d1dca48b-a17b-4817-9688-7652df359c37",
+      "at": 1792875892615,
+      "actor": "m5",
+      "admin": true,
+      "action": "resolve incomplete",
+      "changes": [
+        {
+          "path": "/incomplete/w3:t07/status",
+          "before": "outstanding",
+          "after": "forgiven"
+        },
+        {
+          "path": "/incomplete/w3:t07/events",
+          "before": [],
+          "after": [
+            {
+              "at": 1792875892614,
+              "status": "forgiven",
+              "note": "Bulk forgiven by admin",
+              "member": "",
+              "actor": "m5"
+            }
+          ]
+        },
+        {
+          "path": "/incomplete/w3:t08/status",
+          "before": "outstanding",
+          "after": "forgiven"
+        },
+        {
+          "path": "/incomplete/w3:t08/events",
+          "before": [],
+          "after": [
+            {
+              "at": 1792875892614,
+              "status": "forgiven",
+              "note": "Bulk forgiven by admin",
+              "member": "",
+              "actor": "m5"
+            }
+          ]
+        },
+        {
+          "path": "/incomplete/w3:t09/status",
+          "before": "outstanding",
+          "after": "forgiven"
+        },
+        {
+          "path": "/incomplete/w3:t09/events",
+          "before": [],
+          "after": [
+            {
+              "at": 1792875892614,
+              "status": "forgiven",
+              "note": "Bulk forgiven by admin",
+              "member": "",
+              "actor": "m5"
+            }
+          ]
+        },
+        {
+          "path": "/incomplete/w3:t15/status",
+          "before": "outstanding",
+          "after": "forgiven"
+        },
+        {
+          "path": "/incomplete/w3:t15/events",
+          "before": [],
+          "after": [
+            {
+              "at": 1792875892614,
+              "status": "forgiven",
+              "note": "Bulk forgiven by admin",
+              "member": "",
+              "actor": "m5"
+            }
+          ]
+        },
+        {
+          "path": "/incomplete/w3:t19/status",
+          "before": "outstanding",
+          "after": "forgiven"
+        },
+        {
+          "path": "/incomplete/w3:t19/events",
+          "before": [],
+          "after": [
+            {
+              "at": 1792875892614,
+              "status": "forgiven",
+              "note": "Bulk forgiven by admin",
+              "member": "",
+              "actor": "m5"
+            }
+          ]
+        },
+        {
+          "path": "/incomplete/w3:t23/status",
+          "before": "outstanding",
+          "after": "forgiven"
+        },
+        {
+          "path": "/incomplete/w3:t23/events",
+          "before": [],
+          "after": [
+            {
+              "at": 1792875892614,
+              "status": "forgiven",
+              "note": "Bulk forgiven by admin",
+              "member": "",
+              "actor": "m5"
+            }
+          ]
         }
       ]
     }
@@ -17869,6 +18034,12 @@
         "week": "w4",
         "start": "2026-10-26",
         "no": 4
+      },
+      {
+        "at": 1792875892614,
+        "actor": "m5",
+        "action": "resolve incomplete",
+        "week": "w4"
       }
     ],
     "lastAction": "Advanced 1 week"
