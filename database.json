@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883482474,
+    "updatedAt": 1792883508387,
     "schemaVersion": 2
   },
   "settings": {
@@ -82,7 +82,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m3",
+        "member": "m4",
         "week": "w1",
         "mandatory": true,
         "kind": "automatic"
@@ -100,10 +100,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m3",
+        "member": "m5",
         "week": "w1",
         "mandatory": true,
-        "kind": "selected"
+        "kind": "automatic"
       }
     },
     "t03": {
@@ -118,10 +118,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m2",
+        "member": "m4",
         "week": "w1",
         "mandatory": true,
-        "kind": "selected"
+        "kind": "automatic"
       }
     },
     "t04": {
@@ -136,7 +136,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m4",
+        "member": "m5",
         "week": "w1",
         "mandatory": true,
         "kind": "automatic"
@@ -154,7 +154,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m1",
+        "member": "m4",
         "week": "w1",
         "mandatory": true,
         "kind": "automatic"
@@ -172,7 +172,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m2",
+        "member": "m3",
         "week": "w1",
         "mandatory": true,
         "kind": "automatic"
@@ -190,10 +190,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m3",
+        "member": "m5",
         "week": "w1",
         "mandatory": true,
-        "kind": "selected"
+        "kind": "automatic"
       }
     },
     "t08": {
@@ -208,10 +208,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m2",
+        "member": "m5",
         "week": "w1",
         "mandatory": true,
-        "kind": "selected"
+        "kind": "automatic"
       }
     },
     "t09": {
@@ -226,7 +226,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m1",
+        "member": "m3",
         "week": "w1",
         "mandatory": true,
         "kind": "automatic"
@@ -244,7 +244,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m2",
+        "member": "m3",
         "week": "w1",
         "mandatory": true,
         "kind": "automatic"
@@ -262,10 +262,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m1",
+        "member": "m5",
         "week": "w1",
         "mandatory": true,
-        "kind": "selected"
+        "kind": "automatic"
       }
     },
     "t12": {
@@ -280,10 +280,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m3",
+        "member": "m4",
         "week": "w1",
         "mandatory": true,
-        "kind": "selected"
+        "kind": "automatic"
       }
     },
     "t13": {
@@ -301,7 +301,7 @@
         "member": "m3",
         "week": "w1",
         "mandatory": true,
-        "kind": "admin"
+        "kind": "automatic"
       }
     },
     "t14": {
@@ -316,10 +316,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m2",
+        "member": "m5",
         "week": "w1",
         "mandatory": true,
-        "kind": "admin"
+        "kind": "automatic"
       }
     },
     "t15": {
@@ -334,10 +334,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m2",
+        "member": "m4",
         "week": "w1",
         "mandatory": true,
-        "kind": "selected"
+        "kind": "automatic"
       }
     },
     "t16": {
@@ -352,7 +352,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m5",
+        "member": "m3",
         "week": "w1",
         "mandatory": true,
         "kind": "automatic"
@@ -370,7 +370,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m1",
+        "member": "m3",
         "week": "w1",
         "mandatory": true,
         "kind": "automatic"
@@ -388,10 +388,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m1",
+        "member": "m4",
         "week": "w1",
         "mandatory": true,
-        "kind": "selected"
+        "kind": "automatic"
       }
     },
     "t19": {
@@ -419,10 +419,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m3",
+        "member": "m4",
         "week": "w1",
         "mandatory": true,
-        "kind": "admin"
+        "kind": "automatic"
       }
     },
     "t21": {
@@ -468,7 +468,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m3",
+        "member": "m5",
         "week": "w1",
         "mandatory": true,
         "kind": "automatic"
@@ -563,7 +563,7 @@
         "t01": {
           "task": "t01",
           "taskName": "Upstairs towels, bath mat and cloths",
-          "member": "m3",
+          "member": "m4",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -573,27 +573,27 @@
         "t02": {
           "task": "t02",
           "taskName": "Kitchen counters and table",
-          "member": "m3",
+          "member": "m5",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "selected",
+          "kind": "automatic",
           "completed": 0
         },
         "t03": {
           "task": "t03",
           "taskName": "Downstairs hallway",
-          "member": "m2",
+          "member": "m4",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "selected",
+          "kind": "automatic",
           "completed": 0
         },
         "t04": {
           "task": "t04",
           "taskName": "Upstairs hallway",
-          "member": "m4",
+          "member": "m5",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -603,7 +603,7 @@
         "t05": {
           "task": "t05",
           "taskName": "Air fryers, microwave and toaster",
-          "member": "m1",
+          "member": "m4",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -613,7 +613,7 @@
         "t06": {
           "task": "t06",
           "taskName": "Stove, fridge exterior and kitchen island",
-          "member": "m2",
+          "member": "m3",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -623,27 +623,27 @@
         "t07": {
           "task": "t07",
           "taskName": "Kitchen floor",
-          "member": "m3",
+          "member": "m5",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "selected",
+          "kind": "automatic",
           "completed": 0
         },
         "t08": {
           "task": "t08",
           "taskName": "Brush the dog",
-          "member": "m2",
+          "member": "m5",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "selected",
+          "kind": "automatic",
           "completed": 0
         },
         "t09": {
           "task": "t09",
           "taskName": "Pick up dog poop",
-          "member": "m1",
+          "member": "m3",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -653,7 +653,7 @@
         "t10": {
           "task": "t10",
           "taskName": "Clean the fridge",
-          "member": "m2",
+          "member": "m3",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -663,21 +663,21 @@
         "t11": {
           "task": "t11",
           "taskName": "Dishes",
-          "member": "m1",
+          "member": "m5",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "selected",
+          "kind": "automatic",
           "completed": 0
         },
         "t12": {
           "task": "t12",
           "taskName": "Middle flight of stairs",
-          "member": "m3",
+          "member": "m4",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "selected",
+          "kind": "automatic",
           "completed": 0
         },
         "t13": {
@@ -687,33 +687,33 @@
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "admin",
+          "kind": "automatic",
           "completed": 0
         },
         "t14": {
           "task": "t14",
           "taskName": "Downstairs bathroom",
-          "member": "m2",
+          "member": "m5",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "admin",
+          "kind": "automatic",
           "completed": 0
         },
         "t15": {
           "task": "t15",
           "taskName": "Bathtub / shower",
-          "member": "m2",
+          "member": "m4",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "selected",
+          "kind": "automatic",
           "completed": 0
         },
         "t16": {
           "task": "t16",
           "taskName": "Laundry machines and top",
-          "member": "m5",
+          "member": "m3",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -723,7 +723,7 @@
         "t17": {
           "task": "t17",
           "taskName": "Take out garbage and recycling",
-          "member": "m1",
+          "member": "m3",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -733,21 +733,21 @@
         "t18": {
           "task": "t18",
           "taskName": "Collect indoor garbage",
-          "member": "m1",
+          "member": "m4",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "selected",
+          "kind": "automatic",
           "completed": 0
         },
         "t20": {
           "task": "t20",
           "taskName": "Load the dishwasher & Unload the dishwasher",
-          "member": "m3",
+          "member": "m4",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "admin",
+          "kind": "automatic",
           "completed": 0
         },
         "t22": {
@@ -763,7 +763,7 @@
         "t23": {
           "task": "t23",
           "taskName": "Windows and sliding door",
-          "member": "m3",
+          "member": "m5",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -3361,6 +3361,315 @@
           "after": 1792883482474
         }
       ]
+    },
+    {
+      "id": "e34d0914-b344-4f93-8559-3b506bff76f7",
+      "at": 1792883508387,
+      "actor": "m5",
+      "admin": true,
+      "action": "admin apply chosen tasks",
+      "changes": [
+        {
+          "path": "/tasks/t01/claim/member",
+          "before": "m3",
+          "after": "m4"
+        },
+        {
+          "path": "/tasks/t02/claim/member",
+          "before": "m3",
+          "after": "m5"
+        },
+        {
+          "path": "/tasks/t02/claim/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/tasks/t03/claim/member",
+          "before": "m2",
+          "after": "m4"
+        },
+        {
+          "path": "/tasks/t03/claim/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/tasks/t04/claim/member",
+          "before": "m4",
+          "after": "m5"
+        },
+        {
+          "path": "/tasks/t05/claim/member",
+          "before": "m1",
+          "after": "m4"
+        },
+        {
+          "path": "/tasks/t06/claim/member",
+          "before": "m2",
+          "after": "m3"
+        },
+        {
+          "path": "/tasks/t07/claim/member",
+          "before": "m3",
+          "after": "m5"
+        },
+        {
+          "path": "/tasks/t07/claim/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/tasks/t08/claim/member",
+          "before": "m2",
+          "after": "m5"
+        },
+        {
+          "path": "/tasks/t08/claim/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/tasks/t09/claim/member",
+          "before": "m1",
+          "after": "m3"
+        },
+        {
+          "path": "/tasks/t10/claim/member",
+          "before": "m2",
+          "after": "m3"
+        },
+        {
+          "path": "/tasks/t11/claim/member",
+          "before": "m1",
+          "after": "m5"
+        },
+        {
+          "path": "/tasks/t11/claim/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/tasks/t12/claim/member",
+          "before": "m3",
+          "after": "m4"
+        },
+        {
+          "path": "/tasks/t12/claim/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/tasks/t13/claim/kind",
+          "before": "admin",
+          "after": "automatic"
+        },
+        {
+          "path": "/tasks/t14/claim/member",
+          "before": "m2",
+          "after": "m5"
+        },
+        {
+          "path": "/tasks/t14/claim/kind",
+          "before": "admin",
+          "after": "automatic"
+        },
+        {
+          "path": "/tasks/t15/claim/member",
+          "before": "m2",
+          "after": "m4"
+        },
+        {
+          "path": "/tasks/t15/claim/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/tasks/t16/claim/member",
+          "before": "m5",
+          "after": "m3"
+        },
+        {
+          "path": "/tasks/t17/claim/member",
+          "before": "m1",
+          "after": "m3"
+        },
+        {
+          "path": "/tasks/t18/claim/member",
+          "before": "m1",
+          "after": "m4"
+        },
+        {
+          "path": "/tasks/t18/claim/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/tasks/t20/claim/member",
+          "before": "m3",
+          "after": "m4"
+        },
+        {
+          "path": "/tasks/t20/claim/kind",
+          "before": "admin",
+          "after": "automatic"
+        },
+        {
+          "path": "/tasks/t23/claim/member",
+          "before": "m3",
+          "after": "m5"
+        },
+        {
+          "path": "/weeks/w1/assignments/t01/member",
+          "before": "m3",
+          "after": "m4"
+        },
+        {
+          "path": "/weeks/w1/assignments/t02/member",
+          "before": "m3",
+          "after": "m5"
+        },
+        {
+          "path": "/weeks/w1/assignments/t02/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/weeks/w1/assignments/t03/member",
+          "before": "m2",
+          "after": "m4"
+        },
+        {
+          "path": "/weeks/w1/assignments/t03/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/weeks/w1/assignments/t04/member",
+          "before": "m4",
+          "after": "m5"
+        },
+        {
+          "path": "/weeks/w1/assignments/t05/member",
+          "before": "m1",
+          "after": "m4"
+        },
+        {
+          "path": "/weeks/w1/assignments/t06/member",
+          "before": "m2",
+          "after": "m3"
+        },
+        {
+          "path": "/weeks/w1/assignments/t07/member",
+          "before": "m3",
+          "after": "m5"
+        },
+        {
+          "path": "/weeks/w1/assignments/t07/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/weeks/w1/assignments/t08/member",
+          "before": "m2",
+          "after": "m5"
+        },
+        {
+          "path": "/weeks/w1/assignments/t08/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/weeks/w1/assignments/t09/member",
+          "before": "m1",
+          "after": "m3"
+        },
+        {
+          "path": "/weeks/w1/assignments/t10/member",
+          "before": "m2",
+          "after": "m3"
+        },
+        {
+          "path": "/weeks/w1/assignments/t11/member",
+          "before": "m1",
+          "after": "m5"
+        },
+        {
+          "path": "/weeks/w1/assignments/t11/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/weeks/w1/assignments/t12/member",
+          "before": "m3",
+          "after": "m4"
+        },
+        {
+          "path": "/weeks/w1/assignments/t12/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/weeks/w1/assignments/t13/kind",
+          "before": "admin",
+          "after": "automatic"
+        },
+        {
+          "path": "/weeks/w1/assignments/t14/member",
+          "before": "m2",
+          "after": "m5"
+        },
+        {
+          "path": "/weeks/w1/assignments/t14/kind",
+          "before": "admin",
+          "after": "automatic"
+        },
+        {
+          "path": "/weeks/w1/assignments/t15/member",
+          "before": "m2",
+          "after": "m4"
+        },
+        {
+          "path": "/weeks/w1/assignments/t15/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/weeks/w1/assignments/t16/member",
+          "before": "m5",
+          "after": "m3"
+        },
+        {
+          "path": "/weeks/w1/assignments/t17/member",
+          "before": "m1",
+          "after": "m3"
+        },
+        {
+          "path": "/weeks/w1/assignments/t18/member",
+          "before": "m1",
+          "after": "m4"
+        },
+        {
+          "path": "/weeks/w1/assignments/t18/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/weeks/w1/assignments/t20/member",
+          "before": "m3",
+          "after": "m4"
+        },
+        {
+          "path": "/weeks/w1/assignments/t20/kind",
+          "before": "admin",
+          "after": "automatic"
+        },
+        {
+          "path": "/weeks/w1/assignments/t23/member",
+          "before": "m3",
+          "after": "m5"
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -3449,10 +3758,405 @@
       "reason": "delete chore",
       "at": 1792883287868,
       "actor": "m2"
+    },
+    {
+      "week": "w1",
+      "task": "t01",
+      "before": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m4",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883508386,
+      "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t02",
+      "before": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "selected"
+      },
+      "after": {
+        "member": "m5",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883508386,
+      "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t03",
+      "before": {
+        "member": "m2",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "selected"
+      },
+      "after": {
+        "member": "m4",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883508386,
+      "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t04",
+      "before": {
+        "member": "m4",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m5",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883508386,
+      "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t05",
+      "before": {
+        "member": "m1",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m4",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883508386,
+      "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t06",
+      "before": {
+        "member": "m2",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883508386,
+      "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t07",
+      "before": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "selected"
+      },
+      "after": {
+        "member": "m5",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883508386,
+      "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t08",
+      "before": {
+        "member": "m2",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "selected"
+      },
+      "after": {
+        "member": "m5",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883508386,
+      "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t09",
+      "before": {
+        "member": "m1",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883508386,
+      "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t10",
+      "before": {
+        "member": "m2",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883508386,
+      "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t11",
+      "before": {
+        "member": "m1",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "selected"
+      },
+      "after": {
+        "member": "m5",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883508386,
+      "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t12",
+      "before": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "selected"
+      },
+      "after": {
+        "member": "m4",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883508386,
+      "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t13",
+      "before": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "admin"
+      },
+      "after": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883508386,
+      "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t14",
+      "before": {
+        "member": "m2",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "admin"
+      },
+      "after": {
+        "member": "m5",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883508386,
+      "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t15",
+      "before": {
+        "member": "m2",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "selected"
+      },
+      "after": {
+        "member": "m4",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883508386,
+      "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t16",
+      "before": {
+        "member": "m5",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883508386,
+      "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t17",
+      "before": {
+        "member": "m1",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883508386,
+      "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t18",
+      "before": {
+        "member": "m1",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "selected"
+      },
+      "after": {
+        "member": "m4",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883508386,
+      "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t20",
+      "before": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "admin"
+      },
+      "after": {
+        "member": "m4",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883508386,
+      "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t23",
+      "before": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m5",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792883508386,
+      "actor": "m5"
     }
   ],
   "permanentBonus": {},
   "bonusRequests": {},
   "schemaVersion": 2,
-  "commitmentRulesVersion": 3
+  "commitmentRulesVersion": 3,
+  "lastChosenTaskApplication": {
+    "at": 1792883508386,
+    "actor": "m5",
+    "week": "w1",
+    "weekStart": "2026-10-19",
+    "report": {
+      "chosen": 0,
+      "startedPreserved": 0,
+      "automatic": 21,
+      "unassigned": 0,
+      "conflicts": [],
+      "notDue": [],
+      "vacationSkipped": []
+    }
+  }
 }
