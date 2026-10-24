@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792860722922
+    "updatedAt": 1792860725875
   },
   "settings": {
     "rateCents": 2000,
@@ -104,7 +104,11 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 4
+      "order": 4,
+      "claim": {
+        "member": "m4",
+        "week": "w1"
+      }
     },
     "t05": {
       "name": "Air fryers, microwave and toaster",
