@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792875493931,
+    "updatedAt": 1792875495868,
     "schemaVersion": 2
   },
   "settings": {
@@ -911,6 +911,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1792875493931
+    },
+    "a9637e19-82fe-4442-a040-5fd3cb4a1b2e": {
+      "requestId": "a9637e19-82fe-4442-a040-5fd3cb4a1b2e",
+      "task": "t16",
+      "taskName": "Laundry machines and top",
+      "member": "m3",
+      "memberName": "AW",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792875495868
     }
   },
   "pointLedger": {
@@ -1441,7 +1453,7 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
+          "completed": 1
         },
         "t17": {
           "task": "t17",
@@ -7719,6 +7731,36 @@
         },
         {
           "path": "/weeks/w3/assignments/t13/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "e808cb59-8eba-4571-8788-8a1abe26d11c",
+      "at": 1792875495868,
+      "actor": "m3",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/a9637e19-82fe-4442-a040-5fd3cb4a1b2e",
+          "added": true,
+          "after": {
+            "requestId": "a9637e19-82fe-4442-a040-5fd3cb4a1b2e",
+            "task": "t16",
+            "taskName": "Laundry machines and top",
+            "member": "m3",
+            "memberName": "AW",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792875495868
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t16/completed",
           "before": 0,
           "after": 1
         }
@@ -16421,6 +16463,12 @@
       },
       {
         "at": 1792875493931,
+        "actor": "m3",
+        "action": "complete chore",
+        "week": "w3"
+      },
+      {
+        "at": 1792875495868,
         "actor": "m3",
         "action": "complete chore",
         "week": "w3"
