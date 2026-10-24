@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792860725875
+    "updatedAt": 1792860729333
   },
   "settings": {
     "rateCents": 2000,
@@ -458,6 +458,18 @@
       "kind": "regular",
       "points": 2,
       "at": 1792860722922
+    },
+    "31544932-fccb-44dd-81d8-fcfa8e48735a": {
+      "requestId": "31544932-fccb-44dd-81d8-fcfa8e48735a",
+      "task": "t04",
+      "taskName": "Upstairs hallway",
+      "member": "m4",
+      "memberName": "Mr",
+      "week": "w1",
+      "weekStart": "2026-10-19",
+      "kind": "regular",
+      "points": 2,
+      "at": 1792860729333
     }
   }
 }
