@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883126438,
+    "updatedAt": 1792883135625,
     "schemaVersion": 2
   },
   "settings": {
@@ -16,7 +16,9 @@
     "resetWeekday": 1,
     "timezone": "America/Toronto",
     "deadlineHour": 0,
-    "requiredTasks": {},
+    "requiredTasks": {
+      "m1": 3
+    },
     "assignedWeek": "w1"
   },
   "members": {
@@ -815,19 +817,19 @@
     "minimum:w1:m4": {
       "message": "Person 4 is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883126438,
+      "at": 1792883135625,
       "resolved": false
     },
     "minimum:w1:m3": {
       "message": "Person 3 is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883126438,
+      "at": 1792883135625,
       "resolved": false
     },
     "minimum:w1:m5": {
       "message": "Person 5 is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883126438,
+      "at": 1792883135625,
       "resolved": false
     }
   },
@@ -1432,6 +1434,35 @@
             "at": 1792883126438,
             "resolved": false
           }
+        }
+      ]
+    },
+    {
+      "id": "b83e1534-0d95-45d2-867a-66cf7c67f5fa",
+      "at": 1792883135625,
+      "actor": "m1",
+      "admin": true,
+      "action": "edit person",
+      "changes": [
+        {
+          "path": "/settings/requiredTasks/m1",
+          "added": true,
+          "after": 3
+        },
+        {
+          "path": "/alerts/minimum:w1:m4/at",
+          "before": 1792883126438,
+          "after": 1792883135625
+        },
+        {
+          "path": "/alerts/minimum:w1:m3/at",
+          "before": 1792883126438,
+          "after": 1792883135625
+        },
+        {
+          "path": "/alerts/minimum:w1:m5/at",
+          "before": 1792883126438,
+          "after": 1792883135625
         }
       ]
     }
