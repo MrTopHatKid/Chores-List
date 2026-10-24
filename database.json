@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883092356,
+    "updatedAt": 1792883122627,
     "schemaVersion": 2
   },
   "settings": {
@@ -34,7 +34,8 @@
       "vacation": {
         "from": "",
         "to": ""
-      }
+      },
+      "chosenOnly": true
     },
     "m3": {
       "name": "Person 3",
@@ -797,13 +798,26 @@
       "bonusUsers": [],
       "generated": true,
       "closed": false,
-      "minimumSlots": 4,
+      "minimumSlots": 5,
       "remainder": 3,
       "generatedAt": 1792883092356
     }
   },
   "incomplete": {},
-  "alerts": {},
+  "alerts": {
+    "minimum:w1:m1": {
+      "message": "Person 1 is below the 5-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
+      "week": "w1",
+      "at": 1792883122626,
+      "resolved": false
+    },
+    "minimum:w1:m4": {
+      "message": "Person 4 is below the 5-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
+      "week": "w1",
+      "at": 1792883122626,
+      "resolved": false
+    }
+  },
   "exceptions": {},
   "bonusSlotEnabled": {},
   "slotLayout": {},
@@ -1312,6 +1326,45 @@
           "path": "/schemaVersion",
           "added": true,
           "after": 2
+        }
+      ]
+    },
+    {
+      "id": "c396bba7-6a4c-4d02-a6c9-4a1e5f2391b3",
+      "at": 1792883122627,
+      "actor": "m1",
+      "admin": true,
+      "action": "edit person",
+      "changes": [
+        {
+          "path": "/members/m2/chosenOnly",
+          "added": true,
+          "after": true
+        },
+        {
+          "path": "/weeks/w1/minimumSlots",
+          "before": 4,
+          "after": 5
+        },
+        {
+          "path": "/alerts/minimum:w1:m1",
+          "added": true,
+          "after": {
+            "message": "Person 1 is below the 5-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
+            "week": "w1",
+            "at": 1792883122626,
+            "resolved": false
+          }
+        },
+        {
+          "path": "/alerts/minimum:w1:m4",
+          "added": true,
+          "after": {
+            "message": "Person 4 is below the 5-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
+            "week": "w1",
+            "at": 1792883122626,
+            "resolved": false
+          }
         }
       ]
     }
