@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792881627814,
+    "updatedAt": 1792881644690,
     "schemaVersion": 2
   },
   "settings": {
@@ -941,6 +941,18 @@
       "difficulty": "Medium",
       "at": 1792876494152,
       "voided": true
+    },
+    "1723c030-390d-46cb-a331-e8c2fab7fe83": {
+      "requestId": "1723c030-390d-46cb-a331-e8c2fab7fe83",
+      "task": "t12",
+      "taskName": "Middle flight of stairs",
+      "member": "m4",
+      "memberName": "MK",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792881644690
     }
   },
   "pointLedger": {
@@ -1419,7 +1431,7 @@
           "required": 1,
           "workload": 2,
           "kind": "bonus",
-          "completed": 0
+          "completed": 1
         },
         "t13": {
           "task": "t13",
@@ -33198,6 +33210,36 @@
       "admin": true,
       "action": "new week",
       "changes": []
+    },
+    {
+      "id": "43b718fc-fec0-42bb-b633-6208110ee6f1",
+      "at": 1792881644690,
+      "actor": "m4",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/1723c030-390d-46cb-a331-e8c2fab7fe83",
+          "added": true,
+          "after": {
+            "requestId": "1723c030-390d-46cb-a331-e8c2fab7fe83",
+            "task": "t12",
+            "taskName": "Middle flight of stairs",
+            "member": "m4",
+            "memberName": "MK",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792881644690
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t12/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
     }
   ],
   "vacationHistory": [],
