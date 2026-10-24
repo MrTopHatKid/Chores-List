@@ -1,0 +1,278 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#172554"><title>Chore Chart</title><style>
+:root{--bg:#f3f5f9;--card:#fff;--text:#172033;--muted:#64748b;--line:#dfe5ef;--accent:#3659d9;--green:#16845b;--red:#b42335}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;touch-action:manipulation}[hidden]{display:none!important}
+header{background:#172554;color:#fff;padding:16px;padding-top:max(16px,env(safe-area-inset-top))}header .wrap,main{max-width:1000px;margin:auto}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+h1{margin:0;font-size:clamp(1.4rem,4vw,1.9rem)}header p{margin:2px 0 0;color:#dbeafe;font-size:.9rem}
+.conn{display:inline-block;margin-left:8px;padding:1px 9px;border-radius:99px;font-size:.75rem;background:#ffffff26}.conn.live{background:#16845b}.conn.off{background:#b42335}
+.me{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.me label{color:#dbeafe;font-weight:600}.me select{width:auto;min-width:150px;font-weight:650}
+main{padding:16px 14px 40px}
+.banner{background:#feecee;color:#922b3a;border:1px solid #f5c2c9;border-radius:12px;padding:12px 14px;margin-bottom:12px}
+.card,.person,.task{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:0 2px 8px #17255408}
+input,select,button{font:inherit}
+input[type=text],input[type=number],input[type=password],input[type=date],select{width:100%;min-width:0;border:1px solid #cbd5e1;border-radius:8px;padding:9px;background:#fff;color:var(--text)}
+input[type=checkbox]{width:24px;height:24px;accent-color:var(--green);cursor:pointer;margin:0}input[type=checkbox]:disabled{cursor:not-allowed;opacity:.5}
+button{border:0;border-radius:9px;padding:10px 14px;background:var(--accent);color:#fff;font-weight:650;cursor:pointer}button:disabled{opacity:.55;cursor:not-allowed}
+button.secondary{background:#e8edff;color:#233c9c}button.danger{background:#fee2e2;color:#991b1b}button.ghost{background:#ffffff26;color:#fff}button.small{padding:6px 11px;font-size:.85rem}button.good{background:var(--green)}
+button:focus-visible,input:focus,select:focus{outline:2px solid #93a9ff;outline-offset:1px}
+.progress-track{height:12px;background:#e7ebf3;border-radius:99px;overflow:hidden;margin:10px 0}#progressBar{height:100%;width:0;background:var(--green);transition:width .25s}
+.status{padding:10px 12px;border-radius:10px;background:#e8f7ef;color:#11643f}.status.warn{background:#fff3dc;color:#7a4b00}
+.people{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:14px 0}
+.person{cursor:pointer;text-align:left;color:inherit;padding:12px;font-weight:400}.person.active{border:2px solid var(--accent);background:#f5f8ff}
+.person h3{font-size:.95rem;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.person .points{font-size:1.5rem;font-weight:750}.person .meta{font-size:.78rem;color:var(--muted)}.person .money{font-size:.85rem;font-weight:700;color:#8a4b05;margin-top:2px}
+.person.onvacation{background:#fff8eb;border-color:#f4d9a7}
+.tabs{display:flex;gap:6px;margin:18px 0 12px;border-bottom:2px solid var(--line);overflow-x:auto}
+.tab{background:none;color:var(--muted);border-radius:9px 9px 0 0;padding:10px 16px;white-space:nowrap}.tab.active{background:#fff;color:var(--accent);box-shadow:inset 0 -3px 0 var(--accent)}
+.section-title{font-size:1.05rem;font-weight:700;margin:16px 0 8px}.hint{font-size:.88rem;color:var(--muted);margin:4px 0 10px}
+.task-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.task{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center}.task.completed{opacity:.75}.task.completed .task-name{text-decoration:line-through}
+.task.mandatory{border-left:5px solid #d97706}.task.excused{opacity:.65}
+.task-name{font-weight:650}.task-desc{font-size:.82rem;color:var(--muted);margin-top:2px}.task-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.task .acts{display:flex;flex-direction:column;gap:6px}
+.pill{display:inline-block;border-radius:99px;padding:2px 9px;font-size:.75rem;background:#e8edff;color:#273c9b;white-space:nowrap}.pill.pay{background:#fff0d9;color:#8a4b05}.pill.who{background:#e6f6ee;color:#11643f}.pill.none{background:#f1f5f9;color:#64748b}.pill.done{background:#e6f6ee;color:#11643f}.pill.vac{background:#fff8eb;color:#75440b;border:1px solid #f4d9a7}.pill.must{background:#fef3c7;color:#92400e;font-weight:700}.pill.bi{background:#ede9fe;color:#5b21b6}
+.vaccard{margin-bottom:12px;background:#fffdf5;border-color:#f4d9a7}.vaccard summary{cursor:pointer;font-weight:700;padding:2px 0}.vaccard h3{margin:0 0 6px}
+.empty{padding:22px;text-align:center;color:var(--muted);background:#fff;border:1px dashed var(--line);border-radius:14px}
+.tablewrap{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;font-size:.88rem}th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}th{background:#f8fafc;color:var(--muted);font-weight:650;font-size:.78rem}td.num,th.num{text-align:right}tr.voided td{text-decoration:line-through;color:#94a3b8}tr:last-child td{border-bottom:0}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#172554;color:#fff;padding:10px 16px;border-radius:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:80;max-width:92vw;text-align:center}.toast.show{opacity:1}.toast.err{background:#b42335}.toast.ok{background:#16845b}
+.overlay{position:fixed;inset:0;background:#0f172a88;display:none;z-index:20}.overlay.open{display:block}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(720px,100%);background:var(--bg);z-index:30;transform:translateX(100%);visibility:hidden;transition:transform .22s,visibility .22s;display:flex;flex-direction:column}.drawer.open{transform:none;visibility:visible}
+.drawer-head{background:#172554;color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}.drawer-head h2{margin:0;font-size:1.15rem}
+.drawer-body{overflow-y:auto;padding:14px;flex:1;-webkit-overflow-scrolling:touch}
+.atabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px}.atab{background:#e8edff;color:#233c9c;padding:8px 12px;font-size:.88rem}.atab.active{background:var(--accent);color:#fff}
+.field{display:flex;flex-direction:column;gap:4px;margin:8px 0}.field label,.lbl{font-size:.82rem;color:var(--muted)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.admin-card{margin-bottom:10px}.full{grid-column:1/-1}.check{display:flex;align-items:center;gap:8px}
+.card form label,.modal label{display:block;font-size:.82rem;color:var(--muted);margin-top:6px}
+.modal-wrap{position:fixed;inset:0;background:#0f172acc;display:flex;align-items:center;justify-content:center;padding:14px;z-index:60}
+.modal{background:#fff;border-radius:16px;padding:18px;width:min(460px,100%);max-height:92vh;overflow-y:auto}.modal h3{margin:0 0 6px}
+.paybox{background:#fff8eb;border:1px solid #f4d9a7;border-radius:12px;padding:12px;margin:12px 0;color:#75440b}.paybox .big{font-size:1.6rem;font-weight:800}
+.quick{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.gate{position:fixed;inset:0;background:var(--bg);z-index:15;display:flex;align-items:center;justify-content:center;padding:16px}
+.gate-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;width:min(420px,100%);box-shadow:0 8px 30px #17255418}.gate-card h2{margin:0 0 6px}
+body.locked main,body.locked header .me{visibility:hidden}
+#confetti{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:100}
+@media(max-width:800px){.people{grid-template-columns:repeat(2,minmax(0,1fr))}.task-list{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}}
+/* ---------- mobile-first refinements ---------- */
+@media(max-width:700px){
+  body{font-size:16px}
+  header{padding:12px 12px 10px;padding-top:max(12px,env(safe-area-inset-top))}
+  header .bar{align-items:stretch}.me{width:100%;flex-wrap:nowrap}.me label{display:none}.me select{flex:1;min-width:0}
+  main{padding:12px 12px calc(96px + env(safe-area-inset-bottom))}
+  input[type=text],input[type=number],input[type=password],input[type=date],select{font-size:16px;min-height:46px}
+  button{min-height:46px}button.small{min-height:40px;padding:8px 14px}
+  .people{display:flex;overflow-x:auto;gap:8px;scroll-snap-type:x proximity;margin:12px -12px;padding:2px 12px 6px;-webkit-overflow-scrolling:touch}
+  .person{flex:0 0 138px;scroll-snap-align:start}
+  .tabs{position:fixed;left:0;right:0;bottom:0;z-index:25;margin:0;gap:0;background:#fff;border-top:1px solid var(--line);border-bottom:0;padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -4px 16px #17255412}
+  .tab{flex:1;border-radius:0;padding:14px 4px;font-size:.82rem;white-space:normal;text-align:center;min-height:56px}.tab.active{box-shadow:inset 0 3px 0 var(--accent)}
+  .task{grid-template-columns:auto minmax(0,1fr);gap:10px 12px;padding:14px}
+  .task .acts{grid-column:1/-1;flex-direction:row}.task .acts:empty{display:none}.task .acts button{flex:1}
+  .toast{bottom:calc(76px + env(safe-area-inset-bottom))}
+  .drawer{width:100%}.drawer-head{padding-top:max(14px,env(safe-area-inset-top))}
+  .atabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}.atab{white-space:nowrap;min-height:42px}
+  .grid2,.grid3{grid-template-columns:1fr}.grid2.keep{grid-template-columns:1fr 1fr}
+  .modal-wrap{align-items:flex-end;padding:0}.modal{width:100%;border-radius:20px 20px 0 0;padding:20px 18px calc(20px + env(safe-area-inset-bottom));max-height:88vh}
+  .quick button{flex:1 1 30%}
+  .gate-card{padding:20px}
+}
+</style></head><body><header><div class="wrap"><div class="bar">
+  <div><h1>Weekly Chore Chart</h1><p><span id="weekLabel"></span> <span class="conn" id="conn">Connecting…</span></p></div>
+  <div class="me"><label for="meSelect">I am:</label><select id="meSelect"></select><button class="ghost" id="soundBtn" type="button" aria-label="Toggle sound" title="Sound on/off">🔊</button><button class="ghost" id="menuBtn" type="button">&#9881; Admin</button></div>
+</div></div></header>
+<main>
+  <div id="banner" class="banner" hidden></div>
+  <section class="card"><div class="bar"><strong id="progressText">Loading…</strong><span class="pill" id="myProgress"></span></div>
+    <div class="progress-track"><div id="progressBar"></div></div><div id="overallStatus" class="status warn"></div></section>
+  <div class="people" id="people"></div>
+  <div class="tabs">
+    <button class="tab active" type="button" data-tab="mine">My chores</button>
+    <button class="tab" type="button" data-tab="all">All chores</button>
+    <button class="tab" type="button" data-tab="paid">Paid jobs &amp; earnings</button>
+  </div>
+  <div id="tabContent"></div>
+</main>
+<div class="gate" id="gate" hidden><div class="gate-card">
+  <h2>&#128274; Household access key</h2>
+  <p class="hint">Enter the access key you were given. It unlocks this device and is needed to save changes.</p>
+  <form id="gateForm"><div class="field"><label for="gateKey">Access key</label><input type="password" id="gateKey" autocomplete="off" required></div><button type="submit" id="gateBtn">Unlock</button></form>
+  <div id="gateErr" class="status warn" style="margin-top:10px" hidden></div>
+  <p class="hint" style="margin-top:14px"><a href="#" id="gateAdmin">Admin sign-in</a></p>
+</div></div>
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Admin menu">
+  <div class="drawer-head"><h2>&#9881; Admin menu</h2><div class="row"><button class="ghost small" id="logoutBtn" type="button" hidden>Log out</button><button class="ghost small" id="closeMenu" type="button">Close</button></div></div>
+  <div class="drawer-body" id="drawerBody"></div>
+</aside>
+<div class="modal-wrap" id="modalWrap" hidden><div class="modal" id="modal" role="dialog" aria-modal="true"></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<script>
+const CONFIG={owner:'MrTopHatKid',repo:'Chores-List',branch:'main',path:'database.json',adminPassword:'Ch@ores987!'};
+const DEFAULTS={autoWeek:true,weekStartDay:1,missedWeight:100};
+const $=id=>document.getElementById(id), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let token=sessionStorage.getItem('choreToken')||'',D=null,sha='',me=localStorage.getItem('choreName')||'',tab='mine',admin=false,busy=false,lastAuto=0;
+const endpoint=()=>`https://api.github.com/repos/${encodeURIComponent(CONFIG.owner)}/${encodeURIComponent(CONFIG.repo)}/contents/${CONFIG.path.split('/').map(encodeURIComponent).join('/')}`;
+const money=n=>(D?.settings.currency||'$')+(n/100).toFixed(2), mins=n=>Math.floor(n/60)+'h '+n%60+'m';
+const cfg=(d,k)=>d.settings[k]??DEFAULTS[k];
+
+/* ---------- dates ---------- */
+const iso=d=>d.toLocaleDateString('en-CA');
+const today=()=>iso(new Date());
+const parse=s=>{const [y,m,dd]=s.split('-').map(Number);return new Date(y,m-1,dd)};
+const addDays=(s,n)=>{const d=parse(s);d.setDate(d.getDate()+n);return iso(d)};
+const diffDays=(a,b)=>Math.round((parse(b)-parse(a))/864e5);
+function weekTarget(day){const d=new Date(),isoDow=(d.getDay()+6)%7+1;d.setDate(d.getDate()-((isoDow-day+7)%7));return iso(d)}
+
+/* ---------- feedback ---------- */
+function notify(m,err){const t=$('toast');t.textContent=m;t.className='toast show '+(err?'err':'ok');clearTimeout(notify.t);notify.t=setTimeout(()=>t.className='toast',4500)}
+function gate(m=''){document.body.classList.add('locked');$('gate').hidden=false;$('gateErr').hidden=!m;$('gateErr').textContent=m}
+
+/* ---------- completion effects: sound + confetti + haptics (all work on phones) ---------- */
+window.__fx={sound:0,confetti:0};
+let actx=null,soundOn=localStorage.getItem('choreSound')!=='off';
+function unlockAudio(){try{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;actx=actx||new AC();if(actx.state!=='running'){actx.resume();const b=actx.createBuffer(1,1,22050),s=actx.createBufferSource();s.buffer=b;s.connect(actx.destination);s.start(0)}}catch(e){}}
+['pointerdown','touchstart','touchend','click','keydown'].forEach(ev=>document.addEventListener(ev,unlockAudio,{passive:true}));
+function chime(){window.__fx.sound++;if(!soundOn||!actx)return;try{if(actx.state==='suspended')actx.resume();const t=actx.currentTime+0.02,notes=[523.25,659.25,783.99,1046.5,1318.5];notes.forEach((f,i)=>{const o=actx.createOscillator(),g=actx.createGain(),st=t+i*0.085;o.type=i<4?'triangle':'sine';o.frequency.setValueAtTime(f,st);g.gain.setValueAtTime(0.0001,st);g.gain.exponentialRampToValueAtTime(i<4?0.33:0.22,st+0.02);g.gain.exponentialRampToValueAtTime(0.0001,st+(i===4?0.6:0.3));o.connect(g);g.connect(actx.destination);o.start(st);o.stop(st+0.65)});
+ const n=actx.createBufferSource(),len=Math.floor(actx.sampleRate*0.12),buf=actx.createBuffer(1,len,actx.sampleRate),ch=buf.getChannelData(0);for(let i=0;i<len;i++)ch[i]=(Math.random()*2-1)*Math.pow(1-i/len,3);n.buffer=buf;const ng=actx.createGain();ng.gain.value=0.25;n.connect(ng);ng.connect(actx.destination);n.start(t)}catch(e){}}
+function confetti(){window.__fx.confetti++;const c=$('confetti'),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;const dpr=Math.min(window.devicePixelRatio||1,2),W=innerWidth,H=innerHeight;c.width=W*dpr;c.height=H*dpr;const x=c.getContext('2d');x.setTransform(dpr,0,0,dpr,0,0);const colors=['#f43f5e','#f59e0b','#10b981','#3b82f6','#8b5cf6','#ec4899','#facc15'],N=reduce?36:150;
+ const ps=Array.from({length:N},(_,i)=>{const left=i%2===0,a=(left?-1:1)*(Math.PI/2.6)*Math.random()+(left?-0.9:-2.2)+Math.PI/2*0;return{x:W*(left?0.12:0.88),y:H*0.72,vx:(left?1:-1)*(3+Math.random()*7)*(W<500?0.8:1.2),vy:-(9+Math.random()*10)*(H<700?0.85:1),w:6+Math.random()*7,h:4+Math.random()*6,r:Math.random()*6.28,vr:(Math.random()-.5)*0.4,col:colors[i%colors.length],life:0}});
+ let start=null;const dur=reduce?1400:2800;function frame(ts){start=start||ts;const t=ts-start;x.clearRect(0,0,W,H);let alive=0;for(const p of ps){p.vy+=0.35;p.vx*=0.99;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;if(p.y<H+20&&t<dur){alive++;x.save();x.globalAlpha=Math.max(0,Math.min(1,(dur-t)/600));x.translate(p.x,p.y);x.rotate(p.r);x.fillStyle=p.col;x.fillRect(-p.w/2,-p.h/2,p.w,p.h);x.restore()}}if(alive&&t<dur)requestAnimationFrame(frame);else x.clearRect(0,0,W,H)}requestAnimationFrame(frame)}
+function celebrate(){chime();confetti();try{navigator.vibrate&&navigator.vibrate([40,30,40])}catch(e){}}
+function syncSoundBtn(){$('soundBtn').textContent=soundOn?'🔊':'🔇'}
+$('soundBtn').onclick=()=>{soundOn=!soundOn;localStorage.setItem('choreSound',soundOn?'on':'off');syncSoundBtn();unlockAudio();if(soundOn)chime()};syncSoundBtn();
+
+/* ---------- GitHub storage ---------- */
+async function request(method,body){const r=await fetch(endpoint()+(method==='GET'?'?ref='+encodeURIComponent(CONFIG.branch)+'&t='+Date.now():''),{method,cache:'no-store',headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28',...(body?{'Content-Type':'application/json'}:{})},body:body?JSON.stringify(body):undefined});const v=await r.json();if(!r.ok){const e=Error(v.message||'GitHub request failed');e.status=r.status;throw e}return v}
+async function read(){const v=await request('GET');const bytes=Uint8Array.from(atob(v.content.replace(/\s/g,'')),c=>c.charCodeAt(0));const d=JSON.parse(new TextDecoder().decode(bytes));if(!d.settings||!d.tasks||!d.members)throw Error('Invalid database.json');return {d,sha:v.sha}}
+async function refresh(){if(busy||!token)return;try{const x=await read();D=x.d;sha=x.sha;$('conn').textContent='Synced '+new Date().toLocaleTimeString();$('conn').className='conn live';render();autoWeekly()}catch(e){$('conn').textContent='Not synced';$('conn').className='conn off';if(e.status===401)gate('Invalid or expired token.')}}
+/* op(d) may return false to mean "nothing to write". opts.fx = play celebration after a confirmed save. */
+async function change(label,op,opts={}){if(busy)return;busy=true;document.querySelectorAll('[data-action]').forEach(b=>b.disabled=true);try{for(let attempt=0;attempt<5;attempt++){const x=await read();if(op(x.d)===false){D=x.d;sha=x.sha;return}x.d.meta={updatedAt:Date.now()};const bytes=new TextEncoder().encode(JSON.stringify(x.d,null,2));let bin='';for(const b of bytes)bin+=String.fromCharCode(b);try{await request('PUT',{message:'Chore chart: '+label,content:btoa(bin),sha:x.sha,branch:CONFIG.branch});D=x.d;notify(opts.msg||'Saved to GitHub ✓');if(opts.fx)celebrate();return}catch(e){if(e.status!==409&&e.status!==422)throw e;if(attempt===4)throw Error('Conflicting saves. Please retry.')}}}catch(e){notify('NOT confirmed saved: '+e.message,true)}finally{busy=false;if(D)render()}}
+
+/* ---------- data helpers ---------- */
+function records(d=D){return Object.values(d.completions||{}).filter(c=>!c.voided)}
+function countIn(id,d,wid){return records(d).filter(c=>c.task===id&&c.week===wid).length}
+function count(id,d=D){return countIn(id,d,d.settings.weekId)}
+function owner(t){return t.claim?.week===D.settings.weekId?t.claim.member:''}
+function isMandatory(t,d=D){return !!(t.claim&&t.claim.mandatory&&t.claim.week===d.settings.weekId)}
+function onVacation(id,d=D,date=today()){const v=d.members[id]?.vacation;if(!v||!v.from||!v.to)return false;return v.from<=date&&date<=v.to}
+/* biweekly framework: every=1 (default) weekly, every=2 biweekly, startWeek = first week number it is due */
+function isDue(t,wno){const e=t.every||1;if(e<=1)return true;const st=t.startWeek??1;return wno>=st&&(wno-st)%e===0}
+function nextDueWeekNo(t,wno){const e=t.every||1,st=t.startWeek??1;if(wno<st)return st;return wno+((e-((wno-st)%e))%e||e)}
+
+/* ---------- random weekly mandatory assignment ---------- */
+const rand=()=>crypto.getRandomValues(new Uint32Array(1))[0]/4294967296;
+function shuffle(a,rng=rand){for(let i=a.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function missedTasks(d,wid,wno){return Object.entries(d.tasks).filter(([id,t])=>t.active&&t.kind==='regular'&&isDue(t,wno)&&countIn(id,d,wid)<t.max).map(([id])=>id)}
+function assignMandatory(d,opts={}){
+  const s=d.settings,wid=s.weekId,rng=opts.rng||rand;
+  let missed=opts.missed;if(!missed){const pn=s.weekNo-1;missed=pn>=1?missedTasks(d,'w'+pn,pn):[]}
+  const has=new Set(Object.values(d.tasks).filter(t=>t.claim&&t.claim.mandatory&&t.claim.week===wid).map(t=>t.claim.member));
+  const people=shuffle(Object.keys(d.members).filter(id=>!has.has(id)&&!onVacation(id,d,s.weekStart)),rng);
+  const pool=Object.entries(d.tasks).filter(([id,t])=>t.active&&t.kind==='regular'&&isDue(t,s.weekNo)&&!(t.claim&&t.claim.week===wid)).map(([id])=>id);
+  const w=Number(cfg(d,'missedWeight'))||100;
+  for(const pid of people){if(!pool.length)break;const wts=pool.map(id=>missed.includes(id)?w:1),total=wts.reduce((a,b)=>a+b,0);let r=rng()*total,i=0;while(i<pool.length-1&&r>=wts[i]){r-=wts[i];i++}const tid=pool.splice(i,1)[0];d.tasks[tid].claim={member:pid,week:wid,mandatory:true}}
+  s.assignedWeek=wid;
+}
+function rollWeek(d,force){
+  const s=d.settings,prevId=s.weekId,prevNo=s.weekNo,target=force?today():weekTarget(cfg(d,'weekStartDay'));
+  const elapsed=force?1:Math.max(1,Math.round(diffDays(s.weekStart,target)/7)),missed=missedTasks(d,prevId,prevNo);
+  s.weekNo=prevNo+elapsed;s.weekId='w'+s.weekNo;s.weekStart=target;
+  Object.values(d.tasks).forEach(t=>delete t.claim);
+  assignMandatory(d,{missed});
+}
+const needsRoll=d=>cfg(d,'autoWeek')&&weekTarget(cfg(d,'weekStartDay'))>d.settings.weekStart;
+const needsAssign=d=>cfg(d,'autoWeek')&&d.settings.assignedWeek!==d.settings.weekId;
+function autoWeekly(){if(!D||busy||!token||!(needsRoll(D)||needsAssign(D))||Date.now()-lastAuto<30000)return;lastAuto=Date.now();
+  change('weekly assignments',d=>{if(needsRoll(d))rollWeek(d,false);else if(needsAssign(d))assignMandatory(d);else return false},{msg:'New week: mandatory chores assigned ✓'})}
+function reroll(d){const wid=d.settings.weekId;Object.values(d.tasks).forEach(t=>{if(t.claim&&t.claim.mandatory&&t.claim.week===wid&&!Object.values(d.completions||{}).some(c=>!c.voided&&c.task===t.id&&c.week===wid))delete t.claim});assignMandatory(d)}
+
+/* ---------- rendering ---------- */
+const excused=(id,t)=>{const o=owner(t);return !!o&&onVacation(o)&&count(id)<t.max};
+function card(id,t){
+  const n=count(id),o=owner(t),complete=n>=t.max,vac=o&&onVacation(o),mand=isMandatory(t),ex=excused(id,t);
+  const acts=[];
+  if(!o&&!complete)acts.push(`<button data-action="claim" data-id="${id}">Claim</button>`);
+  if(o===me&&me&&!complete)acts.push(`<button class="good" data-action="complete" data-id="${id}">Complete</button>`);
+  if(o===me&&me&&n===0&&!mand)acts.push(`<button class="secondary small" data-action="release" data-id="${id}">Give up</button>`);
+  return `<article class="task ${complete?'completed':''} ${mand?'mandatory':''} ${ex?'excused':''}"><span>${complete?'✓':''}</span><div><div class="task-name">${esc(t.name)}</div><div class="task-desc">${esc(t.desc||'')}</div><div class="task-meta"><span class="pill">${t.points} pts</span><span class="pill who">${esc(D.members[o]?.name||'Unclaimed')}</span><span class="pill">${n}/${t.max}</span>${mand?'<span class="pill must">🔒 Mandatory</span>':''}${(t.every||1)>1?'<span class="pill bi">Every '+t.every+' weeks</span>':''}${vac?'<span class="pill vac">🌴 Excused</span>':''}</div></div><div class="acts">${acts.join('')}</div></article>`;
+}
+function vacationCard(){
+  const v=D.members[me]?.vacation||{},active=v.from&&v.to&&v.to>=today();
+  if(active)return `<section class="card vaccard"><h3>🌴 Vacation ${v.from<=today()?'in progress':'scheduled'}</h3><p class="hint">${esc(v.from)} → ${esc(v.to)}. You are skipped for random assignments and don’t need to finish chores.</p><button class="secondary" data-vac="back">I’m back — check in now</button></section>`;
+  return `<details class="card vaccard"><summary>🌴 Going on vacation?</summary><form id="vacForm"><div class="grid2 keep"><div><label>From</label><input type="date" name="from" value="${today()}" required></div><div><label>Until (last day away)</label><input type="date" name="to" required></div></div><p class="hint">You’ll be skipped for random weekly assignments and excused from chores until then, or until you check back in.</p><button>Start vacation</button></form></details>`;
+}
+function render(){
+  if(!D)return;const s=D.settings,wno=s.weekNo;
+  $('weekLabel').textContent='Week of '+s.weekStart;
+  $('meSelect').innerHTML='<option value="">Choose your name</option>'+Object.entries(D.members).map(([id,m])=>`<option value="${id}" ${id===me?'selected':''}>${esc(m.name)}</option>`).join('');
+  const dueAll=Object.entries(D.tasks).filter(([id,t])=>t.active&&isDue(t,wno)),reg=dueAll.filter(([id,t])=>t.kind==='regular'),needed=reg.filter(([id,t])=>!excused(id,t)),done=needed.filter(([id,t])=>count(id)>=t.max).length;
+  $('progressText').textContent=`${done} of ${needed.length} chores complete`;$('progressBar').style.width=(needed.length?done/needed.length*100:0)+'%';
+  $('overallStatus').textContent=done===needed.length&&needed.length?'All required chores complete! 🎉':'Pick your name, claim a chore and mark it complete.';
+  const myT=Object.entries(D.tasks).find(([id,t])=>isMandatory(t)&&t.claim.member===me&&t.active);
+  if(me&&onVacation(me))$('myProgress').textContent='🌴 On vacation';
+  else if(me&&myT)$('myProgress').textContent='Mandatory: '+(count(myT[0])>=myT[1].max?'done ✓':'pending');
+  else $('myProgress').textContent='';
+  $('myProgress').hidden=!$('myProgress').textContent;
+  $('people').innerHTML=Object.entries(D.members).map(([id,m])=>{const r=records().filter(c=>c.member===id),wk=r.filter(c=>c.week===s.weekId),earn=r.reduce((a,c)=>a+(c.paymentCents||0),0),v=m.vacation||{},vac=onVacation(id),soon=v.from&&v.to&&v.from>today()&&v.to>=today();return `<button class="person ${id===me?'active':''} ${vac?'onvacation':''}" data-person="${id}"><h3>${esc(m.name)}</h3><div class="points">${s.startPoints+wk.reduce((a,c)=>a+c.points,0)} pts</div><div class="money">${money(earn)} earned</div>${vac?'<div class="meta">🌴 Away until '+esc(v.to)+'</div>':soon?'<div class="meta">🌴 Away from '+esc(v.from)+'</div>':''}</button>`}).join('');
+  document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
+  let ts=dueAll.filter(([id,t])=>tab==='paid'?t.kind==='paid':t.kind==='regular');
+  if(tab==='mine')ts=ts.filter(([id,t])=>!owner(t)||owner(t)===me).sort((a,b)=>(isMandatory(b[1])&&b[1].claim.member===me)-(isMandatory(a[1])&&a[1].claim.member===me));
+  let h=(tab==='mine'&&me&&D.members[me]?vacationCard():'')+(tab==='paid'?`<p class="hint">Optional paid jobs · ${money(s.rateCents)}/hour</p>`:'')+'<div class="task-list">'+ts.map(([id,t])=>card(id,t)).join('')+'</div>';
+  if(!ts.length)h+='<div class="empty">Nothing here right now.</div>';
+  if(tab==='all'){const later=Object.entries(D.tasks).filter(([id,t])=>t.active&&!isDue(t,wno));if(later.length)h+='<div class="section-title">Not due this week</div><div class="task-list">'+later.map(([id,t])=>`<article class="task excused"><span></span><div><div class="task-name">${esc(t.name)}</div><div class="task-meta"><span class="pill bi">Every ${t.every} weeks</span><span class="pill">Next: week of ${addDays(s.weekStart,7*(nextDueWeekNo(t,wno)-wno))}</span></div></div></article>`).join('')+'</div>'}
+  $('tabContent').innerHTML=h;
+  if(tab==='paid')$('tabContent').innerHTML+='<h3>Paid-task history</h3><div class="tablewrap"><table><tr><th>Member</th><th>Task</th><th>Time</th><th>Rate</th><th>Earned</th></tr>'+records().filter(c=>c.kind==='paid').reverse().map(c=>`<tr><td>${esc(D.members[c.member]?.name||c.memberName)}</td><td>${esc(c.taskName)}</td><td>${mins(c.minutes)}</td><td>${money(c.rateCents)}</td><td>${money(c.paymentCents)}</td></tr>`).join('')+'</table></div>';
+  if(admin&&$('drawer').classList.contains('open'))renderAdmin();
+}
+function download(name,data,type){const u=URL.createObjectURL(new Blob([data],{type})),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}
+function exportCSV(){const rows=[['Member','Task','Date','Type','Points','Minutes','Hourly rate','Payment'],...records().map(c=>[D.members[c.member]?.name,c.taskName,new Date(c.at).toISOString(),c.kind,c.points,c.minutes||'',c.rateCents?c.rateCents/100:'',c.paymentCents?c.paymentCents/100:''])];download('chore-chart.csv','\ufeff'+rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n'),'text/csv;charset=utf-8')}
+
+/* ---------- admin ---------- */
+function repeatSelect(t){return `<label>Repeats</label><select name="every"><option value="1" ${(t.every||1)===1?'selected':''}>Every week</option><option value="2" ${t.every===2?'selected':''}>Every 2 weeks (biweekly)</option></select><label>First due week # (current is ${D.settings.weekNo})</label><input name="startWeek" type="number" min="1" step="1" value="${t.startWeek??D.settings.weekNo}">`}
+function renderAdmin(){
+  const s=D.settings,wid=s.weekId;
+  $('drawerBody').innerHTML=`<div class="row"><button id="backup">Download JSON backup</button><button id="excel" class="secondary">Export CSV for Excel</button><button id="reroll" class="secondary">Re-roll mandatory chores</button><button id="newWeek" class="danger">New week</button><button id="fxTest" class="secondary">Test sound &amp; confetti</button></div><form id="settingsForm" class="card"><h3>Settings</h3><label>Hourly rate</label><input name="rate" type="number" min="0.01" max="1000" step="0.01" value="${s.rateCents/100}" required><label>Starting weekly points</label><input name="points" type="number" value="${s.startPoints}" required><label class="check"><input type="checkbox" name="auto" ${cfg(D,'autoWeek')?'checked':''}> Start each week automatically &amp; assign mandatory chores</label><label>Week starts on</label><select name="day">${['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'].map((n,i)=>`<option value="${i+1}" ${cfg(D,'weekStartDay')===i+1?'selected':''}>${n}</option>`).join('')}</select><label>Missed-chore weight (higher = missed chores almost always picked)</label><input name="weight" type="number" min="1" max="1000" value="${cfg(D,'missedWeight')}"><button>Save</button></form><h3>People &amp; vacations</h3>`+
+  Object.entries(D.members).map(([id,m])=>`<form data-member="${id}" class="card admin-card"><input name="name" maxlength="40" required value="${esc(m.name)}"><div class="grid2 keep"><div><label>Vacation from</label><input type="date" name="vfrom" value="${esc(m.vacation?.from||'')}"></div><div><label>Vacation until</label><input type="date" name="vto" value="${esc(m.vacation?.to||'')}"></div></div><div class="row" style="margin-top:8px"><button>Save</button><button type="button" class="secondary" data-clearvac="${id}">Clear vacation</button></div></form>`).join('')+
+  `<h3>Chores</h3><form id="newTask" class="card"><input name="name" placeholder="New chore" maxlength="80" required><select name="kind"><option value="regular">Regular</option><option value="paid">Paid</option></select><label>Points</label><input name="points" type="number" min="0" max="100" value="3">${repeatSelect({})}<button>Add</button></form>`+
+  Object.entries(D.tasks).map(([id,t])=>{const o=t.claim?.week===wid?t.claim.member:'';return `<form data-task="${id}" class="card"><input name="name" required maxlength="80" value="${esc(t.name)}"><select name="kind"><option value="regular" ${t.kind==='regular'?'selected':''}>Regular</option><option value="paid" ${t.kind==='paid'?'selected':''}>Paid</option></select><label>Points</label><input name="points" type="number" min="0" max="100" value="${t.points}"><label>Times per week</label><input name="max" type="number" min="1" max="20" value="${t.max}">${repeatSelect(t)}<label>Assigned to this week</label><select name="assigned"><option value="">Unassigned</option>${Object.entries(D.members).map(([mid,m])=>`<option value="${mid}" ${o===mid?'selected':''}>${esc(m.name)}</option>`).join('')}</select><label class="check"><input type="checkbox" name="mandatory" ${isMandatory(t)?'checked':''}> 🔒 Mandatory (members can’t remove it)</label><div class="row" style="margin-top:8px"><button>Save</button><button type="button" class="danger" data-delete="${id}">Delete</button></div></form>`}).join('')+
+  '<h3>Completion records</h3>'+Object.entries(D.completions||{}).map(([id,c])=>`<div class="card">${esc(c.memberName)} · ${esc(c.taskName)} · ${new Date(c.at).toLocaleString()} ${c.paymentCents?money(c.paymentCents):''} <button class="small secondary" data-void="${id}">${c.voided?'Restore':'Void'}</button></div>`).join('')+'<p class="hint">Admin password is a simple on-page lock, not real security. Anyone with the repository token can edit data.</p>';
+  $('backup').onclick=()=>download('database.json',JSON.stringify(D,null,2),'application/json');$('excel').onclick=exportCSV;$('fxTest').onclick=()=>{unlockAudio();celebrate()};
+  $('reroll').onclick=()=>{if(confirm('Re-roll mandatory chores for people who have not finished theirs?'))change('re-roll mandatory chores',reroll,{msg:'Mandatory chores re-rolled ✓'})};
+  $('newWeek').onclick=()=>{if(confirm('Start a new week now? Mandatory chores are randomly assigned again. History is kept.'))change('new week',d=>rollWeek(d,true),{msg:'New week started ✓'})};
+}
+$('gateForm').onsubmit=async e=>{e.preventDefault();token=$('gateKey').value.trim();$('gateBtn').disabled=true;try{const x=await read();D=x.d;sha=x.sha;sessionStorage.setItem('choreToken',token);$('gateKey').value='';$('gate').hidden=true;document.body.classList.remove('locked');render();$('conn').textContent='Connected';autoWeekly()}catch(e){gate(e.message)}finally{$('gateBtn').disabled=false}};
+function openAdmin(){if(!admin&&prompt('Admin password:')!==CONFIG.adminPassword)return;admin=true;$('drawer').classList.add('open');$('overlay').classList.add('open');if(D)renderAdmin();else $('drawerBody').textContent='Unlock with the repository token first.'}
+$('menuBtn').onclick=openAdmin;$('gateAdmin').onclick=e=>{e.preventDefault();openAdmin()};function closeAdmin(){admin=false;$('drawer').classList.remove('open');$('overlay').classList.remove('open')}$('closeMenu').onclick=closeAdmin;$('overlay').onclick=closeAdmin;
+$('meSelect').onchange=e=>{me=e.target.value;localStorage.setItem('choreName',me);render()};
+
+/* ---------- member actions (mandatory assignments are protected) ---------- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-person],[data-tab],[data-action],[data-delete],[data-void],[data-vac],[data-clearvac]');if(!b)return;
+  if(b.dataset.person){me=b.dataset.person;localStorage.setItem('choreName',me);render()}
+  else if(b.dataset.tab){tab=b.dataset.tab;render()}
+  else if(b.dataset.delete){if(confirm('Delete chore? History is kept.'))change('delete chore',d=>delete d.tasks[b.dataset.delete])}
+  else if(b.dataset.void)change('correct record',d=>{const c=d.completions[b.dataset.void];c.voided=!c.voided});
+  else if(b.dataset.vac){if(!me)return;change('back from vacation',d=>{d.members[me].vacation={from:'',to:''}},{msg:'Welcome back! ✓'})}
+  else if(b.dataset.clearvac){const id=b.dataset.clearvac;change('clear vacation',d=>{d.members[id].vacation={from:'',to:''}})}
+  else if(b.dataset.action){if(!me){notify('Pick your name first',true);return}const id=b.dataset.id,action=b.dataset.action;
+    if(action==='claim')change('claim',d=>{const t=d.tasks[id];if(onVacation(me,d))throw Error('You are on vacation. Check back in first.');if(t.claim?.week===d.settings.weekId)throw Error('Already claimed');t.claim={member:me,week:d.settings.weekId}});
+    else if(action==='release')change('release',d=>{const t=d.tasks[id];if(t.claim?.member!==me)throw Error('Not yours');if(t.claim.mandatory)throw Error('Mandatory assignments can only be changed by the admin');delete t.claim});
+    else complete(id)}});
+function complete(id){const task=D.tasks[id],rc=D.settings.rateCents,wid=D.settings.weekId,person=me;let worked=null;const requestId=crypto.randomUUID();
+  const submit=()=>change('complete chore',d=>{d.completions ||= {};if(Object.values(d.completions).some(c=>c.requestId===requestId))return false;const t=d.tasks[id];if(!t||!t.active)throw Error('Task unavailable');if(d.settings.weekId!==wid)throw Error('Week changed; reopen task');if(t.claim?.member!==person||t.claim.week!==wid)throw Error('Task is no longer assigned to you');if(count(id,d)>=t.max)throw Error('Already completed this week');if(task.kind!==t.kind)throw Error('Task changed; reopen it');if(t.kind==='paid'&&d.settings.rateCents!==rc)throw Error('Rate changed; reopen task');const c={requestId,task:id,taskName:t.name,member:person,memberName:d.members[person].name,week:wid,weekStart:d.settings.weekStart,kind:t.kind,points:t.kind==='paid'&&d.settings.paidPointMode==='zero'?0:t.points,at:Date.now()};if(t.kind==='paid')Object.assign(c,{minutes:worked,rateCents:rc,paymentCents:Math.round(worked*rc/60)});d.completions[requestId]=c},{fx:true,msg:'Done! Saved to GitHub ✓'});
+  if(task.kind!=='paid'){submit();return}
+  $('modalWrap').hidden=false;$('modal').innerHTML=`<h3>${esc(task.name)}</h3><p>Time worked at ${money(rc)}/hour</p><div class="grid2 keep"><label>Hours<input id="h" type="number" min="0" max="12" step="1" value="0" inputmode="numeric"></label><label>Minutes<input id="m" type="number" min="0" max="59" step="1" value="0" inputmode="numeric"></label></div><div class="quick">${[15,30,45,60,120].map(n=>`<button class="secondary" data-minutes="${n}">${n} min</button>`).join('')}</div><div class="paybox big" id="preview"></div><div class="row"><button id="confirmPay" disabled>Confirm &amp; save</button><button id="cancelPay" class="secondary">Cancel</button></div>`;
+  function calc(){worked=Number($('h').value)*60+Number($('m').value);const valid=Number.isInteger(worked)&&worked>=1&&worked<=720&&Number($('h').value)>=0&&Number($('m').value)>=0&&Number($('m').value)<60;$('preview').textContent=money(Math.round(worked*rc/60));$('confirmPay').disabled=!valid}
+  $('h').oninput=$('m').oninput=calc;document.querySelectorAll('[data-minutes]').forEach(b=>b.onclick=()=>{const n=+b.dataset.minutes;$('h').value=Math.floor(n/60);$('m').value=n%60;calc()});$('cancelPay').onclick=()=>{$('modalWrap').hidden=true};$('confirmPay').onclick=()=>{$('modalWrap').hidden=true;submit()};calc()}
+document.addEventListener('submit',e=>{const f=e.target;if(f===$('gateForm'))return;e.preventDefault();const v=f.elements;
+  if(f.id==='settingsForm')change('settings',d=>{d.settings.rateCents=Math.round(+v.rate.value*100);d.settings.startPoints=+v.points.value;d.settings.autoWeek=v.auto.checked;d.settings.weekStartDay=+v.day.value;d.settings.missedWeight=Math.max(1,+v.weight.value||100)});
+  else if(f.id==='vacForm'){if(!me)return;const from=v.from.value,to=v.to.value;if(!from||!to||to<from){notify('Choose a valid date range',true);return}change('vacation',d=>{d.members[me].vacation={from,to}},{msg:'Vacation saved 🌴'})}
+  else if(f.dataset.member){const from=v.vfrom.value,to=v.vto.value;if(!!from!==!!to||(from&&to<from)){notify('Enter both vacation dates (until ≥ from), or leave both empty',true);return}change('edit person',d=>{const m=d.members[f.dataset.member];m.name=v.name.value.trim();m.vacation={from,to}})}
+  else if(f.id==='newTask'){const id='t'+crypto.randomUUID();const rec={name:v.name.value.trim(),desc:'',kind:v.kind.value,points:+v.points.value,max:1,active:true,order:Date.now(),every:+v.every.value,startWeek:+v.startWeek.value};change('add chore',d=>{d.tasks[id]=rec})}
+  else if(f.dataset.task){const id=f.dataset.task,rec={name:v.name.value.trim(),kind:v.kind.value,points:+v.points.value,max:+v.max.value,every:+v.every.value,startWeek:+v.startWeek.value},a=v.assigned.value,mand=v.mandatory.checked;
+    change('edit chore',d=>{const t=d.tasks[id];Object.assign(t,rec);if(a==='')delete t.claim;else t.claim={member:a,week:d.settings.weekId,...(mand?{mandatory:true}:{})}})}});
+
+/* ---------- startup ---------- */
+if(CONFIG.owner==='YOUR-USERNAME')gate('Edit CONFIG near the top of the script: owner, repo, branch and admin password. Then enter a fine-grained GitHub token with Contents read/write permission for this repository.');
+else if(token)read().then(x=>{D=x.d;sha=x.sha;render();autoWeekly()}).catch(e=>gate(e.message));else gate();
+setInterval(()=>{if(!document.hidden&&D)refresh()},20000);
+</script></body></html>
