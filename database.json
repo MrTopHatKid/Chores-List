@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883229956,
+    "updatedAt": 1792883279931,
     "schemaVersion": 2
   },
   "settings": {
@@ -411,7 +411,7 @@
     },
     "t20": {
       "name": "Unload the dishwasher",
-      "desc": "Put clean dishes away.",
+      "desc": "Load dirty dishes and start it if appropriate & Put clean dishes away.",
       "kind": "regular",
       "points": 2,
       "max": 1,
@@ -424,7 +424,7 @@
         "member": "m3",
         "week": "w1",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "admin"
       }
     },
     "t21": {
@@ -759,7 +759,7 @@
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "admin",
           "completed": 0
         },
         "t22": {
@@ -810,19 +810,19 @@
     "minimum:w1:m4": {
       "message": "Person 4 is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883229956,
+      "at": 1792883279931,
       "resolved": false
     },
     "minimum:w1:m3": {
       "message": "Person 3 is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883229956,
+      "at": 1792883279931,
       "resolved": false
     },
     "minimum:w1:m5": {
       "message": "Person 5 is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883229956,
+      "at": 1792883279931,
       "resolved": false
     }
   },
@@ -1679,6 +1679,45 @@
           "after": 1792883229956
         }
       ]
+    },
+    {
+      "id": "20fe90ae-1e13-4c39-89ec-fcc46168f48b",
+      "at": 1792883279931,
+      "actor": "m2",
+      "admin": true,
+      "action": "edit chore",
+      "changes": [
+        {
+          "path": "/tasks/t20/desc",
+          "before": "Put clean dishes away.",
+          "after": "Load dirty dishes and start it if appropriate & Put clean dishes away."
+        },
+        {
+          "path": "/tasks/t20/claim/kind",
+          "before": "automatic",
+          "after": "admin"
+        },
+        {
+          "path": "/weeks/w1/assignments/t20/kind",
+          "before": "automatic",
+          "after": "admin"
+        },
+        {
+          "path": "/alerts/minimum:w1:m4/at",
+          "before": 1792883229956,
+          "after": 1792883279931
+        },
+        {
+          "path": "/alerts/minimum:w1:m3/at",
+          "before": 1792883229956,
+          "after": 1792883279931
+        },
+        {
+          "path": "/alerts/minimum:w1:m5/at",
+          "before": 1792883229956,
+          "after": 1792883279931
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -1733,6 +1772,25 @@
       "after": null,
       "reason": "delete chore",
       "at": 1792883229956,
+      "actor": "m2"
+    },
+    {
+      "week": "w1",
+      "task": "t20",
+      "before": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "admin"
+      },
+      "reason": "edit chore",
+      "at": 1792883279931,
       "actor": "m2"
     }
   ],
