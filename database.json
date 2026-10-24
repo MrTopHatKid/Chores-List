@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792877131804,
+    "updatedAt": 1792877136259,
     "schemaVersion": 2
   },
   "settings": {
@@ -22822,6 +22822,14 @@
       "actor": "m2",
       "admin": true,
       "action": "re-roll mandatory chores",
+      "changes": []
+    },
+    {
+      "id": "67befaa8-c2a7-4010-8bb0-0243a1cb37d3",
+      "at": 1792877136259,
+      "actor": "m2",
+      "admin": true,
+      "action": "new week",
       "changes": []
     }
   ],
