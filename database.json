@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883679073,
+    "updatedAt": 1792883690207,
     "schemaVersion": 2
   },
   "settings": {
@@ -265,7 +265,7 @@
         "member": "m5",
         "week": "w1",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "selected"
       }
     },
     "t12": {
@@ -551,7 +551,9 @@
       "t07",
       "t02"
     ],
-    "m5": []
+    "m5": [
+      "t11"
+    ]
   },
   "bonusPreferences": {
     "m1": [],
@@ -599,6 +601,10 @@
       "t02": {
         "member": "m4",
         "kind": "selected"
+      },
+      "t11": {
+        "member": "m5",
+        "kind": "selected"
       }
     },
     "2026-10-26": {
@@ -636,6 +642,10 @@
       },
       "t02": {
         "member": "m4",
+        "kind": "selected"
+      },
+      "t11": {
+        "member": "m5",
         "kind": "selected"
       }
     }
@@ -753,7 +763,7 @@
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "selected",
           "completed": 0
         },
         "t12": {
@@ -904,7 +914,7 @@
     "minimum:w1:m5": {
       "message": "MW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883679073,
+      "at": 1792883690207,
       "resolved": false
     }
   },
@@ -955,6 +965,15 @@
         "t14",
         "t07",
         "t02"
+      ],
+      "bonus": []
+    },
+    "m5": {
+      "selected": [
+        "t11",
+        null,
+        null,
+        null
       ],
       "bonus": []
     }
@@ -4462,6 +4481,66 @@
           "path": "/alerts/minimum:w1:m5/at",
           "before": 1792883659066,
           "after": 1792883679073
+        }
+      ]
+    },
+    {
+      "id": "f598eb31-0151-4ad0-9246-abe1abb238c6",
+      "at": 1792883690207,
+      "actor": "m5",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t11/claim/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/preferences/m5",
+          "before": [],
+          "after": [
+            "t11"
+          ]
+        },
+        {
+          "path": "/slotLayout/m5",
+          "added": true,
+          "after": {
+            "selected": [
+              "t11",
+              null,
+              null,
+              null
+            ],
+            "bonus": []
+          }
+        },
+        {
+          "path": "/plans/2026-10-19/t11",
+          "added": true,
+          "after": {
+            "member": "m5",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-26/t11",
+          "added": true,
+          "after": {
+            "member": "m5",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w1/assignments/t11/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/alerts/minimum:w1:m5/at",
+          "before": 1792883679073,
+          "after": 1792883690207
         }
       ]
     }
