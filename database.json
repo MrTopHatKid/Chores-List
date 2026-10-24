@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792875495868,
+    "updatedAt": 1792875498601,
     "schemaVersion": 2
   },
   "settings": {
@@ -923,6 +923,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1792875495868
+    },
+    "eefc90da-8aeb-480d-84db-0488335d1891": {
+      "requestId": "eefc90da-8aeb-480d-84db-0488335d1891",
+      "task": "t03",
+      "taskName": "Downstairs hallway",
+      "member": "m2",
+      "memberName": "KI",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792875498600
     }
   },
   "pointLedger": {
@@ -1333,7 +1345,7 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
+          "completed": 1
         },
         "t04": {
           "task": "t04",
@@ -7761,6 +7773,36 @@
         },
         {
           "path": "/weeks/w3/assignments/t16/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "9473c537-f1da-4880-98a1-611afc80bcc0",
+      "at": 1792875498601,
+      "actor": "m2",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/eefc90da-8aeb-480d-84db-0488335d1891",
+          "added": true,
+          "after": {
+            "requestId": "eefc90da-8aeb-480d-84db-0488335d1891",
+            "task": "t03",
+            "taskName": "Downstairs hallway",
+            "member": "m2",
+            "memberName": "KI",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792875498600
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t03/completed",
           "before": 0,
           "after": 1
         }
@@ -16470,6 +16512,12 @@
       {
         "at": 1792875495868,
         "actor": "m3",
+        "action": "complete chore",
+        "week": "w3"
+      },
+      {
+        "at": 1792875498600,
+        "actor": "m2",
         "action": "complete chore",
         "week": "w3"
       }
