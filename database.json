@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792875514460,
+    "updatedAt": 1792875516466,
     "schemaVersion": 2
   },
   "settings": {
@@ -995,6 +995,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1792875514459
+    },
+    "f2f70e32-1e60-4181-aee5-77539e9600f7": {
+      "requestId": "f2f70e32-1e60-4181-aee5-77539e9600f7",
+      "task": "t10",
+      "taskName": "Clean the fridge",
+      "member": "m4",
+      "memberName": "MK",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792875516465
     }
   },
   "pointLedger": {
@@ -1475,7 +1487,7 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
+          "completed": 1
         },
         "t12": {
           "task": "t12",
@@ -8013,6 +8025,36 @@
         },
         {
           "path": "/weeks/w3/assignments/t02/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "66fa5519-0f6d-4e48-8c6c-70dbb520fb29",
+      "at": 1792875516466,
+      "actor": "m4",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/f2f70e32-1e60-4181-aee5-77539e9600f7",
+          "added": true,
+          "after": {
+            "requestId": "f2f70e32-1e60-4181-aee5-77539e9600f7",
+            "task": "t10",
+            "taskName": "Clean the fridge",
+            "member": "m4",
+            "memberName": "MK",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792875516465
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t10/completed",
           "before": 0,
           "after": 1
         }
@@ -16757,6 +16799,12 @@
       },
       {
         "at": 1792875514459,
+        "actor": "m4",
+        "action": "complete chore",
+        "week": "w3"
+      },
+      {
+        "at": 1792875516465,
         "actor": "m4",
         "action": "complete chore",
         "week": "w3"
