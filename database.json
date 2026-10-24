@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883399141,
+    "updatedAt": 1792883419808,
     "schemaVersion": 2
   },
   "settings": {
@@ -51,12 +51,13 @@
       "chosenOnly": false
     },
     "m4": {
-      "name": "Person 4",
+      "name": "MK",
       "quota": 4,
       "vacation": {
         "from": "",
         "to": ""
-      }
+      },
+      "chosenOnly": false
     },
     "m5": {
       "name": "Person 5",
@@ -895,9 +896,9 @@
       "resolved": false
     },
     "minimum:w1:m4": {
-      "message": "Person 4 is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
+      "message": "MK is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883399141,
+      "at": 1792883419808,
       "resolved": false
     },
     "minimum:w1:m3": {
@@ -909,7 +910,7 @@
     "minimum:w1:m5": {
       "message": "Person 5 is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883399141,
+      "at": 1792883419808,
       "resolved": false
     }
   },
@@ -2795,6 +2796,40 @@
           "path": "/alerts/minimum:w1:m5/at",
           "before": 1792883391724,
           "after": 1792883399141
+        }
+      ]
+    },
+    {
+      "id": "a56ebee8-bb1b-4155-aa2a-d2c749bb2df7",
+      "at": 1792883419808,
+      "actor": "m3",
+      "admin": true,
+      "action": "edit person",
+      "changes": [
+        {
+          "path": "/members/m4/name",
+          "before": "Person 4",
+          "after": "MK"
+        },
+        {
+          "path": "/members/m4/chosenOnly",
+          "added": true,
+          "after": false
+        },
+        {
+          "path": "/alerts/minimum:w1:m4/message",
+          "before": "Person 4 is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
+          "after": "MK is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override."
+        },
+        {
+          "path": "/alerts/minimum:w1:m4/at",
+          "before": 1792883399141,
+          "after": 1792883419808
+        },
+        {
+          "path": "/alerts/minimum:w1:m5/at",
+          "before": 1792883399141,
+          "after": 1792883419808
         }
       ]
     }
