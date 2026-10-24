@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792856474912
+    "updatedAt": 1792858542410
   },
   "settings": {
     "rateCents": 2000,
@@ -17,7 +17,7 @@
   },
   "members": {
     "m1": {
-      "name": "Person 1",
+      "name": "The Muffin Man",
       "quota": 4,
       "vacation": {
         "from": "",
