@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883643313,
+    "updatedAt": 1792883651915,
     "schemaVersion": 2
   },
   "settings": {
@@ -301,7 +301,7 @@
         "member": "m3",
         "week": "w1",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "selected"
       }
     },
     "t14": {
@@ -540,7 +540,8 @@
     "m1": [],
     "m2": [],
     "m3": [
-      "t05"
+      "t05",
+      "t13"
     ],
     "m4": [
       "t06",
@@ -569,6 +570,10 @@
         "member": "m3",
         "kind": "selected"
       },
+      "t13": {
+        "member": "m3",
+        "kind": "selected"
+      },
       "t06": {
         "member": "m4",
         "kind": "selected"
@@ -592,6 +597,10 @@
         "kind": "bonus"
       },
       "t05": {
+        "member": "m3",
+        "kind": "selected"
+      },
+      "t13": {
         "member": "m3",
         "kind": "selected"
       },
@@ -746,7 +755,7 @@
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "selected",
           "completed": 0
         },
         "t14": {
@@ -871,13 +880,13 @@
     "minimum:w1:m3": {
       "message": "AW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883643313,
+      "at": 1792883651915,
       "resolved": false
     },
     "minimum:w1:m5": {
       "message": "MW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883643313,
+      "at": 1792883651915,
       "resolved": false
     }
   },
@@ -916,7 +925,7 @@
     "m3": {
       "selected": [
         "t05",
-        null,
+        "t13",
         null,
         null
       ],
@@ -4214,6 +4223,76 @@
           "path": "/alerts/minimum:w1:m5/at",
           "before": 1792883590363,
           "after": 1792883643313
+        }
+      ]
+    },
+    {
+      "id": "33e4754b-b24f-46ca-9a76-d0163f368a87",
+      "at": 1792883651915,
+      "actor": "m3",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t13/claim/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/preferences/m3",
+          "before": [
+            "t05"
+          ],
+          "after": [
+            "t05",
+            "t13"
+          ]
+        },
+        {
+          "path": "/slotLayout/m3/selected",
+          "before": [
+            "t05",
+            null,
+            null,
+            null
+          ],
+          "after": [
+            "t05",
+            "t13",
+            null,
+            null
+          ]
+        },
+        {
+          "path": "/plans/2026-10-19/t13",
+          "added": true,
+          "after": {
+            "member": "m3",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-26/t13",
+          "added": true,
+          "after": {
+            "member": "m3",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w1/assignments/t13/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/alerts/minimum:w1:m3/at",
+          "before": 1792883643313,
+          "after": 1792883651915
+        },
+        {
+          "path": "/alerts/minimum:w1:m5/at",
+          "before": 1792883643313,
+          "after": 1792883651915
         }
       ]
     }
