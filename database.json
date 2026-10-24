@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883215176,
+    "updatedAt": 1792883220580,
     "schemaVersion": 2
   },
   "settings": {
@@ -818,19 +818,19 @@
     "minimum:w1:m4": {
       "message": "Person 4 is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883215176,
+      "at": 1792883220580,
       "resolved": false
     },
     "minimum:w1:m3": {
       "message": "Person 3 is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883215176,
+      "at": 1792883220580,
       "resolved": false
     },
     "minimum:w1:m5": {
       "message": "Person 5 is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883215176,
+      "at": 1792883220580,
       "resolved": false
     }
   },
@@ -1571,6 +1571,30 @@
           "path": "/alerts/minimum:w1:m5/at",
           "before": 1792883208293,
           "after": 1792883215176
+        }
+      ]
+    },
+    {
+      "id": "d50ae69f-d8b1-4419-bf2c-e040aeeda998",
+      "at": 1792883220580,
+      "actor": "m2",
+      "admin": true,
+      "action": "edit chore",
+      "changes": [
+        {
+          "path": "/alerts/minimum:w1:m4/at",
+          "before": 1792883215176,
+          "after": 1792883220580
+        },
+        {
+          "path": "/alerts/minimum:w1:m3/at",
+          "before": 1792883215176,
+          "after": 1792883220580
+        },
+        {
+          "path": "/alerts/minimum:w1:m5/at",
+          "before": 1792883215176,
+          "after": 1792883220580
         }
       ]
     }
