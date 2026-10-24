@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792873854901,
+    "updatedAt": 1792874248438,
     "schemaVersion": 2
   },
   "settings": {
@@ -1965,9 +1965,17 @@
       "difficulty": "Medium",
       "required": 1,
       "completed": 0,
-      "status": "outstanding",
+      "status": "resolved",
       "category": "missed_active",
-      "events": []
+      "events": [
+        {
+          "at": 1792874248437,
+          "status": "resolved",
+          "note": "",
+          "member": "",
+          "actor": "m5"
+        }
+      ]
     },
     "w3:excluded:t20": {
       "id": "w3:excluded:t20",
@@ -6468,6 +6476,33 @@
             "reason": "Archived by admin",
             "events": []
           }
+        }
+      ]
+    },
+    {
+      "id": "6ba4ab27-d6c2-4b12-b6e9-beea63df46f3",
+      "at": 1792874248438,
+      "actor": "m5",
+      "admin": true,
+      "action": "resolve incomplete",
+      "changes": [
+        {
+          "path": "/incomplete/w3:t23/status",
+          "before": "outstanding",
+          "after": "resolved"
+        },
+        {
+          "path": "/incomplete/w3:t23/events",
+          "before": [],
+          "after": [
+            {
+              "at": 1792874248437,
+              "status": "resolved",
+              "note": "",
+              "member": "",
+              "actor": "m5"
+            }
+          ]
         }
       ]
     }
@@ -11605,6 +11640,12 @@
         "week": "w4",
         "start": "2026-10-26",
         "no": 4
+      },
+      {
+        "at": 1792874248437,
+        "actor": "m5",
+        "action": "resolve incomplete",
+        "week": "w4"
       }
     ],
     "lastAction": "Advanced 1 week"
