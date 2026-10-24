@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792872661758,
+    "updatedAt": 1792872754845,
     "schemaVersion": 2
   },
   "settings": {
@@ -779,6 +779,18 @@
       "kind": "regular",
       "points": 5,
       "at": 1792860827723
+    },
+    "d867d050-657e-4b05-97fe-939194aaede7": {
+      "requestId": "d867d050-657e-4b05-97fe-939194aaede7",
+      "task": "t02",
+      "taskName": "Kitchen counters and table",
+      "member": "m5",
+      "memberName": "MW",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792872754844
     }
   },
   "pointLedger": {
@@ -1037,7 +1049,7 @@
           "required": 1,
           "workload": 2,
           "kind": "legacy",
-          "completed": 0
+          "completed": 1
         },
         "t03": {
           "task": "t03",
@@ -4091,6 +4103,36 @@
             "member": "m1",
             "kind": "selected"
           }
+        }
+      ]
+    },
+    {
+      "id": "fcb8c00e-b5d6-42c8-a1ed-a7737201265c",
+      "at": 1792872754845,
+      "actor": "m5",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/d867d050-657e-4b05-97fe-939194aaede7",
+          "added": true,
+          "after": {
+            "requestId": "d867d050-657e-4b05-97fe-939194aaede7",
+            "task": "t02",
+            "taskName": "Kitchen counters and table",
+            "member": "m5",
+            "memberName": "MW",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792872754844
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t02/completed",
+          "before": 0,
+          "after": 1
         }
       ]
     }
