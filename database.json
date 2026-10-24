@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883590363,
+    "updatedAt": 1792883628700,
     "schemaVersion": 2
   },
   "settings": {
@@ -244,10 +244,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m3",
+        "member": "m4",
         "week": "w1",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "bonus"
       }
     },
     "t11": {
@@ -552,7 +552,9 @@
     "m1": [],
     "m2": [],
     "m3": [],
-    "m4": [],
+    "m4": [
+      "t10"
+    ],
     "m5": []
   },
   "plans": {
@@ -575,6 +577,10 @@
       }
     },
     "2026-10-26": {
+      "t10": {
+        "member": "m4",
+        "kind": "bonus"
+      },
       "t06": {
         "member": "m4",
         "kind": "selected"
@@ -692,11 +698,11 @@
         "t10": {
           "task": "t10",
           "taskName": "Clean the fridge",
-          "member": "m3",
+          "member": "m4",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "bonus",
           "completed": 0
         },
         "t11": {
@@ -871,7 +877,9 @@
       }
     }
   },
-  "bonusSlotEnabled": {},
+  "bonusSlotEnabled": {
+    "m4": true
+  },
   "slotLayout": {
     "m2": {
       "selected": [
@@ -4039,6 +4047,67 @@
           "after": 1792883590363
         }
       ]
+    },
+    {
+      "id": "3bd8d53d-71f6-4411-9db3-a458f128bcec",
+      "at": 1792883628700,
+      "actor": "m4",
+      "admin": false,
+      "action": "take bonus chore",
+      "changes": [
+        {
+          "path": "/tasks/t10/claim/member",
+          "before": "m3",
+          "after": "m4"
+        },
+        {
+          "path": "/tasks/t10/claim/kind",
+          "before": "automatic",
+          "after": "bonus"
+        },
+        {
+          "path": "/bonusPreferences/m4",
+          "before": [],
+          "after": [
+            "t10"
+          ]
+        },
+        {
+          "path": "/bonusSlotEnabled/m4",
+          "added": true,
+          "after": true
+        },
+        {
+          "path": "/permanentBonus/t10",
+          "added": true,
+          "after": {
+            "member": "m4",
+            "controller": "m4",
+            "source": "controlled_gift",
+            "originalMember": "m3",
+            "createdAt": 1792883628700,
+            "updatedAt": 1792883628700
+          }
+        },
+        {
+          "path": "/plans/2026-10-26/t10",
+          "added": true,
+          "after": {
+            "member": "m4",
+            "kind": "bonus"
+          }
+        },
+        {
+          "path": "/weeks/w1/assignments/t10/member",
+          "before": "m3",
+          "after": "m4"
+        },
+        {
+          "path": "/weeks/w1/assignments/t10/kind",
+          "before": "automatic",
+          "after": "bonus"
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -4507,9 +4576,37 @@
       "reason": "Admin applied saved chosen tasks",
       "at": 1792883508386,
       "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t10",
+      "before": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m4",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "bonus"
+      },
+      "reason": "take bonus chore",
+      "at": 1792883628700,
+      "actor": "m4"
     }
   ],
-  "permanentBonus": {},
+  "permanentBonus": {
+    "t10": {
+      "member": "m4",
+      "controller": "m4",
+      "source": "controlled_gift",
+      "originalMember": "m3",
+      "createdAt": 1792883628700,
+      "updatedAt": 1792883628700
+    }
+  },
   "bonusRequests": {},
   "schemaVersion": 2,
   "commitmentRulesVersion": 3,
