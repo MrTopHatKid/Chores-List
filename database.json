@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792858542410
+    "updatedAt": 1792858554974
   },
   "settings": {
     "rateCents": 2000,
@@ -25,7 +25,7 @@
       }
     },
     "m2": {
-      "name": "Person 2",
+      "name": "Ke",
       "quota": 4,
       "vacation": {
         "from": "",
