@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792877214766,
+    "updatedAt": 1792877592005,
     "schemaVersion": 2
   },
   "settings": {
@@ -24312,6 +24312,14 @@
           }
         }
       ]
+    },
+    {
+      "id": "76a61a93-8bf7-4a33-a5e9-0a6c93b90252",
+      "at": 1792877592005,
+      "actor": "m1",
+      "admin": true,
+      "action": "edit person",
+      "changes": []
     }
   ],
   "vacationHistory": [],
@@ -48904,6 +48912,12 @@
         "week": "w4",
         "start": "2026-10-26",
         "no": 4
+      },
+      {
+        "at": 1792877592004,
+        "actor": "m1",
+        "action": "edit person",
+        "week": "w4"
       }
     ],
     "lastAction": "Advanced 1 week"
