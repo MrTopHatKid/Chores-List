@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792852928644
+    "updatedAt": 1792852931130
   },
   "settings": {
     "rateCents": 2000,
@@ -314,5 +314,18 @@
       "order": 28
     }
   },
-  "completions": {}
+  "completions": {
+    "e5530493-c825-47e3-9a05-331db7d35b25": {
+      "requestId": "e5530493-c825-47e3-9a05-331db7d35b25",
+      "task": "t01",
+      "taskName": "Upstairs towels, bath mat and cloths",
+      "member": "m4",
+      "memberName": "Person 4",
+      "week": "w1",
+      "weekStart": "2026-10-19",
+      "kind": "regular",
+      "points": 2,
+      "at": 1792852931130
+    }
+  }
 }
