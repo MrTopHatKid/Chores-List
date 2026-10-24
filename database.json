@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792860787520
+    "updatedAt": 1792860790375
   },
   "settings": {
     "rateCents": 2000,
@@ -594,6 +594,18 @@
       "kind": "regular",
       "points": 4,
       "at": 1792860783133
+    },
+    "cbff9f4d-1799-4ced-8d1a-0ae8abfa5582": {
+      "requestId": "cbff9f4d-1799-4ced-8d1a-0ae8abfa5582",
+      "task": "t18",
+      "taskName": "Collect indoor garbage",
+      "member": "m2",
+      "memberName": "Ke",
+      "week": "w1",
+      "weekStart": "2026-10-19",
+      "kind": "regular",
+      "points": 3,
+      "at": 1792860790375
     }
   }
 }
