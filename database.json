@@ -1,6 +1,7 @@
 {
   "meta": {
-    "updatedAt": 1792867274708
+    "updatedAt": 1792871256430,
+    "schemaVersion": 2
   },
   "settings": {
     "rateCents": 2000,
@@ -13,7 +14,8 @@
     "weekStart": "2026-10-24",
     "autoReset": false,
     "resetWeekday": 1,
-    "assignedWeek": "w3"
+    "assignedWeek": "w3",
+    "timezone": "America/Toronto"
   },
   "members": {
     "m1": {
@@ -65,7 +67,16 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 1
+      "order": 1,
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1,
+      "claim": {
+        "member": "m4",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      }
     },
     "t02": {
       "name": "Kitchen counters and table",
@@ -77,8 +88,13 @@
       "order": 2,
       "claim": {
         "member": "m5",
-        "week": "w3"
-      }
+        "week": "w3",
+        "mandatory": true,
+        "kind": "legacy"
+      },
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1
     },
     "t03": {
       "name": "Downstairs hallway",
@@ -87,7 +103,16 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 3
+      "order": 3,
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1,
+      "claim": {
+        "member": "m4",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      }
     },
     "t04": {
       "name": "Upstairs hallway",
@@ -96,7 +121,16 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 4
+      "order": 4,
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1,
+      "claim": {
+        "member": "m1",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      }
     },
     "t05": {
       "name": "Air fryers, microwave and toaster",
@@ -105,7 +139,16 @@
       "points": 3,
       "max": 1,
       "active": true,
-      "order": 5
+      "order": 5,
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1,
+      "claim": {
+        "member": "m4",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      }
     },
     "t06": {
       "name": "Stove, fridge exterior and kitchen island",
@@ -117,8 +160,13 @@
       "order": 6,
       "claim": {
         "member": "m5",
-        "week": "w3"
-      }
+        "week": "w3",
+        "mandatory": true,
+        "kind": "legacy"
+      },
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1
     },
     "t07": {
       "name": "Kitchen floor",
@@ -130,8 +178,13 @@
       "order": 7,
       "claim": {
         "member": "m5",
-        "week": "w3"
-      }
+        "week": "w3",
+        "mandatory": true,
+        "kind": "legacy"
+      },
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1
     },
     "t08": {
       "name": "Brush the dog",
@@ -140,7 +193,16 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 8
+      "order": 8,
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1,
+      "claim": {
+        "member": "m2",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      }
     },
     "t09": {
       "name": "Pick up dog poop",
@@ -149,7 +211,16 @@
       "points": 3,
       "max": 1,
       "active": true,
-      "order": 9
+      "order": 9,
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1,
+      "claim": {
+        "member": "m1",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      }
     },
     "t10": {
       "name": "Clean the fridge",
@@ -158,7 +229,16 @@
       "points": 5,
       "max": 1,
       "active": true,
-      "order": 10
+      "order": 10,
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1,
+      "claim": {
+        "member": "m5",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      }
     },
     "t12": {
       "name": "Middle flight of stairs",
@@ -167,7 +247,16 @@
       "points": 3,
       "max": 1,
       "active": true,
-      "order": 12
+      "order": 12,
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1,
+      "claim": {
+        "member": "m2",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      }
     },
     "t13": {
       "name": "Upstairs bathroom",
@@ -176,7 +265,16 @@
       "points": 4,
       "max": 1,
       "active": true,
-      "order": 13
+      "order": 13,
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1,
+      "claim": {
+        "member": "m3",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      }
     },
     "t14": {
       "name": "Downstairs bathroom",
@@ -189,8 +287,12 @@
       "claim": {
         "member": "m3",
         "week": "w3",
-        "mandatory": true
-      }
+        "mandatory": true,
+        "kind": "legacy"
+      },
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1
     },
     "t15": {
       "name": "Bathtub / shower",
@@ -203,8 +305,12 @@
       "claim": {
         "member": "m4",
         "week": "w3",
-        "mandatory": true
-      }
+        "mandatory": true,
+        "kind": "legacy"
+      },
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1
     },
     "t16": {
       "name": "Laundry machines and top",
@@ -217,8 +323,12 @@
       "claim": {
         "member": "m1",
         "week": "w3",
-        "mandatory": true
-      }
+        "mandatory": true,
+        "kind": "legacy"
+      },
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1
     },
     "t17": {
       "name": "Take out garbage and recycling",
@@ -231,8 +341,12 @@
       "claim": {
         "member": "m2",
         "week": "w3",
-        "mandatory": true
-      }
+        "mandatory": true,
+        "kind": "legacy"
+      },
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1
     },
     "t18": {
       "name": "Collect indoor garbage",
@@ -241,7 +355,16 @@
       "points": 3,
       "max": 1,
       "active": true,
-      "order": 18
+      "order": 18,
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1,
+      "claim": {
+        "member": "m3",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      }
     },
     "t19": {
       "name": "Load the dishwasher",
@@ -250,7 +373,16 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 19
+      "order": 19,
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1,
+      "claim": {
+        "member": "m1",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      }
     },
     "t20": {
       "name": "Unload the dishwasher",
@@ -259,7 +391,16 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 20
+      "order": 20,
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1,
+      "claim": {
+        "member": "m2",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      }
     },
     "t21": {
       "name": "All bathroom mirrors",
@@ -268,7 +409,16 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 21
+      "order": 21,
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1,
+      "claim": {
+        "member": "m5",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      }
     },
     "t22": {
       "name": "Dust shared areas",
@@ -277,7 +427,16 @@
       "points": 4,
       "max": 1,
       "active": true,
-      "order": 22
+      "order": 22,
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1,
+      "claim": {
+        "member": "m3",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      }
     },
     "t23": {
       "name": "Windows and sliding door",
@@ -286,7 +445,16 @@
       "points": 4,
       "max": 1,
       "active": true,
-      "order": 23
+      "order": 23,
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1,
+      "claim": {
+        "member": "m3",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      }
     },
     "t24": {
       "name": "Rake / collect leaves",
@@ -295,7 +463,10 @@
       "points": 4,
       "max": 1,
       "active": true,
-      "order": 24
+      "order": 24,
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1
     },
     "t25": {
       "name": "Shovel snow",
@@ -304,7 +475,10 @@
       "points": 5,
       "max": 1,
       "active": true,
-      "order": 25
+      "order": 25,
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1
     },
     "t26": {
       "name": "Mow the lawn",
@@ -313,7 +487,10 @@
       "points": 5,
       "max": 1,
       "active": true,
-      "order": 26
+      "order": 26,
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1
     },
     "t27": {
       "name": "Pull weeds",
@@ -322,7 +499,10 @@
       "points": 3,
       "max": 1,
       "active": true,
-      "order": 27
+      "order": 27,
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1
     },
     "t28": {
       "name": "Trim hedges",
@@ -331,7 +511,10 @@
       "points": 4,
       "max": 1,
       "active": true,
-      "order": 28
+      "order": 28,
+      "difficulty": "Medium",
+      "every": 1,
+      "startWeek": 1
     }
   },
   "completions": {
@@ -694,5 +877,1336 @@
       }
     },
     "persisted": true
-  }
+  },
+  "preferences": {
+    "m1": [],
+    "m2": [],
+    "m3": [],
+    "m4": [],
+    "m5": []
+  },
+  "bonusPreferences": {
+    "m1": [],
+    "m2": [],
+    "m3": [],
+    "m4": [],
+    "m5": []
+  },
+  "plans": {
+    "2026-10-24": {},
+    "2026-10-26": {}
+  },
+  "weeks": {
+    "w3": {
+      "id": "w3",
+      "start": "2026-10-24",
+      "no": 3,
+      "assignments": {
+        "t01": {
+          "task": "t01",
+          "taskName": "Upstairs towels, bath mat and cloths",
+          "member": "m4",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
+        },
+        "t02": {
+          "task": "t02",
+          "taskName": "Kitchen counters and table",
+          "member": "m5",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "legacy",
+          "completed": 0
+        },
+        "t03": {
+          "task": "t03",
+          "taskName": "Downstairs hallway",
+          "member": "m4",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
+        },
+        "t04": {
+          "task": "t04",
+          "taskName": "Upstairs hallway",
+          "member": "m1",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
+        },
+        "t05": {
+          "task": "t05",
+          "taskName": "Air fryers, microwave and toaster",
+          "member": "m4",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
+        },
+        "t06": {
+          "task": "t06",
+          "taskName": "Stove, fridge exterior and kitchen island",
+          "member": "m5",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "legacy",
+          "completed": 0
+        },
+        "t07": {
+          "task": "t07",
+          "taskName": "Kitchen floor",
+          "member": "m5",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "legacy",
+          "completed": 0
+        },
+        "t08": {
+          "task": "t08",
+          "taskName": "Brush the dog",
+          "member": "m2",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
+        },
+        "t09": {
+          "task": "t09",
+          "taskName": "Pick up dog poop",
+          "member": "m1",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
+        },
+        "t10": {
+          "task": "t10",
+          "taskName": "Clean the fridge",
+          "member": "m5",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
+        },
+        "t12": {
+          "task": "t12",
+          "taskName": "Middle flight of stairs",
+          "member": "m2",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
+        },
+        "t13": {
+          "task": "t13",
+          "taskName": "Upstairs bathroom",
+          "member": "m3",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
+        },
+        "t14": {
+          "task": "t14",
+          "taskName": "Downstairs bathroom",
+          "member": "m3",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "legacy",
+          "completed": 0
+        },
+        "t15": {
+          "task": "t15",
+          "taskName": "Bathtub / shower",
+          "member": "m4",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "legacy",
+          "completed": 0
+        },
+        "t16": {
+          "task": "t16",
+          "taskName": "Laundry machines and top",
+          "member": "m1",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "legacy",
+          "completed": 0
+        },
+        "t17": {
+          "task": "t17",
+          "taskName": "Take out garbage and recycling",
+          "member": "m2",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "legacy",
+          "completed": 0
+        },
+        "t18": {
+          "task": "t18",
+          "taskName": "Collect indoor garbage",
+          "member": "m3",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
+        },
+        "t19": {
+          "task": "t19",
+          "taskName": "Load the dishwasher",
+          "member": "m1",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
+        },
+        "t20": {
+          "task": "t20",
+          "taskName": "Unload the dishwasher",
+          "member": "m2",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
+        },
+        "t21": {
+          "task": "t21",
+          "taskName": "All bathroom mirrors",
+          "member": "m5",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
+        },
+        "t22": {
+          "task": "t22",
+          "taskName": "Dust shared areas",
+          "member": "m3",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
+        },
+        "t23": {
+          "task": "t23",
+          "taskName": "Windows and sliding door",
+          "member": "m3",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
+        }
+      },
+      "excluded": {},
+      "bonusUsers": [],
+      "generated": true,
+      "closed": false,
+      "generatedAt": 1792871256429
+    }
+  },
+  "incomplete": {},
+  "alerts": {},
+  "audit": [
+    {
+      "id": "f493b19e-02e8-49d8-8d4e-4a07cd7e7a6e",
+      "at": 1792871256430,
+      "actor": "m3",
+      "admin": false,
+      "action": "weekly assignments",
+      "changes": {
+        "tasks": {
+          "before": {
+            "t01": {
+              "name": "Upstairs towels, bath mat and cloths",
+              "desc": "Wash and replace towels, bath mat and cleaning cloths.",
+              "kind": "regular",
+              "points": 2,
+              "max": 1,
+              "active": true,
+              "order": 1,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t02": {
+              "name": "Kitchen counters and table",
+              "desc": "Wipe and sanitize counters and dining table.",
+              "kind": "regular",
+              "points": 2,
+              "max": 1,
+              "active": true,
+              "order": 2,
+              "claim": {
+                "member": "m5",
+                "week": "w3"
+              },
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t03": {
+              "name": "Downstairs hallway",
+              "desc": "Tidy and vacuum/sweep the hallway.",
+              "kind": "regular",
+              "points": 2,
+              "max": 1,
+              "active": true,
+              "order": 3,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t04": {
+              "name": "Upstairs hallway",
+              "desc": "Tidy and vacuum/sweep the hallway.",
+              "kind": "regular",
+              "points": 2,
+              "max": 1,
+              "active": true,
+              "order": 4,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t05": {
+              "name": "Air fryers, microwave and toaster",
+              "desc": "Clean appliance interiors/exteriors as appropriate; unplug toaster first.",
+              "kind": "regular",
+              "points": 3,
+              "max": 1,
+              "active": true,
+              "order": 5,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t06": {
+              "name": "Stove, fridge exterior and kitchen island",
+              "desc": "Clean the stovetop and wipe the fridge exterior and island.",
+              "kind": "regular",
+              "points": 3,
+              "max": 1,
+              "active": true,
+              "order": 6,
+              "claim": {
+                "member": "m5",
+                "week": "w3"
+              },
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t07": {
+              "name": "Kitchen floor",
+              "desc": "Sweep and mop.",
+              "kind": "regular",
+              "points": 3,
+              "max": 1,
+              "active": true,
+              "order": 7,
+              "claim": {
+                "member": "m5",
+                "week": "w3"
+              },
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t08": {
+              "name": "Brush the dog",
+              "desc": "Brush coat and tidy up loose fur.",
+              "kind": "regular",
+              "points": 2,
+              "max": 1,
+              "active": true,
+              "order": 8,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t09": {
+              "name": "Pick up dog poop",
+              "desc": "Collect waste from the yard and dispose of it safely.",
+              "kind": "regular",
+              "points": 3,
+              "max": 1,
+              "active": true,
+              "order": 9,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t10": {
+              "name": "Clean the fridge",
+              "desc": "Remove expired food and wipe shelves and drawers.",
+              "kind": "regular",
+              "points": 5,
+              "max": 1,
+              "active": true,
+              "order": 10,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t12": {
+              "name": "Middle flight of stairs",
+              "desc": "Clear items and vacuum/sweep the stairs.",
+              "kind": "regular",
+              "points": 3,
+              "max": 1,
+              "active": true,
+              "order": 12,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t13": {
+              "name": "Upstairs bathroom",
+              "desc": "Clean toilet, sink and counter; tidy up and replace toilet paper.",
+              "kind": "regular",
+              "points": 4,
+              "max": 1,
+              "active": true,
+              "order": 13,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t14": {
+              "name": "Downstairs bathroom",
+              "desc": "Clean toilet, sink and counter; tidy up and replace toilet paper.",
+              "kind": "regular",
+              "points": 4,
+              "max": 1,
+              "active": true,
+              "order": 14,
+              "claim": {
+                "member": "m3",
+                "week": "w3",
+                "mandatory": true
+              },
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t15": {
+              "name": "Bathtub / shower",
+              "desc": "Scrub the tub/shower and rinse away residue.",
+              "kind": "regular",
+              "points": 4,
+              "max": 1,
+              "active": true,
+              "order": 15,
+              "claim": {
+                "member": "m4",
+                "week": "w3",
+                "mandatory": true
+              },
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t16": {
+              "name": "Laundry machines and top",
+              "desc": "Wipe washer/dryer exteriors and the top surface.",
+              "kind": "regular",
+              "points": 3,
+              "max": 1,
+              "active": true,
+              "order": 16,
+              "claim": {
+                "member": "m1",
+                "week": "w3",
+                "mandatory": true
+              },
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t17": {
+              "name": "Take out garbage and recycling",
+              "desc": "Take household bins to the appropriate collection area.",
+              "kind": "regular",
+              "points": 2,
+              "max": 1,
+              "active": true,
+              "order": 17,
+              "claim": {
+                "member": "m2",
+                "week": "w3",
+                "mandatory": true
+              },
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t18": {
+              "name": "Collect indoor garbage",
+              "desc": "Empty garbage bins throughout the house and replace liners as needed.",
+              "kind": "regular",
+              "points": 3,
+              "max": 1,
+              "active": true,
+              "order": 18,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t19": {
+              "name": "Load the dishwasher",
+              "desc": "Load dirty dishes and start it if appropriate.",
+              "kind": "regular",
+              "points": 2,
+              "max": 1,
+              "active": true,
+              "order": 19,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t20": {
+              "name": "Unload the dishwasher",
+              "desc": "Put clean dishes away.",
+              "kind": "regular",
+              "points": 2,
+              "max": 1,
+              "active": true,
+              "order": 20,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t21": {
+              "name": "All bathroom mirrors",
+              "desc": "Clean mirrors without leaving streaks.",
+              "kind": "regular",
+              "points": 2,
+              "max": 1,
+              "active": true,
+              "order": 21,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t22": {
+              "name": "Dust shared areas",
+              "desc": "Dust tables and surfaces in the main hallway and the hallway toward the downstairs bathroom.",
+              "kind": "regular",
+              "points": 4,
+              "max": 1,
+              "active": true,
+              "order": 22,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t23": {
+              "name": "Windows and sliding door",
+              "desc": "Clean accessible windows and focus on the sliding glass door.",
+              "kind": "regular",
+              "points": 4,
+              "max": 1,
+              "active": true,
+              "order": 23,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t24": {
+              "name": "Rake / collect leaves",
+              "desc": "Seasonal yard cleanup.",
+              "kind": "paid",
+              "points": 4,
+              "max": 1,
+              "active": true,
+              "order": 24,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t25": {
+              "name": "Shovel snow",
+              "desc": "Clear snow from agreed paths and entrance.",
+              "kind": "paid",
+              "points": 5,
+              "max": 1,
+              "active": true,
+              "order": 25,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t26": {
+              "name": "Mow the lawn",
+              "desc": "Mow lawn when needed and conditions allow.",
+              "kind": "paid",
+              "points": 5,
+              "max": 1,
+              "active": true,
+              "order": 26,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t27": {
+              "name": "Pull weeds",
+              "desc": "Pull weeds from agreed garden/yard areas.",
+              "kind": "paid",
+              "points": 3,
+              "max": 1,
+              "active": true,
+              "order": 27,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t28": {
+              "name": "Trim hedges",
+              "desc": "Trim hedges where safe and appropriate.",
+              "kind": "paid",
+              "points": 4,
+              "max": 1,
+              "active": true,
+              "order": 28,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            }
+          },
+          "after": {
+            "t01": {
+              "name": "Upstairs towels, bath mat and cloths",
+              "desc": "Wash and replace towels, bath mat and cleaning cloths.",
+              "kind": "regular",
+              "points": 2,
+              "max": 1,
+              "active": true,
+              "order": 1,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1,
+              "claim": {
+                "member": "m4",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "automatic"
+              }
+            },
+            "t02": {
+              "name": "Kitchen counters and table",
+              "desc": "Wipe and sanitize counters and dining table.",
+              "kind": "regular",
+              "points": 2,
+              "max": 1,
+              "active": true,
+              "order": 2,
+              "claim": {
+                "member": "m5",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "legacy"
+              },
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t03": {
+              "name": "Downstairs hallway",
+              "desc": "Tidy and vacuum/sweep the hallway.",
+              "kind": "regular",
+              "points": 2,
+              "max": 1,
+              "active": true,
+              "order": 3,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1,
+              "claim": {
+                "member": "m4",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "automatic"
+              }
+            },
+            "t04": {
+              "name": "Upstairs hallway",
+              "desc": "Tidy and vacuum/sweep the hallway.",
+              "kind": "regular",
+              "points": 2,
+              "max": 1,
+              "active": true,
+              "order": 4,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1,
+              "claim": {
+                "member": "m1",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "automatic"
+              }
+            },
+            "t05": {
+              "name": "Air fryers, microwave and toaster",
+              "desc": "Clean appliance interiors/exteriors as appropriate; unplug toaster first.",
+              "kind": "regular",
+              "points": 3,
+              "max": 1,
+              "active": true,
+              "order": 5,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1,
+              "claim": {
+                "member": "m4",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "automatic"
+              }
+            },
+            "t06": {
+              "name": "Stove, fridge exterior and kitchen island",
+              "desc": "Clean the stovetop and wipe the fridge exterior and island.",
+              "kind": "regular",
+              "points": 3,
+              "max": 1,
+              "active": true,
+              "order": 6,
+              "claim": {
+                "member": "m5",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "legacy"
+              },
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t07": {
+              "name": "Kitchen floor",
+              "desc": "Sweep and mop.",
+              "kind": "regular",
+              "points": 3,
+              "max": 1,
+              "active": true,
+              "order": 7,
+              "claim": {
+                "member": "m5",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "legacy"
+              },
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t08": {
+              "name": "Brush the dog",
+              "desc": "Brush coat and tidy up loose fur.",
+              "kind": "regular",
+              "points": 2,
+              "max": 1,
+              "active": true,
+              "order": 8,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1,
+              "claim": {
+                "member": "m2",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "automatic"
+              }
+            },
+            "t09": {
+              "name": "Pick up dog poop",
+              "desc": "Collect waste from the yard and dispose of it safely.",
+              "kind": "regular",
+              "points": 3,
+              "max": 1,
+              "active": true,
+              "order": 9,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1,
+              "claim": {
+                "member": "m1",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "automatic"
+              }
+            },
+            "t10": {
+              "name": "Clean the fridge",
+              "desc": "Remove expired food and wipe shelves and drawers.",
+              "kind": "regular",
+              "points": 5,
+              "max": 1,
+              "active": true,
+              "order": 10,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1,
+              "claim": {
+                "member": "m5",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "automatic"
+              }
+            },
+            "t12": {
+              "name": "Middle flight of stairs",
+              "desc": "Clear items and vacuum/sweep the stairs.",
+              "kind": "regular",
+              "points": 3,
+              "max": 1,
+              "active": true,
+              "order": 12,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1,
+              "claim": {
+                "member": "m2",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "automatic"
+              }
+            },
+            "t13": {
+              "name": "Upstairs bathroom",
+              "desc": "Clean toilet, sink and counter; tidy up and replace toilet paper.",
+              "kind": "regular",
+              "points": 4,
+              "max": 1,
+              "active": true,
+              "order": 13,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1,
+              "claim": {
+                "member": "m3",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "automatic"
+              }
+            },
+            "t14": {
+              "name": "Downstairs bathroom",
+              "desc": "Clean toilet, sink and counter; tidy up and replace toilet paper.",
+              "kind": "regular",
+              "points": 4,
+              "max": 1,
+              "active": true,
+              "order": 14,
+              "claim": {
+                "member": "m3",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "legacy"
+              },
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t15": {
+              "name": "Bathtub / shower",
+              "desc": "Scrub the tub/shower and rinse away residue.",
+              "kind": "regular",
+              "points": 4,
+              "max": 1,
+              "active": true,
+              "order": 15,
+              "claim": {
+                "member": "m4",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "legacy"
+              },
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t16": {
+              "name": "Laundry machines and top",
+              "desc": "Wipe washer/dryer exteriors and the top surface.",
+              "kind": "regular",
+              "points": 3,
+              "max": 1,
+              "active": true,
+              "order": 16,
+              "claim": {
+                "member": "m1",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "legacy"
+              },
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t17": {
+              "name": "Take out garbage and recycling",
+              "desc": "Take household bins to the appropriate collection area.",
+              "kind": "regular",
+              "points": 2,
+              "max": 1,
+              "active": true,
+              "order": 17,
+              "claim": {
+                "member": "m2",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "legacy"
+              },
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t18": {
+              "name": "Collect indoor garbage",
+              "desc": "Empty garbage bins throughout the house and replace liners as needed.",
+              "kind": "regular",
+              "points": 3,
+              "max": 1,
+              "active": true,
+              "order": 18,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1,
+              "claim": {
+                "member": "m3",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "automatic"
+              }
+            },
+            "t19": {
+              "name": "Load the dishwasher",
+              "desc": "Load dirty dishes and start it if appropriate.",
+              "kind": "regular",
+              "points": 2,
+              "max": 1,
+              "active": true,
+              "order": 19,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1,
+              "claim": {
+                "member": "m1",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "automatic"
+              }
+            },
+            "t20": {
+              "name": "Unload the dishwasher",
+              "desc": "Put clean dishes away.",
+              "kind": "regular",
+              "points": 2,
+              "max": 1,
+              "active": true,
+              "order": 20,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1,
+              "claim": {
+                "member": "m2",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "automatic"
+              }
+            },
+            "t21": {
+              "name": "All bathroom mirrors",
+              "desc": "Clean mirrors without leaving streaks.",
+              "kind": "regular",
+              "points": 2,
+              "max": 1,
+              "active": true,
+              "order": 21,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1,
+              "claim": {
+                "member": "m5",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "automatic"
+              }
+            },
+            "t22": {
+              "name": "Dust shared areas",
+              "desc": "Dust tables and surfaces in the main hallway and the hallway toward the downstairs bathroom.",
+              "kind": "regular",
+              "points": 4,
+              "max": 1,
+              "active": true,
+              "order": 22,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1,
+              "claim": {
+                "member": "m3",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "automatic"
+              }
+            },
+            "t23": {
+              "name": "Windows and sliding door",
+              "desc": "Clean accessible windows and focus on the sliding glass door.",
+              "kind": "regular",
+              "points": 4,
+              "max": 1,
+              "active": true,
+              "order": 23,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1,
+              "claim": {
+                "member": "m3",
+                "week": "w3",
+                "mandatory": true,
+                "kind": "automatic"
+              }
+            },
+            "t24": {
+              "name": "Rake / collect leaves",
+              "desc": "Seasonal yard cleanup.",
+              "kind": "paid",
+              "points": 4,
+              "max": 1,
+              "active": true,
+              "order": 24,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t25": {
+              "name": "Shovel snow",
+              "desc": "Clear snow from agreed paths and entrance.",
+              "kind": "paid",
+              "points": 5,
+              "max": 1,
+              "active": true,
+              "order": 25,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t26": {
+              "name": "Mow the lawn",
+              "desc": "Mow lawn when needed and conditions allow.",
+              "kind": "paid",
+              "points": 5,
+              "max": 1,
+              "active": true,
+              "order": 26,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t27": {
+              "name": "Pull weeds",
+              "desc": "Pull weeds from agreed garden/yard areas.",
+              "kind": "paid",
+              "points": 3,
+              "max": 1,
+              "active": true,
+              "order": 27,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            },
+            "t28": {
+              "name": "Trim hedges",
+              "desc": "Trim hedges where safe and appropriate.",
+              "kind": "paid",
+              "points": 4,
+              "max": 1,
+              "active": true,
+              "order": 28,
+              "difficulty": "Medium",
+              "every": 1,
+              "startWeek": 1
+            }
+          }
+        },
+        "plans": {
+          "before": {},
+          "after": {
+            "2026-10-24": {},
+            "2026-10-26": {}
+          }
+        },
+        "weeks": {
+          "before": {},
+          "after": {
+            "w3": {
+              "id": "w3",
+              "start": "2026-10-24",
+              "no": 3,
+              "assignments": {
+                "t01": {
+                  "task": "t01",
+                  "taskName": "Upstairs towels, bath mat and cloths",
+                  "member": "m4",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "automatic",
+                  "completed": 0
+                },
+                "t02": {
+                  "task": "t02",
+                  "taskName": "Kitchen counters and table",
+                  "member": "m5",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "legacy",
+                  "completed": 0
+                },
+                "t03": {
+                  "task": "t03",
+                  "taskName": "Downstairs hallway",
+                  "member": "m4",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "automatic",
+                  "completed": 0
+                },
+                "t04": {
+                  "task": "t04",
+                  "taskName": "Upstairs hallway",
+                  "member": "m1",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "automatic",
+                  "completed": 0
+                },
+                "t05": {
+                  "task": "t05",
+                  "taskName": "Air fryers, microwave and toaster",
+                  "member": "m4",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "automatic",
+                  "completed": 0
+                },
+                "t06": {
+                  "task": "t06",
+                  "taskName": "Stove, fridge exterior and kitchen island",
+                  "member": "m5",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "legacy",
+                  "completed": 0
+                },
+                "t07": {
+                  "task": "t07",
+                  "taskName": "Kitchen floor",
+                  "member": "m5",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "legacy",
+                  "completed": 0
+                },
+                "t08": {
+                  "task": "t08",
+                  "taskName": "Brush the dog",
+                  "member": "m2",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "automatic",
+                  "completed": 0
+                },
+                "t09": {
+                  "task": "t09",
+                  "taskName": "Pick up dog poop",
+                  "member": "m1",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "automatic",
+                  "completed": 0
+                },
+                "t10": {
+                  "task": "t10",
+                  "taskName": "Clean the fridge",
+                  "member": "m5",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "automatic",
+                  "completed": 0
+                },
+                "t12": {
+                  "task": "t12",
+                  "taskName": "Middle flight of stairs",
+                  "member": "m2",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "automatic",
+                  "completed": 0
+                },
+                "t13": {
+                  "task": "t13",
+                  "taskName": "Upstairs bathroom",
+                  "member": "m3",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "automatic",
+                  "completed": 0
+                },
+                "t14": {
+                  "task": "t14",
+                  "taskName": "Downstairs bathroom",
+                  "member": "m3",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "legacy",
+                  "completed": 0
+                },
+                "t15": {
+                  "task": "t15",
+                  "taskName": "Bathtub / shower",
+                  "member": "m4",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "legacy",
+                  "completed": 0
+                },
+                "t16": {
+                  "task": "t16",
+                  "taskName": "Laundry machines and top",
+                  "member": "m1",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "legacy",
+                  "completed": 0
+                },
+                "t17": {
+                  "task": "t17",
+                  "taskName": "Take out garbage and recycling",
+                  "member": "m2",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "legacy",
+                  "completed": 0
+                },
+                "t18": {
+                  "task": "t18",
+                  "taskName": "Collect indoor garbage",
+                  "member": "m3",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "automatic",
+                  "completed": 0
+                },
+                "t19": {
+                  "task": "t19",
+                  "taskName": "Load the dishwasher",
+                  "member": "m1",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "automatic",
+                  "completed": 0
+                },
+                "t20": {
+                  "task": "t20",
+                  "taskName": "Unload the dishwasher",
+                  "member": "m2",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "automatic",
+                  "completed": 0
+                },
+                "t21": {
+                  "task": "t21",
+                  "taskName": "All bathroom mirrors",
+                  "member": "m5",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "automatic",
+                  "completed": 0
+                },
+                "t22": {
+                  "task": "t22",
+                  "taskName": "Dust shared areas",
+                  "member": "m3",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "automatic",
+                  "completed": 0
+                },
+                "t23": {
+                  "task": "t23",
+                  "taskName": "Windows and sliding door",
+                  "member": "m3",
+                  "difficulty": "Medium",
+                  "required": 1,
+                  "workload": 2,
+                  "kind": "automatic",
+                  "completed": 0
+                }
+              },
+              "excluded": {},
+              "bonusUsers": [],
+              "generated": true,
+              "closed": false,
+              "generatedAt": 1792871256429
+            }
+          }
+        }
+      }
+    }
+  ],
+  "vacationHistory": [],
+  "assignmentHistory": [],
+  "exceptions": {},
+  "schemaVersion": 2
 }
