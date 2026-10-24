@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792860742156
+    "updatedAt": 1792860747157
   },
   "settings": {
     "rateCents": 2000,
@@ -502,6 +502,18 @@
       "kind": "regular",
       "points": 3,
       "at": 1792860742156
+    },
+    "9b28bac3-7bcd-4e71-8f2b-913553737ad6": {
+      "requestId": "9b28bac3-7bcd-4e71-8f2b-913553737ad6",
+      "task": "t12",
+      "taskName": "Middle flight of stairs",
+      "member": "m5",
+      "memberName": "Ma",
+      "week": "w1",
+      "weekStart": "2026-10-19",
+      "kind": "regular",
+      "points": 3,
+      "at": 1792860747157
     }
   }
 }
