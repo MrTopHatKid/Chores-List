@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792878840329,
+    "updatedAt": 1792879076104,
     "schemaVersion": 2
   },
   "settings": {
@@ -120,10 +120,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m4",
+        "member": "m2",
         "week": "w3",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "selected"
       }
     },
     "t04": {
@@ -138,10 +138,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m3",
+        "member": "m1",
         "week": "w3",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "selected"
       }
     },
     "t05": {
@@ -354,10 +354,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m5",
+        "member": "m2",
         "week": "w3",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "selected"
       }
     },
     "t18": {
@@ -372,10 +372,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m5",
+        "member": "m1",
         "week": "w3",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "selected"
       }
     },
     "t19": {
@@ -434,10 +434,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m5",
+        "member": "m2",
         "week": "w3",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "selected"
       }
     },
     "t23": {
@@ -452,10 +452,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m3",
+        "member": "m1",
         "week": "w3",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "selected"
       }
     },
     "t24": {
@@ -1066,6 +1066,30 @@
   },
   "plans": {
     "2026-10-24": {
+      "t18": {
+        "member": "m1",
+        "kind": "selected"
+      },
+      "t04": {
+        "member": "m1",
+        "kind": "selected"
+      },
+      "t23": {
+        "member": "m1",
+        "kind": "selected"
+      },
+      "t22": {
+        "member": "m2",
+        "kind": "selected"
+      },
+      "t03": {
+        "member": "m2",
+        "kind": "selected"
+      },
+      "t17": {
+        "member": "m2",
+        "kind": "selected"
+      },
       "t01": {
         "member": "m3",
         "kind": "selected"
@@ -1112,22 +1136,34 @@
       },
       "t09": {
         "member": "m5",
-        "kind": "selected"
-      },
-      "t18": {
-        "member": "m1",
-        "kind": "selected"
-      },
-      "t04": {
-        "member": "m1",
-        "kind": "selected"
-      },
-      "t23": {
-        "member": "m1",
         "kind": "selected"
       }
     },
     "2026-10-26": {
+      "t18": {
+        "member": "m1",
+        "kind": "selected"
+      },
+      "t04": {
+        "member": "m1",
+        "kind": "selected"
+      },
+      "t23": {
+        "member": "m1",
+        "kind": "selected"
+      },
+      "t22": {
+        "member": "m2",
+        "kind": "selected"
+      },
+      "t03": {
+        "member": "m2",
+        "kind": "selected"
+      },
+      "t17": {
+        "member": "m2",
+        "kind": "selected"
+      },
       "t01": {
         "member": "m3",
         "kind": "selected"
@@ -1174,18 +1210,6 @@
       },
       "t09": {
         "member": "m5",
-        "kind": "selected"
-      },
-      "t18": {
-        "member": "m1",
-        "kind": "selected"
-      },
-      "t04": {
-        "member": "m1",
-        "kind": "selected"
-      },
-      "t23": {
-        "member": "m1",
         "kind": "selected"
       }
     },
@@ -1301,21 +1325,21 @@
         "t03": {
           "task": "t03",
           "taskName": "Downstairs hallway",
-          "member": "m4",
+          "member": "m2",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "selected",
           "completed": 0
         },
         "t04": {
           "task": "t04",
           "taskName": "Upstairs hallway",
-          "member": "m3",
+          "member": "m1",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "selected",
           "completed": 0
         },
         "t05": {
@@ -1431,21 +1455,21 @@
         "t17": {
           "task": "t17",
           "taskName": "Take out garbage and recycling",
-          "member": "m5",
+          "member": "m2",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "selected",
           "completed": 0
         },
         "t18": {
           "task": "t18",
           "taskName": "Collect indoor garbage",
-          "member": "m5",
+          "member": "m1",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "selected",
           "completed": 0
         },
         "t19": {
@@ -1461,21 +1485,21 @@
         "t22": {
           "task": "t22",
           "taskName": "Dust shared areas",
-          "member": "m5",
+          "member": "m2",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "selected",
           "completed": 0
         },
         "t23": {
           "task": "t23",
           "taskName": "Windows and sliding door",
-          "member": "m3",
+          "member": "m1",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "selected",
           "completed": 0
         }
       },
@@ -1497,7 +1521,7 @@
       "generated": true,
       "closed": false,
       "generatedAt": 1792871256429,
-      "minimumSlots": 5,
+      "minimumSlots": 4,
       "remainder": 0
     }
   },
@@ -30545,6 +30569,188 @@
           "after": false
         }
       ]
+    },
+    {
+      "id": "36d6d8ce-23c1-4e7b-821a-d967c010905c",
+      "at": 1792879076104,
+      "actor": "m4",
+      "admin": false,
+      "action": "weekly assignments",
+      "changes": [
+        {
+          "path": "/tasks/t03/claim/member",
+          "before": "m4",
+          "after": "m2"
+        },
+        {
+          "path": "/tasks/t03/claim/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/tasks/t04/claim/member",
+          "before": "m3",
+          "after": "m1"
+        },
+        {
+          "path": "/tasks/t04/claim/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/tasks/t17/claim/member",
+          "before": "m5",
+          "after": "m2"
+        },
+        {
+          "path": "/tasks/t17/claim/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/tasks/t18/claim/member",
+          "before": "m5",
+          "after": "m1"
+        },
+        {
+          "path": "/tasks/t18/claim/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/tasks/t22/claim/member",
+          "before": "m5",
+          "after": "m2"
+        },
+        {
+          "path": "/tasks/t22/claim/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/tasks/t23/claim/member",
+          "before": "m3",
+          "after": "m1"
+        },
+        {
+          "path": "/tasks/t23/claim/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/plans/2026-10-24/t22",
+          "added": true,
+          "after": {
+            "member": "m2",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-24/t03",
+          "added": true,
+          "after": {
+            "member": "m2",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-24/t17",
+          "added": true,
+          "after": {
+            "member": "m2",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-26/t22",
+          "added": true,
+          "after": {
+            "member": "m2",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-26/t03",
+          "added": true,
+          "after": {
+            "member": "m2",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-26/t17",
+          "added": true,
+          "after": {
+            "member": "m2",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t03/member",
+          "before": "m4",
+          "after": "m2"
+        },
+        {
+          "path": "/weeks/w3/assignments/t03/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/weeks/w3/assignments/t04/member",
+          "before": "m3",
+          "after": "m1"
+        },
+        {
+          "path": "/weeks/w3/assignments/t04/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/weeks/w3/assignments/t17/member",
+          "before": "m5",
+          "after": "m2"
+        },
+        {
+          "path": "/weeks/w3/assignments/t17/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/weeks/w3/assignments/t18/member",
+          "before": "m5",
+          "after": "m1"
+        },
+        {
+          "path": "/weeks/w3/assignments/t18/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/weeks/w3/assignments/t22/member",
+          "before": "m5",
+          "after": "m2"
+        },
+        {
+          "path": "/weeks/w3/assignments/t22/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/weeks/w3/assignments/t23/member",
+          "before": "m3",
+          "after": "m1"
+        },
+        {
+          "path": "/weeks/w3/assignments/t23/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/weeks/w3/minimumSlots",
+          "before": 5,
+          "after": 4
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -32304,5 +32510,8 @@
     "active": false,
     "lastRestoredAt": 1792878593211,
     "lastRestoredId": "test-71e457e9-dbb8-4355-b7f0-1778e7ccaaaa"
-  }
+  },
+  "permanentBonus": {},
+  "bonusRequests": {},
+  "commitmentRulesVersion": 3
 }
