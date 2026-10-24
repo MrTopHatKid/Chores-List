@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883744851,
+    "updatedAt": 1792883747593,
     "schemaVersion": 2
   },
   "settings": {
@@ -118,10 +118,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m4",
+        "member": "m1",
         "week": "w1",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "selected"
       }
     },
     "t04": {
@@ -538,7 +538,8 @@
   "completions": {},
   "preferences": {
     "m1": [
-      "t15"
+      "t15",
+      "t03"
     ],
     "m2": [
       "t08",
@@ -580,6 +581,10 @@
         "kind": "bonus"
       },
       "t15": {
+        "member": "m1",
+        "kind": "selected"
+      },
+      "t03": {
         "member": "m1",
         "kind": "selected"
       },
@@ -650,6 +655,10 @@
         "kind": "bonus"
       },
       "t15": {
+        "member": "m1",
+        "kind": "selected"
+      },
+      "t03": {
         "member": "m1",
         "kind": "selected"
       },
@@ -744,11 +753,11 @@
         "t03": {
           "task": "t03",
           "taskName": "Downstairs hallway",
-          "member": "m4",
+          "member": "m1",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "selected",
           "completed": 0
         },
         "t04": {
@@ -973,13 +982,13 @@
     "minimum:w1:m3": {
       "message": "AW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883744851,
+      "at": 1792883747593,
       "resolved": false
     },
     "minimum:w1:m5": {
       "message": "MW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883744851,
+      "at": 1792883747593,
       "resolved": false
     }
   },
@@ -1010,7 +1019,7 @@
     "m1": {
       "selected": [
         "t15",
-        null,
+        "t03",
         null
       ],
       "bonus": []
@@ -5140,6 +5149,84 @@
           "path": "/alerts/minimum:w1:m5/at",
           "before": 1792883735496,
           "after": 1792883744851
+        }
+      ]
+    },
+    {
+      "id": "432c81b9-c1ef-4e2d-8075-ed23587e6df3",
+      "at": 1792883747593,
+      "actor": "m1",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t03/claim/member",
+          "before": "m4",
+          "after": "m1"
+        },
+        {
+          "path": "/tasks/t03/claim/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/preferences/m1",
+          "before": [
+            "t15"
+          ],
+          "after": [
+            "t15",
+            "t03"
+          ]
+        },
+        {
+          "path": "/slotLayout/m1/selected",
+          "before": [
+            "t15",
+            null,
+            null
+          ],
+          "after": [
+            "t15",
+            "t03",
+            null
+          ]
+        },
+        {
+          "path": "/plans/2026-10-19/t03",
+          "added": true,
+          "after": {
+            "member": "m1",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-26/t03",
+          "added": true,
+          "after": {
+            "member": "m1",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w1/assignments/t03/member",
+          "before": "m4",
+          "after": "m1"
+        },
+        {
+          "path": "/weeks/w1/assignments/t03/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/alerts/minimum:w1:m3/at",
+          "before": 1792883744851,
+          "after": 1792883747593
+        },
+        {
+          "path": "/alerts/minimum:w1:m5/at",
+          "before": 1792883744851,
+          "after": 1792883747593
         }
       ]
     }
