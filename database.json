@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792860777365
+    "updatedAt": 1792860783133
   },
   "settings": {
     "rateCents": 2000,
@@ -578,6 +578,18 @@
       "kind": "regular",
       "points": 3,
       "at": 1792860774861
+    },
+    "f034f39b-9dee-4cae-996e-d0a912d5cd19": {
+      "requestId": "f034f39b-9dee-4cae-996e-d0a912d5cd19",
+      "task": "t13",
+      "taskName": "Upstairs bathroom",
+      "member": "m2",
+      "memberName": "Ke",
+      "week": "w1",
+      "weekStart": "2026-10-19",
+      "kind": "regular",
+      "points": 4,
+      "at": 1792860783133
     }
   }
 }
