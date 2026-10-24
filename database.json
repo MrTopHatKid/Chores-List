@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792860757495
+    "updatedAt": 1792860760372
   },
   "settings": {
     "rateCents": 2000,
@@ -279,7 +279,11 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 20
+      "order": 20,
+      "claim": {
+        "member": "m5",
+        "week": "w1"
+      }
     },
     "t21": {
       "name": "All bathroom mirrors",
