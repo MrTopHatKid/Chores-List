@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792861205246
+    "updatedAt": 1792864369055
   },
   "settings": {
     "rateCents": 2000,
@@ -52,8 +52,8 @@
       "name": "Ma",
       "quota": 4,
       "vacation": {
-        "from": "2026-10-24",
-        "to": "2026-10-31"
+        "from": "",
+        "to": ""
       }
     }
   },
