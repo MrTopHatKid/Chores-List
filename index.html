@@ -1,0 +1,1324 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#172554"><title>Chore Chart</title><style>
+
+:root{
+  --bg:#f6f7fb;--surface:#fff;--surface-2:#fbfcfe;--text:#111827;--muted:#6b7280;
+  --line:#e5e7eb;--line-strong:#d1d5db;--accent:#2563eb;--accent-soft:#eff6ff;
+  --green:#059669;--green-soft:#ecfdf5;--amber:#b45309;--amber-soft:#fffbeb;
+  --red:#dc2626;--red-soft:#fef2f2;--violet:#7c3aed;--violet-soft:#f5f3ff;
+  --radius:14px;--radius-sm:10px;--shadow:0 1px 2px rgba(16,24,40,.05),0 8px 24px rgba(16,24,40,.05);
+  --shadow-lg:0 12px 32px rgba(16,24,40,.16);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;touch-action:manipulation}
+[hidden]{display:none!important}
+h1,h2,h3,h4{line-height:1.25}
+a{color:var(--accent)}
+img,canvas{max-width:100%}
+
+/* Header */
+header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--line);color:var(--text);padding:12px 16px;padding-top:max(12px,env(safe-area-inset-top))}
+header .wrap,main{max-width:1080px;margin:auto}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+h1{margin:0;font-size:clamp(1.15rem,3vw,1.45rem);font-weight:800;letter-spacing:-.02em}
+header p{margin:3px 0 0;color:var(--muted);font-size:.86rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.conn{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:999px;font-size:.72rem;font-weight:700;background:var(--surface-2);border:1px solid var(--line);color:var(--muted)}
+.conn::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--muted)}
+.conn.live{color:#065f46;background:var(--green-soft);border-color:#a7f3d0}.conn.live::before{background:var(--green)}
+.conn.off{color:#991b1b;background:var(--red-soft);border-color:#fecaca}.conn.off::before{background:var(--red)}
+.me{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.me label{color:var(--muted);font-weight:650;font-size:.86rem}
+.me select{width:auto;min-width:160px;font-weight:650}
+.deadline-timer{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);font-weight:700;font-size:.8rem;white-space:nowrap;color:var(--muted)}
+.deadline-timer.soon{background:var(--amber-soft);border-color:#fde68a;color:var(--amber)}
+
+/* Layout and cards */
+main{padding:20px 16px 32px}
+.banner{background:var(--red-soft);color:#991b1b;border:1px solid #fecaca;border-radius:var(--radius);padding:12px 14px;margin-bottom:14px;font-weight:550}
+.card,.person,.task{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+.card+.card,.card+div,.people+.tabs{margin-top:14px}
+
+/* Forms and buttons */
+input,select,button,textarea{font:inherit}
+input[type=text],input[type=number],input[type=password],input[type=date],input[type=search],select,textarea{width:100%;min-width:0;border:1px solid var(--line-strong);border-radius:var(--radius-sm);padding:10px 12px;background:var(--surface);color:var(--text);transition:border-color .15s,box-shadow .15s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,.14)}
+input[type=checkbox]{width:22px;height:22px;accent-color:var(--green);cursor:pointer;margin:0;flex:none}
+input[type=checkbox]:disabled{cursor:not-allowed;opacity:.5}
+button{border:1px solid transparent;border-radius:var(--radius-sm);padding:10px 15px;background:var(--accent);color:#fff;font-weight:650;cursor:pointer;transition:filter .15s,background .15s,transform .05s}
+button:hover:not(:disabled){filter:brightness(.96)}
+button:active:not(:disabled){transform:translateY(1px)}
+button:disabled{opacity:.5;cursor:not-allowed}
+button.secondary{background:var(--accent-soft);color:#1d4ed8;border-color:#bfdbfe}
+button.danger{background:var(--red-soft);color:#991b1b;border-color:#fecaca}
+button.ghost{background:transparent;color:var(--text);border-color:var(--line-strong)}
+button.small{padding:7px 11px;font-size:.84rem;border-radius:9px}
+button.good{background:var(--green)}
+button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid rgba(37,99,235,.35);outline-offset:1px}
+.linklike{background:none;border:0;color:var(--muted);font-weight:550;text-decoration:underline;padding:8px;font-size:.85rem}
+.linklike:hover{color:var(--text)}
+
+/* Progress */
+.progress-track{height:10px;background:#eef1f6;border-radius:999px;overflow:hidden;margin:12px 0}
+#progressBar{height:100%;width:0;background:linear-gradient(90deg,var(--green),#34d399);border-radius:999px;transition:width .3s ease}
+.status{padding:11px 13px;border-radius:var(--radius-sm);background:var(--green-soft);color:#065f46;font-weight:550}
+.status.warn{background:var(--amber-soft);color:var(--amber)}
+
+/* People */
+.people{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:16px 0}
+.person{cursor:pointer;text-align:left;color:inherit;padding:14px;font-weight:400;transition:border-color .15s,box-shadow .15s,background .15s}
+.person:hover{border-color:var(--line-strong);box-shadow:var(--shadow-lg)}
+.person.active{border:2px solid var(--accent);background:var(--accent-soft);box-shadow:none}
+.person h3{font-size:.95rem;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.person .points{font-size:1.55rem;font-weight:800;letter-spacing:-.02em;margin-top:4px}
+.person .meta{font-size:.76rem;color:var(--muted)}
+.person .money{font-size:.82rem;font-weight:750;color:#92400e;margin-top:3px}
+.person.onvacation{background:var(--amber-soft);border-color:#fde68a}
+
+/* Navigation */
+.tabs{display:flex;gap:6px;margin:18px 0 14px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px;overflow-x:auto;box-shadow:var(--shadow)}
+.tab{background:none;color:var(--muted);border-radius:999px;padding:9px 16px;white-space:nowrap;font-weight:650;font-size:.9rem}
+.tab:hover{color:var(--text)}
+.tab.active{background:var(--accent);color:#fff;box-shadow:none}
+.section-title{font-size:1.02rem;font-weight:750;margin:18px 0 8px;letter-spacing:-.01em}
+.hint{font-size:.87rem;color:var(--muted);margin:4px 0 10px}
+
+/* Tasks */
+.task-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.task{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:14px}
+.task.completed{opacity:.72;background:var(--surface-2)}
+.task.completed .task-name{text-decoration:line-through}
+.task.mandatory{border-left:4px solid #f59e0b}
+.task.excused{opacity:.65;border-style:dashed}
+.task-name{font-weight:700}
+.task-desc{font-size:.82rem;color:var(--muted);margin-top:2px}
+.task-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.task .acts{display:flex;flex-direction:column;gap:6px;min-width:112px}
+.pill{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:3px 9px;font-size:.73rem;font-weight:700;background:var(--accent-soft);color:#1d4ed8;white-space:nowrap;border:1px solid transparent}
+.pill.pay{background:var(--amber-soft);color:var(--amber);border-color:#fde68a}
+.pill.who{background:var(--green-soft);color:#065f46;border-color:#a7f3d0}
+.pill.none{background:var(--surface-2);color:var(--muted);border-color:var(--line)}
+.pill.done{background:var(--green-soft);color:#065f46;border-color:#a7f3d0}
+.pill.vac{background:var(--amber-soft);color:var(--amber);border-color:#fde68a}
+.pill.must{background:#fef3c7;color:#92400e;border-color:#fde68a}
+.pill.bi{background:var(--violet-soft);color:var(--violet);border-color:#ddd6fe}
+.pill.bad{background:var(--red-soft);color:#991b1b;border-color:#fecaca}
+.difficulty-Easy{background:var(--green-soft);color:#065f46;border-color:#a7f3d0}
+.difficulty-Medium{background:var(--accent-soft);color:#1d4ed8;border-color:#bfdbfe}
+.difficulty-Hard{background:var(--amber-soft);color:var(--amber);border-color:#fde68a}
+.difficulty-VeryHard{background:var(--red-soft);color:#991b1b;border-color:#fecaca}
+
+/* Details, tables, empty states */
+.vaccard{margin-bottom:12px;background:var(--amber-soft);border-color:#fde68a}
+.vaccard summary{cursor:pointer;font-weight:700;padding:2px 0}
+.vaccard h3{margin:0 0 6px}
+.empty{padding:26px 18px;text-align:center;color:var(--muted);background:var(--surface);border:1px dashed var(--line-strong);border-radius:var(--radius)}
+.tablewrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{background:var(--surface-2);color:var(--muted);font-weight:700;font-size:.74rem;text-transform:uppercase;letter-spacing:.04em}
+tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--surface-2)}
+
+/* Toast / overlays */
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(8px);background:#111827;color:#fff;padding:11px 16px;border-radius:12px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:90;max-width:92vw;text-align:center;font-weight:550;box-shadow:var(--shadow-lg)}
+.toast.show{opacity:1;transform:translateX(-50%)}
+.toast.err{background:var(--red)}.toast.ok{background:var(--green)}
+.overlay{position:fixed;inset:0;background:rgba(15,23,42,.45);backdrop-filter:blur(2px);display:none;z-index:20}
+.overlay.open{display:block}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(780px,100%);background:var(--bg);z-index:50;transform:translateX(100%);visibility:hidden;transition:transform .24s ease,visibility .24s;display:flex;flex-direction:column;box-shadow:var(--shadow-lg)}
+.drawer.open{transform:none;visibility:visible}
+.drawer-head{background:var(--surface);color:var(--text);border-bottom:1px solid var(--line);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.drawer-head h2{margin:0;font-size:1.1rem;font-weight:800}
+.drawer-body{overflow-y:auto;padding:0 16px 48px;flex:1;-webkit-overflow-scrolling:touch}
+.field{display:flex;flex-direction:column;gap:5px;margin:10px 0}
+.field label,.lbl{font-size:.8rem;color:var(--muted);font-weight:650}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.full{grid-column:1/-1}
+.check{display:flex;align-items:center;gap:10px;font-size:.95rem;color:var(--text)!important}
+.card form label,.modal label{display:block;font-size:.8rem;color:var(--muted);font-weight:650;margin:10px 0 4px}
+.modal-wrap{position:fixed;inset:0;background:rgba(15,23,42,.55);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:16px;z-index:70}
+.modal{background:var(--surface);border-radius:18px;padding:20px;width:min(480px,100%);max-height:92vh;overflow-y:auto;box-shadow:var(--shadow-lg)}
+.modal h3{margin:0 0 8px;font-weight:800}
+.paybox{background:var(--amber-soft);border:1px solid #fde68a;border-radius:var(--radius);padding:14px;margin:14px 0;color:var(--amber)}
+.paybox .big{font-size:1.7rem;font-weight:800;letter-spacing:-.02em}
+.quick{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}
+.gate{position:fixed;inset:0;background:var(--bg);z-index:60;display:flex;align-items:center;justify-content:center;padding:18px}
+.gate-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;width:min(430px,100%);box-shadow:var(--shadow-lg)}
+.gate-card h2{margin:0 0 8px;font-weight:800}
+body.locked main,body.locked header .me{visibility:hidden}
+#confetti{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:100}
+.foot{text-align:center;padding:8px 0 34px}
+
+/* Admin */
+.anav{display:flex;gap:7px;overflow-x:auto;position:sticky;top:0;z-index:5;background:var(--bg);padding:14px 0 10px;margin:0 -2px;-webkit-overflow-scrolling:touch}
+.anav button{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;background:var(--surface);color:#374151;border:1px solid var(--line);padding:9px 14px;border-radius:999px;font-size:.88rem;font-weight:650}
+.anav button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.apane h3.sec{font-size:1rem;margin:22px 0 5px;font-weight:750}
+.apane .sub{color:var(--muted);font-size:.86rem;margin:0 0 12px}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)}
+.tile .l{font-size:.75rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.tile .v{font-size:1.55rem;font-weight:800;margin-top:3px;letter-spacing:-.02em}
+.actions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.action{background:var(--surface);color:var(--text);border:1px solid var(--line);text-align:left;padding:15px;border-radius:var(--radius);display:block;box-shadow:var(--shadow);transition:border-color .15s,box-shadow .15s}
+.action:hover{border-color:var(--line-strong);box-shadow:var(--shadow-lg)}
+.action b{display:block;font-size:.97rem}
+.action span{display:block;font-weight:450;font-size:.82rem;color:var(--muted);margin-top:3px}
+.action.warn{border-color:#fecaca;background:var(--red-soft)}
+.listcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.listcard .li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.listcard .li:last-child{border-bottom:0}
+.li .t{min-width:0}
+.li .t b{display:block;overflow:hidden;text-overflow:ellipsis}
+.li .t span{font-size:.82rem;color:var(--muted)}
+.pcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);margin-bottom:10px;overflow:hidden;box-shadow:var(--shadow)}
+.pcard>summary,.crow>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:13px 14px}
+.pcard>summary::-webkit-details-marker,.crow>summary::-webkit-details-marker{display:none}
+.pcard>summary::after,.crow>summary::after{content:"▾";margin-left:auto;color:var(--muted);transition:transform .15s}
+.pcard[open]>summary::after,.crow[open]>summary::after{content:"▴"}
+.avatar{width:38px;height:38px;border-radius:50%;background:var(--accent-soft);color:#1d4ed8;display:grid;place-items:center;font-weight:800;flex:none}
+.pcard form,.crow form{padding:6px 14px 15px;border-top:1px solid var(--line);background:var(--surface-2)}
+.crow{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);margin-bottom:8px;overflow:hidden;box-shadow:var(--shadow)}
+.crow .nm{font-weight:700;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.crow .pills{display:flex;gap:5px;flex-wrap:wrap;margin-top:4px}
+.fgroup{border:1px solid var(--line);border-radius:var(--radius);padding:8px 14px 14px;margin:14px 0;background:var(--surface)}
+.fgroup>legend,.fgroup>.gt{font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:0 6px}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+.toolbar input{flex:1 1 190px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.chip{background:var(--surface);color:#374151;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:.84rem;font-weight:600}
+.chip.on{background:#111827;color:#fff;border-color:#111827}
+.savebar{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.rec{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;margin-bottom:8px;display:flex;justify-content:space-between;gap:12px;align-items:center;box-shadow:var(--shadow)}
+.rec.voided .t{text-decoration:line-through;opacity:.55}
+.rec .t b{display:block}.rec .t span{font-size:.82rem;color:var(--muted)}
+
+/* Task chooser */
+.slot-summary h3{margin:0 0 8px}
+.slot-count{font-size:1.9rem;font-weight:800;margin:8px 0;letter-spacing:-.03em}
+.slot-count span{font-size:.95rem;font-weight:550;color:var(--muted)}
+.slot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.slot-card{border:1px solid var(--line);border-radius:var(--radius);padding:18px;background:var(--surface);color:var(--text);min-width:0;display:flex;flex-direction:column;gap:12px;align-items:flex-start;box-shadow:var(--shadow);transition:border-color .15s,box-shadow .15s,background .15s}
+.slot-card h3{margin:0;font-size:1.03rem;font-weight:750;overflow-wrap:anywhere}
+.slot-card.filled{border-color:#a7f3d0;background:var(--green-soft)}
+.slot-card.empty-slot{border:1px dashed var(--line-strong);min-height:180px;text-align:left;justify-content:center}
+.slot-card.empty-slot:hover:not(:disabled){border-color:var(--accent);background:var(--accent-soft)}
+.slot-label{font-size:.78rem;color:var(--muted);font-weight:750;text-transform:uppercase;letter-spacing:.04em}
+.slot-plus{font-size:1.9rem;color:var(--accent);line-height:1}
+.slot-help{font-size:.82rem;color:var(--muted);font-weight:450}
+.slot-card.bonus-slot{border-color:#fde68a;background:var(--amber-soft)}
+.slot-card .secondary{margin-top:auto}
+.bonus-section{margin-top:22px}
+.vac-toggle{display:flex;gap:10px;align-items:center;margin:14px 0}
+.work-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px 0;border-bottom:1px solid var(--line)}
+.picker-list{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.picker-task{background:var(--surface);color:var(--text);text-align:left;border:1px solid var(--line);display:flex;flex-direction:column;gap:5px;padding:14px;box-shadow:var(--shadow)}
+.picker-task:hover:not(:disabled){border-color:var(--accent);background:var(--accent-soft)}
+.picker-name{font-weight:750;font-size:1rem}
+.slot-picker{width:min(640px,100%)}
+
+/* Responsive */
+@media(max-width:900px){
+  .people{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .task-list{grid-template-columns:1fr}
+}
+@media(max-width:700px){
+  body{font-size:16px}
+  header{padding:10px 12px;padding-top:max(10px,env(safe-area-inset-top))}
+  header .bar{flex-direction:column;align-items:stretch;gap:10px}
+  header>div:first-child{text-align:center}
+  header p{justify-content:center}
+  #weekLabel{width:100%;font-weight:700;color:var(--text)}
+  .me{width:100%;gap:8px}
+  .me label{display:none}
+  .me select{flex:1;min-width:0}
+  .me button{min-height:44px}
+  main{padding:14px 12px calc(92px + env(safe-area-inset-bottom))}
+  input[type=text],input[type=number],input[type=password],input[type=date],input[type=search],select,textarea{font-size:16px;min-height:46px}
+  button{min-height:46px}
+  button.small{min-height:40px;padding:8px 13px}
+  .card,.person,.task{padding:13px;border-radius:13px}
+  .people{display:flex;overflow-x:auto;gap:8px;scroll-snap-type:x proximity;margin:12px -12px;padding:2px 12px 8px;-webkit-overflow-scrolling:touch}
+  .person{flex:0 0 150px;scroll-snap-align:start}
+  .tabs{position:fixed;left:8px;right:8px;bottom:calc(8px + env(safe-area-inset-bottom));z-index:45;margin:0;gap:4px;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:18px;padding:5px;box-shadow:var(--shadow-lg)}
+  .tab{flex:1;padding:12px 4px;font-size:.78rem;white-space:normal;text-align:center;min-height:52px;border-radius:14px}
+  .task{grid-template-columns:auto minmax(0,1fr);gap:10px 12px}
+  .task .acts{grid-column:1/-1;flex-direction:row}
+  .task .acts:empty{display:none}
+  .task .acts button{flex:1}
+  .toast{bottom:calc(84px + env(safe-area-inset-bottom))}
+  .drawer{width:100%}
+  .drawer-head{padding-top:max(14px,env(safe-area-inset-top))}
+  .grid2{grid-template-columns:1fr}
+  .grid2.keep{grid-template-columns:1fr 1fr}
+  .actions,.tiles{grid-template-columns:1fr}
+  .modal-wrap{align-items:flex-end;padding:0}
+  .modal{width:100%;border-radius:20px 20px 0 0;padding:20px 18px calc(22px + env(safe-area-inset-bottom));max-height:88vh}
+  .quick button{flex:1 1 32%}
+  .anav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+  .anav button{min-height:44px;font-size:.76rem;padding:8px 4px;justify-content:center}
+  .slot-grid{grid-template-columns:1fr}
+  .slot-card.empty-slot{min-height:155px}
+  .picker-task{min-height:100px}
+}
+@media(max-width:420px){
+  .people{flex-wrap:wrap}
+  .person{flex:1 1 calc(50% - 8px)}
+  .anav{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+}
+
+</style></head><body><header><div class="wrap"><div class="bar">
+  <div><h1>Weekly Chore Chart</h1><p><span id="weekLabel"></span> <span class="conn" id="conn">Connecting…</span><span class="deadline-timer" id="deadlineTimer" title="Time until the next task-selection deadline">⏳ Loading timer…</span></p></div>
+  <div class="me"><label for="meSelect">I am:</label><select id="meSelect"></select><button class="ghost" id="soundBtn" type="button" aria-label="Toggle sound" title="Sound on/off">🔊</button><button class="ghost" id="menuBtn" type="button">&#9881; Admin</button></div>
+</div></div></header>
+<main>
+  <div id="banner" class="banner" hidden></div>
+  <section class="card"><div class="bar"><strong id="progressText">Loading…</strong><span class="pill" id="myProgress"></span></div>
+    <div class="progress-track"><div id="progressBar"></div></div><div id="overallStatus" class="status warn"></div></section>
+  <div class="people" id="people"></div>
+  <div class="tabs">
+    <button class="tab active" type="button" data-tab="mine">My chores</button>
+    <button class="tab" type="button" data-tab="choose">Choose Tasks</button>
+    <button class="tab" type="button" data-tab="all">All chores</button>
+    <button class="tab" type="button" data-tab="paid">Paid jobs &amp; earnings</button>
+  </div>
+  <div id="tabContent"></div>
+  <div class="foot"><button class="linklike" id="signOutBtn" type="button" hidden>Sign out of this device</button></div>
+</main>
+<div class="gate" id="gate" hidden><div class="gate-card">
+  <h2>&#128274; Household access code</h2>
+  <p class="hint">Enter the GitHub code you were given. It is saved on this device, so you only need to do this once.</p>
+  <form id="gateForm"><div class="field"><label for="gateKey">GitHub access code</label><input type="password" id="gateKey" autocomplete="off" required></div><button type="submit" id="gateBtn" style="width:100%">Save &amp; continue</button></form>
+  <div id="gateErr" class="status warn" style="margin-top:10px" hidden></div>
+  <p class="hint" style="margin-top:14px"><a href="#" id="gateAdmin">Admin sign-in</a></p>
+</div></div>
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Admin panel">
+  <div class="drawer-head"><h2>&#9881; Admin panel</h2><div class="row"><button class="ghost small" id="lockAdmin" type="button">🔒 Lock</button><button class="ghost small" id="closeMenu" type="button">Close</button></div></div>
+  <div class="drawer-body" id="drawerBody"></div>
+</aside>
+<div class="modal-wrap" id="modalWrap" hidden><div class="modal" id="modal" role="dialog" aria-modal="true"></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<script>
+const CONFIG={owner:'MrTopHatKid',repo:'Chores-List',branch:'main',path:'database.json',adminPassword:'Ch@ores987!'};
+const DEFAULTS={autoWeek:true,weekStartDay:1,missedWeight:100};
+const $=id=>document.getElementById(id), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* ---------- GitHub code is remembered on this device ---------- */
+const store={
+  get(){try{return localStorage.getItem('choreToken')||sessionStorage.getItem('choreToken')||''}catch(e){try{return sessionStorage.getItem('choreToken')||''}catch(_){return ''}}},
+  set(t){try{localStorage.setItem('choreToken',t);sessionStorage.removeItem('choreToken');return true}catch(e){try{sessionStorage.setItem('choreToken',t)}catch(_){}return false}},
+  clear(){try{localStorage.removeItem('choreToken')}catch(e){}try{sessionStorage.removeItem('choreToken')}catch(e){}}
+};
+let memberFormDirty=false,slotPicker=null,pickerQuery='';
+let token=store.get(),D=null,sha='',me=localStorage.getItem('choreName')||'',tab='mine',busy=false,lastAuto=0;
+let admin=sessionStorage.getItem('choreAdmin')==='1',adminTab='overview',adminDirty=false,aSearch='',aFilter='all',recMember='',recKind='',recScope='week';
+const endpoint=()=>`https://api.github.com/repos/${encodeURIComponent(CONFIG.owner)}/${encodeURIComponent(CONFIG.repo)}/contents/${CONFIG.path.split('/').map(encodeURIComponent).join('/')}`;
+const money=n=>(D?.settings.currency||'$')+(n/100).toFixed(2), mins=n=>Math.floor(n/60)+'h '+n%60+'m';
+const cfg=(d,k)=>d.settings[k]??DEFAULTS[k];
+
+/* ---------- dates ---------- */
+const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const today=()=>householdToday();
+const parse=s=>{const [y,m,dd]=s.split('-').map(Number);return new Date(y,m-1,dd)};
+const addDays=(s,n)=>{const d=parse(s);d.setDate(d.getDate()+n);return iso(d)};
+const diffDays=(a,b)=>Math.round((parse(b)-parse(a))/864e5);
+function weekTarget(day){const d=new Date(),isoDow=(d.getDay()+6)%7+1;d.setDate(d.getDate()-((isoDow-day+7)%7));return iso(d)}
+
+/* ---------- feedback ---------- */
+function notify(m,err){const t=$('toast');t.textContent=m;t.className='toast show '+(err?'err':'ok');clearTimeout(notify.t);notify.t=setTimeout(()=>t.className='toast',4500)}
+function gate(m=''){document.body.classList.add('locked');$('gate').hidden=false;$('signOutBtn').hidden=true;$('gateErr').hidden=!m;$('gateErr').textContent=m}
+function banner(m){$('banner').hidden=!m;$('banner').textContent=m||''}
+function forgetToken(msg){store.clear();token='';D=null;sha='';banner('');closeAdmin();gate(msg||'')}
+
+/* ---------- completion effects: sound + confetti + haptics (work on phones) ---------- */
+window.__fx={sound:0,confetti:0};
+let actx=null,soundOn=localStorage.getItem('choreSound')!=='off';
+function unlockAudio(){try{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;actx=actx||new AC();if(actx.state!=='running'){actx.resume();const b=actx.createBuffer(1,1,22050),s=actx.createBufferSource();s.buffer=b;s.connect(actx.destination);s.start(0)}}catch(e){}}
+['pointerdown','touchstart','touchend','click','keydown'].forEach(ev=>document.addEventListener(ev,unlockAudio,{passive:true}));
+function chime(){window.__fx.sound++;if(!soundOn||!actx)return;try{if(actx.state==='suspended')actx.resume();const t=actx.currentTime+0.02,notes=[523.25,659.25,783.99,1046.5,1318.5];notes.forEach((f,i)=>{const o=actx.createOscillator(),g=actx.createGain(),st=t+i*0.085;o.type=i<4?'triangle':'sine';o.frequency.setValueAtTime(f,st);g.gain.setValueAtTime(0.0001,st);g.gain.exponentialRampToValueAtTime(i<4?0.33:0.22,st+0.02);g.gain.exponentialRampToValueAtTime(0.0001,st+(i===4?0.6:0.3));o.connect(g);g.connect(actx.destination);o.start(st);o.stop(st+0.65)});
+ const n=actx.createBufferSource(),len=Math.floor(actx.sampleRate*0.12),buf=actx.createBuffer(1,len,actx.sampleRate),ch=buf.getChannelData(0);for(let i=0;i<len;i++)ch[i]=(Math.random()*2-1)*Math.pow(1-i/len,3);n.buffer=buf;const ng=actx.createGain();ng.gain.value=0.25;n.connect(ng);ng.connect(actx.destination);n.start(t)}catch(e){}}
+function confetti(){window.__fx.confetti++;const c=$('confetti'),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;const dpr=Math.min(window.devicePixelRatio||1,2),W=innerWidth,H=innerHeight;c.width=W*dpr;c.height=H*dpr;const x=c.getContext('2d');x.setTransform(dpr,0,0,dpr,0,0);const colors=['#f43f5e','#f59e0b','#10b981','#3b82f6','#8b5cf6','#ec4899','#facc15'],N=reduce?36:150;
+ const ps=Array.from({length:N},(_,i)=>{const left=i%2===0;return{x:W*(left?0.12:0.88),y:H*0.72,vx:(left?1:-1)*(3+Math.random()*7)*(W<500?0.8:1.2),vy:-(9+Math.random()*10)*(H<700?0.85:1),w:6+Math.random()*7,h:4+Math.random()*6,r:Math.random()*6.28,vr:(Math.random()-.5)*0.4,col:colors[i%colors.length]}});
+ let start=null;const dur=reduce?1400:2800;function frame(ts){start=start||ts;const t=ts-start;x.clearRect(0,0,W,H);let alive=0;for(const p of ps){p.vy+=0.35;p.vx*=0.99;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;if(p.y<H+20&&t<dur){alive++;x.save();x.globalAlpha=Math.max(0,Math.min(1,(dur-t)/600));x.translate(p.x,p.y);x.rotate(p.r);x.fillStyle=p.col;x.fillRect(-p.w/2,-p.h/2,p.w,p.h);x.restore()}}if(alive&&t<dur)requestAnimationFrame(frame);else x.clearRect(0,0,W,H)}requestAnimationFrame(frame)}
+function celebrate(){chime();confetti();try{navigator.vibrate&&navigator.vibrate([40,30,40])}catch(e){}}
+function syncSoundBtn(){$('soundBtn').textContent=soundOn?'🔊':'🔇'}
+$('soundBtn').onclick=()=>{soundOn=!soundOn;localStorage.setItem('choreSound',soundOn?'on':'off');syncSoundBtn();unlockAudio();if(soundOn)chime()};syncSoundBtn();
+
+/* ---------- GitHub storage ---------- */
+async function request(method,body){const r=await fetch(endpoint()+(method==='GET'?'?ref='+encodeURIComponent(CONFIG.branch)+'&t='+Date.now():''),{method,cache:'no-store',headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28',...(body?{'Content-Type':'application/json'}:{})},body:body?JSON.stringify(body):undefined});const v=await r.json();if(!r.ok){const e=Error(v.message||'GitHub request failed');e.status=r.status;throw e}return v}
+async function read(){const v=await request('GET');let d;
+ if(v.content&&v.encoding!=='none'){const bytes=Uint8Array.from(atob(v.content.replace(/\s/g,'')),c=>c.charCodeAt(0));d=JSON.parse(new TextDecoder().decode(bytes))}
+ else{if(!v.sha)throw Error('No database version returned');const u=`https://api.github.com/repos/${encodeURIComponent(CONFIG.owner)}/${encodeURIComponent(CONFIG.repo)}/git/blobs/${encodeURIComponent(v.sha)}`,r=await fetch(u,{cache:'no-store',headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github.raw+json'}});if(!r.ok){const e=Error('Database read failed');e.status=r.status;throw e}d=JSON.parse(await r.text())}
+ if(!d.settings||!d.tasks||!d.members)throw Error('Invalid database.json');return {d:normalize(d),sha:v.sha}}
+const REJECTED='Your saved code was rejected or has expired. Please enter a new one.';
+async function refresh(){if(busy||!token)return;try{const x=await read();D=x.d;sha=x.sha;banner('');$('conn').textContent='Synced '+new Date().toLocaleTimeString();$('conn').className='conn live';$('gate').hidden=true;document.body.classList.remove('locked');$('signOutBtn').hidden=false;render();autoWeekly()}catch(e){$('conn').textContent='Not synced';$('conn').className='conn off';if(e.status===401)forgetToken(REJECTED);else banner(D?'Can’t reach GitHub right now — showing the last data. Retrying…':'Can’t load data: '+e.message+'. Retrying… (your code is still saved on this device)')}}
+/* op(d) may return false = "nothing to write". opts.fx = celebrate after a confirmed save. */
+function auditDiff(before,after,path,out){if(JSON.stringify(before)===JSON.stringify(after))return;if(before&&after&&typeof before==='object'&&typeof after==='object'&&!Array.isArray(before)&&!Array.isArray(after)){for(const k of new Set([...Object.keys(before),...Object.keys(after)]))auditDiff(before[k],after[k],path+'/'+k.replaceAll('~','~0').replaceAll('/','~1'),out)}else out.push({path,...(before===undefined?{added:true}:{before:structuredClone(before)}),...(after===undefined?{removed:true}:{after:structuredClone(after)})})}
+async function change(label,op,opts={}){
+ if(busy){notify('A save is in progress. Please wait.',true);return false}
+ const protectedLabels=new Set(['approve bonus request','reject bonus request','remove permanent bonus','random exclusion','settings','edit person','clear vacation','add chore','edit chore','delete chore','correct record','re-roll mandatory chores','new week','admin exception','admin override','resolve incomplete','review alert','add person',"admin testing start","admin testing advance","admin testing restore","admin apply chosen tasks"]);
+ if(protectedLabels.has(label)&&!admin){notify('Unlock Admin first',true);return false}
+ busy=true;const actionId=crypto.randomUUID(),actor=me||'admin';let success=false;
+ document.querySelectorAll('[data-action],[data-open-slot],[data-remove-slot],[data-add-bonus]').forEach(b=>b.disabled=true);
+ try{for(let attempt=0;attempt<6;attempt++){
+  const x=await read();if(x.d.audit.some(a=>a.id===actionId)){D=x.d;success=true;break}
+  const original=JSON.stringify(x.d),auditBefore=structuredClone(x.d);prepare(x.d);const before=structuredClone(x.d),result=op(x.d);
+  if(result===false&&JSON.stringify(x.d)===original){D=x.d;sha=x.sha;success=true;break}
+  reconcileChanges(x.d,before,label);const changes=[];
+  for(const k of ['settings','tasks','members','completions','preferences','bonusPreferences','bonusSlotEnabled','slotLayout','bonusRequests','permanentBonus','plans','weeks','incomplete','exceptions','alerts','schemaVersion'])auditDiff(auditBefore[k],x.d[k],'/'+k,changes);
+  x.d.audit.push({id:actionId,at:Date.now(),actor,admin:protectedLabels.has(label),action:label,changes});x.d.meta={...(x.d.meta||{}),updatedAt:Date.now(),schemaVersion:2};
+  const bytes=new TextEncoder().encode(JSON.stringify(x.d,null,2));let bin='';for(let i=0;i<bytes.length;i+=8192)bin+=String.fromCharCode(...bytes.subarray(i,i+8192));
+  try{const result=await request('PUT',{message:'Chore chart: '+label,content:btoa(bin),sha:x.sha,branch:CONFIG.branch});D=x.d;sha=result.content?.sha||'';success=true;notify(opts.msg||'Saved to shared JSON ✓');if(opts.fx)celebrate();break}
+  catch(e){if(e.status!==409&&e.status!==422)throw e;if(attempt===5)throw Error('Too many conflicting saves. Please retry.');await new Promise(r=>setTimeout(r,150+rand()*500))}
+ }}catch(e){if(e.status===401)forgetToken(REJECTED);else notify('NOT saved: '+e.message,true)}
+ finally{busy=false;if(D)render()}
+ if(!success&&token)setTimeout(refresh,300);return success;
+}
+
+/* ---------- data helpers ---------- */
+function records(d=D){return Object.values(d.completions||{}).filter(c=>!c.voided)}
+function countIn(id,d,wid){return records(d).filter(c=>c.task===id&&c.week===wid).length}
+function count(id,d=D){return countIn(id,d,d.settings.weekId)}
+function owner(t){return t.claim?.week===D.settings.weekId?t.claim.member:''}
+function isMandatory(t,d=D){return !!(t.claim&&t.claim.mandatory&&t.claim.week===d.settings.weekId)}
+function onVacation(id,d=D,date=today()){const v=d.members[id]?.vacation;if(!v||!v.from||!v.to)return false;return v.from<=date&&date<=v.to}
+function isDue(t,wno){if(t.forcedWeeks?.includes(wno))return true;const e=t.every||1;if(e<=1)return true;const st=t.startWeek??1;return wno>=st&&(wno-st)%e===0}
+function nextDueWeekNo(t,wno){const e=t.every||1,st=t.startWeek??1;if(wno<st)return st;return wno+((e-((wno-st)%e))%e||e)}
+
+/* ---------- shared task data, fair quotas and weekly history ---------- */
+const DIFFICULTIES=['Easy','Medium','Hard','Very Hard'];
+const effort=t=>({Easy:1,Medium:2,Hard:3,'Very Hard':4}[t.difficulty]||2);
+const workload=t=>effort(t)*Math.max(1,Number(t.max)||1);
+const rand=()=>crypto.getRandomValues(new Uint32Array(1))[0]/4294967296;
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(rand()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function householdToday(d=D){try{const p=new Intl.DateTimeFormat('en-CA',{timeZone:d?.settings?.timezone||'America/Toronto',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()),v=Object.fromEntries(p.map(x=>[x.type,x.value]));return v.year+'-'+v.month+'-'+v.day}catch(e){return iso(new Date())}}
+function nextStart(d=D){const st=d.settings.weekStart,dow=parse(st).getDay()||7;return addDays(st,(cfg(d,'weekStartDay')-dow+7)%7||7)}
+function vacationOverlaps(mid,d,start,end=addDays(start,6)){const v=d.members[mid]?.vacation;return !!(v?.from&&v?.to&&v.from<=end&&v.to>=start)}
+function eligibleFor(d,start){return Object.keys(d.members).filter(m=>!vacationOverlaps(m,d,start))}
+function chosenOnly(id,d=D){return !!d.members[id]?.chosenOnly}
+function randomEligibleFor(d,start){return eligibleFor(d,start).filter(m=>!chosenOnly(m,d))}
+function normalize(d){
+ d.settings||={};d.members||={};d.tasks||={};d.completions||={};d.settings.weekStart||=householdToday(d);d.settings.weekNo||=1;d.settings.weekId||='w'+d.settings.weekNo;d.settings.timezone||='America/Toronto';d.settings.deadlineHour??=0;d.settings.rateCents??=1500;d.settings.currency||='$';d.settings.requiredTasks||={};
+ for(const k of ['preferences','bonusPreferences','plans','weeks','incomplete','alerts','exceptions','bonusSlotEnabled','slotLayout'])d[k]||={};
+ for(const k of ['audit','vacationHistory','assignmentHistory'])d[k]||=[];
+ for(const mid of Object.keys(d.members)){d.preferences[mid]||=[];d.bonusPreferences[mid]||=[]}
+ for(const t of Object.values(d.tasks)){t.difficulty=DIFFICULTIES.includes(t.difficulty)?t.difficulty:'Medium';t.max=Math.max(1,Math.floor(Number(t.max)||1));t.every=Math.max(1,Math.floor(Number(t.every)||1));t.startWeek??=1;t.active??=true;t.kind||='regular'}return d;
+}
+function dueRegular(d,no,start){return Object.entries(d.tasks).filter(([id,t])=>t.active&&t.kind==='regular'&&isDue(t,no)&&!d.exceptions[start]?.[id])}
+function planFor(d,start=nextStart(d),no=d.settings.weekNo+1){
+ const p=d.plans[start]||={},eligible=eligibleFor(d,start);
+ for(const [tid,c] of Object.entries(p)){const t=d.tasks[tid];if(!t?.active||t.kind!=='regular'||!isDue(t,no)||!eligible.includes(c.member)||d.exceptions[start]?.[tid])delete p[tid]}
+ for(const mid of eligible)for(const [key,kind] of [['preferences','selected'],['bonusPreferences','bonus']])for(const tid of d[key][mid]||[]){const t=d.tasks[tid];if(t?.active&&t.kind==='regular'&&isDue(t,no)&&!p[tid]&&!d.exceptions[start]?.[tid])p[tid]={member:mid,kind}}
+ return p;
+}
+function upcoming(d=D){const start=nextStart(d),no=d.settings.weekNo+1,users=eligibleFor(d,start),tasks=dueRegular(d,no,start),claims=planFor(d,start,no),total=tasks.reduce((s,[id,t])=>s+workload(t),0),minimum=users.length?Math.floor(tasks.length/users.length):0;return {start,no,users,tasks,claims,total,minimum,remainder:users.length?tasks.length%users.length:tasks.length,target:users.length?total/users.length:0}}
+function requiredFor(d,mid,fallback=0){const n=Number(d.settings.requiredTasks?.[mid]);return Number.isFinite(n)&&n>=0?Math.floor(n):Math.floor(fallback)}
+function deadlineDate(d=D){const tz=d.settings.timezone||'America/Toronto',target=nextStart(d),[y,m,dd]=target.split('-').map(Number),dh=Math.min(23,Math.max(0,Number(d.settings.deadlineHour??0))),utc=Date.UTC(y,m-1,dd,dh,0,0),fmt=new Intl.DateTimeFormat('en-US',{timeZone:tz,hour12:false,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'}),p=Object.fromEntries(fmt.formatToParts(new Date(utc)).map(x=>[x.type,x.value])),asUTC=Date.UTC(+p.year,+p.month-1,+p.day,+p.hour%24,+p.minute,+p.second);return new Date(utc*2-asUTC)}
+function updateDeadlineTimer(){const el=$('deadlineTimer');if(!el||!D)return;const ms=deadlineDate(D)-Date.now();if(ms<=0){el.textContent='⏰ Selection deadline reached';el.classList.add('soon');return}const totalMinutes=Math.floor(ms/60000),days=Math.floor(totalMinutes/1440),hours=Math.floor((totalMinutes%1440)/60),minutes=totalMinutes%60,text=days>0?days+' day'+(days===1?'':'s')+' '+hours+' hr'+(hours===1?'':'s')+' left':hours>0?hours+' hr'+(hours===1?'':'s')+' '+minutes+' min left':minutes+' min left';el.textContent='⏳ '+text;el.classList.toggle('soon',ms<48*3600000)}
+function weekRecord(d){const s=d.settings;return d.weeks[s.weekId]||={id:s.weekId,start:s.weekStart,no:s.weekNo,assignments:{},excluded:{},bonusUsers:[],generated:false,closed:false}}
+function snapshot(d,id,c){const t=d.tasks[id];return {task:id,taskName:t.name,member:c.member,difficulty:t.difficulty,required:t.max,workload:workload(t),kind:c.kind||'automatic',completed:countIn(id,d,d.settings.weekId)}}
+function syncWeek(d){const w=weekRecord(d);if(w.closed)return;for(const [id,t] of Object.entries(d.tasks)){if(t.kind!=='regular')continue;if(t.claim?.week===d.settings.weekId)w.assignments[id]=snapshot(d,id,t.claim);else delete w.assignments[id]}}
+function alertAdmin(d,key,message){d.alerts[key]={...(d.alerts[key]||{}),message,week:d.settings.weekId,at:Date.now(),resolved:false}}
+function archiveWeek(d){const w=weekRecord(d),s=d.settings;if(w.closed)return;syncWeek(d);
+ for(const [id,a] of Object.entries(w.assignments)){a.completed=countIn(id,d,s.weekId);if(a.completed<a.required){const key=s.weekId+':'+id;d.incomplete[key]||={id:key,task:id,taskName:a.taskName,member:a.member,memberName:d.members[a.member]?.name,week:s.weekId,weekStart:s.weekStart,difficulty:a.difficulty,required:a.required,completed:a.completed,status:'outstanding',category:'missed_active',events:[]}}}
+ for(const [id,x] of Object.entries(w.excluded)){const key=s.weekId+':excluded:'+id;d.incomplete[key]||={id:key,task:id,taskName:x.taskName,member:'',week:s.weekId,weekStart:s.weekStart,difficulty:x.difficulty,status:'excluded',category:x.category||'admin_exception',reason:x.reason,events:[]}}
+ w.closed=true;w.closedAt=Date.now();
+}
+function assignMandatory(d){
+ normalize(d);const s=d.settings,w=weekRecord(d),eligible=randomEligibleFor(d,s.weekStart),p=planFor(d,s.weekStart,s.weekNo),tasks=Object.entries(d.tasks).filter(([id,t])=>t.active&&t.kind==='regular'&&isDue(t,s.weekNo));
+ for(const [id,t] of tasks){if(t.claim?.week!==s.weekId)delete t.claim;const ex=d.exceptions[s.weekStart]?.[id];if(ex){w.excluded[id]={taskName:t.name,difficulty:t.difficulty,reason:ex.reason||ex,category:ex.category||'admin_exception'};delete t.claim;continue}
+  if(t.claim&&(!eligibleFor(d,s.weekStart).includes(t.claim.member))&&countIn(id,d,s.weekId)<t.max){d.assignmentHistory.push({week:s.weekId,task:id,before:structuredClone(t.claim),reason:'vacation exclusion',at:Date.now()});delete t.claim}
+  if(p[id]&&(!t.claim||(countIn(id,d,s.weekId)===0&&!['admin','admin_override'].includes(t.claim.kind))))t.claim={member:p[id].member,week:s.weekId,mandatory:true,kind:p[id].kind};if(t.claim){t.claim.mandatory=true;t.claim.kind||='legacy'}
+ }
+ w.bonusUsers=Array.from(new Set([...w.bonusUsers,...tasks.filter(([id,t])=>t.claim?.kind==='bonus').map(([id,t])=>t.claim.member)]));
+ const due=tasks.filter(([id])=>!w.excluded[id]),minimum=eligible.length?Math.floor(due.length/eligible.length):0,required=Object.fromEntries(eligible.map(m=>[m,requiredFor(d,m,minimum)]));
+ w.minimumSlots=minimum;w.remainder=eligible.length?due.length%eligible.length:due.length;
+ const load=Object.fromEntries(eligible.map(m=>[m,due.filter(([id,t])=>t.claim?.member===m).reduce((s,[id,t])=>s+workload(t),0)])),counts=Object.fromEntries(eligible.map(m=>[m,due.filter(([id,t])=>t.claim?.member===m).length]));
+ const autos=eligible.filter(m=>!w.bonusUsers.includes(m)),pool=shuffle(due.filter(([id,t])=>!t.claim&&!d.permanentBonus?.[id]&&!Object.values(d.bonusRequests||{}).some(r=>r.task===id&&r.status==='pending'))).sort((a,b)=>workload(b[1])-workload(a[1])),newAuto=new Set();
+ for(const [id,t] of pool){
+  if(!autos.length){alertAdmin(d,'unassigned:'+s.weekId+':'+id,'Cannot cover '+t.name+' for '+s.weekStart+': all remaining people are away or bonus volunteers. An admin override or explicit exception is needed.');continue}
+  // Fill whole-number minimums first. Thereafter the lowest difficulty workload gets leftovers.
+  const below=autos.filter(m=>counts[m]<required[m]),allowed=below.length?below:autos,low=Math.min(...allowed.map(m=>load[m]));let candidates=allowed.filter(m=>load[m]===low);
+  const rotating=Object.keys(d.members).some(m=>d.preferences[m]?.includes(id)&&vacationOverlaps(m,d,s.weekStart)&&diffDays(d.members[m].vacation.from,s.weekStart)>=7);
+  if(rotating){const exp=Object.fromEntries(candidates.map(m=>[m,Object.values(d.weeks).filter(old=>old.id!==s.weekId&&old.assignments?.[id]?.member===m).length])),least=Math.min(...Object.values(exp));candidates=candidates.filter(m=>exp[m]===least)}
+  const mid=candidates[Math.floor(rand()*candidates.length)];t.claim={member:mid,week:s.weekId,mandatory:true,kind:rotating?'vacation_rotation':'automatic'};load[mid]+=workload(t);counts[mid]++;newAuto.add(id);
+ }
+ // Equal-count swaps and surplus-only moves improve effort balance without undoing minimum slots.
+ const movable=due.filter(([id])=>newAuto.has(id));if(movable.length<=100)for(let k=0;k<100;k++){
+  let best=null;for(const [id,t] of movable){const a=t.claim.member,wt=workload(t);for(const b of autos){if(a===b||counts[a]<=minimum)continue;const gain=load[a]**2+load[b]**2-(load[a]-wt)**2-(load[b]+wt)**2;if(gain>0&&(!best||gain>best.gain))best={t,a,b,gain}}
+   for(const [oid,o] of movable){const b=o.claim.member;if(a===b)continue;const delta=wt-workload(o),gain=load[a]**2+load[b]**2-(load[a]-delta)**2-(load[b]+delta)**2;if(gain>0&&(!best||gain>best.gain))best={t,o,a,b,gain}}}
+  if(!best)break;const {t,o,a,b}=best;load[a]-=workload(t);load[b]+=workload(t);counts[a]--;counts[b]++;t.claim.member=b;if(o){load[b]-=workload(o);load[a]+=workload(o);counts[b]--;counts[a]++;o.claim.member=a}
+ }
+ for(const mid of eligible)if(counts[mid]<required[mid])alertAdmin(d,'minimum:'+s.weekId+':'+mid,(d.members[mid]?.name||mid)+' is below the '+required[mid]+'-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.');
+ for(const [id,t] of tasks)if(t.claim||w.excluded[id]){const key='unassigned:'+s.weekId+':'+id;if(d.alerts[key])d.alerts[key].resolved=true}
+ syncWeek(d);w.generated=true;w.generatedAt||=Date.now();s.assignedWeek=s.weekId;d.schemaVersion=2;
+}
+function needsRoll(d){return cfg(d,'autoWeek')&&nextStart(d)<=householdToday(d)}
+function needsAssign(d){return d.schemaVersion!==2||!d.weeks[d.settings.weekId]?.generated}
+function rollWeek(d,force=false){if(force)throw Error('Use the weekly calendar. Saved commitments cannot be cleared by an early rollover.');let n=0;while(needsRoll(d)){if(++n>520)throw Error('Saved week date is more than ten years old');archiveWeek(d);const start=nextStart(d);d.settings.weekNo++;d.settings.weekId='w'+d.settings.weekNo;d.settings.weekStart=start;for(const t of Object.values(d.tasks))delete t.claim;assignMandatory(d)}planFor(d)}
+function prepare(d){normalize(d);if(needsAssign(d))assignMandatory(d);if(needsRoll(d))rollWeek(d);planFor(d)}
+function reroll(d){assignMandatory(d)}
+function autoWeekly(){if(!D||busy||!token||!(needsRoll(D)||needsAssign(D))||Date.now()-lastAuto<15000)return;lastAuto=Date.now();change('weekly assignments',d=>{}, {msg:'Weekly assignments synchronized ✓'})}
+function memberWork(mid,d=D){const a=Object.entries(d.tasks).filter(([id,t])=>t.active&&t.kind==='regular'&&isDue(t,d.settings.weekNo)&&t.claim?.week===d.settings.weekId&&t.claim.member===mid);return {assigned:a.reduce((s,[id,t])=>s+workload(t),0),remaining:a.reduce((s,[id,t])=>s+Math.max(0,t.max-countIn(id,d,d.settings.weekId))*effort(t),0),tasks:a.length}}
+function spareBonusTasks(u){const missing=u.users.reduce((s,m)=>s+Math.max(0,u.minimum-Object.values(u.claims).filter(c=>c.member===m&&c.kind!=='bonus').length),0),unclaimed=u.tasks.filter(([id])=>!u.claims[id]).length;return Math.max(0,unclaimed-missing)}
+function slotItems(u,mid,kind,d=D){
+ const active=Object.entries(u.claims).filter(([id,c])=>c.member===mid&&(kind==='bonus'?c.kind==='bonus':c.kind!=='bonus')),byId=new Map(active.map(item=>[item[0],item])),layout=d.slotLayout[mid]?.[kind]||[],size=kind==='bonus'?Math.max(1,active.length):requiredFor(d,mid,u.minimum),slots=Array(size).fill(null),used=new Set();
+ for(let i=0;i<size;i++){const id=layout[i];if(byId.has(id)&&!used.has(id)){slots[i]=byId.get(id);used.add(id)}}
+ for(const item of active){if(used.has(item[0]))continue;const empty=slots.findIndex(x=>!x);if(empty>=0)slots[empty]=item;else slots.push(item);used.add(item[0])}return slots;
+}
+function setChoice(d,mid,id,kind,start,remove=false,slotIndex=null){
+ if(kind==='bonus'&&!remove){requestPermanentBonus(d,mid,id);return}const u=upcoming(d);if(start!==u.start)throw Error('The week changed or the deadline passed. Reopen the slot.');if(!d.members[mid])throw Error('Pick your name first');
+ if(remove){if(d.permanentBonus?.[id]?.member===mid)throw Error('Only an admin can remove a permanent bonus assignment');for(const k of ['selected','bonus'])if(d.slotLayout[mid]?.[k])d.slotLayout[mid][k]=d.slotLayout[mid][k].map(t=>t===id?null:t);d.preferences[mid]=d.preferences[mid].filter(t=>t!==id);d.bonusPreferences[mid]=d.bonusPreferences[mid].filter(t=>t!==id);if(u.claims[id]?.member===mid)delete u.claims[id];return}
+ if(!u.users.includes(mid))throw Error('You are on vacation for that week. Saved choices are preserved.');if(!u.tasks.some(([tid])=>tid===id))throw Error('That chore is not available for this week.');
+ if(d.permanentBonus?.[id]||Object.entries(d.preferences).some(([m,ids])=>m!==mid&&ids.includes(id)))throw Error('That task has a saved owner');if(u.claims[id])throw Error('Unavailable: '+(d.members[u.claims[id].member]?.name||'another person')+' already selected that task.');
+ const normal=Object.values(u.claims).filter(c=>c.member===mid&&c.kind!=='bonus').length,bonus=Object.values(u.claims).filter(c=>c.member===mid&&c.kind==='bonus').length;
+ if(kind==='selected'&&normal>=requiredFor(d,mid,u.minimum))throw Error('Your required slots are full. Add a voluntary bonus slot for extra work.');
+ if(kind==='bonus'){const totalAssigned=Object.keys(u.claims).length;if(totalAssigned%2===0)throw Error('Bonus chores can only be added when there is an odd number of chores already assigned.');if(spareBonusTasks(u)<1)throw Error('All remaining chores are reserved for unfilled minimum slots. No leftover bonus chore is available.');if(normal<requiredFor(d,mid,u.minimum))throw Error('Fill your required slots before accepting a bonus. Bonus volunteers cannot receive automatic top-ups.');if(!d.bonusSlotEnabled[mid])throw Error('Add an optional bonus slot first');if(bonus>=Math.max(1,d.bonusPreferences[mid].length))throw Error('Your bonus slot is already filled. Remove its chore before choosing another.');}
+ if(!['selected','bonus'].includes(kind))throw Error('Invalid slot type');
+ const slots=slotItems(u,mid,kind,d);let index=slotIndex===null?slots.findIndex(x=>!x):slotIndex;
+ if(!Number.isInteger(index)||index<0||index>=slots.length||slots[index])throw Error('That slot has already been filled or no longer exists. Reopen it.');
+ const layout=d.slotLayout[mid]||={selected:[],bonus:[]};layout[kind]=slots.map(item=>item?.[0]||null);layout[kind][index]=id;
+ d.preferences[mid]=d.preferences[mid].filter(t=>t!==id);d.bonusPreferences[mid]=d.bonusPreferences[mid].filter(t=>t!==id);d[kind==='bonus'?'bonusPreferences':'preferences'][mid].push(id);u.claims[id]={member:mid,kind};
+}
+function reconcileChanges(d,before,label){
+ const s=d.settings,w=weekRecord(d);
+ for(const [mid,m] of Object.entries(d.members)){const prev=before.members[mid]?.vacation||{},v=m.vacation||{};if(JSON.stringify(prev)!==JSON.stringify(v)){
+  if(!!v.from!==!!v.to||(v.from&&(!/^\d{4}-\d{2}-\d{2}$/.test(v.from)||!/^\d{4}-\d{2}-\d{2}$/.test(v.to)||v.to<v.from)))throw Error('Invalid vacation dates');
+  d.vacationHistory.push({member:mid,before:prev,after:structuredClone(v),at:Date.now(),actor:me||'admin'});
+  if(vacationOverlaps(mid,d,s.weekStart))for(const [id,t] of Object.entries(d.tasks))if(t.kind==='regular'&&t.claim?.week===s.weekId&&t.claim.member===mid&&countIn(id,d,s.weekId)<t.max){const key=s.weekId+':vacation:'+id+':'+mid;d.incomplete[key]||={id:key,task:id,taskName:t.name,member:mid,memberName:m.name,week:s.weekId,weekStart:s.weekStart,difficulty:t.difficulty,status:'excluded',category:'approved_vacation',reason:'Removed for approved vacation; not owed by this member.',events:[]};d.assignmentHistory.push({week:s.weekId,task:id,before:structuredClone(t.claim),reason:'approved vacation',at:Date.now()});delete t.claim}
+ }}
+ for(const [id,t] of Object.entries(d.tasks)){if(!DIFFICULTIES.includes(t.difficulty))throw Error('Choose a valid difficulty');if(!Number.isInteger(t.max)||t.max<1||t.max>20||!Number.isInteger(t.every)||t.every<1||t.every>52)throw Error('Invalid task schedule');const old=before.tasks[id]?.claim||null,c=t.claim||null;
+  if(JSON.stringify(old)!==JSON.stringify(c)){d.assignmentHistory.push({week:s.weekId,task:id,before:old,after:c,reason:label,at:Date.now(),actor:me||'admin'});if(c?.week===s.weekId){if(!d.members[c.member]||vacationOverlaps(c.member,d,s.weekStart))throw Error('Choose an active person, not someone on vacation');if(t.kind==='regular'){c.mandatory=true;if(w.bonusUsers.includes(c.member)&&!['bonus','selected'].includes(c.kind)&&!c.overrideReason)throw Error('Bonus volunteers need an explicit reasoned admin override for extra work')}}}
+ }
+ if(['add chore','edit chore','delete chore','edit person','vacation','back from vacation','clear vacation','admin exception','admin override','resolve incomplete','add person','save task preference','request permanent bonus','remove permanent bonus','random exclusion'].includes(label))assignMandatory(d);
+ syncWeek(d);planFor(d);
+}
+
+/* ---------- member view ---------- */
+const excused=(id,t)=>!!D.weeks[D.settings.weekId]?.excluded?.[id];
+function card(id,t){
+  const n=count(id),o=owner(t),complete=n>=t.max,vac=o&&onVacation(o),mand=isMandatory(t),ex=excused(id,t);
+  const acts=[];
+  if(!o&&!complete&&t.kind==='paid'&&!onVacation(me))acts.push(`<button data-action="claim" data-id="${id}">Claim</button>`);
+  if(o===me&&me&&!complete&&!onVacation(me))acts.push(`<button class="good" data-action="complete" data-id="${id}">Complete</button>`);
+  if(o===me&&me&&n===0&&!mand)acts.push(`<button class="secondary small" data-action="release" data-id="${id}">Give up</button>`);
+  return `<article class="task ${complete?'completed':''} ${mand?'mandatory':''} ${ex?'excused':''}"><span>${complete?'✓':''}</span><div><div class="task-name">${esc(t.name)}</div><div class="task-desc">${esc(t.desc||'')}</div><div class="task-meta"><span class="pill">${esc(t.difficulty)} · ${workload(t)} workload</span><span class="pill who">${esc(D.members[o]?.name||'Unclaimed')}</span><span class="pill">${n}/${t.max}</span>${mand?'<span class="pill must">🔒 Mandatory</span>':''}${ex?'<span class="pill vac">Authorized exclusion</span>':''}${(t.every||1)>1?'<span class="pill bi">Every '+t.every+' weeks</span>':''}${vac?'<span class="pill vac">🌴 Away</span>':''}</div></div><div class="acts">${acts.join('')}</div></article>`;
+}
+function vacationCard(){
+  const v=D.members[me]?.vacation||{},active=v.from&&v.to&&v.to>=today();
+  if(active)return `<section class="card vaccard"><h3>🌴 Vacation ${v.from<=today()?'in progress':'scheduled'}</h3><p class="hint">${esc(v.from)} → ${esc(v.to)}. You are skipped for random assignments and don’t need to finish chores.</p><button class="secondary" data-vac="back">I’m back — check in now</button></section>`;
+  return `<details class="card vaccard"><summary>🌴 Going on vacation?</summary><form id="vacForm"><div class="grid2 keep"><div><label>From</label><input type="date" name="from" value="${today()}" required></div><div><label>Until (last day away)</label><input type="date" name="to" required></div></div><p class="hint">You’ll be skipped for random weekly assignments and excused from chores until then, or until you check back in.</p><button>Start vacation</button></form></details>`;
+}
+function render(){
+  if(!D)return;const s=D.settings,wno=s.weekNo;
+  $('weekLabel').textContent='Week of '+s.weekStart;updateDeadlineTimer();
+  $('meSelect').innerHTML='<option value="">Choose your name</option>'+Object.entries(D.members).map(([id,m])=>`<option value="${id}" ${id===me?'selected':''}>${esc(m.name)}</option>`).join('');
+  const dueAll=Object.entries(D.tasks).filter(([id,t])=>t.active&&isDue(t,wno)),reg=dueAll.filter(([id,t])=>t.kind==='regular'),needed=reg.filter(([id,t])=>!excused(id,t)),done=needed.filter(([id,t])=>count(id)>=t.max).length;
+  $('progressText').textContent=`${done} of ${needed.length} chores complete`;$('progressBar').style.width=(needed.length?done/needed.length*100:0)+'%';
+  $('overallStatus').textContent=done===needed.length&&needed.length?'All required chores complete! 🎉':'Complete your assigned chores, and fill next week’s slots in Choose Tasks.';
+  const myT=Object.entries(D.tasks).find(([id,t])=>isMandatory(t)&&t.claim.member===me&&t.active);
+  if(me&&onVacation(me))$('myProgress').textContent='🌴 On vacation';
+  else if(me&&myT)$('myProgress').textContent='Mandatory: '+(count(myT[0])>=myT[1].max?'done ✓':'pending');
+  else $('myProgress').textContent='';
+  $('myProgress').hidden=!$('myProgress').textContent;
+  $('people').innerHTML=Object.entries(D.members).map(([id,m])=>{const r=records().filter(c=>c.member===id),wk=r.filter(c=>c.week===s.weekId),earn=r.reduce((a,c)=>a+(c.paymentCents||0),0),v=m.vacation||{},vac=onVacation(id),soon=v.from&&v.to&&v.from>today()&&v.to>=today();return `<button class="person ${id===me?'active':''} ${vac?'onvacation':''}" data-person="${id}"><h3>${esc(m.name)}</h3><div class="points">${memberWork(id).remaining} left</div><div class="money">${money(earn)} earned</div>${vac?'<div class="meta">🌴 Away until '+esc(v.to)+'</div>':soon?'<div class="meta">🌴 Away from '+esc(v.from)+'</div>':''}</button>`}).join('');
+  document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
+  let ts=dueAll.filter(([id,t])=>tab==='paid'?t.kind==='paid':t.kind==='regular');
+  if(tab==='mine')ts=ts.filter(([id,t])=>owner(t)===me).sort((a,b)=>(isMandatory(b[1])&&b[1].claim.member===me)-(isMandatory(a[1])&&a[1].claim.member===me));
+  let h='';
+  if(tab==='mine'){
+    const mine=ts.filter(([id,t])=>t.kind==='regular'&&owner(t)===me&&count(id)<t.max&&!excused(id,t)&&!onVacation(me));
+    const remaining=mine.reduce((a,[id,t])=>a+(t.max-count(id)),0);
+  }
+  h+=(tab==='paid'?`<p class="hint">Optional paid jobs · ${money(s.rateCents)}/hour</p>`:'')+'<div class="task-list">'+ts.map(([id,t])=>card(id,t)).join('')+'</div>';
+  if(!ts.length)h+='<div class="empty">Nothing here right now.</div>';
+  if(tab==='all'){const later=Object.entries(D.tasks).filter(([id,t])=>t.active&&!isDue(t,wno));if(later.length)h+='<div class="section-title">Not due this week</div><div class="task-list">'+later.map(([id,t])=>`<article class="task excused"><span></span><div><div class="task-name">${esc(t.name)}</div><div class="task-meta"><span class="pill bi">Every ${t.every} weeks</span><span class="pill">Next: week of ${addDays(s.weekStart,7*(nextDueWeekNo(t,wno)-wno))}</span></div></div></article>`).join('')+'</div>'}
+  if(!memberFormDirty)$('tabContent').innerHTML=tab==='choose'?chooseView():h;
+  if(tab==='paid')$('tabContent').innerHTML+='<h3>Paid-task history</h3><div class="tablewrap"><table><tr><th>Member</th><th>Task</th><th>Time</th><th>Rate</th><th>Earned</th></tr>'+records().filter(c=>c.kind==='paid').reverse().map(c=>`<tr><td>${esc(D.members[c.member]?.name||c.memberName)}</td><td>${esc(c.taskName)}</td><td>${mins(c.minutes)}</td><td>${money(c.rateCents)}</td><td>${money(c.paymentCents)}</td></tr>`).join('')+'</table></div>';
+  if(admin&&$('drawer').classList.contains('open')&&!adminDirty)renderAdmin();
+}
+function download(name,data,type){const u=URL.createObjectURL(new Blob([data],{type})),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}
+function exportCSV(){const rows=[['Member','Task','Date','Type','Difficulty','Minutes','Hourly rate','Payment'],...records().map(c=>[D.members[c.member]?.name,c.taskName,new Date(c.at).toISOString(),c.kind,c.difficulty||'Legacy',c.minutes||'',c.rateCents?c.rateCents/100:'',c.paymentCents?c.paymentCents/100:''])];download('chore-chart.csv','\ufeff'+rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n'),'text/csv;charset=utf-8')}
+
+/* ---------- ADMIN PANEL ---------- */
+const ATABS=[['overview','🏠','Overview'],['incomplete','📋','Incomplete Tasks'],['rules','⚖️','Overrides & alerts'],['people','👥','People'],['chores','🧹','Chores'],['records','🧾','Records'],['settings','⚙️','Settings'],['data','💾','Backup']];
+const dayNames=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+function renderAdmin(){
+  if(!D){$('drawerBody').innerHTML='<div class="empty" style="margin-top:14px">Enter the GitHub code first.</div>';return}
+  adminDirty=false;const pane={overview:aOverview,incomplete:aIncomplete,rules:aRules,people:aPeople,chores:aChores,records:aRecords,settings:aSettings,data:aData}[adminTab]();
+  const keep=$('drawerBody').scrollTop;
+  $('drawerBody').innerHTML='<nav class="anav">'+ATABS.map(t=>`<button type="button" class="${adminTab===t[0]?'active':''}" data-atab="${t[0]}"><span>${t[1]}</span>${t[2]}</button>`).join('')+'</nav><div class="apane">'+pane+'</div>';
+  $('drawerBody').scrollTop=keep;
+}
+function aOverview(){
+  const s=D.settings,T=Object.keys(D.members),reg=Object.entries(D.tasks).filter(([id,t])=>t.active&&t.kind==='regular'&&isDue(t,s.weekNo)),needed=reg.filter(([id,t])=>!excused(id,t)),done=needed.filter(([id,t])=>count(id)>=t.max).length;
+  const wk=records().filter(c=>c.week===s.weekId&&c.kind==='paid').reduce((a,c)=>a+c.paymentCents,0),all=records().filter(c=>c.kind==='paid').reduce((a,c)=>a+c.paymentCents,0),away=T.filter(id=>onVacation(id)).length;
+  const rows=T.map(id=>{const m=D.members[id],es=Object.entries(D.tasks).filter(([tid,t])=>isMandatory(t)&&t.claim.member===id),e=es[0];let st;
+    if(onVacation(id))st='<span class="pill vac">🌴 On vacation</span>';else if(!e)st='<span class="pill none">No mandatory chore</span>';else st=es.every(([tid,t])=>count(tid)>=t.max)?'<span class="pill done">Done ✓</span>':'<span class="pill must">Pending</span>';
+    return `<div class="li"><div class="t"><b>${esc(m.name)}</b><span>${es.length?esc(es.map(([tid,t])=>t.name).join(', ')):'—'}</span></div>${st}</div>`}).join('');
+  return `<div class="tiles"><div class="tile"><div class="l">Chores done this week</div><div class="v">${done} / ${needed.length}</div></div><div class="tile"><div class="l">Paid this week</div><div class="v">${money(wk)}</div></div><div class="tile"><div class="l">Paid all-time</div><div class="v">${money(all)}</div></div><div class="tile"><div class="l">On vacation now</div><div class="v">${away}</div></div></div>
+  <h3 class="sec">This week’s mandatory chores</h3><p class="sub">Week of ${esc(s.weekStart)} · whole-number minimum slots plus difficulty-balanced leftover work. Saved choices persist.</p><div class="listcard">${rows}</div>
+  <h3 class="sec">Quick actions</h3><div class="actions"><button class="action" data-do="reroll"><b>⚖️ Reconcile assignments</b><span>Cover unassigned work without removing saved or existing commitments.</span></button><button class="action warn" data-do="newweek"><b>📅 Check weekly calendar</b><span>Check the scheduled weekly transition; preferences are never reset.</span></button><button class="action" data-do="fx"><b>🎉 Test sound &amp; confetti</b><span>Check the celebration works on this device.</span></button></div>`;
+}
+function aPeople(){
+  return '<details class="pcard"><summary>Add a person</summary><form id="addPersonForm"><label>Name</label><input type="text" name="personName" maxlength="40" required><button style="margin-top:10px">Add person</button></form></details><h3 class="sec" style="margin-top:14px">People, vacations &amp; assignments</h3><p class="sub">Tap a person to rename them, set a vacation, or permanently exclude them from random assignments. Vacation people are excused; <b>Chosen tasks only</b> people still choose and keep their selected tasks, but never receive random extras.</p>'+Object.entries(D.members).map(([id,m])=>{const v=m.vacation||{},vac=onVacation(id),soon=v.from&&v.to&&v.from>today()&&v.to>=today();
+    return `<details class="pcard"><summary><div class="avatar">${esc((m.name||'?').trim().charAt(0).toUpperCase())}</div><div><b>${esc(m.name)}</b><div class="pills">${vac?'<span class="pill vac">🌴 Away until '+esc(v.to)+'</span>':soon?'<span class="pill vac">🌴 From '+esc(v.from)+'</span>':m.chosenOnly?'<span class="pill must">🎯 Chosen tasks only</span>':'<span class="pill done">Available</span>'}</div></div></summary><form data-member="${id}"><label>Name</label><input name="name" maxlength="40" required value="${esc(m.name)}"><div class="grid2 keep"><div><label>Vacation from</label><input type="date" name="vfrom" value="${esc(v.from||'')}"></div><div><label>Vacation until</label><input type="date" name="vto" value="${esc(v.to||'')}"></div></div><label>Required task slots (blank = automatic)</label><input type="number" name="requiredTasks" min="0" step="1" value="${D.settings.requiredTasks?.[id]??''}"><p class="hint">Changes the number of chores this person must select. Remaining unclaimed chores are redistributed or randomly assigned, but never to someone who already has a voluntary bonus task.</p><div class="choice-row"><label class="toggle"><input type="checkbox" name="chosenOnly" ${m.chosenOnly?'checked':''}><span><b>Exclude from Random Assignment</b><small>Permanently exclude this person from random assignments. They can still select regular and bonus tasks.</small></span></label></div><div class="savebar"><button>Save</button><button type="button" class="secondary" data-clearvac="${id}">End vacation</button></div></form></details>`}).join('');
+}
+function taskFormFields(t,isNew){
+  const o=t.claim?.week===D.settings.weekId?t.claim.member:'';
+  return `<fieldset class="fgroup" style="border:1px solid var(--line)"><legend>Basics</legend><label>Name</label><input name="name" required maxlength="80" value="${esc(t.name||'')}" placeholder="e.g. Vacuum the stairs"><label>Description (optional)</label><input name="desc" maxlength="200" value="${esc(t.desc||'')}"><div class="grid2 keep"><div><label>Type</label><select name="kind"><option value="regular" ${t.kind!=='paid'?'selected':''}>Regular</option><option value="paid" ${t.kind==='paid'?'selected':''}>Paid</option></select></div><div><label>Difficulty</label><select name="difficulty">${DIFFICULTIES.map(x=>`<option ${x===(t.difficulty||'Medium')?'selected':''}>${x}</option>`).join('')}</select></div></div></fieldset>
+  <fieldset class="fgroup" style="border:1px solid var(--line)"><legend>Schedule</legend><div class="grid2 keep"><div><label>Repeats</label><select name="every"><option value="1" ${(t.every||1)===1?'selected':''}>Every week</option><option value="2" ${t.every===2?'selected':''}>Every 2 weeks</option></select></div><div><label>Times per week</label><input name="max" type="number" min="1" max="20" value="${t.max??1}"></div></div><label>First due week # <span style="font-weight:400">(this is week ${D.settings.weekNo})</span></label><input name="startWeek" type="number" min="1" value="${t.startWeek??D.settings.weekNo}"></fieldset>`
+  +(isNew?'':`<fieldset class="fgroup" style="border:1px solid var(--line)"><legend>Assignment this week</legend><label>Assigned to</label><select name="assigned"><option value="">No assignment (requires an admin exception)</option>${Object.entries(D.members).map(([mid,m])=>`<option value="${mid}" ${o===mid?'selected':''}>${esc(m.name)}</option>`).join('')}</select><label class="check" style="margin-top:10px"><input type="checkbox" name="mandatory" ${isMandatory(t)?'checked':''}> 🔒 Mandatory — members can’t remove it</label></fieldset>`);
+}
+function aChores(){
+  const list=Object.entries(D.tasks).sort((a,b)=>(a[1].order||0)-(b[1].order||0));
+  const chips=[['all','All'],['regular','Regular'],['paid','Paid'],['bi','Biweekly'],['off','Hidden']].map(c=>`<button type="button" class="chip ${aFilter===c[0]?'on':''}" data-chip="${c[0]}">${c[1]}</button>`).join('');
+  return `<h3 class="sec" style="margin-top:14px">Chores <span style="font-weight:400;color:var(--muted)">(${list.length})</span></h3><details class="pcard" style="margin-top:8px"><summary><div class="avatar">＋</div><div><b>Add a chore</b></div></summary><form id="newTask">${taskFormFields({},true)}<div class="savebar"><button>Add chore</button></div></form></details>
+  <div class="toolbar"><input type="search" id="aSearch" placeholder="Search chores…" value="${esc(aSearch)}"></div><div class="chips">${chips}</div><div id="choreList">`+
+  list.map(([id,t])=>{const o=t.claim?.week===D.settings.weekId?t.claim.member:'';return `<details class="crow" data-name="${esc((t.name||'').toLowerCase())}" data-kind="${t.kind}" data-bi="${(t.every||1)>1?1:0}" data-off="${t.active?0:1}"><summary><div style="min-width:0"><div class="nm">${esc(t.name)}</div><div class="pills"><span class="pill ${t.kind==='paid'?'pay':''}">${t.kind==='paid'?'Paid':'Regular'}</span><span class="pill">${esc(t.difficulty)} · ${workload(t)} workload</span>${(t.every||1)>1?'<span class="pill bi">Every '+t.every+' wks</span>':''}${isMandatory(t)?'<span class="pill must">🔒 '+esc(D.members[o]?.name||'')+'</span>':o?'<span class="pill who">'+esc(D.members[o]?.name||'')+'</span>':''}${t.active?'':'<span class="pill bad">Hidden</span>'}</div></div></summary><form data-task="${id}">${taskFormFields(t,false)}<label class="check" style="margin:8px 0"><input type="checkbox" name="active" ${t.active?'checked':''}> Visible to everyone</label><div class="savebar"><button>Save</button><button type="button" class="danger" data-delete="${id}">Delete</button></div></form></details>`}).join('')+'</div><div class="empty" id="noChores" hidden>No chores match.</div>';
+}
+function applyChoreFilter(){const q=aSearch.trim().toLowerCase();let shown=0;document.querySelectorAll('#choreList .crow').forEach(r=>{const ok=(!q||r.dataset.name.includes(q))&&(aFilter==='all'||(aFilter==='regular'&&r.dataset.kind==='regular')||(aFilter==='paid'&&r.dataset.kind==='paid')||(aFilter==='bi'&&r.dataset.bi==='1')||(aFilter==='off'&&r.dataset.off==='1'));r.hidden=!ok;if(ok)shown++});const n=$('noChores');if(n)n.hidden=shown>0}
+function aRecords(){
+  let list=Object.entries(D.completions||{}).map(([id,c])=>({id,...c})).filter(c=>(recScope==='all'||c.week===D.settings.weekId)&&(!recMember||c.member===recMember)&&(!recKind||c.kind===recKind)).sort((a,b)=>b.at-a.at).slice(0,100);
+  return `<h3 class="sec" style="margin-top:14px">Completion records</h3><p class="sub">Voiding excludes a record from completed work and earnings but keeps it, so you can restore it.</p><div class="grid2 keep" style="margin-bottom:8px"><select id="rfScope"><option value="week" ${recScope==='week'?'selected':''}>This week</option><option value="all" ${recScope==='all'?'selected':''}>All time</option></select><select id="rfKind"><option value="">All types</option><option value="regular" ${recKind==='regular'?'selected':''}>Regular</option><option value="paid" ${recKind==='paid'?'selected':''}>Paid</option></select></div><select id="rfMember" style="margin-bottom:10px"><option value="">Everyone</option>${Object.entries(D.members).map(([id,m])=>`<option value="${id}" ${recMember===id?'selected':''}>${esc(m.name)}</option>`).join('')}</select>`+
+  (list.length?list.map(c=>`<div class="rec ${c.voided?'voided':''}"><div class="t"><b>${esc(c.taskName)}</b><span>${esc(D.members[c.member]?.name||c.memberName)} · ${new Date(c.at).toLocaleString([],{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})} · ${esc(c.difficulty||'Legacy record')}${c.paymentCents?' · '+money(c.paymentCents)+' ('+mins(c.minutes)+')':''}${c.voided?' · voided':''}</span></div><button class="small ${c.voided?'':'secondary'}" data-void="${c.id}">${c.voided?'Restore':'Void'}</button></div>`).join(''):'<div class="empty">No records match.</div>');
+}
+function aSettings(){const s=D.settings;return `<form id="settingsForm"><h3 class="sec">Settings</h3><label>Paid-job hourly rate (${esc(s.currency)})</label><input name="rate" type="number" min="0.01" max="1000" step="0.01" value="${s.rateCents/100}" required><p class="hint">Existing earnings retain their saved rate.</p><label class="check"><input type="checkbox" name="auto" ${cfg(D,'autoWeek')?'checked':''}> Check weekly transitions when the app opens</label><label>Week starts on</label><select name="day">${dayNames.map((n,i)=>`<option value="${i+1}" ${cfg(D,'weekStartDay')===i+1?'selected':''}>${n}</option>`).join('')}</select><label>Weekly reset / selection deadline time</label><input name="deadlineTime" type="time" value="${String(cfg(D,'deadlineHour')??0).padStart(2,'0')}:00" required><p class="hint">The countdown and weekly reset use this exact local time.</p><label>Household timezone</label><input name="timezone" type="text" value="${esc(s.timezone)}" required><p class="hint">Minimum slots = eligible chores ÷ active people, rounded down. Bonus slots cover leftovers; automatic assignment fills missing minimums first, then balances leftover difficulty. Easy 1 · Medium 2 · Hard 3 · Very Hard 4, multiplied by repetitions.</p><button>Save settings</button></form>`}
+function aData(){
+  return `<h3 class="sec" style="margin-top:14px">Backup &amp; export</h3><div class="actions"><button class="action" data-do="backup"><b>⬇ Download JSON backup</b><span>Full copy of all chores, people and history.</span></button><button class="action" data-do="csv"><b>📊 Export CSV for Excel</b><span>Completion history as a spreadsheet.</span></button></div>
+  <h3 class="sec">This device</h3><p class="sub">Your GitHub code is saved on this device, so you stay signed in.</p><div class="actions"><button class="action warn" data-do="signout"><b>🚪 Sign out of this device</b><span>Forgets the saved GitHub code. You’ll need to enter it again.</span></button><button class="action" data-do="lock"><b>🔒 Lock the admin panel</b><span>Ask for the admin password next time.</span></button></div>
+  <p class="hint" style="margin-top:16px">The admin password is an on-page lock, not server-side authorization. Anyone with the GitHub write code can edit the JSON. The app refreshes every 10 seconds while visible; weekly transitions run when someone opens it. Keep your existing database.json when upgrading.</p>`;
+}
+const openAdminPane=()=>{$('drawer').classList.add('open');$('overlay').classList.add('open');renderAdmin()};
+function openAdmin(){if(!admin){const p=prompt('Admin password:');if(p===null)return;if(p!==CONFIG.adminPassword){notify('Wrong admin password',true);return}admin=true;sessionStorage.setItem('choreAdmin','1')}openAdminPane()}
+function closeAdmin(){$('drawer').classList.remove('open');$('overlay').classList.remove('open')}
+function lockAdmin(){admin=false;sessionStorage.removeItem('choreAdmin');closeAdmin();notify('Admin panel locked')}
+$('menuBtn').onclick=openAdmin;$('gateAdmin').onclick=e=>{e.preventDefault();openAdmin()};$('closeMenu').onclick=closeAdmin;$('overlay').onclick=closeAdmin;$('lockAdmin').onclick=lockAdmin;
+$('signOutBtn').onclick=()=>{if(confirm('Sign out of this device? You will need the GitHub code to sign in again.'))forgetToken('')};
+$('drawerBody').addEventListener('input',e=>{adminDirty=true;if(e.target.id==='aSearch'){aSearch=e.target.value;applyChoreFilter()}});
+$('drawerBody').addEventListener('change',e=>{const id=e.target.id;if(id==='rfScope'){recScope=e.target.value;renderAdmin()}else if(id==='rfKind'){recKind=e.target.value;renderAdmin()}else if(id==='rfMember'){recMember=e.target.value;renderAdmin()}});
+$('drawerBody').addEventListener('click',e=>{
+  const t=e.target.closest('[data-atab],[data-chip],[data-do]');if(!t)return;if(!admin){notify('Unlock Admin first',true);return}
+  if(t.dataset.atab){adminTab=t.dataset.atab;renderAdmin();$('drawerBody').scrollTop=0}
+  else if(t.dataset.chip){aFilter=t.dataset.chip;document.querySelectorAll('[data-chip]').forEach(c=>c.classList.toggle('on',c.dataset.chip===aFilter));applyChoreFilter()}
+  else{const a=t.dataset.do;
+    if(a==='reroll'){if(confirm('Fill uncovered work without clearing existing commitments?'))change('re-roll mandatory chores',reroll,{msg:'Assignments reconciled; commitments preserved ✓'})}
+    else if(a==='newweek'){change('new week',d=>{if(needsRoll(d))rollWeek(d)},{msg:'Weekly calendar checked; preferences preserved ✓'})}
+    else if(a==='fx'){unlockAudio();celebrate()}
+    else if(a==='backup')download('database.json',JSON.stringify(D,null,2),'application/json');
+    else if(a==='csv')exportCSV();
+    else if(a==='signout'){if(confirm('Sign out of this device? You will need the GitHub code to sign in again.'))forgetToken('')}
+    else if(a==='lock')lockAdmin()}
+});
+
+/* ---------- sign-in ---------- */
+$('gateForm').onsubmit=async e=>{e.preventDefault();const t=$('gateKey').value.trim();if(!t)return;token=t;$('gateBtn').disabled=true;$('gateBtn').textContent='Checking…';
+  try{const x=await read();D=x.d;sha=x.sha;const persisted=store.set(token);$('gateKey').value='';$('gate').hidden=true;document.body.classList.remove('locked');$('signOutBtn').hidden=false;$('conn').textContent='Connected';$('conn').className='conn live';render();notify(persisted?'Signed in — saved on this device ✓':'Signed in (this browser can’t save it, so you’ll need to re-enter it next time)');autoWeekly()}
+  catch(err){token='';gate(err.status===401?'That code was not accepted. Check it and try again.':err.status===404?'Repository or file not found, or this code has no access to it.':err.message)}
+  finally{$('gateBtn').disabled=false;$('gateBtn').textContent='Save & continue'}};
+$('meSelect').onchange=e=>{if(busy){render();return}memberFormDirty=false;closeSlotPicker();me=e.target.value;localStorage.setItem('choreName',me);render()};
+
+/* ---------- member actions (mandatory assignments are protected) ---------- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-person],[data-tab],[data-action],[data-delete],[data-void],[data-vac],[data-clearvac]');if(!b)return;
+  if(busy){notify('Please wait for the current save',true);return}if(b.dataset.person){memberFormDirty=false;closeSlotPicker();me=b.dataset.person;localStorage.setItem('choreName',me);render()}
+  else if(b.dataset.tab){memberFormDirty=false;closeSlotPicker();tab=b.dataset.tab;render()}
+  else if(b.dataset.delete){adminDirty=false;if(confirm('Archive this chore? History is kept.'))change('delete chore',d=>{const id=b.dataset.delete,t=d.tasks[id];t.active=false;t.archived=true;delete t.claim;(d.exceptions[d.settings.weekStart]||={})[id]={reason:'Archived by admin',category:'admin_exception'};weekRecord(d).excluded[id]={taskName:t.name,difficulty:t.difficulty,reason:'Archived by admin',category:'admin_exception'}},{msg:'Chore deleted'})}
+  else if(b.dataset.void){adminDirty=false;change('correct record',d=>{const c=d.completions[b.dataset.void];c.voided=!c.voided},{msg:'Record updated ✓'})}
+  else if(b.dataset.vac){if(!me)return;change('back from vacation',d=>{d.members[me].vacation={from:'',to:''}},{msg:'Welcome back! ✓'})}
+  else if(b.dataset.clearvac){adminDirty=false;const id=b.dataset.clearvac;change('clear vacation',d=>{d.members[id].vacation={from:'',to:''}},{msg:'Vacation ended ✓'})}
+  else if(b.dataset.action){if(!me){notify('Pick your name first',true);return}const id=b.dataset.id,action=b.dataset.action;
+    if(action==='claim')change('claim',d=>{const t=d.tasks[id];if(t.kind!=='paid')throw Error('Regular chores are assigned weekly. Fill your slots for the upcoming week instead.');if(onVacation(me,d))throw Error('You are on vacation. Check back in first.');if(t.claim?.week===d.settings.weekId)throw Error('Already claimed');t.claim={member:me,week:d.settings.weekId}});
+    else if(action==='release')change('release',d=>{const t=d.tasks[id];if(t.claim?.member!==me)throw Error('Not yours');if(t.claim.mandatory)throw Error('Mandatory assignments can only be changed by the admin');delete t.claim});
+    else complete(id)}});
+function complete(id){const task=D.tasks[id],rc=D.settings.rateCents,wid=D.settings.weekId,person=me;let worked=null;const requestId=crypto.randomUUID();
+  const submit=()=>change('complete chore',d=>{d.completions ||= {};if(Object.values(d.completions).some(c=>c.requestId===requestId))return false;const t=d.tasks[id];if(!t||!t.active)throw Error('Task unavailable');if(d.settings.weekId!==wid)throw Error('Week changed; reopen task');if(onVacation(person,d))throw Error('Vacation Mode is on. Check back in first.');if(t.claim?.member!==person||t.claim.week!==wid)throw Error('Task is no longer assigned to you');if(count(id,d)>=t.max)throw Error('Already completed this week');if(task.kind!==t.kind)throw Error('Task changed; reopen it');if(t.kind==='paid'&&d.settings.rateCents!==rc)throw Error('Rate changed; reopen task');const c={requestId,task:id,taskName:t.name,member:person,memberName:d.members[person].name,week:wid,weekStart:d.settings.weekStart,kind:t.kind,difficulty:t.difficulty,at:Date.now()};if(t.kind==='paid')Object.assign(c,{minutes:worked,rateCents:rc,paymentCents:Math.round(worked*rc/60)});d.completions[requestId]=c},{fx:true,msg:'Done! Saved to GitHub ✓'});
+  if(task.kind!=='paid'){submit();return}
+  $('modalWrap').hidden=false;$('modal').innerHTML=`<h3>${esc(task.name)}</h3><p>Time worked at ${money(rc)}/hour</p><div class="grid2 keep"><label>Hours<input id="h" type="number" min="0" max="12" step="1" value="0" inputmode="numeric"></label><label>Minutes<input id="m" type="number" min="0" max="59" step="1" value="0" inputmode="numeric"></label></div><div class="quick">${[15,30,45,60,120].map(n=>`<button class="secondary" data-minutes="${n}">${n} min</button>`).join('')}</div><div class="paybox big" id="preview"></div><div class="row"><button id="confirmPay" disabled>Confirm &amp; save</button><button id="cancelPay" class="secondary">Cancel</button></div>`;
+  function calc(){worked=Number($('h').value)*60+Number($('m').value);const valid=Number.isInteger(worked)&&worked>=1&&worked<=720&&Number($('h').value)>=0&&Number($('m').value)>=0&&Number($('m').value)<60;$('preview').textContent=money(Math.round(worked*rc/60));$('confirmPay').disabled=!valid}
+  $('h').oninput=$('m').oninput=calc;document.querySelectorAll('[data-minutes]').forEach(b=>b.onclick=()=>{const n=+b.dataset.minutes;$('h').value=Math.floor(n/60);$('m').value=n%60;calc()});$('cancelPay').onclick=()=>{$('modalWrap').hidden=true};$('confirmPay').onclick=()=>{$('modalWrap').hidden=true;submit()};calc()}
+document.addEventListener('submit',e=>{const f=e.target;if(f===$('gateForm')||f.id==='overrideForm'||f.id==='addPersonForm')return;e.preventDefault();const v=f.elements;if(f.id==='vacForm')memberFormDirty=false;
+  if(f.id==='settingsForm'){adminDirty=false;change('settings',d=>{d.settings.rateCents=Math.round(+v.rate.value*100);d.settings.autoWeek=v.auto.checked;d.settings.weekStartDay=+v.day.value;const [dh]=v.deadlineTime.value.split(':').map(Number);d.settings.deadlineHour=Number.isFinite(dh)?dh:0;new Intl.DateTimeFormat('en',{timeZone:v.timezone.value.trim()});d.settings.timezone=v.timezone.value.trim();updateDeadlineTimer()},{msg:'Settings saved ✓'})}
+  else if(f.id==='vacForm'){if(!me)return;const from=v.from.value,to=v.to.value;if(!from||!to||to<from){notify('Choose a valid date range',true);return}change('vacation',d=>{d.members[me].vacation={from,to}},{msg:'Vacation saved 🌴'})}
+  else if(f.dataset.member){const from=v.vfrom.value,to=v.vto.value;if(!!from!==!!to||(from&&to<from)){notify('Enter both vacation dates (until ≥ from), or leave both empty',true);return}adminDirty=false;change('edit person',d=>{const mid=f.dataset.member,m=d.members[mid];m.name=v.name.value.trim();m.vacation={from,to};m.chosenOnly=!!v.chosenOnly?.checked;d.settings.requiredTasks||={};const rq=(v.requiredTasks?.value??'').trim(),before=d.settings.requiredTasks[mid];if(rq==='')delete d.settings.requiredTasks[mid];else d.settings.requiredTasks[mid]=Math.max(0,Math.floor(+rq));if(m.chosenOnly){const current=d.tasks?.[Object.keys(d.tasks).find(tid=>d.tasks[tid].claim?.week===d.settings.weekId&&d.tasks[tid].claim?.member===mid)]?.claim;if(current&&['automatic','vacation_rotation'].includes(current.kind))delete current}if(d.settings.requiredTasks[mid]!==before||m.chosenOnly)assignMandatory(d)},{msg:'Person and assignment settings saved ✓'})}
+  else if(f.id==='newTask'){adminDirty=false;const id='t'+crypto.randomUUID();const rec={name:v.name.value.trim(),desc:v.desc.value.trim(),kind:v.kind.value,difficulty:v.difficulty.value,max:+v.max.value||1,active:true,order:Date.now(),every:+v.every.value,startWeek:+v.startWeek.value};change('add chore',d=>{d.tasks[id]=rec},{msg:'Chore added ✓'})}
+  else if(f.dataset.task){adminDirty=false;const id=f.dataset.task,rec={name:v.name.value.trim(),desc:v.desc.value.trim(),kind:v.kind.value,difficulty:v.difficulty.value,max:+v.max.value||1,every:+v.every.value,startWeek:+v.startWeek.value,active:v.active.checked},a=v.assigned.value,mand=v.mandatory.checked,assignmentReason=(!a||weekRecord(D).bonusUsers.includes(a))?prompt('Reason for this authorized exclusion or bonus-user override:'):'';
+    change('edit chore',d=>{const t=d.tasks[id];Object.assign(t,rec);if(a===''){delete t.claim;if(t.kind==='regular'){if(!assignmentReason)throw Error('Exclusion reason required');(d.exceptions[d.settings.weekStart]||={})[id]={reason:assignmentReason,category:'admin_exception'}}}else{delete d.exceptions[d.settings.weekStart]?.[id];delete weekRecord(d).excluded[id];t.claim={member:a,week:d.settings.weekId,mandatory:t.kind==='regular'||mand,kind:'admin',...(assignmentReason?{overrideReason:assignmentReason}:{})}}},{msg:'Chore saved ✓'})}});
+
+/* ---------- slot-based Choose Tasks ---------- */
+function picked(u,mid,kind){return Object.entries(u.claims).filter(([id,c])=>c.member===mid&&(kind==='bonus'?c.kind==='bonus':c.kind!=='bonus'))}
+function difficultyPill(t){return `<span class="pill difficulty-${t.difficulty.replaceAll(' ','')}">${esc(t.difficulty)} · ${workload(t)} workload</span>`}
+function slotTile(index,item,kind,blocked,extra=false){
+ const bonus=kind==='bonus',label=bonus?'Bonus slot '+(index+1):extra?'Saved extra slot':'Required slot '+(index+1);
+ if(item){const [id,c]=item,t=D.tasks[id];return `<article class="slot-card filled ${bonus?'bonus-slot':''}"><div class="slot-label">${bonus?'★':'✓'} ${label}</div><h3>${esc(t.name)}</h3><div class="task-meta">${difficultyPill(t)}<span class="pill">${t.max} time${t.max===1?'':'s'}</span><span class="pill who">Saved selection</span></div><button class="secondary small" data-remove-slot="${id}" aria-label="Remove ${esc(t.name)} from this slot">Remove chore</button></article>`}
+ return `<button type="button" class="slot-card empty-slot ${bonus?'bonus-slot':''}" data-open-slot="${kind}" data-index="${index}" ${blocked?'disabled':''} aria-label="Fill ${label}"><span class="slot-label">${label}</span><span class="slot-plus" aria-hidden="true">＋</span><span>Tap to choose a chore</span><span class="slot-help">${bonus?'Voluntary extra — never assigned automatically':'Shows available chores when tapped'}</span></button>`;
+}
+function chooseView(){
+ if(!me||!D.members[me])return '<div class="empty">Choose your name above to see your task slots.</div>';
+ const u=upcoming(),normal=picked(u,me,'selected'),bonus=picked(u,me,'bonus'),blocked=!u.users.includes(me),myRequired=requiredFor(D,me,u.minimum),normalFull=normal.length>=myRequired,bonusOpen=!!D.bonusSlotEnabled[me]||bonus.length>0,work=memberWork(me),selectedLoad=[...normal,...bonus].reduce((s,[id])=>s+workload(D.tasks[id]),0),inactive=Array.from(new Set([...(D.preferences[me]||[]),...(D.bonusPreferences[me]||[])])).filter(id=>u.claims[id]?.member!==me);
+ const slots=slotItems(u,me,'selected').map((item,i)=>slotTile(i,item,'selected',blocked,i>=u.minimum));
+ return `<section class="card slot-summary"><h3>Your slots · week of ${esc(u.start)}</h3><div class="slot-count">${Math.min(normal.length,myRequired)} <span>/ ${myRequired} required slots filled</span></div><p class="hint">${D.settings.requiredTasks?.[me]!=null?'Admin set: '+myRequired+' required slot'+(myRequired===1?'':'s')+'.':u.tasks.length+' eligible chores ÷ '+u.users.length+' active people, rounded down = '+u.minimum+' required slot'+(u.minimum===1?'':'s')+' each.'}</p><p class="hint">${u.remainder} leftover chore${u.remainder===1?'':'s'} can be taken in optional bonus slots or assigned automatically at the deadline. Missing minimum slots are filled automatically first.</p><div class="work-row"><span>Your selected workload</span><b>${selectedLoad}</b></div><div class="work-row"><span>Fair workload share</span><b>about ${u.target.toFixed(1)}</b></div><p class="hint">Each slot holds one chore, including all its weekly repetitions. Difficulty still matters: leftover work is balanced by effort, not just task count.</p><p class="hint">Deadline: ${esc(u.start)} at midnight · ${esc(D.settings.timezone)}. All choices stay saved until you change them.</p><label class="vac-toggle"><input type="checkbox" id="vacationToggle" ${onVacation(me)?'checked':''}> 🌴 Vacation Mode</label>${vacationCard()}${blocked?'<div class="status warn">Vacation overlaps this week. You do not need to fill slots; saved choices are preserved.</div>':''}</section>
+ <h3 class="section-title">Minimum task slots</h3><div class="slot-grid">${slots.join('')||'<div class="empty">No minimum slots this week. You can still volunteer for a leftover chore.</div>'}</div>
+ ${normal.length>myRequired?'<p class="hint">Previous saved extra choices are preserved. Remove them manually if you want fewer commitments.</p>':''}
+ <section class="bonus-section"><div class="bar"><h3 class="section-title">Optional bonus</h3>${!bonusOpen?`<button class="secondary" data-add-bonus ${blocked||!normalFull?'disabled':''}>＋ Add a bonus slot</button>`:''}</div>${!normalFull&&!blocked?'<p class="hint">Fill your minimum slots first to unlock a bonus slot.</p>':''}${bonusOpen?`<p class="hint">A bonus is voluntary. Once a chore fills this slot, you will receive no automatic additional assignments for that week.</p><div class="slot-grid">${slotItems(u,me,'bonus').map((item,i)=>slotTile(i,item,'bonus',blocked||!normalFull)).join('')}</div>${!bonus.length?'<button class="linklike" data-hide-bonus>Remove empty bonus slot</button>':''}`:'<p class="hint">Bonus work is not added unless you choose to add a slot and fill it.</p>'}</section>
+ <section class="card" style="margin-top:14px"><b>This week</b><p class="hint">${work.tasks} assigned chores · ${work.remaining} remaining / ${work.assigned} assigned workload</p></section>
+ ${inactive.length?`<details class="card" style="margin-top:12px"><summary>Saved preferences inactive this week (${inactive.length})</summary><p class="hint">Not due, on vacation, archived, or already selected by someone else. Nothing was automatically deleted.</p>${inactive.map(id=>`<div class="work-row"><span>${esc(D.tasks[id]?.name||'Archived chore')} ${D.bonusPreferences[me]?.includes(id)?'· bonus':''}</span><button class="secondary small" data-remove-slot="${id}">Remove saved choice</button></div>`).join('')}</details>`:''}
+ <details class="card" style="margin-top:12px"><summary>Household slots & workload</summary>${Object.entries(D.members).map(([mid,m])=>{const a=picked(u,mid,'selected'),b=picked(u,mid,'bonus');return `<div class="work-row"><span>${esc(m.name)}</span><span>${u.users.includes(mid)?a.length+'/'+u.minimum+' minimum · '+b.length+' bonus · '+[...a,...b].reduce((s,[id])=>s+workload(D.tasks[id]),0)+' workload':'🌴 Vacation — excluded'}</span></div>`}).join('')}</details>`;
+}
+function openSlotPicker(kind,index){if(!me||busy)return;const u=upcoming(),normal=picked(u,me,'selected');if(!u.users.includes(me)){notify('Vacation excludes you from this week',true);return}if(kind==='bonus'&&normal.length<u.minimum){notify('Fill your minimum slots first',true);return}slotPicker={kind,index,member:me,start:u.start};pickerQuery='';$('modal').innerHTML='';$('modalWrap').hidden=false;$('modal').classList.add('slot-picker');renderSlotPicker();setTimeout(()=>$('slotSearch')?.focus(),50)}
+function closeSlotPicker(){if(!slotPicker)return;slotPicker=null;pickerQuery='';$('modalWrap').hidden=true;$('modal').classList.remove('slot-picker')}
+function renderSlotPicker(){
+ if(!slotPicker||!D)return;const u=upcoming();if(slotPicker.start!==u.start||slotPicker.member!==me){closeSlotPicker();notify('The week or selected person changed. Reopen your slot.');return}const activeSlots=slotItems(u,me,slotPicker.kind);if(slotPicker.index>=activeSlots.length||activeSlots[slotPicker.index]){closeSlotPicker();notify('This slot changed on another device. Reopen an empty slot.');return}
+ if(!$('slotTaskList')){$('modal').innerHTML=`<div class="bar"><h3>${slotPicker.kind==='bonus'?'Choose a bonus chore':'Fill a task slot'}</h3><button class="secondary small" data-close-picker aria-label="Close chore picker">Close</button></div><p class="hint" id="slotPickerHint"></p><input type="search" id="slotSearch" placeholder="Search available chores…" aria-label="Search available chores"><div id="slotTaskList" class="picker-list"></div>`;$('slotSearch').value=pickerQuery}
+ const normal=picked(u,me,'selected'),mine=[...normal,...picked(u,me,'bonus')],load=mine.reduce((s,[id])=>s+workload(D.tasks[id]),0),remainingSlots=Math.max(1,u.minimum-normal.length),ideal=Math.max(0,(u.target-load)/remainingSlots),bonusBlocked=slotPicker.kind==='bonus'&&(spareBonusTasks(u)<1||normal.length<u.minimum),available=u.tasks.filter(([id])=>!u.claims[id]&&!D.permanentBonus?.[id]&&!Object.entries(D.preferences).some(([m,ids])=>m!==me&&ids.includes(id))),items=available.filter(([id,t])=>(t.name+' '+(t.desc||'')+' '+t.difficulty).toLowerCase().includes(pickerQuery.toLowerCase())).sort((a,b)=>Math.abs(workload(a[1])-ideal)-Math.abs(workload(b[1])-ideal)||a[1].name.localeCompare(b[1].name));
+ const best=items.length?Math.abs(workload(items[0][1])-ideal):0;
+ $('slotPickerHint').textContent=bonusBlocked?'No leftover bonus chore is available right now. Remaining chores are reserved for unfilled minimum slots.':available.length+' available chores. Already-selected chores are hidden. Your selected workload is '+load+'; fair share is about '+u.target.toFixed(1)+'.';
+ $('slotTaskList').innerHTML=bonusBlocked?'<div class="empty">All remaining chores are needed for minimum slots. You can keep your empty bonus slot for a later week.</div>':items.map(([id,t])=>`<button class="picker-task" data-pick-task="${id}" ${busy?'disabled':''}><span class="picker-name">${esc(t.name)}</span><span class="task-desc">${esc(t.desc||'')}</span><span class="task-meta">${difficultyPill(t)}<span class="pill">${t.max} time${t.max===1?'':'s'}</span>${slotPicker.kind!=='bonus'&&Math.abs(workload(t)-ideal)===best?'<span class="pill who">Closest workload fit</span>':''}</span>${load+workload(t)>Math.ceil(u.target)?'<span class="task-desc">This choice puts you above the average workload share.</span>':''}</button>`).join('')||'<div class="empty">No available chores match. Another device may have claimed the last chore.</div>';
+}
+/* ---------- admin records, exceptions and historical controls ---------- */
+function aIncomplete(){
+  const all=Object.values(D.incomplete).sort((a,b)=>b.weekStart.localeCompare(a.weekStart));
+  const outstanding=all.filter(r=>r.status==='outstanding');
+  const excluded=all.filter(r=>r.status==='excluded');
+  const lateByUser={};
+  for(const r of outstanding.filter(r=>r.category==='missed_active')){
+    const key=r.member||r.memberName||'Unassigned';
+    (lateByUser[key]??={name:D.members[r.member]?.name||r.memberName||'Unassigned',records:[]}).records.push(r);
+  }
+  const groups=Object.values(lateByUser).sort((a,b)=>b.records.length-a.records.length||a.name.localeCompare(b.name));
+  const chip=(n,label,cls)=>`<span class="pill ${cls}">${n} ${label}</span>`;
+  const resolveButtons=r=>['resolved','handled','reassigned','carried_forward','forgiven'].map(status=>`<button class="secondary small" data-resolve="${esc(r.id)}" data-status="${status}">${status.replaceAll('_',' ')}</button>`).join('');
+  const recordCard=r=>`<article class="card" style="margin:8px 0;border-left:4px solid #e5484d">
+    <div class="bar"><b>${esc(r.taskName)}</b><span class="pill bad">${esc(r.status.replaceAll('_',' '))}</span></div>
+    <p class="hint">Week of ${esc(r.weekStart)} · ${esc(r.difficulty)}${r.required?` · ${r.completed}/${r.required} completed`:''}${r.reason?` · ${esc(r.reason)}`:''}</p>
+    <div class="row" style="gap:6px;flex-wrap:wrap">${resolveButtons(r)}</div>
+    <details style="margin-top:8px"><summary>Resolution history (${r.events.length})</summary>${r.events.map(e=>`<p class="hint">${new Date(e.at).toLocaleString()} · ${esc(e.status)} · ${esc(e.note||'')}</p>`).join('')||'<p class="hint">No resolution events yet.</p>'}</details>
+  </article>`;
+  const userGroup=g=>{
+    const times=g.records.length;
+    const repeat=times>1?`<span class="pill bad">⚠️ Late ${times} times</span>`:'';
+    return `<section class="card" style="margin-bottom:14px;border:2px solid #e5484d">
+      <div class="bar"><div><h3 style="margin:0">${esc(g.name)}</h3><div class="hint">${times} late task record${times===1?'':'s'} outstanding</div></div><div class="row" style="gap:6px">${repeat}<span class="pill bad">Late</span></div></div>
+      ${g.records.map(recordCard).join('')}
+    </section>`};
+  const excludedCard=r=>`<article class="card" style="margin-bottom:10px;border-left:4px solid #30a46c">
+    <div class="bar"><b>${esc(r.taskName)}</b><span class="pill done">${esc(r.status.replaceAll('_',' '))}</span></div>
+    <p class="hint">${esc(D.members[r.member]?.name||r.memberName||'Excluded')} · week of ${esc(r.weekStart)} · ${esc(r.category==='approved_vacation'?'Approved vacation':'Authorized admin exception')}${r.reason?` · ${esc(r.reason)}`:''}</p>
+    <details><summary>Resolution history (${r.events.length})</summary>${r.events.map(e=>`<p class="hint">${new Date(e.at).toLocaleString()} · ${esc(e.status)} · ${esc(e.note||'')}</p>`).join('')||'<p class="hint">No resolution events yet.</p>'}</details>
+  </article>`;
+  return `<h3 class="sec">Incomplete Tasks</h3>
+  <div class="row" style="gap:8px;flex-wrap:wrap;margin-bottom:8px">
+    ${chip(all.length,'total','')}${chip(outstanding.length,'outstanding','bad')}${chip(Object.keys(lateByUser).length,'people late','bad')}${chip(excluded.length,'excluded','done')}
+  </div>
+  <p class="hint">People with late tasks are grouped below. Repeat offenders are listed first and show how many separate task records are outstanding.</p>
+  ${outstanding.length?`<div class="row" style="margin:12px 0;gap:8px;flex-wrap:wrap">
+    <button type="button" class="secondary" data-bulk-resolve="forgiven">🙏 Forgive all lates (${outstanding.filter(r=>r.category==='missed_active').length})</button>
+    <button type="button" class="good" data-bulk-resolve="resolved">✅ Complete all tasks (${outstanding.length})</button>
+  </div><p class="hint">Both actions ask for confirmation first and retain the original history.</p>`:''}
+  ${groups.map(userGroup).join('')||'<div class="empty">No users are currently late on assigned tasks.</div>'}
+  ${excluded.length?`<div class="section-title">Approved exclusions</div>${excluded.map(excludedCard).join('')}`:''}`;
+}
+
+function aRules(){const w=weekRecord(D),alerts=Object.entries(D.alerts).filter(([id,a])=>!a.resolved);return `<h3 class="sec">Overrides & alerts</h3><p class="hint">Bonus volunteers never receive automatic additional work. A manual exception needs a reason. Vacation users cannot be assigned.</p><form id="overrideForm"><label>Task</label><select name="task">${Object.entries(D.tasks).filter(([id,t])=>t.active&&t.kind==='regular').map(([id,t])=>`<option value="${id}">${esc(t.name)}</option>`).join('')}</select><label>Action</label><select name="kind"><option value="assign">Authorized assignment override</option><option value="exception">Exclude for admin exception</option><option value="vacation">Exclude for approved vacation</option></select><label>Assignee</label><select name="member">${Object.entries(D.members).map(([id,m])=>`<option value="${id}">${esc(m.name)}</option>`).join('')}</select><label>Reason</label><input type="text" name="reason" maxlength="300" required><button style="margin-top:10px">Apply authorized change</button></form><h3>Unresolved alerts (${alerts.length})</h3>${alerts.map(([id,a])=>`<section class="card"><p>${esc(a.message)}</p><button class="secondary" data-review-alert="${esc(id)}">Mark reviewed</button></section>`).join('')||'<p class="hint">No unresolved alerts.</p>'}<h3>Current workloads</h3>${Object.entries(D.members).map(([mid,m])=>{const x=memberWork(mid);return `<div class="work-row"><span>${esc(m.name)}</span><span>${x.tasks} tasks · ${x.assigned} assigned / ${x.remaining} remaining${w.bonusUsers.includes(mid)?' · bonus: no auto extras':''}${onVacation(mid)?' · vacation':''}</span></div>`}).join('')}<h3>Vacation history</h3><details><summary>${D.vacationHistory.length} changes</summary>${[...D.vacationHistory].reverse().map(v=>`<p class="hint">${esc(D.members[v.member]?.name||v.member)} · ${new Date(v.at).toLocaleString()} · ${esc(v.after.from||'returned')} ${esc(v.after.to||'')}</p>`).join('')}</details><h3>Audit history</h3><p class="hint">${D.audit.length} changes recorded in the JSON database.</p><button class="secondary" data-export-audit>Export audit JSON</button>`}
+const originalRender=render;render=function(){originalRender();if(!D)return;const x=memberWork(me);$('myProgress').textContent=onVacation(me)?'🌴 On vacation':me?x.remaining+' remaining workload':'';$('myProgress').hidden=!me;const alerts=Object.values(D.alerts).filter(a=>!a.resolved).length;if(alerts&&admin)$('overallStatus').textContent+=' · '+alerts+' assignment alert(s) in Admin.';if(needsAssign(D)||needsRoll(D)){document.querySelectorAll('[data-action],[data-open-slot],[data-add-bonus]').forEach(b=>b.disabled=true);$('overallStatus').textContent='Checking weekly assignments…'}if(slotPicker)renderSlotPicker()};
+/* ---------- slot interactions and existing JSON preferences ---------- */
+document.addEventListener('click',async e=>{
+ const b=e.target.closest('[data-open-slot],[data-remove-slot],[data-add-bonus],[data-hide-bonus],[data-pick-task],[data-close-picker],[data-resolve],[data-complete-all],[data-bulk-resolve],[data-review-alert],[data-export-audit]');if(!b)return;
+ if(b.hasAttribute('data-close-picker')){closeSlotPicker();return}if(busy){notify('Please wait for the current save',true);return}
+ if(b.dataset.openSlot){openSlotPicker(b.dataset.openSlot,+b.dataset.index);return}
+ if(b.hasAttribute('data-add-bonus')){const mid=me,start=nextStart(D);await change('bonus slot setting',d=>{if(start!==nextStart(d))throw Error('Week changed; refresh');const u=upcoming(d);if(!u.users.includes(mid)||picked(u,mid,'selected').length<u.minimum)throw Error('Fill your minimum slots before adding bonus work');d.bonusSlotEnabled[mid]=true},{msg:'Optional bonus slot added — choose a chore when ready ✓'});return}
+ if(b.hasAttribute('data-hide-bonus')){const mid=me;await change('bonus slot setting',d=>{if((d.bonusPreferences[mid]||[]).length)throw Error('Remove the saved bonus chore first');d.bonusSlotEnabled[mid]=false},{msg:'Empty bonus slot removed ✓'});return}
+ if(b.dataset.removeSlot){const id=b.dataset.removeSlot,mid=me,start=nextStart(D);await change('save task preference',d=>setChoice(d,mid,id,'selected',start,true),{msg:'Saved choice removed; slot is available ✓'});return}
+ if(b.dataset.pickTask){if(!slotPicker)return;const {member,kind,start,index}=slotPicker,id=b.dataset.pickTask;b.disabled=true;const ok=await change('save task preference',d=>setChoice(d,member,id,kind,start,false,index),{msg:kind==='bonus'?'Bonus slot filled; no automatic extras this week ✓':'Task slot filled and saved ✓'});if(ok)closeSlotPicker();else renderSlotPicker();return}
+ if(!admin){notify('Unlock Admin first',true);return}
+ if(b.hasAttribute('data-export-audit')){download('chore-audit.json',JSON.stringify(D.audit,null,2),'application/json');return}
+ if(b.dataset.reviewAlert){const id=b.dataset.reviewAlert;change('review alert',d=>{d.alerts[id].resolved=true});return}
+ if(b.hasAttribute('data-complete-all')){
+  if(!me){notify('Pick your name first',true);return}
+  const getTargets=()=>Object.entries(D.tasks).filter(([id,t])=>t.active&&t.kind==='regular'&&owner(t)===me&&count(id)<t.max&&!excused(id,t)&&!onVacation(me));
+  let targets=getTargets();
+  if(!targets.length){notify('No incomplete regular tasks to complete',true);return}
+  const remaining=targets.reduce((a,[id,t])=>a+(t.max-count(id)),0);
+  if(!confirm(`Complete all ${remaining} remaining regular chore completion${remaining===1?'':'s'}?\n\nThis will save a completion for each one.`))return;
+  let guard=0;
+  while(guard++<100){
+    targets=getTargets();
+    if(!targets.length)break;
+    const [id,t]=targets[0];
+    await complete(id);
+  }
+  return;
+ }
+ if(b.dataset.bulkResolve){
+  if(!admin){notify('Unlock Admin first',true);return}
+  const status=b.dataset.bulkResolve;
+  const targets=Object.values(D.incomplete).filter(r=>status==='forgiven'?(r.status==='outstanding'&&r.category==='missed_active'):r.status==='outstanding');
+  if(!targets.length){notify('No matching incomplete tasks',true);return}
+  const message=status==='forgiven'
+    ?`Forgive ${targets.length} late task record${targets.length===1?'':'s'}? They will be marked forgiven, but the original history stays.`
+    :`Mark ${targets.length} outstanding task record${targets.length===1?'':'s'} as resolved? This cannot be undone automatically, though resolution history is retained.`;
+  if(!confirm(message))return;
+  const note=status==='forgiven'?'Bulk forgiven by admin':'Bulk resolved by admin';
+  const wid=D.settings.weekId;
+  await change('resolve incomplete',d=>{
+    if(d.settings.weekId!==wid)throw Error('Week changed; reopen this action');
+    let n=0;
+    for(const r of Object.values(d.incomplete)){
+      const match=status==='forgiven'?(r.status==='outstanding'&&r.category==='missed_active'):r.status==='outstanding';
+      if(!match)continue;
+      r.status=status;r.events.push({at:Date.now(),status,note,member:'',actor:me||'admin'});n++;
+    }
+    if(!n)throw Error('No matching incomplete tasks');
+  },{msg:`${targets.length} incomplete record${targets.length===1?'':'s'} updated ✓`});
+  return;
+ }
+ if(b.dataset.resolve){const id=b.dataset.resolve,status=b.dataset.status,note=prompt('Resolution note:');if(note===null)return;let mid='';if(['reassigned','carried_forward'].includes(status)){mid=prompt('Enter assignee ID:\n'+Object.entries(D.members).map(([id,m])=>id+' = '+m.name).join('\n'));if(!mid)return}const wid=D.settings.weekId;change('resolve incomplete',d=>{if(d.settings.weekId!==wid)throw Error('Week changed; reopen this action');const r=d.incomplete[id];if(!r)throw Error('Record not found');if(['reassigned','carried_forward'].includes(status)){const t=d.tasks[r.task];if(!t?.active)throw Error('Restore the chore before assigning it');if(!d.members[mid]||vacationOverlaps(mid,d,d.settings.weekStart))throw Error('Choose an active person');if(weekRecord(d).bonusUsers.includes(mid))throw Error('Bonus users need a reasoned override, not automatic extra work');if(t.claim?.week===wid)throw Error('Already assigned this week. Use a reasoned override rather than creating a duplicate.');delete d.exceptions[d.settings.weekStart]?.[r.task];delete weekRecord(d).excluded[r.task];t.forcedWeeks=Array.from(new Set([...(t.forcedWeeks||[]),d.settings.weekNo]));t.claim={member:mid,week:wid,mandatory:true,kind:'carry_forward'}}r.status=status;r.events.push({at:Date.now(),status,note,member:mid,actor:me||'admin'})},{msg:'Resolution saved; original history retained ✓'})}
+});
+setInterval(()=>updateDeadlineTimer(),1000);
+document.addEventListener('input',e=>{if(e.target.id==='slotSearch'){pickerQuery=e.target.value;renderSlotPicker()}if(e.target.closest?.('#vacForm'))memberFormDirty=true});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&slotPicker)closeSlotPicker()});
+$('modalWrap').addEventListener('click',e=>{if(e.target===$('modalWrap')&&slotPicker)closeSlotPicker()});
+document.addEventListener('change',e=>{if(e.target.id!=='vacationToggle')return;const mid=me;if(!mid)return;if(e.target.checked){const to=prompt('Last day away (YYYY-MM-DD):',addDays(today(),7));if(!to){render();return}change('vacation',d=>{d.members[mid].vacation={from:householdToday(d),to}},{msg:'Vacation on; saved choices preserved ✓'})}else change('back from vacation',d=>{d.members[mid].vacation={from:'',to:''}},{msg:'Welcome back; saved choices preserved ✓'})});
+document.addEventListener('submit',e=>{
+ const f=e.target;if(f.id!=='overrideForm'&&f.id!=='addPersonForm')return;e.preventDefault();if(!admin){notify('Unlock Admin first',true);return}
+ if(f.id==='addPersonForm'){const name=f.elements.personName.value.trim(),id='p'+crypto.randomUUID();if(!name)return;change('add person',d=>{d.members[id]={name:name.slice(0,40),vacation:{}};d.preferences[id]=[];d.bonusPreferences[id]=[]});return}
+ const v=f.elements,id=v.task.value,mid=v.member.value,kind=v.kind.value,reason=v.reason.value.trim(),wid=D.settings.weekId;if(!reason)return;
+ change(kind==='assign'?'admin override':'admin exception',d=>{if(d.settings.weekId!==wid)throw Error('Week changed; reopen this action');const t=d.tasks[id],w=weekRecord(d);if(!t)throw Error('Chore missing');if(kind==='assign'){if(!d.members[mid]||vacationOverlaps(mid,d,d.settings.weekStart))throw Error('Vacation users remain excluded');delete d.exceptions[d.settings.weekStart]?.[id];delete w.excluded[id];t.forcedWeeks=Array.from(new Set([...(t.forcedWeeks||[]),d.settings.weekNo]));t.claim={member:mid,week:wid,mandatory:true,kind:'admin_override',overrideReason:reason}}else{(d.exceptions[d.settings.weekStart]||={})[id]={reason,category:kind==='vacation'?'approved_vacation':'admin_exception'};w.excluded[id]={taskName:t.name,difficulty:t.difficulty,reason,category:kind==='vacation'?'approved_vacation':'admin_exception'};delete t.claim}},{msg:'Authorized change recorded ✓'})
+});
+
+/* ---------- startup ---------- */
+async function boot(){try{const x=await read();D=x.d;sha=x.sha;$('signOutBtn').hidden=false;$('conn').textContent='Synced';$('conn').className='conn live';render();autoWeekly()}catch(e){if(e.status===401)forgetToken(REJECTED);else{$('conn').textContent='Not synced';$('conn').className='conn off';banner('Can’t load data: '+e.message+'. Retrying… (your code is still saved on this device)')}}}
+if(CONFIG.owner==='YOUR-USERNAME')gate('Edit CONFIG near the top of the script: owner, repo, branch and admin password. Then enter a fine-grained GitHub token with Contents read/write permission for this repository.');
+else if(token)boot();else gate();
+setInterval(()=>{if(!document.hidden&&token)refresh()},10000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&token)refresh()});
+</script><!-- chore-admin-testing:start -->
+<script id="chore-admin-testing-tools">
+/* Chore admin week testing v1.0 - injected without replacing the application. */
+(() => {
+ 'use strict';
+ const TAB='weektests';
+ const labels=new Set(['admin testing start','admin testing advance','admin testing restore','admin apply chosen tasks','remove permanent bonus']);
+ const clone=v=>typeof structuredClone==='function'?structuredClone(v):JSON.parse(JSON.stringify(v));
+ const stamp=()=>Date.now();
+ const isTesting=d=>!!(d?.adminTesting?.active&&d.adminTesting.backup);
+ const who=()=>typeof me==='string'&&me?me:'admin';
+ function assertAdmin(){if(!admin)throw Error('Unlock the password-protected admin panel first.');}
+ function appendTestEvent(d,action,extra={}){if(isTesting(d))d.adminTesting.events.push({at:stamp(),actor:who(),action,week:d.settings.weekId,...extra});}
+ function makeBackup(d){const b=clone(d);delete b.adminTesting;return b;}
+ function startTest(d){
+  assertAdmin();if(isTesting(d))return false;
+  const backup=makeBackup(d),date=realToday(d);
+  d.adminTesting={active:true,id:'test-'+crypto.randomUUID(),startedAt:stamp(),startedBy:who(),date,baseWeek:d.settings.weekId,baseStart:d.settings.weekStart,steps:0,backup,events:[]};
+  appendTestEvent(d,'snapshot created',{date});return true;
+ }
+ function advanceTest(d,count){
+  assertAdmin();if(!Number.isInteger(count)||count<1||count>52)throw Error('Choose a whole number from 1 to 52 weeks.');
+  if(!isTesting(d))startTest(d);
+  if(d.adminTesting.steps+count>520)throw Error('This test already covers ten years. Restore it before starting another.');
+  const run=d.adminTesting;
+  for(let i=0;i<count;i++){
+   archiveWeek(d);
+   const start=nextStart(d),no=d.settings.weekNo+1;
+   d.settings.weekNo=no;d.settings.weekStart=start;
+   let wid='w'+no;if(d.weeks[wid])wid=run.id+'-w'+no;
+   d.settings.weekId=wid;run.date=start;run.steps++;
+   for(const t of Object.values(d.tasks))delete t.claim;
+   assignMandatory(d);planFor(d);
+   appendTestEvent(d,'simulated next week',{start,no});
+  }
+  d.adminTesting.lastAction='Advanced '+count+' week'+(count===1?'':'s');
+ }
+ function restoreTest(d){
+  assertAdmin();if(!isTesting(d))throw Error('No pre-test snapshot is available.');
+  const run=clone(d.adminTesting),backup=clone(run.backup),baseAudit=backup.audit||[],baseIds=new Set(baseAudit.map(a=>a.id)),testAudit=(d.audit||[]).filter(a=>!baseIds.has(a.id));
+  const record={id:run.id,startedAt:run.startedAt,startedBy:run.startedBy,baseWeek:run.baseWeek,baseStart:run.baseStart,steps:run.steps,restoredAt:stamp(),restoredBy:who(),events:run.events};
+  for(const k of Object.keys(d))delete d[k];Object.assign(d,backup);
+  // Keep a separate audit of test operations without retaining test assignments as real history.
+  d.audit=[...baseAudit,...testAudit.map(a=>({...a,simulationId:run.id,restoredTest:true}))];
+  d.adminTestingHistory=[...(d.adminTestingHistory||[]),record];
+  d.adminTesting={active:false,lastRestoredAt:record.restoredAt,lastRestoredId:run.id};
+ }
+ function applyChosen(d){
+  assertAdmin();normalize(d);
+  const s=d.settings,w=weekRecord(d),oldClaims={},report={chosen:0,startedPreserved:0,automatic:0,unassigned:0,conflicts:[],notDue:[],vacationSkipped:[]};
+  for(const [id,x] of Object.entries(w.excluded||{}))if(!d.exceptions[s.weekStart]?.[id]){(d.exceptions[s.weekStart]||={})[id]={reason:x.reason||'Preserved authorized exclusion',category:x.category||'admin_exception'};}
+  const allDue=Object.entries(d.tasks).filter(([id,t])=>t.active&&t.kind==='regular'&&isDue(t,s.weekNo));
+  const eligible=eligibleFor(d,s.weekStart),upcomingClaims=planFor(d,nextStart(d),s.weekNo+1),currentPlan={},conflicted=new Set();
+  const desired=new Map();
+  for(const mid of Object.keys(d.members)){
+   const normal=d.preferences[mid]||[],bonus=d.bonusPreferences[mid]||[];
+   for(const id of new Set([...normal,...bonus])){
+    const t=d.tasks[id];if(!t||!t.active||t.kind!=='regular'||!isDue(t,s.weekNo)){report.notDue.push({task:id,member:mid});continue;}
+    if(!eligible.includes(mid)){report.vacationSkipped.push({task:id,member:mid});continue;}
+    if(d.exceptions[s.weekStart]?.[id]||w.excluded[id])continue;
+    const candidates=desired.get(id)||[];candidates.push({member:mid,kind:bonus.includes(id)?'bonus':'selected'});desired.set(id,candidates);
+   }
+  }
+  for(const [id,candidates] of desired){
+   let choice=candidates[0];
+   if(candidates.length>1){
+    const reserved=upcomingClaims[id];choice=reserved?candidates.find(c=>c.member===reserved.member):null;
+    if(!choice){conflicted.add(id);report.conflicts.push({task:id,reason:'More than one saved owner; no unique current reservation.'});alertAdmin(d,'apply-choices:'+s.weekId+':'+id,'Saved-choice conflict for '+d.tasks[id].name+'. Review an explicit admin assignment.');continue;}
+   }
+   currentPlan[id]=clone(choice);
+  }
+  for(const [id,t] of allDue){
+   oldClaims[id]=clone(t.claim||null);
+   if(t.claim?.week===s.weekId&&countIn(id,d,s.weekId)>0){
+    report.startedPreserved++;
+    const c=currentPlan[id];
+    if(c&&c.member===t.claim.member){t.claim.kind=c.kind;t.claim.mandatory=true;}
+    else if(c){report.conflicts.push({task:id,reason:'Started/completed work kept with its original person.'});alertAdmin(d,'apply-started:'+s.weekId+':'+id,'Cannot move '+t.name+' to its saved choice because work is already recorded for its current owner.');}
+    delete currentPlan[id];continue;
+   }
+   delete t.claim;
+  }
+  d.plans[s.weekStart]=currentPlan;
+  // Filter only this allocation pass; the actual persistent preference templates are never changed.
+  const normalSaved=clone(d.preferences),bonusSaved=clone(d.bonusPreferences);
+  try{
+   for(const mid of Object.keys(d.members)){
+    d.preferences[mid]=(normalSaved[mid]||[]).filter(id=>!conflicted.has(id));
+    d.bonusPreferences[mid]=(bonusSaved[mid]||[]).filter(id=>!conflicted.has(id));
+   }
+   w.generated=false;assignMandatory(d);
+  }finally{d.preferences=normalSaved;d.bonusPreferences=bonusSaved;}
+  syncWeek(d);planFor(d);
+  for(const [id,t] of allDue){
+   const c=t.claim?.week===s.weekId?t.claim:null,previous=oldClaims[id];
+   if(JSON.stringify(previous)!==JSON.stringify(c))d.assignmentHistory.push({week:s.weekId,task:id,before:previous,after:clone(c),reason:'Admin applied saved chosen tasks',at:stamp(),actor:who()});
+   if(c&&['selected','bonus'].includes(c.kind))report.chosen++;
+   else if(c&&['automatic','vacation_rotation'].includes(c.kind))report.automatic++;
+   if(!c&&!w.excluded[id]&&!d.exceptions[s.weekStart]?.[id])report.unassigned++;
+  }
+  d.lastChosenTaskApplication={at:stamp(),actor:who(),week:s.weekId,weekStart:s.weekStart,report};
+  appendTestEvent(d,'applied saved choices',report);return report;
+ }
+ // Use the existing shared-JSON optimistic transaction for every operation.
+ const realChange=change,realPrepare=prepare,realReconcile=reconcileChanges,realNeedsRoll=needsRoll,realNeedsAssign=needsAssign,realAutoWeekly=autoWeekly,realToday=householdToday,realRender=render,realRenderAdmin=renderAdmin;
+ needsRoll=function(d){return isTesting(d)?false:realNeedsRoll(d)};
+ needsAssign=function(d){return isTesting(d)?false:realNeedsAssign(d)};
+ householdToday=function(d=D){return isTesting(d)?d.adminTesting.date:realToday(d)};
+ prepare=function(d){if(isTesting(d)){normalize(d);return}return realPrepare(d)};
+ autoWeekly=function(){if(D&&isTesting(D))return;return realAutoWeekly()};
+ reconcileChanges=function(d,before,label){if(labels.has(label))return;return realReconcile(d,before,label)};
+ change=async function(label,op,opts={}){
+  if(labels.has(label)&&!admin){notify('Unlock Admin first.',true);return false}
+  return realChange(label,d=>{
+   if(label==='weekly assignments'&&isTesting(d))return false;
+   if(isTesting(d)&&!admin)throw Error('The household is in shared test mode. Only the admin can make changes until it is restored.');
+   const result=op(d);
+   if(isTesting(d)&&!labels.has(label)&&result!==false)appendTestEvent(d,label);
+   return result;
+  },opts);
+ };
+ const existing=ATABS.findIndex(t=>t[0]===TAB);if(existing<0){const at=ATABS.findIndex(t=>t[0]==='data');ATABS.splice(at<0?ATABS.length:at,0,[TAB,'🧪','Week testing']);}
+ function testingPane(){
+  const run=D?.adminTesting,active=isTesting(D),last=D?.lastChosenTaskApplication,history=D?.adminTestingHistory||[];
+  const status=active?'TEST MODE — snapshot saved before '+run.baseStart:'Live household data';
+  const report=last?.report;
+  return `<h3 class="sec">Week simulation & quick assignment</h3><div class="status ${active?'warn':''}">${esc(status)}</div>
+  <p class="hint">Tests use a saved copy of the full household state. The shared JSON shows test data on every device until you restore. Regular users cannot edit during test mode in this updated application. Do not mix old and updated app versions during a shared test.</p>
+  <section class="card wt-card"><h3>Simulate upcoming weeks</h3><p>Current ${active?'simulated':'live'} week: <b>${esc(D.settings.weekStart)}</b> · week ${D.settings.weekNo}</p>${active?`<p class="hint">Original snapshot: ${esc(run.baseStart)} · ${run.steps} week(s) simulated · testing date ${esc(run.date)}</p>`:'<p class="hint">The first simulation automatically saves one pre-test snapshot. Further simulations keep that same original snapshot.</p>'}
+  <label class="lbl" for="wtWeeks">How many weeks?</label><input type="number" id="wtWeeks" min="1" max="52" step="1" value="1" inputmode="numeric"><div class="savebar"><button type="button" data-weektest="simulate">🧪 Simulate weeks</button><button type="button" class="secondary" data-weektest="start" ${active?'disabled':''}>Save snapshot & enter test mode</button></div>
+  <p class="hint">Each step closes the simulated week, records incomplete tasks, advances dates, and generates the next assignments using the existing selections, quotas, bonus restrictions and vacation rules.</p>
+  <button type="button" class="danger wt-restore" data-weektest="restore" ${active?'':'disabled'}>↩ Restore everything from before testing</button><p class="hint">One restore returns the original week, selections, bonus preferences, bonus-slot settings, vacations, assignments, completions, settings and real historical records. All test-time edits are discarded from live data; a marked audit of test operations is retained.</p></section>
+  <section class="card wt-card"><h3>Set everyone’s tasks to their chosen tasks</h3><p class="hint">Applies saved normal and bonus choices to the <b>current ${active?'simulated':'live'} week</b>. Already-started/completed work stays with its recorded owner. Vacation users remain excluded; explicit admin exclusions remain in force. Remaining chores are assigned fairly, without automatic extras for bonus volunteers.</p><button type="button" data-weektest="apply">✓ Set everyone’s tasks to their chosen tasks</button><p class="hint">${active?'This change is inside the test and can be undone with Restore.':'This changes live assignments. For a reversible trial, enter test mode first.'}</p>
+  ${report?`<details><summary>Last application report · ${esc(last.weekStart)}</summary><p>${report.chosen} chosen assignments · ${report.startedPreserved} started/completed chores preserved · ${report.automatic} automatic assignments · ${report.unassigned} unassigned</p><p class="hint">${report.notDue.length} saved choices not due · ${report.vacationSkipped.length} vacation choices skipped · ${report.conflicts.length} conflicts to review</p>${report.conflicts.map(c=>`<p class="hint">${esc(D.tasks[c.task]?.name||c.task)}: ${esc(c.reason)}</p>`).join('')}</details>`:''}</section>
+  <details class="wt-history"><summary>Restored test sessions (${history.length})</summary>${history.slice().reverse().map(h=>`<p class="hint">${esc(h.baseStart)} · ${h.steps} simulated week(s) · restored ${new Date(h.restoredAt).toLocaleString()}</p>`).join('')}</details>`;
+ }
+ renderAdmin=function(){
+  if(adminTab!==TAB)return realRenderAdmin();
+  if(!admin||!D){$('drawerBody').innerHTML='<div class="empty">Unlock Admin and load the household first.</div>';return;}
+  const body=$('drawerBody'),scroll=body.scrollTop;adminDirty=false;
+  body.innerHTML='<nav class="anav">'+ATABS.map(t=>`<button type="button" class="${adminTab===t[0]?'active':''}" data-atab="${t[0]}"><span>${t[1]}</span>${t[2]}</button>`).join('')+'</nav><div class="apane">'+testingPane()+'</div>';body.scrollTop=scroll;
+ };
+ function paintBanner(){
+  let banner=document.getElementById('wtSharedBanner');
+  if(!banner){const main=document.querySelector('main');if(!main)return;banner=document.createElement('section');banner.id='wtSharedBanner';banner.className='banner wt-banner';banner.setAttribute('role','status');main.insertBefore(banner,main.firstChild);}
+  banner.hidden=!isTesting(D);
+  if(isTesting(D)){const run=D.adminTesting;banner.textContent='🧪 SHARED TEST MODE — simulated week '+D.settings.weekStart+'. Live data is saved from '+run.baseStart+'. Only the admin can edit; use Admin → Week testing → Restore to return.';}
+ }
+ render=function(){const r=realRender();paintBanner();return r;};
+ const style=document.createElement('style');style.id='chore-weektests-style';style.textContent='.wt-card{margin:14px 0}.wt-card h3{margin:0 0 8px;font-size:1.02rem}.wt-restore{width:100%;margin-top:14px}.wt-banner{border:2px solid #d97706;background:#fff4db;color:#713f12}.wt-history{margin:18px 0}.wt-card input[type=number]{max-width:160px}@media(max-width:700px){.wt-card .savebar button{width:100%;min-height:46px}.wt-card>button{width:100%;white-space:normal;min-height:48px}}';document.head.appendChild(style);
+ document.addEventListener('click',async e=>{
+  const b=e.target.closest('[data-weektest]');if(!b)return;
+  if(!admin){notify('Unlock Admin first.',true);return}if(busy){notify('Wait for the current save.',true);return}
+  const action=b.dataset.weektest;
+  if(action==='simulate'){
+   const count=Number($('wtWeeks')?.value);if(!Number.isInteger(count)||count<1||count>52){notify('Enter a whole number of weeks from 1 to 52.',true);return}
+   const text=isTesting(D)?'Advance this shared test by '+count+' week(s)? The original snapshot will be kept.':'Save the current state and simulate '+count+' week(s)? Every device will see test mode until Restore. Test-time edits will be discarded when restored.';
+   if(!confirm(text))return;
+   await change('admin testing advance',d=>advanceTest(d,count),{msg:'Simulated '+count+' week(s). Original snapshot preserved ✓'});
+  }else if(action==='start'){
+   if(!confirm('Save the full current state and enter shared test mode? Only the admin can edit until Restore.'))return;
+   await change('admin testing start',d=>startTest(d),{msg:'Pre-test snapshot saved ✓'});
+  }else if(action==='restore'){
+   if(!isTesting(D)){notify('No active test snapshot to restore.',true);return}
+   const id=D.adminTesting.id;
+   if(!confirm('Restore everything from before this test? All test-time selections, assignments, completions and other edits will be discarded from live data. Test audit records will be retained.'))return;
+   await change('admin testing restore',d=>{if(!isTesting(d)||d.adminTesting.id!==id)throw Error('The test session changed on another device. Refresh first.');restoreTest(d)},{msg:'Original household state restored ✓'});
+  }else if(action==='apply'){
+   const wid=D.settings.weekId,testId=isTesting(D)?D.adminTesting.id:null;
+   if(!confirm('Set everyone’s current-week tasks from their saved choices? Started/completed work and authorized exclusions stay intact. Leftovers will be assigned fairly, subject to vacation and bonus restrictions. '+(testId?'This is a restorable test change.':'This changes LIVE assignments.')))return;
+   await change('admin apply chosen tasks',d=>{if(d.settings.weekId!==wid||(isTesting(d)?d.adminTesting.id:null)!==testId)throw Error('The week or test session changed. Refresh and review first.');applyChosen(d)},{msg:'Saved choices applied; review the report and any alerts ✓'});
+  }
+  adminDirty=false;if(admin&&$('drawer').classList.contains('open'))renderAdmin();paintBanner();
+ });
+ paintBanner();
+ // Expose a narrow test surface without exposing the saved snapshot through extra UI globals.
+ if(typeof window!=='undefined')window.__choreWeekTools={version:'1.0',isTesting};
+})();
+
+</script>
+<!-- chore-admin-testing:end -->
+
+<script>
+/* Durable commitments. All writes go through change(): fresh read, SHA compare,
+   retry on conflict, audit, and only then a confirmed UI update. */
+const legacyNormalize=normalize;
+normalize=function(d){legacyNormalize(d);d.permanentBonus||={};d.bonusRequests||={};
+ for(const [mid,ids] of Object.entries(d.bonusPreferences))for(const tid of new Set(ids)){
+  if(!d.permanentBonus[tid])d.permanentBonus[tid]={member:mid,createdAt:Date.now(),source:'legacy bonus'};
+ }
+ for(const mid of Object.keys(d.members)){
+  d.preferences[mid]=[...new Set(d.preferences[mid])].filter(tid=>!d.permanentBonus[tid]);
+  d.bonusPreferences[mid]=Object.entries(d.permanentBonus).filter(([tid,a])=>a.member===mid).map(([tid])=>tid);
+ }return d;
+};
+planFor=function(d,start=nextStart(d),no=d.settings.weekNo+1){
+ const p={},eligible=eligibleFor(d,start);
+ for(const [tid,a] of Object.entries(d.permanentBonus||{})){
+  const t=d.tasks[tid];if(t?.active&&t.kind==='regular'&&isDue(t,no)&&eligible.includes(a.member)&&!d.exceptions[start]?.[tid])p[tid]={member:a.member,kind:'bonus'};
+ }
+ for(const mid of eligible)for(const tid of d.preferences[mid]||[]){const t=d.tasks[tid];
+  if(t?.active&&t.kind==='regular'&&isDue(t,no)&&!d.permanentBonus[tid]&&!p[tid]&&!d.exceptions[start]?.[tid])p[tid]={member:mid,kind:'selected'};
+ }d.plans[start]=p;return p;
+};
+const legacyNeedsAssign=needsAssign;
+needsAssign=function(d){return d.commitmentRulesVersion!==3||legacyNeedsAssign(d)};
+const legacyAssign=assignMandatory;
+assignMandatory=function(d){legacyAssign(d);d.commitmentRulesVersion=3;
+ for(const [tid,a] of Object.entries(d.permanentBonus)){
+  const t=d.tasks[tid];if(t?.claim?.week===d.settings.weekId&&t.claim.member!==a.member){
+   alertAdmin(d,'bonus-conflict:'+d.settings.weekId+':'+tid,'Permanent bonus '+t.name+' is reserved for '+(d.members[a.member]?.name||a.member)+'. Existing started work or admin override is preserved this week; reservation remains for future weeks.');
+  }
+ }
+};
+function bonusRequestProblem(d,tid,rid=null){
+ const t=d.tasks[tid];if(!t?.active||t.kind!=='regular'||!isDue(t,d.settings.weekNo)||d.exceptions[d.settings.weekStart]?.[tid])return 'This task is not currently eligible';
+ if(d.permanentBonus[tid])return 'This task already has a permanent owner';
+ if(Object.values(d.preferences).some(ids=>ids.includes(tid))||Object.values(d.bonusPreferences).some(ids=>ids.includes(tid)))return 'This task has a saved owner';
+ const allowed=c=>!c||['automatic','vacation_rotation'].includes(c.kind);
+ if(t.claim?.week===d.settings.weekId&&!allowed(t.claim))return 'Only randomly assigned tasks can be requested from another person';
+ for(const [start,p] of Object.entries(d.plans||{}))if(start>=d.settings.weekStart&&!allowed(p[tid]))return 'This task has a non-random planned assignment';
+ if(Object.values(d.bonusRequests).some(r=>r.id!==rid&&r.task===tid&&['pending','assigned','approved'].includes(r.status)))return 'Another request already reserves this task';
+ return '';
+}
+function requestPermanentBonus(d,mid,tid){
+ normalize(d);if(!d.members[mid])throw Error('Select a person');const problem=bonusRequestProblem(d,tid);if(problem)throw Error(problem);
+ const id=crypto.randomUUID();d.bonusRequests[id]={id,task:tid,member:mid,status:'pending',requestedAt:Date.now(),reservedBy:mid,previousMember:d.tasks[tid].claim?.member||null};
+}
+function reviewRandomBonus(d,rid,approve){
+ if(!admin)throw Error('Unlock Admin first');const r=d.bonusRequests[rid];if(!r||r.status!=='pending')throw Error('Request was already reviewed');
+ const problem=approve?bonusRequestProblem(d,r.task,rid):'Declined by administrator';
+ r.reviewedAt=Date.now();r.reviewedBy=me||'admin';delete r.reservedBy;
+ if(problem||!d.members[r.member]){r.status='rejected';r.reason=problem||'User no longer exists';return}
+ const t=d.tasks[r.task],now=Date.now();r.status='assigned';r.assignedAt=now;
+ d.permanentBonus[r.task]={member:r.member,originalMember:r.member,request:rid,createdAt:now};
+ d.bonusPreferences[r.member].push(r.task);d.bonusSlotEnabled[r.member]=true;
+ for(const p of Object.values(d.plans))delete p[r.task];
+ const started=countIn(r.task,d,d.settings.weekId)>0;
+ const away=vacationOverlaps(r.member,d,d.settings.weekStart);
+ if(!started&&!away)t.claim={member:r.member,week:d.settings.weekId,mandatory:true,kind:'bonus'};
+ r.currentWeekDeferred=started||away;
+}
+function removePermanentBonus(d,tid){
+ if(!admin)throw Error('Unlock Admin first');const a=d.permanentBonus[tid];if(!a)throw Error('Assignment was already removed');
+ delete d.permanentBonus[tid];for(const mid of Object.keys(d.bonusPreferences))d.bonusPreferences[mid]=d.bonusPreferences[mid].filter(id=>id!==tid);
+ for(const p of Object.values(d.plans))delete p[tid];
+ for(const r of Object.values(d.bonusRequests))if(r.task===tid&&r.status==='assigned'){r.status='removed';r.removedAt=Date.now();r.removedBy=me||'admin'}
+ const t=d.tasks[tid];if(t?.claim?.member===a.member&&t.claim.kind==='bonus'&&countIn(tid,d,d.settings.weekId)===0)delete t.claim;
+}
+const legacyChooseView=chooseView;
+chooseView=function(){const html=legacyChooseView();if(!me||!D.members[me])return html;
+ const tasks=Object.entries(D.tasks).filter(([tid])=>!bonusRequestProblem(D,tid));
+ const rows=tasks.map(([tid,t])=>`<div class="work-row"><span>${esc(t.name)}${t.claim?.week===D.settings.weekId?' · randomly assigned to '+esc(D.members[t.claim.member]?.name||t.claim.member):''}</span><button class="secondary small" data-request-bonus="${esc(tid)}" ${busy?'disabled':''}>Request permanently</button></div>`).join('');
+ // Replace the obsolete weekly-only optional bonus UI with the durable request UI.
+ const start=html.indexOf('<section class="bonus-section">'),end=html.indexOf('<section class="card" style="margin-top:14px">',start);
+ const panel=`<section class="card bonus-section"><h3>Request a permanent bonus task</h3><p class="hint">You can request unassigned tasks or tasks randomly assigned to someone else. Administrator approval makes the task permanently yours. Chosen Tasks and existing permanent owners are protected. Work already recorded this week stays with its original user; your permanent assignment applies on the next eligible week.</p>${rows||'<p>No other tasks available.</p>'}</section>`;
+ const result=start>=0&&end>start?html.slice(0,start)+panel+html.slice(end):html+panel;
+ return result;
+};
+const legacySlotTile=slotTile;
+slotTile=function(index,item,kind,blocked,extra=false){let html=legacySlotTile(index,item,kind,blocked,extra);if(item&&D.permanentBonus[item[0]])html=html.replace(/<button[^>]*data-remove-slot[^>]*>.*?<\/button>/,'<span class="hint">Permanent bonus · admin removal only</span>');return html};
+const legacyRules=aRules;
+aRules=function(){return `<section class="card"><h3>Permanent bonus assignments</h3>${Object.entries(D.permanentBonus).map(([tid,a])=>`<div class="work-row"><span>${esc(D.tasks[tid]?.name||tid)} → ${esc(D.members[a.member]?.name||a.member)}</span><button class="danger small" data-remove-permanent="${esc(tid)}">Remove assignment</button></div>`).join('')||'<p>No permanent bonus assignments.</p>'}<h3>Bonus request history</h3>${Object.values(D.bonusRequests).map(r=>`<p class="hint">${esc(D.members[r.member]?.name||r.member)} · ${esc(D.tasks[r.task]?.name||r.task)} · ${esc(r.status)} · ${esc(new Date(r.requestedAt).toLocaleString())}</p>`).join('')||'<p>No requests yet.</p>'}</section>`+legacyRules()};
+document.addEventListener('click',async e=>{const b=e.target.closest('[data-request-bonus],[data-remove-permanent]');if(!b)return;
+ if(busy)return;if(b.dataset.requestBonus){const mid=me,tid=b.dataset.requestBonus;if(!confirm('Request permanent ownership of this task? Administrator approval is required.'))return;await change('request permanent bonus',d=>requestPermanentBonus(d,mid,tid),{msg:'Request reserved for administrator review ✓'});}
+ else {if(!admin)return;const tid=b.dataset.removePermanent;if(!confirm('Remove this permanent bonus assignment?'))return;await change('remove permanent bonus',d=>removePermanentBonus(d,tid),{msg:'Permanent bonus removed ✓'});}
+});
+
+const randomBonusRules=aRules;
+aRules=function(){if(!admin)return '';return `<section class="card"><h3>Pending permanent bonus requests</h3>${Object.values(D.bonusRequests).filter(r=>r.status==='pending').map(r=>`<div class="work-row"><span>${esc(D.tasks[r.task]?.name||r.task)} → ${esc(D.members[r.member]?.name||r.member)}</span><span><button class="small good" data-review-random-bonus="${esc(r.id)}" data-approve="yes">Approve</button> <button class="small danger" data-review-random-bonus="${esc(r.id)}">Reject</button></span></div>`).join('')||'<p>No pending requests.</p>'}</section>`+randomBonusRules()};
+document.addEventListener('click',async e=>{const b=e.target.closest('[data-review-random-bonus]');if(!b||!admin||busy)return;const id=b.dataset.reviewRandomBonus;
+ const ok=await change(b.dataset.approve?'approve bonus request':'reject bonus request',d=>reviewRandomBonus(d,id,!!b.dataset.approve),{msg:'Request review saved'});
+ if(ok){const r=D.bonusRequests[id];if(r.status==='rejected')notify(r.reason,true);else if(r.currentWeekDeferred)notify('Permanent assignment saved. Current-week work stays unchanged.');}
+});
+window.addEventListener('focus',()=>{if(token&&!busy)refresh()});
+</script>
+
+<style>
+.task.bonus-highlight{border-left:4px solid #8b5cf6;background:linear-gradient(90deg,#f5f0ff, var(--card,#fff) 65%)}
+.bonus-label{background:#ede9fe;color:#5b21b6;border:1px solid #ddd6fe}
+.bonus-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.bonus-recipient-dialog{border:1px solid #ddd6fe;border-radius:16px;padding:24px;max-width:440px;width:calc(100% - 40px);box-sizing:border-box}
+.bonus-recipient-dialog::backdrop{background:#15102d66}
+.bonus-recipient-dialog select{width:100%;margin:12px 0}
+</style>
+<script>
+/* Controller-managed gifts use the existing compare-and-swap shared save. */
+function giftFingerprint(d,tid){return JSON.stringify({claim:d.tasks[tid]?.claim||null,permanent:d.permanentBonus?.[tid]||null})}
+function controlsGift(d,tid){const a=d.permanentBonus?.[tid];return !!a&&a.source==='controlled_gift'&&(admin||!!me&&a.controller===me)}
+function canStartGift(d,tid){const t=d.tasks[tid];if(!me||!d.members[me]||bonusRequestProblem(d,tid))return false;
+ const c=t.claim?.week===d.settings.weekId?t.claim:null;
+ return !c||admin||c.member===me;
+}
+function setGiftRecipient(d,tid,recipient,expected){
+ normalize(d);if(!me||!d.members[me])throw Error('Choose your name first');
+ if(giftFingerprint(d,tid)!==expected)throw Error('This assignment changed on another device. Refresh and try again.');
+ const a=d.permanentBonus[tid],t=d.tasks[tid];
+ if(a?!controlsGift(d,tid):!canStartGift(d,tid))throw Error('You do not control this assignment, or it is no longer eligible.');
+ if(Object.values(d.bonusRequests).some(r=>r.task===tid&&['pending','approved'].includes(r.status)))throw Error('A bonus request is already being processed.');
+ if(recipient){
+  if(!d.members[recipient])throw Error('The selected person no longer exists');
+  if(vacationOverlaps(recipient,d,d.settings.weekStart))throw Error('This person is away this week. Choose an available person.');
+  if(!t.active||t.kind!=='regular'||!isDue(t,d.settings.weekNo)||d.exceptions[d.settings.weekStart]?.[tid])throw Error('This task is not eligible this week');
+ }
+ // Remove only this task's saved bonus linkage; never alter completions or other tasks.
+ for(const mid of Object.keys(d.bonusPreferences))d.bonusPreferences[mid]=d.bonusPreferences[mid].filter(id=>id!==tid);
+ for(const p of Object.values(d.plans))delete p[tid];
+ if(recipient){
+  d.permanentBonus[tid]={member:recipient,controller:a?.controller||me,source:'controlled_gift',originalMember:a?.originalMember||t.claim?.member||null,createdAt:a?.createdAt||Date.now(),updatedAt:Date.now()};
+  d.bonusPreferences[recipient].push(tid);d.bonusSlotEnabled[recipient]=true;
+  t.claim={member:recipient,week:d.settings.weekId,mandatory:true,kind:'bonus'};
+ }else{
+  if(!a)throw Error('There is no permanent gift to return');
+  delete d.permanentBonus[tid];
+  if(t.claim?.kind==='bonus')delete t.claim;
+  for(const r of Object.values(d.bonusRequests))if(r.task===tid&&r.status==='assigned'){r.status='removed';r.removedAt=Date.now();r.removedBy=me}
+ }
+}
+function giftButtons(tid){
+ if(controlsGift(D,tid))return `<button class="secondary small" data-gift-task="${esc(tid)}">Change recipient</button><button class="secondary small" data-gift-random="${esc(tid)}">Back to random</button>`;
+ return canStartGift(D,tid)?`<button class="secondary small" data-gift-task="${esc(tid)}">Give to Whomever</button>`:'';
+}
+const giftBaseCard=card;
+card=function(id,t){let html=giftBaseCard(id,t);const bonus=!!D.permanentBonus[id]||t.claim?.kind==='bonus';
+ if(bonus){html=html.replace('class="task ','class="task bonus-highlight ');html=html.replace('<div class="task-meta">','<div class="task-meta"><span class="pill bonus-label">'+(D.permanentBonus[id]?'Permanent bonus':'Bonus task')+'</span>')}
+ return html.replace('<div class="acts">','<div class="acts">'+giftButtons(id));
+};
+const giftBaseChoose=chooseView;
+chooseView=function(){let html=giftBaseChoose();if(!me||!D.members[me])return html;
+ // Include owned random assignments too; those do not need to request themselves.
+ const available=Object.entries(D.tasks).filter(([id])=>canStartGift(D,id));
+ const managed=Object.entries(D.permanentBonus).filter(([id])=>controlsGift(D,id));
+ const rows=[...available.map(([id,t])=>`<div class="work-row"><span>${esc(t.name)} <span class="pill bonus-label">Random · eligible bonus</span></span><div class="bonus-controls">${giftButtons(id)}</div></div>`),...managed.map(([id,a])=>`<div class="work-row"><span>${esc(D.tasks[id]?.name||id)} <span class="pill bonus-label">Permanent bonus</span><small> → ${esc(D.members[a.member]?.name||a.member)}</small></span><div class="bonus-controls">${giftButtons(id)}</div></div>`)];
+ if(rows.length)html+=`<section class="card" style="margin-top:14px"><h3>Give to Whomever</h3><p class="hint">Give an eligible task permanently. You keep control of the recipient and can return it to random assignment. Recorded work stays credited to its original person.</p>${rows.join('')}</section>`;
+ return html;
+};
+function openGiftPicker(tid){
+ document.getElementById('giftRecipientDialog')?.remove();const expected=giftFingerprint(D,tid),actor=me;
+ const dialog=document.createElement('dialog');dialog.id='giftRecipientDialog';dialog.className='bonus-recipient-dialog';
+ const selected=D.permanentBonus[tid]?.member||'';
+ dialog.innerHTML=`<form><h3>Give to Whomever</h3><p>${esc(D.tasks[tid]?.name||tid)}</p><label for="giftRecipient">Permanent recipient</label><select id="giftRecipient" required><option value="">Choose a person</option>${Object.entries(D.members).map(([id,m])=>`<option value="${esc(id)}" ${id===selected?'selected':''} ${vacationOverlaps(id,D,D.settings.weekStart)?'disabled':''}>${esc(m.name)}${vacationOverlaps(id,D,D.settings.weekStart)?' (away)':''}</option>`).join('')}</select><p class="hint">Only this task changes. You retain control; completion history and points are preserved.</p><div class="bonus-controls"><button type="submit">Assign permanently</button><button type="button" data-gift-cancel class="secondary">Cancel</button></div></form>`;
+ document.body.append(dialog);dialog.querySelector('[data-gift-cancel]').onclick=()=>dialog.close();dialog.addEventListener('close',()=>dialog.remove());
+ dialog.querySelector('form').onsubmit=async e=>{e.preventDefault();if(busy)return;const recipient=dialog.querySelector('select').value;if(!recipient)return;
+ const ok=await change('give controlled bonus',d=>{if(me!==actor)throw Error('Selected user changed. Reopen the dialog.');setGiftRecipient(d,tid,recipient,expected)},{msg:'Permanent recipient saved ✓'});if(ok)dialog.close();};dialog.showModal();
+}
+document.addEventListener('click',async e=>{const b=e.target.closest('[data-gift-task],[data-gift-random]');if(!b||busy)return;
+ if(b.dataset.giftTask){openGiftPicker(b.dataset.giftTask);return}
+ const tid=b.dataset.giftRandom,expected=giftFingerprint(D,tid),actor=me;
+ if(!confirm('Remove this permanent gift and return this task to the random pool if eligible? Recorded work and other tasks will not change.'))return;
+ await change('return controlled bonus to random',d=>{if(me!==actor)throw Error('Selected user changed');setGiftRecipient(d,tid,null,expected)},{msg:'Permanent gift removed; random eligibility restored ✓'});
+});
+</script>
+
+
+<!-- bonus-under-minimum:start -->
+<style>
+.choose-assigned-bonuses{margin:12px 0 18px;border-left:4px solid #8b5cf6;background:#faf7ff;border-radius:12px;padding:14px}
+.choose-assigned-bonuses h3{margin:0 0 10px}
+.choose-assigned-bonuses .task{border-left:3px solid #8b5cf6}
+.choose-assigned-bonuses .bonus-slot-label{display:inline-block;background:#ede9fe;color:#5b21b6;border-radius:20px;padding:3px 9px;font-size:12px}
+</style>
+<script>
+(()=>{
+ const previousChooseView=chooseView;
+ chooseView=function(){
+  let html=previousChooseView();if(!me||!D?.members?.[me])return html;
+  const ids=new Set(Object.entries(D.permanentBonus||{}).filter(([,a])=>a.member===me).map(([id])=>id));
+  for(const [id,t] of Object.entries(D.tasks||{}))if(t.claim?.week===D.settings.weekId&&t.claim.member===me&&t.claim.kind==='bonus')ids.add(id);
+  const items=[...ids].filter(id=>D.tasks[id]);
+  const section=`<section class="choose-assigned-bonuses" aria-label="Your bonus tasks"><h3>Your bonus tasks <span class="bonus-slot-label">Bonus · separate from minimum slots</span></h3>${items.length?items.map(id=>{const t=D.tasks[id],a=D.permanentBonus?.[id],active=t.claim?.week===D.settings.weekId&&t.claim.member===me;return `<div data-bonus-assignment="${esc(id)}">${active?card(id,t):`<div class="work-row"><span>${esc(t.name)}</span><span class="bonus-slot-label">${a?'Permanently assigned':'Bonus'}</span></div><p class="hint">Saved assignment; not active for you this week. Availability and vacation rules still apply.</p>${typeof giftButtons==='function'?`<div class="bonus-controls">${giftButtons(id)}</div>`:''}`}</div>`}).join(''):'<p class="hint">No bonus tasks assigned to you yet.</p>'}</section>`;
+  const marker='<h3 class="section-title">Minimum task slots</h3>';
+  const start=html.indexOf(marker);
+  if(start<0)return html+section;
+  const gridStart=html.indexOf('<div class="slot-grid">',start+marker.length);
+  if(gridStart<0)return html+section;
+  // Match the grid's closing div, including nested slot elements.
+  const tags=/<\/?div\b[^>]*>/gi;tags.lastIndex=gridStart;let depth=0,m;
+  while((m=tags.exec(html))){depth+=/^<\/div/i.test(m[0])?-1:1;if(depth===0){return html.slice(0,tags.lastIndex)+section+html.slice(tags.lastIndex)}}
+  return html+section;
+ };
+ if(typeof D!=='undefined'&&D)render();
+})();
+</script>
+<!-- bonus-under-minimum:end -->
+
+
+<!-- unified-bonus-layout:start -->
+<style>
+.unified-bonus-panel{margin:14px 0 20px;padding:16px;border-left:4px solid #8b5cf6;border-radius:12px;background:#faf7ff}
+.unified-bonus-panel>h3{margin:0 0 8px}.unified-bonus-panel .bonus-subheading{font-size:14px;margin:18px 0 8px}
+.unified-bonus-panel .work-row{gap:12px;flex-wrap:wrap}.unified-bonus-panel .bonus-controls{display:flex;gap:8px;flex-wrap:wrap}
+.unified-bonus-panel .bonus-layout-tag{background:#ede9fe;color:#5b21b6;border-radius:20px;padding:3px 8px;font-size:12px;display:inline-block}
+</style>
+<script>
+(()=>{
+ const prior=chooseView;
+ chooseView=function(){
+  const html=prior();if(!me||!D?.members?.[me])return html;
+  const root=document.createElement('div');root.innerHTML=html;
+  const sections=[...root.querySelectorAll('section')];
+  const assigned=sections.find(el=>el.classList.contains('choose-assigned-bonuses'));
+  const request=sections.find(el=>[...el.querySelectorAll('h3')].some(h=>h.textContent.trim()==='Request a permanent bonus task'));
+  const gift=sections.find(el=>[...el.querySelectorAll('h3')].some(h=>h.textContent.trim()==='Give to Whomever'));
+  const panel=document.createElement('section');panel.className='unified-bonus-panel';panel.setAttribute('aria-label','Bonus tasks');
+  panel.innerHTML='<h3>Bonus tasks <span class="bonus-layout-tag">Separate from minimum slots</span></h3><p class="hint">Your assignments and available bonus tasks are shown here. Requesting a task needs administrator approval; giving a task uses the existing assignment controls.</p>';
+  let populated=false;
+  if(assigned){const entries=[...assigned.querySelectorAll('[data-bonus-assignment]')];if(entries.length){const h=document.createElement('h4');h.className='bonus-subheading';h.textContent='Assigned to you';panel.append(h,...entries);populated=true}assigned.remove()}
+  const available=new Map();
+  function collect(section){if(!section)return;for(const row of section.querySelectorAll('.work-row')){
+   const button=row.querySelector('[data-request-bonus],[data-gift-task],[data-gift-random]');if(!button)continue;
+   const id=button.dataset.requestBonus||button.dataset.giftTask||button.dataset.giftRandom;
+   if(!id)continue;let entry=available.get(id);
+   if(!entry){entry=document.createElement('div');entry.className='work-row';const text=document.createElement('span');text.textContent=D.tasks[id]?.name||id;entry.append(text);const controls=document.createElement('div');controls.className='bonus-controls';entry.append(controls);available.set(id,entry)}
+   const controls=entry.querySelector('.bonus-controls');for(const b of row.querySelectorAll('[data-request-bonus],[data-gift-task],[data-gift-random]')){
+    const key=b.hasAttribute('data-request-bonus')?'data-request-bonus':b.hasAttribute('data-gift-task')?'data-gift-task':'data-gift-random';
+    if(!controls.querySelector('['+key+']'))controls.append(b.cloneNode(true));
+   }
+  }const details=section.querySelector('details');if(details)panel.append(details);section.remove()}
+  collect(request);collect(gift);
+  if(available.size){const h=document.createElement('h4');h.className='bonus-subheading';h.textContent='Available tasks & assignment controls';panel.append(h,...available.values());populated=true}
+  if(!populated){const p=document.createElement('p');p.className='hint';p.textContent='No assigned or eligible bonus tasks are available right now.';panel.append(p)}
+  const heading=[...root.querySelectorAll('h3')].find(h=>h.textContent.trim()==='Minimum task slots');
+  const grid=heading?.nextElementSibling;
+  if(grid?.classList.contains('slot-grid'))grid.after(panel);else root.append(panel);
+  return root.innerHTML;
+ };
+ if(typeof D!=='undefined'&&D)render();
+})();
+</script>
+<!-- unified-bonus-layout:end -->
+
+
+<!-- direct-bonus-claim:start -->
+<script>
+requestPermanentBonus=function(d,mid,tid){
+ normalize(d);if(!mid||mid!==me||!d.members[mid])throw Error('Choose your name first');
+ const problem=bonusRequestProblem(d,tid);if(problem)throw Error(problem);
+ if(vacationOverlaps(mid,d,d.settings.weekStart))throw Error('You cannot take a bonus chore while away this week');
+ const t=d.tasks[tid],now=Date.now(),previous=t.claim?.member||null;
+ d.permanentBonus[tid]={member:mid,controller:mid,source:'controlled_gift',originalMember:previous,createdAt:now,updatedAt:now};
+ for(const ids of Object.values(d.bonusPreferences))for(let i=ids.length-1;i>=0;i--)if(ids[i]===tid)ids.splice(i,1);
+ d.bonusPreferences[mid].push(tid);d.bonusSlotEnabled[mid]=true;
+ for(const plan of Object.values(d.plans))delete plan[tid];
+ t.claim={member:mid,week:d.settings.weekId,mandatory:true,kind:'bonus'};
+};
+(()=>{
+ const previous=chooseView;
+ chooseView=function(){let html=previous();
+  html=html.replace(/Request permanently/g,'Take bonus chore')
+   .replace(/Request a permanent bonus task/g,'Take a permanent bonus chore')
+   .replace(/Administrator approval makes the task permanently yours\./g,'Taking a chore makes it permanently yours immediately after the save succeeds.')
+   .replace(/Requesting a task needs administrator approval; giving a task uses the existing assignment controls\./g,'Take an eligible bonus chore immediately, or use Give to Whomever to choose a recipient. No administrator approval is required.')
+   .replace(/Work already recorded this week stays with its original user; your permanent assignment applies on the next eligible week\./g,'Recorded work stays credited to its original user. The active assignment changes after the save succeeds.');
+  return html;
+ };
+ document.addEventListener('click',async e=>{
+  const b=e.target.closest('[data-request-bonus]');if(!b)return;
+  e.preventDefault();e.stopImmediatePropagation();if(busy)return;
+  const tid=b.dataset.requestBonus,actor=me;
+  const expected=JSON.stringify({claim:D.tasks[tid]?.claim||null,permanent:D.permanentBonus?.[tid]||null});
+  if(!confirm('Take this bonus chore permanently? No administrator approval is needed. Recorded work stays credited to its original user.'))return;
+  await change('take bonus chore',d=>{
+   if(me!==actor)throw Error('Selected user changed. Try again.');
+   if(expected!==JSON.stringify({claim:d.tasks[tid]?.claim||null,permanent:d.permanentBonus?.[tid]||null}))throw Error('This chore changed on another device. Refresh and try again.');
+   requestPermanentBonus(d,actor,tid);
+  },{msg:'Bonus chore assigned permanently ✓'});
+ },true);
+ if(typeof D!=='undefined'&&D)render();
+})();
+</script>
+<!-- direct-bonus-claim:end -->
+
+
+<!-- bonus-visibility-fix:start -->
+<script>
+(()=>{
+ function assignedBonuses(d,mid){
+  const found=new Map();const add=(id,source)=>{if(d.tasks?.[id]){const a=d.permanentBonus?.[id];if(a&&a.member!==mid)return;if(!found.has(id))found.set(id,{id,source})}};
+  for(const [id,a] of Object.entries(d.permanentBonus||{}))if(a.member===mid)add(id,'permanent');
+  for(const id of d.bonusPreferences?.[mid]||[])add(id,'saved');
+  for(const [id,t] of Object.entries(d.tasks||{}))if(t.claim?.member===mid&&t.claim.week===d.settings.weekId&&t.claim.kind==='bonus')add(id,'current');
+  const next=typeof nextStart==='function'?nextStart(d):null;
+  if(next)for(const [id,c] of Object.entries(d.plans?.[next]||{}))if(c.member===mid&&c.kind==='bonus')add(id,'upcoming');
+  return [...found.values()];
+ }
+ const prior=chooseView;
+ chooseView=function(){
+  const html=prior();if(!me||!D?.members?.[me])return html;
+  const root=document.createElement('div');root.innerHTML=html;
+  let panel=root.querySelector('.unified-bonus-panel');
+  if(!panel){panel=document.createElement('section');panel.className='unified-bonus-panel';const h=[...root.querySelectorAll('h3')].find(el=>el.textContent.trim()==='Minimum task slots');const grid=h?.nextElementSibling;if(grid?.classList.contains('slot-grid'))grid.after(panel);else root.append(panel)}
+  // Keep actionable available-task rows, not nested copies of assignment cards.
+  const available=new Map();
+  for(const row of panel.querySelectorAll('.work-row')){
+   const b=row.querySelector('[data-request-bonus],[data-gift-task],[data-gift-random]');if(!b||row.closest('[data-bonus-assignment]'))continue;
+   const id=b.dataset.requestBonus||b.dataset.giftTask||b.dataset.giftRandom;
+   if(id&&!available.has(id))available.set(id,row.cloneNode(true));
+  }
+  const assigned=assignedBonuses(D,me),ids=new Set(assigned.map(a=>a.id));
+  panel.innerHTML='<h3>Bonus tasks <span class="bonus-layout-tag">Separate from minimum slots</span></h3>';
+  if(assigned.length){
+   const h=document.createElement('h4');h.className='bonus-subheading';h.textContent='Assigned to you';panel.append(h);
+   for(const {id,source} of assigned){
+    const t=D.tasks[id],a=D.permanentBonus?.[id],current=t.claim?.member===me&&t.claim.week===D.settings.weekId;
+    const row=document.createElement('div');row.dataset.bonusAssignment=id;
+    let state=current?'Assigned this week':source==='upcoming'?'Assigned for next week':'Saved bonus assignment';
+    if(!t.active)state+=' · task disabled';else if(typeof vacationOverlaps==='function'&&vacationOverlaps(me,D,D.settings.weekStart))state+=' · vacation rules apply';else if(!isDue(t,D.settings.weekNo))state+=' · not due this week';
+    const actions=typeof giftButtons==='function'?giftButtons(id):'';
+    row.innerHTML=`<div class="work-row"><span><strong>${esc(t.name)}</strong> <span class="bonus-layout-tag">${a?'Permanent bonus':'Bonus'}</span><div class="hint">${esc(state)}</div></span><div class="bonus-controls">${actions}</div></div>`;
+    panel.append(row);
+   }
+  }
+  const other=[...available].filter(([id])=>!ids.has(id));
+  if(other.length){const h=document.createElement('h4');h.className='bonus-subheading';h.textContent='Available tasks & assignment controls';panel.append(h,...other.map(([,row])=>row))}
+  if(!assigned.length&&!other.length)panel.insertAdjacentHTML('beforeend','<p class="hint">No assigned or eligible bonus tasks are available right now.</p>');
+  // Old layout wrappers must not leave a second contradictory assignment panel.
+  root.querySelectorAll('.choose-assigned-bonuses').forEach(el=>el.remove());
+  return root.innerHTML;
+ };
+ if(typeof D!=='undefined'&&D)render();
+})();
+</script>
+<!-- bonus-visibility-fix:end -->
+
+</body></html>
