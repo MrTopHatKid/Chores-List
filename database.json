@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792872330119,
+    "updatedAt": 1792872479950,
     "schemaVersion": 2
   },
   "settings": {
@@ -260,7 +260,7 @@
     },
     "t13": {
       "name": "Upstairs bathroom",
-      "desc": "Clean toilet, sink and counter; tidy up and replace toilet paper.",
+      "desc": "Clean toilet, sink and counter; tidy up, all bathroom mirrors, and replace toilet paper.",
       "kind": "regular",
       "points": 4,
       "max": 1,
@@ -273,7 +273,7 @@
         "member": "m3",
         "week": "w3",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "admin"
       }
     },
     "t14": {
@@ -1057,7 +1057,7 @@
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "admin",
           "completed": 0
         },
         "t14": {
@@ -1172,7 +1172,7 @@
     "minimum:w3:m2": {
       "message": "KI is below the 4-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792872291698,
+      "at": 1792872479950,
       "resolved": false
     }
   },
@@ -3199,6 +3199,35 @@
           "removed": true
         }
       ]
+    },
+    {
+      "id": "fa149aaa-77e1-4121-bdf6-ceb7b2b83d80",
+      "at": 1792872479950,
+      "actor": "m3",
+      "admin": true,
+      "action": "edit chore",
+      "changes": [
+        {
+          "path": "/tasks/t13/desc",
+          "before": "Clean toilet, sink and counter; tidy up and replace toilet paper.",
+          "after": "Clean toilet, sink and counter; tidy up, all bathroom mirrors, and replace toilet paper."
+        },
+        {
+          "path": "/tasks/t13/claim/kind",
+          "before": "automatic",
+          "after": "admin"
+        },
+        {
+          "path": "/weeks/w3/assignments/t13/kind",
+          "before": "automatic",
+          "after": "admin"
+        },
+        {
+          "path": "/alerts/minimum:w3:m2/at",
+          "before": 1792872291698,
+          "after": 1792872479950
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -3234,6 +3263,25 @@
       },
       "reason": "edit chore",
       "at": 1792872291697,
+      "actor": "m3"
+    },
+    {
+      "week": "w3",
+      "task": "t13",
+      "before": {
+        "member": "m3",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m3",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "admin"
+      },
+      "reason": "edit chore",
+      "at": 1792872479950,
       "actor": "m3"
     }
   ],
