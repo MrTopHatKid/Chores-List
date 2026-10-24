@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792860763024
+    "updatedAt": 1792860774861
   },
   "settings": {
     "rateCents": 2000,
@@ -562,6 +562,18 @@
       "kind": "regular",
       "points": 2,
       "at": 1792860763024
+    },
+    "a08514cc-8c85-4f5e-9c33-0a12b3949acf": {
+      "requestId": "a08514cc-8c85-4f5e-9c33-0a12b3949acf",
+      "task": "t16",
+      "taskName": "Laundry machines and top",
+      "member": "m2",
+      "memberName": "Ke",
+      "week": "w1",
+      "weekStart": "2026-10-19",
+      "kind": "regular",
+      "points": 3,
+      "at": 1792860774861
     }
   }
 }
