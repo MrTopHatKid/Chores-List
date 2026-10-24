@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792855984364
+    "updatedAt": 1792855986020
   },
   "settings": {
     "rateCents": 2000,
@@ -379,7 +379,8 @@
       "weekStart": "2026-10-19",
       "kind": "regular",
       "points": 2,
-      "at": 1792855746276
+      "at": 1792855746276,
+      "voided": true
     }
   }
 }
