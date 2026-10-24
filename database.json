@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792875512354,
+    "updatedAt": 1792875514460,
     "schemaVersion": 2
   },
   "settings": {
@@ -983,6 +983,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1792875512353
+    },
+    "5e206aa6-2090-4df5-893d-2063b19692c0": {
+      "requestId": "5e206aa6-2090-4df5-893d-2063b19692c0",
+      "task": "t02",
+      "taskName": "Kitchen counters and table",
+      "member": "m4",
+      "memberName": "MK",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792875514459
     }
   },
   "pointLedger": {
@@ -1383,7 +1395,7 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
+          "completed": 1
         },
         "t03": {
           "task": "t03",
@@ -7971,6 +7983,36 @@
         },
         {
           "path": "/weeks/w3/assignments/t06/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "096b1442-6afc-4795-855e-4abebb012c6c",
+      "at": 1792875514460,
+      "actor": "m4",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/5e206aa6-2090-4df5-893d-2063b19692c0",
+          "added": true,
+          "after": {
+            "requestId": "5e206aa6-2090-4df5-893d-2063b19692c0",
+            "task": "t02",
+            "taskName": "Kitchen counters and table",
+            "member": "m4",
+            "memberName": "MK",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792875514459
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t02/completed",
           "before": 0,
           "after": 1
         }
@@ -16709,6 +16751,12 @@
       },
       {
         "at": 1792875512353,
+        "actor": "m4",
+        "action": "complete chore",
+        "week": "w3"
+      },
+      {
+        "at": 1792875514459,
         "actor": "m4",
         "action": "complete chore",
         "week": "w3"
