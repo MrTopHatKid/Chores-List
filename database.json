@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792877030961,
+    "updatedAt": 1792877053297,
     "schemaVersion": 2
   },
   "settings": {
@@ -205,10 +205,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m1",
+        "member": "m2",
         "week": "w3",
         "mandatory": true,
-        "kind": "selected"
+        "kind": "automatic"
       }
     },
     "t09": {
@@ -259,10 +259,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m2",
+        "member": "m1",
         "week": "w3",
         "mandatory": true,
-        "kind": "selected"
+        "kind": "automatic"
       }
     },
     "t13": {
@@ -1065,10 +1065,6 @@
         "member": "m1",
         "kind": "selected"
       },
-      "t08": {
-        "member": "m1",
-        "kind": "selected"
-      },
       "t04": {
         "member": "m1",
         "kind": "selected"
@@ -1086,10 +1082,6 @@
         "kind": "selected"
       },
       "t17": {
-        "member": "m2",
-        "kind": "selected"
-      },
-      "t12": {
         "member": "m2",
         "kind": "selected"
       },
@@ -1378,11 +1370,11 @@
         "t08": {
           "task": "t08",
           "taskName": "Brush the dog",
-          "member": "m1",
+          "member": "m2",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "selected",
+          "kind": "automatic",
           "completed": 0
         },
         "t09": {
@@ -1408,11 +1400,11 @@
         "t12": {
           "task": "t12",
           "taskName": "Middle flight of stairs",
-          "member": "m2",
+          "member": "m1",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "selected",
+          "kind": "automatic",
           "completed": 0
         },
         "t13": {
@@ -22758,6 +22750,71 @@
           "removed": true
         }
       ]
+    },
+    {
+      "id": "73a06068-f2f8-42d1-94e9-9dcba38d5425",
+      "at": 1792877053297,
+      "actor": "m2",
+      "admin": true,
+      "action": "admin apply chosen tasks",
+      "changes": [
+        {
+          "path": "/tasks/t08/claim/member",
+          "before": "m1",
+          "after": "m2"
+        },
+        {
+          "path": "/tasks/t08/claim/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/tasks/t12/claim/member",
+          "before": "m2",
+          "after": "m1"
+        },
+        {
+          "path": "/tasks/t12/claim/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/plans/2026-10-24/t08",
+          "before": {
+            "member": "m1",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-10-24/t12",
+          "before": {
+            "member": "m2",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w3/assignments/t08/member",
+          "before": "m1",
+          "after": "m2"
+        },
+        {
+          "path": "/weeks/w3/assignments/t08/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/weeks/w3/assignments/t12/member",
+          "before": "m2",
+          "after": "m1"
+        },
+        {
+          "path": "/weeks/w3/assignments/t12/kind",
+          "before": "selected",
+          "after": "automatic"
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -23226,6 +23283,44 @@
       "reason": "Admin applied saved chosen tasks",
       "at": 1792875196838,
       "actor": "m5"
+    },
+    {
+      "week": "w3",
+      "task": "t08",
+      "before": {
+        "member": "m1",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "selected"
+      },
+      "after": {
+        "member": "m2",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792877053297,
+      "actor": "m2"
+    },
+    {
+      "week": "w3",
+      "task": "t12",
+      "before": {
+        "member": "m2",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "selected"
+      },
+      "after": {
+        "member": "m1",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792877053297,
+      "actor": "m2"
     }
   ],
   "exceptions": {
@@ -23569,14 +23664,14 @@
     }
   ],
   "lastChosenTaskApplication": {
-    "at": 1792875196838,
-    "actor": "m5",
+    "at": 1792877053297,
+    "actor": "m2",
     "week": "w3",
     "weekStart": "2026-10-24",
     "report": {
-      "chosen": 20,
+      "chosen": 18,
       "startedPreserved": 0,
-      "automatic": 0,
+      "automatic": 2,
       "unassigned": 0,
       "conflicts": [],
       "notDue": [],
