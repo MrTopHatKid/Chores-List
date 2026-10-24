@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792855986020
+    "updatedAt": 1792856004115
   },
   "settings": {
     "rateCents": 2000,
@@ -96,12 +96,7 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 4,
-      "claim": {
-        "member": "m1",
-        "week": "w1",
-        "mandatory": true
-      }
+      "order": 4
     },
     "t05": {
       "name": "Air fryers, microwave and toaster",
@@ -164,7 +159,12 @@
       "points": 3,
       "max": 1,
       "active": true,
-      "order": 12
+      "order": 12,
+      "claim": {
+        "member": "m5",
+        "week": "w1",
+        "mandatory": true
+      }
     },
     "t13": {
       "name": "Upstairs bathroom",
@@ -182,7 +182,12 @@
       "points": 4,
       "max": 1,
       "active": true,
-      "order": 14
+      "order": 14,
+      "claim": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true
+      }
     },
     "t15": {
       "name": "Bathtub / shower",
@@ -202,7 +207,7 @@
       "active": true,
       "order": 16,
       "claim": {
-        "member": "m5",
+        "member": "m2",
         "week": "w1",
         "mandatory": true
       }
@@ -214,12 +219,7 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 17,
-      "claim": {
-        "member": "m3",
-        "week": "w1",
-        "mandatory": true
-      }
+      "order": 17
     },
     "t18": {
       "name": "Collect indoor garbage",
@@ -239,7 +239,7 @@
       "active": true,
       "order": 19,
       "claim": {
-        "member": "m2",
+        "member": "m1",
         "week": "w1",
         "mandatory": true
       }
@@ -260,7 +260,12 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 21
+      "order": 21,
+      "claim": {
+        "member": "m4",
+        "week": "w1",
+        "mandatory": true
+      }
     },
     "t22": {
       "name": "Dust shared areas",
