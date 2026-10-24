@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792860774861
+    "updatedAt": 1792860777365
   },
   "settings": {
     "rateCents": 2000,
@@ -201,7 +201,11 @@
       "points": 4,
       "max": 1,
       "active": true,
-      "order": 13
+      "order": 13,
+      "claim": {
+        "member": "m2",
+        "week": "w1"
+      }
     },
     "t14": {
       "name": "Downstairs bathroom",
