@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792877891616,
+    "updatedAt": 1792877998078,
     "schemaVersion": 2
   },
   "settings": {
@@ -1041,7 +1041,6 @@
       "t17"
     ],
     "m3": [
-      "t01",
       "t05",
       "t13",
       "t16"
@@ -1298,10 +1297,6 @@
       }
     },
     "2026-11-02": {
-      "t01": {
-        "member": "m3",
-        "kind": "selected"
-      },
       "t05": {
         "member": "m3",
         "kind": "selected"
@@ -25257,6 +25252,37 @@
             "at": 1792877891615,
             "resolved": false
           }
+        }
+      ]
+    },
+    {
+      "id": "b2f41491-9f33-405c-ad92-85deeb6f1af5",
+      "at": 1792877998078,
+      "actor": "m3",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/preferences/m3",
+          "before": [
+            "t01",
+            "t05",
+            "t13",
+            "t16"
+          ],
+          "after": [
+            "t05",
+            "t13",
+            "t16"
+          ]
+        },
+        {
+          "path": "/plans/2026-11-02/t01",
+          "before": {
+            "member": "m3",
+            "kind": "selected"
+          },
+          "removed": true
         }
       ]
     }
@@ -50276,6 +50302,12 @@
         "conflicts": [],
         "notDue": [],
         "vacationSkipped": []
+      },
+      {
+        "at": 1792877998077,
+        "actor": "m3",
+        "action": "save task preference",
+        "week": "w4"
       }
     ],
     "lastAction": "Advanced 1 week"
