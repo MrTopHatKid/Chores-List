@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792877592005,
+    "updatedAt": 1792877724952,
     "schemaVersion": 2
   },
   "settings": {
@@ -31,7 +31,8 @@
       "vacation": {
         "from": "",
         "to": ""
-      }
+      },
+      "excludeFromRandom": true
     },
     "m2": {
       "name": "KI",
@@ -39,7 +40,8 @@
       "vacation": {
         "from": "",
         "to": ""
-      }
+      },
+      "excludeFromRandom": false
     },
     "m3": {
       "name": "AW",
@@ -47,7 +49,8 @@
       "vacation": {
         "from": "",
         "to": ""
-      }
+      },
+      "excludeFromRandom": false
     },
     "m4": {
       "name": "MK",
@@ -55,7 +58,8 @@
       "vacation": {
         "from": "",
         "to": ""
-      }
+      },
+      "excludeFromRandom": false
     },
     "m5": {
       "name": "MW",
@@ -63,7 +67,8 @@
       "vacation": {
         "from": "",
         "to": ""
-      }
+      },
+      "excludeFromRandom": false
     }
   },
   "tasks": {
@@ -133,10 +138,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m1",
+        "member": "m4",
         "week": "w4",
         "mandatory": true,
-        "kind": "selected"
+        "kind": "automatic"
       }
     },
     "t05": {
@@ -259,7 +264,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m1",
+        "member": "m3",
         "week": "w4",
         "mandatory": true,
         "kind": "automatic"
@@ -367,10 +372,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m1",
+        "member": "m2",
         "week": "w4",
         "mandatory": true,
-        "kind": "selected"
+        "kind": "automatic"
       }
     },
     "t19": {
@@ -447,10 +452,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m1",
+        "member": "m5",
         "week": "w4",
         "mandatory": true,
-        "kind": "selected"
+        "kind": "automatic"
       }
     },
     "t24": {
@@ -1194,18 +1199,6 @@
       "t17": {
         "member": "m2",
         "kind": "selected"
-      },
-      "t18": {
-        "member": "m1",
-        "kind": "selected"
-      },
-      "t04": {
-        "member": "m1",
-        "kind": "selected"
-      },
-      "t23": {
-        "member": "m1",
-        "kind": "selected"
       }
     },
     "2026-10-25": {
@@ -1291,18 +1284,6 @@
       }
     },
     "2026-11-02": {
-      "t18": {
-        "member": "m1",
-        "kind": "selected"
-      },
-      "t04": {
-        "member": "m1",
-        "kind": "selected"
-      },
-      "t23": {
-        "member": "m1",
-        "kind": "selected"
-      },
       "t22": {
         "member": "m2",
         "kind": "selected"
@@ -1632,11 +1613,11 @@
         "t04": {
           "task": "t04",
           "taskName": "Upstairs hallway",
-          "member": "m1",
+          "member": "m4",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "selected",
+          "kind": "automatic",
           "completed": 0
         },
         "t05": {
@@ -1702,7 +1683,7 @@
         "t12": {
           "task": "t12",
           "taskName": "Middle flight of stairs",
-          "member": "m1",
+          "member": "m3",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -1762,11 +1743,11 @@
         "t18": {
           "task": "t18",
           "taskName": "Collect indoor garbage",
-          "member": "m1",
+          "member": "m2",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "selected",
+          "kind": "automatic",
           "completed": 0
         },
         "t19": {
@@ -1792,11 +1773,11 @@
         "t23": {
           "task": "t23",
           "taskName": "Windows and sliding door",
-          "member": "m1",
+          "member": "m5",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "selected",
+          "kind": "automatic",
           "completed": 0
         }
       },
@@ -1804,7 +1785,7 @@
       "bonusUsers": [],
       "generated": true,
       "closed": false,
-      "minimumSlots": 4,
+      "minimumSlots": 5,
       "remainder": 0,
       "generatedAt": 1792877214765
     }
@@ -2134,6 +2115,62 @@
       "status": "excluded",
       "category": "admin_exception",
       "reason": "Archived by admin",
+      "events": []
+    },
+    "w4:excluded-person:t04:m1": {
+      "id": "w4:excluded-person:t04:m1",
+      "task": "t04",
+      "taskName": "Upstairs hallway",
+      "member": "m1",
+      "memberName": "The Muffin Man",
+      "week": "w4",
+      "weekStart": "2026-10-26",
+      "difficulty": "Medium",
+      "status": "excluded",
+      "category": "admin_exclusion",
+      "reason": "Excluded from random assignments by admin; not owed by this member.",
+      "events": []
+    },
+    "w4:excluded-person:t12:m1": {
+      "id": "w4:excluded-person:t12:m1",
+      "task": "t12",
+      "taskName": "Middle flight of stairs",
+      "member": "m1",
+      "memberName": "The Muffin Man",
+      "week": "w4",
+      "weekStart": "2026-10-26",
+      "difficulty": "Medium",
+      "status": "excluded",
+      "category": "admin_exclusion",
+      "reason": "Excluded from random assignments by admin; not owed by this member.",
+      "events": []
+    },
+    "w4:excluded-person:t18:m1": {
+      "id": "w4:excluded-person:t18:m1",
+      "task": "t18",
+      "taskName": "Collect indoor garbage",
+      "member": "m1",
+      "memberName": "The Muffin Man",
+      "week": "w4",
+      "weekStart": "2026-10-26",
+      "difficulty": "Medium",
+      "status": "excluded",
+      "category": "admin_exclusion",
+      "reason": "Excluded from random assignments by admin; not owed by this member.",
+      "events": []
+    },
+    "w4:excluded-person:t23:m1": {
+      "id": "w4:excluded-person:t23:m1",
+      "task": "t23",
+      "taskName": "Windows and sliding door",
+      "member": "m1",
+      "memberName": "The Muffin Man",
+      "week": "w4",
+      "weekStart": "2026-10-26",
+      "difficulty": "Medium",
+      "status": "excluded",
+      "category": "admin_exclusion",
+      "reason": "Excluded from random assignments by admin; not owed by this member.",
       "events": []
     }
   },
@@ -24320,6 +24357,215 @@
       "admin": true,
       "action": "edit person",
       "changes": []
+    },
+    {
+      "id": "1c1f0a7d-4474-4831-981c-849047bcce41",
+      "at": 1792877724952,
+      "actor": "m1",
+      "admin": true,
+      "action": "edit person",
+      "changes": [
+        {
+          "path": "/tasks/t04/claim/member",
+          "before": "m1",
+          "after": "m4"
+        },
+        {
+          "path": "/tasks/t04/claim/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/tasks/t12/claim/member",
+          "before": "m1",
+          "after": "m3"
+        },
+        {
+          "path": "/tasks/t18/claim/member",
+          "before": "m1",
+          "after": "m2"
+        },
+        {
+          "path": "/tasks/t18/claim/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/tasks/t23/claim/member",
+          "before": "m1",
+          "after": "m5"
+        },
+        {
+          "path": "/tasks/t23/claim/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/members/m1/excludeFromRandom",
+          "before": false,
+          "after": true
+        },
+        {
+          "path": "/plans/2026-10-26/t18",
+          "before": {
+            "member": "m1",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-10-26/t04",
+          "before": {
+            "member": "m1",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-10-26/t23",
+          "before": {
+            "member": "m1",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-11-02/t18",
+          "before": {
+            "member": "m1",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-11-02/t04",
+          "before": {
+            "member": "m1",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-11-02/t23",
+          "before": {
+            "member": "m1",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w4/assignments/t04/member",
+          "before": "m1",
+          "after": "m4"
+        },
+        {
+          "path": "/weeks/w4/assignments/t04/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/weeks/w4/assignments/t12/member",
+          "before": "m1",
+          "after": "m3"
+        },
+        {
+          "path": "/weeks/w4/assignments/t18/member",
+          "before": "m1",
+          "after": "m2"
+        },
+        {
+          "path": "/weeks/w4/assignments/t18/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/weeks/w4/assignments/t23/member",
+          "before": "m1",
+          "after": "m5"
+        },
+        {
+          "path": "/weeks/w4/assignments/t23/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/weeks/w4/minimumSlots",
+          "before": 4,
+          "after": 5
+        },
+        {
+          "path": "/incomplete/w4:excluded-person:t04:m1",
+          "added": true,
+          "after": {
+            "id": "w4:excluded-person:t04:m1",
+            "task": "t04",
+            "taskName": "Upstairs hallway",
+            "member": "m1",
+            "memberName": "The Muffin Man",
+            "week": "w4",
+            "weekStart": "2026-10-26",
+            "difficulty": "Medium",
+            "status": "excluded",
+            "category": "admin_exclusion",
+            "reason": "Excluded from random assignments by admin; not owed by this member.",
+            "events": []
+          }
+        },
+        {
+          "path": "/incomplete/w4:excluded-person:t12:m1",
+          "added": true,
+          "after": {
+            "id": "w4:excluded-person:t12:m1",
+            "task": "t12",
+            "taskName": "Middle flight of stairs",
+            "member": "m1",
+            "memberName": "The Muffin Man",
+            "week": "w4",
+            "weekStart": "2026-10-26",
+            "difficulty": "Medium",
+            "status": "excluded",
+            "category": "admin_exclusion",
+            "reason": "Excluded from random assignments by admin; not owed by this member.",
+            "events": []
+          }
+        },
+        {
+          "path": "/incomplete/w4:excluded-person:t18:m1",
+          "added": true,
+          "after": {
+            "id": "w4:excluded-person:t18:m1",
+            "task": "t18",
+            "taskName": "Collect indoor garbage",
+            "member": "m1",
+            "memberName": "The Muffin Man",
+            "week": "w4",
+            "weekStart": "2026-10-26",
+            "difficulty": "Medium",
+            "status": "excluded",
+            "category": "admin_exclusion",
+            "reason": "Excluded from random assignments by admin; not owed by this member.",
+            "events": []
+          }
+        },
+        {
+          "path": "/incomplete/w4:excluded-person:t23:m1",
+          "added": true,
+          "after": {
+            "id": "w4:excluded-person:t23:m1",
+            "task": "t23",
+            "taskName": "Windows and sliding door",
+            "member": "m1",
+            "memberName": "The Muffin Man",
+            "week": "w4",
+            "weekStart": "2026-10-26",
+            "difficulty": "Medium",
+            "status": "excluded",
+            "category": "admin_exclusion",
+            "reason": "Excluded from random assignments by admin; not owed by this member.",
+            "events": []
+          }
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -24826,6 +25072,114 @@
       "reason": "Admin applied saved chosen tasks",
       "at": 1792877053297,
       "actor": "m2"
+    },
+    {
+      "week": "w4",
+      "task": "t04",
+      "before": {
+        "member": "m1",
+        "week": "w4",
+        "mandatory": true,
+        "kind": "selected"
+      },
+      "reason": "admin random-assignment exclusion",
+      "at": 1792877724950,
+      "actor": "m1"
+    },
+    {
+      "week": "w4",
+      "task": "t12",
+      "before": {
+        "member": "m1",
+        "week": "w4",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "admin random-assignment exclusion",
+      "at": 1792877724950,
+      "actor": "m1"
+    },
+    {
+      "week": "w4",
+      "task": "t18",
+      "before": {
+        "member": "m1",
+        "week": "w4",
+        "mandatory": true,
+        "kind": "selected"
+      },
+      "reason": "admin random-assignment exclusion",
+      "at": 1792877724950,
+      "actor": "m1"
+    },
+    {
+      "week": "w4",
+      "task": "t23",
+      "before": {
+        "member": "m1",
+        "week": "w4",
+        "mandatory": true,
+        "kind": "selected"
+      },
+      "reason": "admin random-assignment exclusion",
+      "at": 1792877724950,
+      "actor": "m1"
+    },
+    {
+      "week": "w4",
+      "task": "t04",
+      "before": {
+        "member": "m1",
+        "week": "w4",
+        "mandatory": true,
+        "kind": "selected"
+      },
+      "after": null,
+      "reason": "edit person",
+      "at": 1792877724950,
+      "actor": "m1"
+    },
+    {
+      "week": "w4",
+      "task": "t12",
+      "before": {
+        "member": "m1",
+        "week": "w4",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": null,
+      "reason": "edit person",
+      "at": 1792877724950,
+      "actor": "m1"
+    },
+    {
+      "week": "w4",
+      "task": "t18",
+      "before": {
+        "member": "m1",
+        "week": "w4",
+        "mandatory": true,
+        "kind": "selected"
+      },
+      "after": null,
+      "reason": "edit person",
+      "at": 1792877724950,
+      "actor": "m1"
+    },
+    {
+      "week": "w4",
+      "task": "t23",
+      "before": {
+        "member": "m1",
+        "week": "w4",
+        "mandatory": true,
+        "kind": "selected"
+      },
+      "after": null,
+      "reason": "edit person",
+      "at": 1792877724950,
+      "actor": "m1"
     }
   ],
   "exceptions": {
@@ -48915,6 +49269,12 @@
       },
       {
         "at": 1792877592004,
+        "actor": "m1",
+        "action": "edit person",
+        "week": "w4"
+      },
+      {
+        "at": 1792877724950,
         "actor": "m1",
         "action": "edit person",
         "week": "w4"
