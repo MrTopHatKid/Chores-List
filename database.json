@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792860737206
+    "updatedAt": 1792860740141
   },
   "settings": {
     "rateCents": 2000,
@@ -117,7 +117,11 @@
       "points": 3,
       "max": 1,
       "active": true,
-      "order": 5
+      "order": 5,
+      "claim": {
+        "member": "m4",
+        "week": "w1"
+      }
     },
     "t06": {
       "name": "Stove, fridge exterior and kitchen island",
