@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792881869352,
+    "updatedAt": 1792881872237,
     "schemaVersion": 2
   },
   "settings": {
@@ -37274,6 +37274,14 @@
       "admin": true,
       "action": "new week",
       "changes": []
+    },
+    {
+      "id": "c41475d4-6e02-40f8-a1f1-69e1df59ed88",
+      "at": 1792881872237,
+      "actor": "m3",
+      "admin": true,
+      "action": "new week",
+      "changes": []
     }
   ],
   "vacationHistory": [],
@@ -74366,6 +74374,12 @@
       },
       {
         "at": 1792881869351,
+        "actor": "m3",
+        "action": "new week",
+        "week": "w5"
+      },
+      {
+        "at": 1792881872236,
         "actor": "m3",
         "action": "new week",
         "week": "w5"
