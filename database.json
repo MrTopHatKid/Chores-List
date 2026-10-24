@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792881088336,
+    "updatedAt": 1792881600426,
     "schemaVersion": 2
   },
   "settings": {
@@ -216,7 +216,7 @@
         "member": "m3",
         "week": "w3",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "selected"
       }
     },
     "t09": {
@@ -1044,7 +1044,8 @@
     "m3": [
       "t01",
       "t05",
-      "t13"
+      "t13",
+      "t08"
     ],
     "m4": [
       "t14",
@@ -1107,6 +1108,10 @@
         "kind": "selected"
       },
       "t13": {
+        "member": "m3",
+        "kind": "selected"
+      },
+      "t08": {
         "member": "m3",
         "kind": "selected"
       },
@@ -1181,6 +1186,10 @@
         "kind": "selected"
       },
       "t13": {
+        "member": "m3",
+        "kind": "selected"
+      },
+      "t08": {
         "member": "m3",
         "kind": "selected"
       },
@@ -1379,7 +1388,7 @@
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "selected",
           "completed": 0
         },
         "t09": {
@@ -1671,19 +1680,19 @@
     "minimum:w3:m5": {
       "message": "MW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792881088335,
+      "at": 1792881600426,
       "resolved": false
     },
     "minimum:w3:m3": {
       "message": "AW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792881088335,
+      "at": 1792881600426,
       "resolved": false
     },
     "minimum:w3:m4": {
       "message": "MK is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792881088335,
+      "at": 1792881600426,
       "resolved": false
     }
   },
@@ -33099,6 +33108,80 @@
           "after": 1792881088335
         }
       ]
+    },
+    {
+      "id": "f9e0a17d-5834-4b82-833d-db1dd42be4b0",
+      "at": 1792881600426,
+      "actor": "m3",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t08/claim/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/preferences/m3",
+          "before": [
+            "t01",
+            "t05",
+            "t13"
+          ],
+          "after": [
+            "t01",
+            "t05",
+            "t13",
+            "t08"
+          ]
+        },
+        {
+          "path": "/slotLayout/m3/selected",
+          "before": [],
+          "after": [
+            "t01",
+            "t05",
+            "t13",
+            "t08"
+          ]
+        },
+        {
+          "path": "/plans/2026-10-24/t08",
+          "added": true,
+          "after": {
+            "member": "m3",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-26/t08",
+          "added": true,
+          "after": {
+            "member": "m3",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t08/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/alerts/minimum:w3:m5/at",
+          "before": 1792881088335,
+          "after": 1792881600426
+        },
+        {
+          "path": "/alerts/minimum:w3:m3/at",
+          "before": 1792881088335,
+          "after": 1792881600426
+        },
+        {
+          "path": "/alerts/minimum:w3:m4/at",
+          "before": 1792881088335,
+          "after": 1792881600426
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -34414,7 +34497,12 @@
   },
   "slotLayout": {
     "m3": {
-      "selected": [],
+      "selected": [
+        "t01",
+        "t05",
+        "t13",
+        "t08"
+      ],
       "bonus": [
         null
       ]
