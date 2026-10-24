@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792882040583,
+    "updatedAt": 1792882123990,
     "schemaVersion": 2
   },
   "settings": {
@@ -2316,19 +2316,19 @@
     "minimum:w4:m3": {
       "message": "AW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w4",
-      "at": 1792882040582,
+      "at": 1792882123990,
       "resolved": false
     },
     "minimum:w4:m4": {
       "message": "MK is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w4",
-      "at": 1792882040582,
+      "at": 1792882123990,
       "resolved": false
     },
     "minimum:w4:m5": {
       "message": "MW is below the 6-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w4",
-      "at": 1792882040582,
+      "at": 1792882123990,
       "resolved": false
     }
   },
@@ -39150,6 +39150,43 @@
           }
         }
       ]
+    },
+    {
+      "id": "c785915d-1f9d-4887-9a58-7b18a73f9bab",
+      "at": 1792882123990,
+      "actor": "m3",
+      "admin": false,
+      "action": "request permanent bonus",
+      "changes": [
+        {
+          "path": "/bonusRequests/00ac15a8-6b23-425a-a2cb-0d9a09dcb858",
+          "added": true,
+          "after": {
+            "id": "00ac15a8-6b23-425a-a2cb-0d9a09dcb858",
+            "task": "t16",
+            "member": "m3",
+            "status": "pending",
+            "requestedAt": 1792882123989,
+            "reservedBy": "m3",
+            "previousMember": "m3"
+          }
+        },
+        {
+          "path": "/alerts/minimum:w4:m3/at",
+          "before": 1792882040582,
+          "after": 1792882123990
+        },
+        {
+          "path": "/alerts/minimum:w4:m4/at",
+          "before": 1792882040582,
+          "after": 1792882123990
+        },
+        {
+          "path": "/alerts/minimum:w4:m5/at",
+          "before": 1792882040582,
+          "after": 1792882123990
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -41093,6 +41130,15 @@
       "status": "assigned",
       "requestedAt": 1792879128456,
       "assignedAt": 1792879128456
+    },
+    "00ac15a8-6b23-425a-a2cb-0d9a09dcb858": {
+      "id": "00ac15a8-6b23-425a-a2cb-0d9a09dcb858",
+      "task": "t16",
+      "member": "m3",
+      "status": "pending",
+      "requestedAt": 1792882123989,
+      "reservedBy": "m3",
+      "previousMember": "m3"
     }
   },
   "commitmentRulesVersion": 3,
@@ -80729,6 +80775,12 @@
         "week": "w4",
         "start": "2026-10-26",
         "no": 4
+      },
+      {
+        "at": 1792882123989,
+        "actor": "m3",
+        "action": "request permanent bonus",
+        "week": "w4"
       }
     ],
     "lastAction": "Advanced 1 week"
