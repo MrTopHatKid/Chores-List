@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792872487314,
+    "updatedAt": 1792872519645,
     "schemaVersion": 2
   },
   "settings": {
@@ -403,17 +403,12 @@
       "kind": "regular",
       "points": 2,
       "max": 1,
-      "active": true,
+      "active": false,
       "order": 21,
       "difficulty": "Medium",
       "every": 1,
       "startWeek": 1,
-      "claim": {
-        "member": "m5",
-        "week": "w3",
-        "mandatory": true,
-        "kind": "automatic"
-      }
+      "archived": true
     },
     "t22": {
       "name": "Dust shared areas",
@@ -1120,16 +1115,6 @@
           "kind": "admin",
           "completed": 0
         },
-        "t21": {
-          "task": "t21",
-          "taskName": "All bathroom mirrors",
-          "member": "m5",
-          "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
-          "kind": "automatic",
-          "completed": 0
-        },
         "t22": {
           "task": "t22",
           "taskName": "Dust shared areas",
@@ -1157,6 +1142,12 @@
           "difficulty": "Medium",
           "reason": "Archived by admin",
           "category": "admin_exception"
+        },
+        "t21": {
+          "taskName": "All bathroom mirrors",
+          "difficulty": "Medium",
+          "reason": "Archived by admin",
+          "category": "admin_exception"
         }
       },
       "bonusUsers": [],
@@ -1164,7 +1155,7 @@
       "closed": false,
       "generatedAt": 1792871256429,
       "minimumSlots": 4,
-      "remainder": 1
+      "remainder": 0
     }
   },
   "incomplete": {},
@@ -1172,7 +1163,7 @@
     "minimum:w3:m2": {
       "message": "KI is below the 4-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w3",
-      "at": 1792872487314,
+      "at": 1792872519645,
       "resolved": false
     }
   },
@@ -3257,6 +3248,77 @@
           "after": 1792872487314
         }
       ]
+    },
+    {
+      "id": "f957fd45-ba22-43d1-b02c-34d2145781f6",
+      "at": 1792872519645,
+      "actor": "m4",
+      "admin": true,
+      "action": "delete chore",
+      "changes": [
+        {
+          "path": "/tasks/t21/active",
+          "before": true,
+          "after": false
+        },
+        {
+          "path": "/tasks/t21/claim",
+          "before": {
+            "member": "m5",
+            "week": "w3",
+            "mandatory": true,
+            "kind": "automatic"
+          },
+          "removed": true
+        },
+        {
+          "path": "/tasks/t21/archived",
+          "added": true,
+          "after": true
+        },
+        {
+          "path": "/weeks/w3/assignments/t21",
+          "before": {
+            "task": "t21",
+            "taskName": "All bathroom mirrors",
+            "member": "m5",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "automatic",
+            "completed": 0
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w3/excluded/t21",
+          "added": true,
+          "after": {
+            "taskName": "All bathroom mirrors",
+            "difficulty": "Medium",
+            "reason": "Archived by admin",
+            "category": "admin_exception"
+          }
+        },
+        {
+          "path": "/weeks/w3/remainder",
+          "before": 1,
+          "after": 0
+        },
+        {
+          "path": "/exceptions/2026-10-24/t21",
+          "added": true,
+          "after": {
+            "reason": "Archived by admin",
+            "category": "admin_exception"
+          }
+        },
+        {
+          "path": "/alerts/minimum:w3:m2/at",
+          "before": 1792872487314,
+          "after": 1792872519645
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -3331,11 +3393,29 @@
       "reason": "edit chore",
       "at": 1792872487314,
       "actor": "m3"
+    },
+    {
+      "week": "w3",
+      "task": "t21",
+      "before": {
+        "member": "m5",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": null,
+      "reason": "delete chore",
+      "at": 1792872519645,
+      "actor": "m4"
     }
   ],
   "exceptions": {
     "2026-10-24": {
       "t20": {
+        "reason": "Archived by admin",
+        "category": "admin_exception"
+      },
+      "t21": {
         "reason": "Archived by admin",
         "category": "admin_exception"
       }
