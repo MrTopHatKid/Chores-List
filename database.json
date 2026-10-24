@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792878153027,
+    "updatedAt": 1792878155614,
     "schemaVersion": 2
   },
   "settings": {
@@ -1052,7 +1052,6 @@
       "t14"
     ],
     "m5": [
-      "t07",
       "t09"
     ]
   },
@@ -1313,10 +1312,6 @@
       },
       "t06": {
         "member": "m4",
-        "kind": "selected"
-      },
-      "t07": {
-        "member": "m5",
         "kind": "selected"
       },
       "t09": {
@@ -25525,6 +25520,48 @@
           "removed": true
         }
       ]
+    },
+    {
+      "id": "7fceefb5-4f0e-4219-b1e1-73d7ac36f9a8",
+      "at": 1792878155614,
+      "actor": "m5",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/preferences/m5",
+          "before": [
+            "t07",
+            "t09"
+          ],
+          "after": [
+            "t09"
+          ]
+        },
+        {
+          "path": "/slotLayout/m5/selected",
+          "before": [
+            null,
+            null,
+            "t07",
+            "t09"
+          ],
+          "after": [
+            null,
+            null,
+            null,
+            "t09"
+          ]
+        },
+        {
+          "path": "/plans/2026-11-02/t07",
+          "before": {
+            "member": "m5",
+            "kind": "selected"
+          },
+          "removed": true
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -26503,7 +26540,7 @@
       "selected": [
         null,
         null,
-        "t07",
+        null,
         "t09"
       ],
       "bonus": []
@@ -50639,6 +50676,12 @@
       },
       {
         "at": 1792878153027,
+        "actor": "m5",
+        "action": "save task preference",
+        "week": "w4"
+      },
+      {
+        "at": 1792878155614,
         "actor": "m5",
         "action": "save task preference",
         "week": "w4"
