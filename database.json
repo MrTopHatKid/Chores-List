@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792875516466,
+    "updatedAt": 1792875518617,
     "schemaVersion": 2
   },
   "settings": {
@@ -1007,6 +1007,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1792875516465
+    },
+    "532e1777-8e53-4dc8-a42b-6563e3d927ae": {
+      "requestId": "532e1777-8e53-4dc8-a42b-6563e3d927ae",
+      "task": "t14",
+      "taskName": "Downstairs bathroom",
+      "member": "m4",
+      "memberName": "MK",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792875518617
     }
   },
   "pointLedger": {
@@ -1517,7 +1529,7 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
+          "completed": 1
         },
         "t15": {
           "task": "t15",
@@ -8055,6 +8067,36 @@
         },
         {
           "path": "/weeks/w3/assignments/t10/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "c4a9acbe-db3c-4e4c-b288-754569cc1ad7",
+      "at": 1792875518617,
+      "actor": "m4",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/532e1777-8e53-4dc8-a42b-6563e3d927ae",
+          "added": true,
+          "after": {
+            "requestId": "532e1777-8e53-4dc8-a42b-6563e3d927ae",
+            "task": "t14",
+            "taskName": "Downstairs bathroom",
+            "member": "m4",
+            "memberName": "MK",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792875518617
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t14/completed",
           "before": 0,
           "after": 1
         }
@@ -16805,6 +16847,12 @@
       },
       {
         "at": 1792875516465,
+        "actor": "m4",
+        "action": "complete chore",
+        "week": "w3"
+      },
+      {
+        "at": 1792875518617,
         "actor": "m4",
         "action": "complete chore",
         "week": "w3"
