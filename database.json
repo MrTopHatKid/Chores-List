@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792872754845,
+    "updatedAt": 1792872771032,
     "schemaVersion": 2
   },
   "settings": {
@@ -791,6 +791,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1792872754844
+    },
+    "8eb90f7f-82a2-4014-be94-3738a4f3aea9": {
+      "requestId": "8eb90f7f-82a2-4014-be94-3738a4f3aea9",
+      "task": "t06",
+      "taskName": "Stove, fridge exterior and kitchen island",
+      "member": "m5",
+      "memberName": "MW",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792872771031
     }
   },
   "pointLedger": {
@@ -1089,7 +1101,7 @@
           "required": 1,
           "workload": 2,
           "kind": "legacy",
-          "completed": 0
+          "completed": 1
         },
         "t07": {
           "task": "t07",
@@ -4131,6 +4143,36 @@
         },
         {
           "path": "/weeks/w3/assignments/t02/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "84afa01a-b558-4ef0-95c3-208ce67ce08c",
+      "at": 1792872771032,
+      "actor": "m5",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/8eb90f7f-82a2-4014-be94-3738a4f3aea9",
+          "added": true,
+          "after": {
+            "requestId": "8eb90f7f-82a2-4014-be94-3738a4f3aea9",
+            "task": "t06",
+            "taskName": "Stove, fridge exterior and kitchen island",
+            "member": "m5",
+            "memberName": "MW",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792872771031
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t06/completed",
           "before": 0,
           "after": 1
         }
