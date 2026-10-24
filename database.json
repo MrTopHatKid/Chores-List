@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792872104366,
+    "updatedAt": 1792872209003,
     "schemaVersion": 2
   },
   "settings": {
@@ -390,17 +390,12 @@
       "kind": "regular",
       "points": 2,
       "max": 1,
-      "active": true,
+      "active": false,
       "order": 20,
       "difficulty": "Medium",
       "every": 1,
       "startWeek": 1,
-      "claim": {
-        "member": "m2",
-        "week": "w3",
-        "mandatory": true,
-        "kind": "automatic"
-      }
+      "archived": true
     },
     "t21": {
       "name": "All bathroom mirrors",
@@ -898,7 +893,24 @@
     "m5": []
   },
   "plans": {
-    "2026-10-24": {},
+    "2026-10-24": {
+      "t01": {
+        "member": "m3",
+        "kind": "selected"
+      },
+      "t05": {
+        "member": "m3",
+        "kind": "selected"
+      },
+      "t13": {
+        "member": "m3",
+        "kind": "selected"
+      },
+      "t16": {
+        "member": "m3",
+        "kind": "selected"
+      }
+    },
     "2026-10-26": {
       "t01": {
         "member": "m3",
@@ -1104,16 +1116,6 @@
           "kind": "automatic",
           "completed": 0
         },
-        "t20": {
-          "task": "t20",
-          "taskName": "Unload the dishwasher",
-          "member": "m2",
-          "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
-          "kind": "automatic",
-          "completed": 0
-        },
         "t21": {
           "task": "t21",
           "taskName": "All bathroom mirrors",
@@ -1145,15 +1147,31 @@
           "completed": 0
         }
       },
-      "excluded": {},
+      "excluded": {
+        "t20": {
+          "taskName": "Unload the dishwasher",
+          "difficulty": "Medium",
+          "reason": "Archived by admin",
+          "category": "admin_exception"
+        }
+      },
       "bonusUsers": [],
       "generated": true,
       "closed": false,
-      "generatedAt": 1792871256429
+      "generatedAt": 1792871256429,
+      "minimumSlots": 4,
+      "remainder": 1
     }
   },
   "incomplete": {},
-  "alerts": {},
+  "alerts": {
+    "minimum:w3:m2": {
+      "message": "KI is below the 4-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
+      "week": "w3",
+      "at": 1792872209002,
+      "resolved": false
+    }
+  },
   "audit": [
     {
       "id": "f493b19e-02e8-49d8-8d4e-4a07cd7e7a6e",
@@ -2948,11 +2966,148 @@
           "after": true
         }
       ]
+    },
+    {
+      "id": "cecd32a8-6160-44e8-b205-1680ef629fad",
+      "at": 1792872209003,
+      "actor": "m3",
+      "admin": true,
+      "action": "delete chore",
+      "changes": [
+        {
+          "path": "/tasks/t20/active",
+          "before": true,
+          "after": false
+        },
+        {
+          "path": "/tasks/t20/claim",
+          "before": {
+            "member": "m2",
+            "week": "w3",
+            "mandatory": true,
+            "kind": "automatic"
+          },
+          "removed": true
+        },
+        {
+          "path": "/tasks/t20/archived",
+          "added": true,
+          "after": true
+        },
+        {
+          "path": "/plans/2026-10-24/t01",
+          "added": true,
+          "after": {
+            "member": "m3",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-24/t05",
+          "added": true,
+          "after": {
+            "member": "m3",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-24/t13",
+          "added": true,
+          "after": {
+            "member": "m3",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-24/t16",
+          "added": true,
+          "after": {
+            "member": "m3",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t20",
+          "before": {
+            "task": "t20",
+            "taskName": "Unload the dishwasher",
+            "member": "m2",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "automatic",
+            "completed": 0
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w3/excluded/t20",
+          "added": true,
+          "after": {
+            "taskName": "Unload the dishwasher",
+            "difficulty": "Medium",
+            "reason": "Archived by admin",
+            "category": "admin_exception"
+          }
+        },
+        {
+          "path": "/weeks/w3/minimumSlots",
+          "added": true,
+          "after": 4
+        },
+        {
+          "path": "/weeks/w3/remainder",
+          "added": true,
+          "after": 1
+        },
+        {
+          "path": "/exceptions/2026-10-24",
+          "added": true,
+          "after": {
+            "t20": {
+              "reason": "Archived by admin",
+              "category": "admin_exception"
+            }
+          }
+        },
+        {
+          "path": "/alerts/minimum:w3:m2",
+          "added": true,
+          "after": {
+            "message": "KI is below the 4-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
+            "week": "w3",
+            "at": 1792872209002,
+            "resolved": false
+          }
+        }
+      ]
     }
   ],
   "vacationHistory": [],
-  "assignmentHistory": [],
-  "exceptions": {},
+  "assignmentHistory": [
+    {
+      "week": "w3",
+      "task": "t20",
+      "before": {
+        "member": "m2",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": null,
+      "reason": "delete chore",
+      "at": 1792872209002,
+      "actor": "m3"
+    }
+  ],
+  "exceptions": {
+    "2026-10-24": {
+      "t20": {
+        "reason": "Archived by admin",
+        "category": "admin_exception"
+      }
+    }
+  },
   "schemaVersion": 2,
   "bonusSlotEnabled": {
     "m3": true
