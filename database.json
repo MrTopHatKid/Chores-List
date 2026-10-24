@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883732487,
+    "updatedAt": 1792883735497,
     "schemaVersion": 2
   },
   "settings": {
@@ -468,10 +468,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m5",
+        "member": "m2",
         "week": "w1",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "selected"
       }
     },
     "t24": {
@@ -540,7 +540,8 @@
     "m1": [],
     "m2": [
       "t08",
-      "t17"
+      "t17",
+      "t23"
     ],
     "m3": [
       "t05",
@@ -581,6 +582,10 @@
         "kind": "selected"
       },
       "t17": {
+        "member": "m2",
+        "kind": "selected"
+      },
+      "t23": {
         "member": "m2",
         "kind": "selected"
       },
@@ -643,6 +648,10 @@
         "kind": "selected"
       },
       "t17": {
+        "member": "m2",
+        "kind": "selected"
+      },
+      "t23": {
         "member": "m2",
         "kind": "selected"
       },
@@ -905,11 +914,11 @@
         "t23": {
           "task": "t23",
           "taskName": "Windows and sliding door",
-          "member": "m5",
+          "member": "m2",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "selected",
           "completed": 0
         }
       },
@@ -954,13 +963,13 @@
     "minimum:w1:m3": {
       "message": "AW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883732486,
+      "at": 1792883735496,
       "resolved": false
     },
     "minimum:w1:m5": {
       "message": "MW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883732486,
+      "at": 1792883735496,
       "resolved": false
     }
   },
@@ -984,7 +993,7 @@
       "selected": [
         "t08",
         "t17",
-        null
+        "t23"
       ],
       "bonus": []
     },
@@ -4966,6 +4975,86 @@
           "path": "/alerts/minimum:w1:m5/at",
           "before": 1792883726049,
           "after": 1792883732486
+        }
+      ]
+    },
+    {
+      "id": "0da9472a-dce3-42d7-9212-38d23d322c8d",
+      "at": 1792883735497,
+      "actor": "m2",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t23/claim/member",
+          "before": "m5",
+          "after": "m2"
+        },
+        {
+          "path": "/tasks/t23/claim/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/preferences/m2",
+          "before": [
+            "t08",
+            "t17"
+          ],
+          "after": [
+            "t08",
+            "t17",
+            "t23"
+          ]
+        },
+        {
+          "path": "/slotLayout/m2/selected",
+          "before": [
+            "t08",
+            "t17",
+            null
+          ],
+          "after": [
+            "t08",
+            "t17",
+            "t23"
+          ]
+        },
+        {
+          "path": "/plans/2026-10-19/t23",
+          "added": true,
+          "after": {
+            "member": "m2",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-26/t23",
+          "added": true,
+          "after": {
+            "member": "m2",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w1/assignments/t23/member",
+          "before": "m5",
+          "after": "m2"
+        },
+        {
+          "path": "/weeks/w1/assignments/t23/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/alerts/minimum:w1:m3/at",
+          "before": 1792883732486,
+          "after": 1792883735496
+        },
+        {
+          "path": "/alerts/minimum:w1:m5/at",
+          "before": 1792883732486,
+          "after": 1792883735496
         }
       ]
     }
