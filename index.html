@@ -81,7 +81,7 @@ body.locked main,body.locked header .me{visibility:hidden}
 <div class="modal-wrap" id="modalWrap" hidden><div class="modal" id="modal" role="dialog" aria-modal="true"></div></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
-const CONFIG={owner:'YOUR-USERNAME',repo:'YOUR-REPOSITORY',branch:'main',path:'database.json',adminPassword:'change-me'};
+const CONFIG={owner:'mrtophatkid',repo:'https://github.com/MrTopHatKid/Chores-List',branch:'main',path:'database.json',adminPassword:'Ch@ores987!'};
 const $=id=>document.getElementById(id), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let token=sessionStorage.getItem('choreToken')||'',D=null,sha='',me=localStorage.getItem('choreName')||'',tab='mine',admin=false,busy=false;
 const endpoint=()=>`https://api.github.com/repos/${encodeURIComponent(CONFIG.owner)}/${encodeURIComponent(CONFIG.repo)}/contents/${CONFIG.path.split('/').map(encodeURIComponent).join('/')}`;
