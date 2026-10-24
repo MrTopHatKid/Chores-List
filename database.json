@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792883628700,
+    "updatedAt": 1792883643313,
     "schemaVersion": 2
   },
   "settings": {
@@ -154,10 +154,10 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m4",
+        "member": "m3",
         "week": "w1",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "selected"
       }
     },
     "t06": {
@@ -539,7 +539,9 @@
   "preferences": {
     "m1": [],
     "m2": [],
-    "m3": [],
+    "m3": [
+      "t05"
+    ],
     "m4": [
       "t06",
       "t14",
@@ -559,6 +561,14 @@
   },
   "plans": {
     "2026-10-19": {
+      "t10": {
+        "member": "m4",
+        "kind": "bonus"
+      },
+      "t05": {
+        "member": "m3",
+        "kind": "selected"
+      },
       "t06": {
         "member": "m4",
         "kind": "selected"
@@ -580,6 +590,10 @@
       "t10": {
         "member": "m4",
         "kind": "bonus"
+      },
+      "t05": {
+        "member": "m3",
+        "kind": "selected"
       },
       "t06": {
         "member": "m4",
@@ -648,11 +662,11 @@
         "t05": {
           "task": "t05",
           "taskName": "Air fryers, microwave and toaster",
-          "member": "m4",
+          "member": "m3",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "selected",
           "completed": 0
         },
         "t06": {
@@ -830,7 +844,9 @@
           "category": "admin_exception"
         }
       },
-      "bonusUsers": [],
+      "bonusUsers": [
+        "m4"
+      ],
       "generated": true,
       "closed": false,
       "minimumSlots": 7,
@@ -855,13 +871,13 @@
     "minimum:w1:m3": {
       "message": "AW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883590363,
+      "at": 1792883643313,
       "resolved": false
     },
     "minimum:w1:m5": {
       "message": "MW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792883590363,
+      "at": 1792883643313,
       "resolved": false
     }
   },
@@ -899,7 +915,7 @@
     },
     "m3": {
       "selected": [
-        null,
+        "t05",
         null,
         null,
         null
@@ -4106,6 +4122,98 @@
           "path": "/weeks/w1/assignments/t10/kind",
           "before": "automatic",
           "after": "bonus"
+        }
+      ]
+    },
+    {
+      "id": "f663c641-ce0a-46a1-b58b-36b12ba8305d",
+      "at": 1792883643313,
+      "actor": "m3",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t05/claim/member",
+          "before": "m4",
+          "after": "m3"
+        },
+        {
+          "path": "/tasks/t05/claim/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/preferences/m3",
+          "before": [],
+          "after": [
+            "t05"
+          ]
+        },
+        {
+          "path": "/slotLayout/m3/selected",
+          "before": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "after": [
+            "t05",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "path": "/plans/2026-10-19/t10",
+          "added": true,
+          "after": {
+            "member": "m4",
+            "kind": "bonus"
+          }
+        },
+        {
+          "path": "/plans/2026-10-19/t05",
+          "added": true,
+          "after": {
+            "member": "m3",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-26/t05",
+          "added": true,
+          "after": {
+            "member": "m3",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w1/assignments/t05/member",
+          "before": "m4",
+          "after": "m3"
+        },
+        {
+          "path": "/weeks/w1/assignments/t05/kind",
+          "before": "automatic",
+          "after": "selected"
+        },
+        {
+          "path": "/weeks/w1/bonusUsers",
+          "before": [],
+          "after": [
+            "m4"
+          ]
+        },
+        {
+          "path": "/alerts/minimum:w1:m3/at",
+          "before": 1792883590363,
+          "after": 1792883643313
+        },
+        {
+          "path": "/alerts/minimum:w1:m5/at",
+          "before": 1792883590363,
+          "after": 1792883643313
         }
       ]
     }
