@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792877866549,
+    "updatedAt": 1792877869966,
     "schemaVersion": 2
   },
   "settings": {
@@ -42,7 +42,8 @@
         "from": "",
         "to": ""
       },
-      "excludeFromRandom": true
+      "excludeFromRandom": true,
+      "chosenOnly": true
     },
     "m3": {
       "name": "AW",
@@ -1810,8 +1811,8 @@
       "bonusUsers": [],
       "generated": true,
       "closed": false,
-      "minimumSlots": 5,
-      "remainder": 0,
+      "minimumSlots": 6,
+      "remainder": 2,
       "generatedAt": 1792877214765
     }
   },
@@ -25045,6 +25046,30 @@
             "at": 1792877866548,
             "resolved": false
           }
+        }
+      ]
+    },
+    {
+      "id": "ccd3a982-4bbf-48d0-b844-c633b391edb3",
+      "at": 1792877869966,
+      "actor": "m1",
+      "admin": true,
+      "action": "edit person",
+      "changes": [
+        {
+          "path": "/members/m2/chosenOnly",
+          "added": true,
+          "after": true
+        },
+        {
+          "path": "/weeks/w4/minimumSlots",
+          "before": 5,
+          "after": 6
+        },
+        {
+          "path": "/weeks/w4/remainder",
+          "before": 0,
+          "after": 2
         }
       ]
     }
@@ -49909,6 +49934,12 @@
       },
       {
         "at": 1792877866548,
+        "actor": "m1",
+        "action": "edit person",
+        "week": "w4"
+      },
+      {
+        "at": 1792877869966,
         "actor": "m1",
         "action": "edit person",
         "week": "w4"
