@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792876205024,
+    "updatedAt": 1792876215000,
     "schemaVersion": 2
   },
   "settings": {
@@ -863,6 +863,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1792876205023
+    },
+    "8a9e6769-ee00-4ad2-97b4-5a7c0b030f8b": {
+      "requestId": "8a9e6769-ee00-4ad2-97b4-5a7c0b030f8b",
+      "task": "t05",
+      "taskName": "Air fryers, microwave and toaster",
+      "member": "m3",
+      "memberName": "AW",
+      "week": "w3",
+      "weekStart": "2026-10-24",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1792876215000
     }
   },
   "pointLedger": {
@@ -1293,7 +1305,7 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
+          "completed": 1
         },
         "t06": {
           "task": "t06",
@@ -12526,6 +12538,36 @@
         },
         {
           "path": "/weeks/w3/assignments/t01/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "660b0ea6-6a22-4ed4-a143-316bde76773d",
+      "at": 1792876215000,
+      "actor": "m3",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/8a9e6769-ee00-4ad2-97b4-5a7c0b030f8b",
+          "added": true,
+          "after": {
+            "requestId": "8a9e6769-ee00-4ad2-97b4-5a7c0b030f8b",
+            "task": "t05",
+            "taskName": "Air fryers, microwave and toaster",
+            "member": "m3",
+            "memberName": "AW",
+            "week": "w3",
+            "weekStart": "2026-10-24",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1792876215000
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t05/completed",
           "before": 0,
           "after": 1
         }
