@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792861195464
+    "updatedAt": 1792861205246
   },
   "settings": {
     "rateCents": 2000,
@@ -8,12 +8,12 @@
     "defaultQuota": 4,
     "paidPointMode": "points",
     "currency": "$",
-    "weekNo": 2,
-    "weekId": "w2",
+    "weekNo": 3,
+    "weekId": "w3",
     "weekStart": "2026-10-24",
     "autoReset": false,
     "resetWeekday": 1,
-    "assignedWeek": "w2"
+    "assignedWeek": "w3"
   },
   "members": {
     "m1": {
@@ -128,12 +128,7 @@
       "points": 2,
       "max": 1,
       "active": true,
-      "order": 8,
-      "claim": {
-        "member": "m3",
-        "week": "w2",
-        "mandatory": true
-      }
+      "order": 8
     },
     "t09": {
       "name": "Pick up dog poop",
@@ -142,12 +137,7 @@
       "points": 3,
       "max": 1,
       "active": true,
-      "order": 9,
-      "claim": {
-        "member": "m1",
-        "week": "w2",
-        "mandatory": true
-      }
+      "order": 9
     },
     "t10": {
       "name": "Clean the fridge",
@@ -183,7 +173,12 @@
       "points": 4,
       "max": 1,
       "active": true,
-      "order": 14
+      "order": 14,
+      "claim": {
+        "member": "m3",
+        "week": "w3",
+        "mandatory": true
+      }
     },
     "t15": {
       "name": "Bathtub / shower",
@@ -194,8 +189,8 @@
       "active": true,
       "order": 15,
       "claim": {
-        "member": "m2",
-        "week": "w2",
+        "member": "m4",
+        "week": "w3",
         "mandatory": true
       }
     },
@@ -206,7 +201,12 @@
       "points": 3,
       "max": 1,
       "active": true,
-      "order": 16
+      "order": 16,
+      "claim": {
+        "member": "m1",
+        "week": "w3",
+        "mandatory": true
+      }
     },
     "t17": {
       "name": "Take out garbage and recycling",
@@ -217,8 +217,8 @@
       "active": true,
       "order": 17,
       "claim": {
-        "member": "m4",
-        "week": "w2",
+        "member": "m2",
+        "week": "w3",
         "mandatory": true
       }
     },
@@ -274,12 +274,7 @@
       "points": 4,
       "max": 1,
       "active": true,
-      "order": 23,
-      "claim": {
-        "member": "m5",
-        "week": "w2",
-        "mandatory": true
-      }
+      "order": 23
     },
     "t24": {
       "name": "Rake / collect leaves",
