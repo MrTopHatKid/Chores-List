@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792877730671,
+    "updatedAt": 1792877773584,
     "schemaVersion": 2
   },
   "settings": {
@@ -24854,6 +24854,14 @@
           }
         }
       ]
+    },
+    {
+      "id": "69f4f3f2-4d08-4c0c-8d57-1d792595bfe2",
+      "at": 1792877773584,
+      "actor": "m1",
+      "admin": true,
+      "action": "edit person",
+      "changes": []
     }
   ],
   "vacationHistory": [],
@@ -49704,6 +49712,12 @@
       },
       {
         "at": 1792877730670,
+        "actor": "m1",
+        "action": "edit person",
+        "week": "w4"
+      },
+      {
+        "at": 1792877773583,
         "actor": "m1",
         "action": "edit person",
         "week": "w4"
