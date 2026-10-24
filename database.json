@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792871534536,
+    "updatedAt": 1792872104366,
     "schemaVersion": 2
   },
   "settings": {
@@ -2934,10 +2934,28 @@
           }
         }
       }
+    },
+    {
+      "id": "0929e04d-33b3-4469-848b-2b523b2dd119",
+      "at": 1792872104366,
+      "actor": "m3",
+      "admin": false,
+      "action": "bonus slot setting",
+      "changes": [
+        {
+          "path": "/bonusSlotEnabled/m3",
+          "added": true,
+          "after": true
+        }
+      ]
     }
   ],
   "vacationHistory": [],
   "assignmentHistory": [],
   "exceptions": {},
-  "schemaVersion": 2
+  "schemaVersion": 2,
+  "bonusSlotEnabled": {
+    "m3": true
+  },
+  "slotLayout": {}
 }
