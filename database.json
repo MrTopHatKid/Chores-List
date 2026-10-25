@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792888554637,
+    "updatedAt": 1792888571157,
     "schemaVersion": 2
   },
   "settings": {
@@ -242,13 +242,7 @@
       "order": 10,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1,
-      "claim": {
-        "member": "m4",
-        "week": "w1",
-        "mandatory": true,
-        "kind": "bonus"
-      }
+      "startWeek": 1
     },
     "t11": {
       "name": "Dishes",
@@ -564,19 +558,13 @@
     "m1": [],
     "m2": [],
     "m3": [],
-    "m4": [
-      "t10"
-    ],
+    "m4": [],
     "m5": [
       "t09"
     ]
   },
   "plans": {
     "2026-10-19": {
-      "t10": {
-        "member": "m4",
-        "kind": "bonus"
-      },
       "t15": {
         "member": "m1",
         "kind": "selected"
@@ -651,10 +639,6 @@
       }
     },
     "2026-10-26": {
-      "t10": {
-        "member": "m4",
-        "kind": "bonus"
-      },
       "t09": {
         "member": "m5",
         "kind": "bonus"
@@ -823,16 +807,6 @@
           "task": "t09",
           "taskName": "Pick up dog poop",
           "member": "m5",
-          "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
-          "kind": "bonus",
-          "completed": 0
-        },
-        "t10": {
-          "task": "t10",
-          "taskName": "Clean the fridge",
-          "member": "m4",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -5593,6 +5567,74 @@
           "removed": true
         }
       ]
+    },
+    {
+      "id": "eeedf9dc-d7e3-4fac-b556-95defbb669da",
+      "at": 1792888571157,
+      "actor": "m4",
+      "admin": false,
+      "action": "return controlled bonus to random",
+      "changes": [
+        {
+          "path": "/tasks/t10/claim",
+          "before": {
+            "member": "m4",
+            "week": "w1",
+            "mandatory": true,
+            "kind": "bonus"
+          },
+          "removed": true
+        },
+        {
+          "path": "/bonusPreferences/m4",
+          "before": [
+            "t10"
+          ],
+          "after": []
+        },
+        {
+          "path": "/permanentBonus/t10",
+          "before": {
+            "member": "m4",
+            "controller": "m4",
+            "source": "controlled_gift",
+            "originalMember": "m3",
+            "createdAt": 1792883628700,
+            "updatedAt": 1792883628700
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-10-19/t10",
+          "before": {
+            "member": "m4",
+            "kind": "bonus"
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-10-26/t10",
+          "before": {
+            "member": "m4",
+            "kind": "bonus"
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w1/assignments/t10",
+          "before": {
+            "task": "t10",
+            "taskName": "Clean the fridge",
+            "member": "m4",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "bonus",
+            "completed": 0
+          },
+          "removed": true
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -6170,17 +6212,23 @@
       "reason": "return controlled bonus to random",
       "at": 1792888554637,
       "actor": "m3"
+    },
+    {
+      "week": "w1",
+      "task": "t10",
+      "before": {
+        "member": "m4",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "bonus"
+      },
+      "after": null,
+      "reason": "return controlled bonus to random",
+      "at": 1792888571156,
+      "actor": "m4"
     }
   ],
   "permanentBonus": {
-    "t10": {
-      "member": "m4",
-      "controller": "m4",
-      "source": "controlled_gift",
-      "originalMember": "m3",
-      "createdAt": 1792883628700,
-      "updatedAt": 1792883628700
-    },
     "t09": {
       "member": "m5",
       "controller": "m5",
