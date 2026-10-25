@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792937435679,
+    "updatedAt": 1792937647036,
     "schemaVersion": 2
   },
   "settings": {
@@ -533,6 +533,23 @@
       "difficulty": "Medium",
       "every": 1,
       "startWeek": 1
+    },
+    "tdeced27f-a83e-4896-88f0-eb3bd9266b94": {
+      "name": "test",
+      "desc": "222",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "max": 1,
+      "active": true,
+      "order": 1792937646817,
+      "every": 1,
+      "startWeek": 1,
+      "claim": {
+        "member": "m4",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      }
     }
   },
   "completions": {},
@@ -938,6 +955,16 @@
           "workload": 2,
           "kind": "selected",
           "completed": 0
+        },
+        "tdeced27f-a83e-4896-88f0-eb3bd9266b94": {
+          "task": "tdeced27f-a83e-4896-88f0-eb3bd9266b94",
+          "taskName": "test",
+          "member": "m4",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
         }
       },
       "excluded": {},
@@ -945,7 +972,7 @@
       "generated": true,
       "closed": false,
       "minimumSlots": 5,
-      "remainder": 0,
+      "remainder": 1,
       "lockedUsers": [
         "m1",
         "m2"
@@ -6078,6 +6105,55 @@
           "path": "/weeks/w1/generatedAt",
           "before": 1792937420779,
           "after": 1792937435679
+        }
+      ]
+    },
+    {
+      "id": "6f427dd4-5065-485a-a504-b5d81d32988a",
+      "at": 1792937647036,
+      "actor": "m3",
+      "admin": true,
+      "action": "add chore",
+      "changes": [
+        {
+          "path": "/tasks/tdeced27f-a83e-4896-88f0-eb3bd9266b94",
+          "added": true,
+          "after": {
+            "name": "test",
+            "desc": "222",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "max": 1,
+            "active": true,
+            "order": 1792937646817,
+            "every": 1,
+            "startWeek": 1,
+            "claim": {
+              "member": "m4",
+              "week": "w1",
+              "mandatory": true,
+              "kind": "automatic"
+            }
+          }
+        },
+        {
+          "path": "/weeks/w1/assignments/tdeced27f-a83e-4896-88f0-eb3bd9266b94",
+          "added": true,
+          "after": {
+            "task": "tdeced27f-a83e-4896-88f0-eb3bd9266b94",
+            "taskName": "test",
+            "member": "m4",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "automatic",
+            "completed": 0
+          }
+        },
+        {
+          "path": "/weeks/w1/remainder",
+          "before": 0,
+          "after": 1
         }
       ]
     }
