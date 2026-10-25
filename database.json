@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792884871097,
+    "updatedAt": 1792888533103,
     "schemaVersion": 2
   },
   "settings": {
@@ -229,7 +229,7 @@
         "member": "m5",
         "week": "w1",
         "mandatory": true,
-        "kind": "automatic"
+        "kind": "bonus"
       }
     },
     "t10": {
@@ -573,7 +573,9 @@
     "m4": [
       "t10"
     ],
-    "m5": []
+    "m5": [
+      "t09"
+    ]
   },
   "plans": {
     "2026-10-19": {
@@ -657,6 +659,10 @@
     "2026-10-26": {
       "t10": {
         "member": "m4",
+        "kind": "bonus"
+      },
+      "t09": {
+        "member": "m5",
         "kind": "bonus"
       },
       "t15": {
@@ -826,7 +832,7 @@
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
-          "kind": "automatic",
+          "kind": "bonus",
           "completed": 0
         },
         "t10": {
@@ -1014,7 +1020,8 @@
     }
   },
   "bonusSlotEnabled": {
-    "m4": true
+    "m4": true,
+    "m5": true
   },
   "slotLayout": {
     "m2": {
@@ -5439,6 +5446,57 @@
           "after": 1792884871097
         }
       ]
+    },
+    {
+      "id": "9bdf6ee8-56e9-4288-9756-9dd868f6cbba",
+      "at": 1792888533103,
+      "actor": "m5",
+      "admin": false,
+      "action": "take bonus chore",
+      "changes": [
+        {
+          "path": "/tasks/t09/claim/kind",
+          "before": "automatic",
+          "after": "bonus"
+        },
+        {
+          "path": "/bonusPreferences/m5",
+          "before": [],
+          "after": [
+            "t09"
+          ]
+        },
+        {
+          "path": "/bonusSlotEnabled/m5",
+          "added": true,
+          "after": true
+        },
+        {
+          "path": "/permanentBonus/t09",
+          "added": true,
+          "after": {
+            "member": "m5",
+            "controller": "m5",
+            "source": "controlled_gift",
+            "originalMember": "m5",
+            "createdAt": 1792888533102,
+            "updatedAt": 1792888533102
+          }
+        },
+        {
+          "path": "/plans/2026-10-26/t09",
+          "added": true,
+          "after": {
+            "member": "m5",
+            "kind": "bonus"
+          }
+        },
+        {
+          "path": "/weeks/w1/assignments/t09/kind",
+          "before": "automatic",
+          "after": "bonus"
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -5964,6 +6022,25 @@
       "reason": "Admin applied saved chosen tasks",
       "at": 1792883764159,
       "actor": "m3"
+    },
+    {
+      "week": "w1",
+      "task": "t09",
+      "before": {
+        "member": "m5",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m5",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "bonus"
+      },
+      "reason": "take bonus chore",
+      "at": 1792888533102,
+      "actor": "m5"
     }
   ],
   "permanentBonus": {
@@ -5974,6 +6051,14 @@
       "originalMember": "m3",
       "createdAt": 1792883628700,
       "updatedAt": 1792883628700
+    },
+    "t09": {
+      "member": "m5",
+      "controller": "m5",
+      "source": "controlled_gift",
+      "originalMember": "m5",
+      "createdAt": 1792888533102,
+      "updatedAt": 1792888533102
     }
   },
   "bonusRequests": {},
