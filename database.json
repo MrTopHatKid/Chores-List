@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792937085318,
+    "updatedAt": 1792937420780,
     "schemaVersion": 2
   },
   "settings": {
@@ -226,7 +226,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m3",
+        "member": "m5",
         "week": "w1",
         "mandatory": true,
         "kind": "automatic"
@@ -247,7 +247,7 @@
         "member": "m3",
         "week": "w1",
         "mandatory": true,
-        "kind": "selected"
+        "kind": "automatic"
       }
     },
     "t11": {
@@ -280,7 +280,7 @@
       "every": 1,
       "startWeek": 1,
       "claim": {
-        "member": "m3",
+        "member": "m4",
         "week": "w1",
         "mandatory": true,
         "kind": "automatic"
@@ -574,7 +574,7 @@
     "m5": []
   },
   "plans": {
-    "2026-10-19": {
+    "2026-10-26": {
       "t15": {
         "member": "m1",
         "kind": "selected"
@@ -648,7 +648,7 @@
         "kind": "selected"
       }
     },
-    "2026-10-26": {
+    "2026-10-19": {
       "t15": {
         "member": "m1",
         "kind": "selected"
@@ -809,6 +809,26 @@
           "kind": "selected",
           "completed": 0
         },
+        "t09": {
+          "task": "t09",
+          "taskName": "Pick up dog poop",
+          "member": "m5",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
+        },
+        "t10": {
+          "task": "t10",
+          "taskName": "Clean the fridge",
+          "member": "m3",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
+        },
         "t11": {
           "task": "t11",
           "taskName": "Dishes",
@@ -817,6 +837,16 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
+          "completed": 0
+        },
+        "t12": {
+          "task": "t12",
+          "taskName": "Middle flight of stairs",
+          "member": "m4",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
           "completed": 0
         },
         "t13": {
@@ -908,90 +938,23 @@
           "workload": 2,
           "kind": "selected",
           "completed": 0
-        },
-        "t09": {
-          "task": "t09",
-          "taskName": "Pick up dog poop",
-          "member": "m3",
-          "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
-          "kind": "automatic",
-          "completed": 0
-        },
-        "t10": {
-          "task": "t10",
-          "taskName": "Clean the fridge",
-          "member": "m3",
-          "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
-          "kind": "selected",
-          "completed": 0
-        },
-        "t12": {
-          "task": "t12",
-          "taskName": "Middle flight of stairs",
-          "member": "m3",
-          "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
-          "kind": "automatic",
-          "completed": 0
         }
       },
-      "excluded": {
-        "t21": {
-          "taskName": "All bathroom mirrors",
-          "difficulty": "Medium",
-          "reason": "Archived by admin",
-          "category": "admin_exception"
-        },
-        "t19": {
-          "taskName": "Load the dishwasher",
-          "difficulty": "Medium",
-          "reason": "Archived by admin",
-          "category": "admin_exception"
-        }
-      },
-      "bonusUsers": [
-        "m4"
-      ],
+      "excluded": {},
+      "bonusUsers": [],
       "generated": true,
       "closed": false,
-      "minimumSlots": 7,
+      "minimumSlots": 5,
       "remainder": 0,
-      "generatedAt": 1792883092356,
-      "lockedUsers": []
+      "lockedUsers": [
+        "m1",
+        "m2"
+      ],
+      "generatedAt": 1792937420779
     }
   },
   "incomplete": {},
-  "alerts": {
-    "minimum:w1:m1": {
-      "message": "Person 1 is below the 5-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
-      "week": "w1",
-      "at": 1792883122626,
-      "resolved": false
-    },
-    "minimum:w1:m4": {
-      "message": "MK is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
-      "week": "w1",
-      "at": 1792937085318,
-      "resolved": false
-    },
-    "minimum:w1:m3": {
-      "message": "AW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
-      "week": "w1",
-      "at": 1792888618547,
-      "resolved": false
-    },
-    "minimum:w1:m5": {
-      "message": "MW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
-      "week": "w1",
-      "at": 1792937085318,
-      "resolved": false
-    }
-  },
+  "alerts": {},
   "exceptions": {
     "2026-10-19": {
       "t21": {
@@ -5979,6 +5942,130 @@
           "after": 1792937085318
         }
       ]
+    },
+    {
+      "id": "277f6e12-91ad-42e6-b9ef-55bbe0398bdb",
+      "at": 1792937420780,
+      "actor": "m3",
+      "admin": true,
+      "action": "reset current week",
+      "changes": [
+        {
+          "path": "/tasks/t09/claim/member",
+          "before": "m3",
+          "after": "m5"
+        },
+        {
+          "path": "/tasks/t10/claim/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/tasks/t12/claim/member",
+          "before": "m3",
+          "after": "m4"
+        },
+        {
+          "path": "/weeks/w1/assignments/t09/member",
+          "before": "m3",
+          "after": "m5"
+        },
+        {
+          "path": "/weeks/w1/assignments/t10/kind",
+          "before": "selected",
+          "after": "automatic"
+        },
+        {
+          "path": "/weeks/w1/assignments/t12/member",
+          "before": "m3",
+          "after": "m4"
+        },
+        {
+          "path": "/weeks/w1/excluded/t21",
+          "before": {
+            "taskName": "All bathroom mirrors",
+            "difficulty": "Medium",
+            "reason": "Archived by admin",
+            "category": "admin_exception"
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w1/excluded/t19",
+          "before": {
+            "taskName": "Load the dishwasher",
+            "difficulty": "Medium",
+            "reason": "Archived by admin",
+            "category": "admin_exception"
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w1/bonusUsers",
+          "before": [
+            "m4"
+          ],
+          "after": []
+        },
+        {
+          "path": "/weeks/w1/minimumSlots",
+          "before": 7,
+          "after": 5
+        },
+        {
+          "path": "/weeks/w1/generatedAt",
+          "before": 1792883092356,
+          "after": 1792937420779
+        },
+        {
+          "path": "/weeks/w1/lockedUsers",
+          "before": [],
+          "after": [
+            "m1",
+            "m2"
+          ]
+        },
+        {
+          "path": "/alerts/minimum:w1:m1",
+          "before": {
+            "message": "Person 1 is below the 5-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
+            "week": "w1",
+            "at": 1792883122626,
+            "resolved": false
+          },
+          "removed": true
+        },
+        {
+          "path": "/alerts/minimum:w1:m4",
+          "before": {
+            "message": "MK is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
+            "week": "w1",
+            "at": 1792937085318,
+            "resolved": false
+          },
+          "removed": true
+        },
+        {
+          "path": "/alerts/minimum:w1:m3",
+          "before": {
+            "message": "AW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
+            "week": "w1",
+            "at": 1792888618547,
+            "resolved": false
+          },
+          "removed": true
+        },
+        {
+          "path": "/alerts/minimum:w1:m5",
+          "before": {
+            "message": "MW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
+            "week": "w1",
+            "at": 1792937085318,
+            "resolved": false
+          },
+          "removed": true
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -6625,6 +6712,63 @@
       },
       "reason": "Admin applied saved chosen tasks",
       "at": 1792888618547,
+      "actor": "m3"
+    },
+    {
+      "week": "w1",
+      "task": "t09",
+      "before": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m5",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "reset current week",
+      "at": 1792937420780,
+      "actor": "m3"
+    },
+    {
+      "week": "w1",
+      "task": "t10",
+      "before": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "selected"
+      },
+      "after": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "reset current week",
+      "at": 1792937420780,
+      "actor": "m3"
+    },
+    {
+      "week": "w1",
+      "task": "t12",
+      "before": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "after": {
+        "member": "m4",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "reset current week",
+      "at": 1792937420780,
       "actor": "m3"
     }
   ],
