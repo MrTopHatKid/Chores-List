@@ -1,0 +1,99 @@
+{
+  "settings": {
+    "weekStart": "2026-10-24",
+    "weekNo": 1,
+    "weekId": "w1",
+    "timezone": "America/Toronto",
+    "deadlineHour": 0,
+    "rateCents": 1500,
+    "currency": "$",
+    "requiredTasks": {},
+    "autoWeek": true,
+    "weekStartDay": 1,
+    "missedWeight": 100,
+    "assignedWeek": "w1"
+  },
+  "tasks": {},
+  "members": {},
+  "completions": {},
+  "preferences": {},
+  "extraPreferences": {},
+  "extraSlotEnabled": {},
+  "slotLayout": {},
+  "extraRequests": {},
+  "permanentExtra": {},
+  "plans": {
+    "2026-10-24": {},
+    "2026-10-26": {}
+  },
+  "weeks": {
+    "w1": {
+      "id": "w1",
+      "start": "2026-10-24",
+      "no": 1,
+      "assignments": {},
+      "excluded": {},
+      "extraUsers": [],
+      "generated": true,
+      "closed": false,
+      "minimumSlots": 0,
+      "remainder": 0,
+      "generatedAt": 1792888110380
+    }
+  },
+  "incomplete": {},
+  "exceptions": {},
+  "alerts": {},
+  "audit": [
+    {
+      "id": "dd947e19-afee-4a7c-899c-ac17a38c626d",
+      "at": 1792888110381,
+      "actor": "m4",
+      "admin": false,
+      "action": "weekly assignments",
+      "changes": [
+        {
+          "path": "/settings/assignedWeek",
+          "added": true,
+          "after": "w1"
+        },
+        {
+          "path": "/plans/2026-10-24",
+          "added": true,
+          "after": {}
+        },
+        {
+          "path": "/plans/2026-10-26",
+          "added": true,
+          "after": {}
+        },
+        {
+          "path": "/weeks/w1",
+          "added": true,
+          "after": {
+            "id": "w1",
+            "start": "2026-10-24",
+            "no": 1,
+            "assignments": {},
+            "excluded": {},
+            "extraUsers": [],
+            "generated": true,
+            "closed": false,
+            "minimumSlots": 0,
+            "remainder": 0,
+            "generatedAt": 1792888110380
+          }
+        }
+      ]
+    }
+  ],
+  "vacationHistory": [],
+  "assignmentHistory": [],
+  "schemaVersion": 2,
+  "meta": {
+    "createdAt": 1792888110380,
+    "updatedAt": 1792888110381,
+    "schemaVersion": 2
+  },
+  "commitmentRulesVersion": 3
+}
