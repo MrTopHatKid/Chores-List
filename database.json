@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792938171793,
+    "updatedAt": 1792938179785,
     "schemaVersion": 2
   },
   "settings": {
@@ -83,7 +83,13 @@
       "order": 1,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1
+      "startWeek": 1,
+      "claim": {
+        "member": "m3",
+        "kind": "selected",
+        "week": "w1",
+        "mandatory": true
+      }
     },
     "t02": {
       "name": "Kitchen counters and table",
@@ -540,7 +546,8 @@
     "m3": [
       "t05",
       "t13",
-      "t16"
+      "t16",
+      "t01"
     ],
     "m4": [
       "t06",
@@ -597,6 +604,10 @@
         "kind": "selected"
       },
       "t16": {
+        "member": "m3",
+        "kind": "selected"
+      },
+      "t01": {
         "member": "m3",
         "kind": "selected"
       },
@@ -667,6 +678,10 @@
         "kind": "selected"
       },
       "t16": {
+        "member": "m3",
+        "kind": "selected"
+      },
+      "t01": {
         "member": "m3",
         "kind": "selected"
       },
@@ -879,6 +894,16 @@
           "workload": 2,
           "kind": "selected",
           "completed": 0
+        },
+        "t01": {
+          "task": "t01",
+          "taskName": "Upstairs towels, bath mat and cloths",
+          "member": "m3",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "selected",
+          "completed": 0
         }
       },
       "excluded": {},
@@ -935,8 +960,7 @@
         "t05",
         "t13",
         "t16",
-        null,
-        null
+        "t01"
       ],
       "bonus": []
     },
@@ -6258,6 +6282,85 @@
             "completed": 0
           },
           "removed": true
+        }
+      ]
+    },
+    {
+      "id": "209c3823-acb4-42d6-b1fe-c1a5be07164a",
+      "at": 1792938179785,
+      "actor": "m3",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t01/claim",
+          "added": true,
+          "after": {
+            "member": "m3",
+            "kind": "selected",
+            "week": "w1",
+            "mandatory": true
+          }
+        },
+        {
+          "path": "/preferences/m3",
+          "before": [
+            "t05",
+            "t13",
+            "t16"
+          ],
+          "after": [
+            "t05",
+            "t13",
+            "t16",
+            "t01"
+          ]
+        },
+        {
+          "path": "/slotLayout/m3/selected",
+          "before": [
+            "t05",
+            "t13",
+            "t16",
+            null,
+            null
+          ],
+          "after": [
+            "t05",
+            "t13",
+            "t16",
+            "t01"
+          ]
+        },
+        {
+          "path": "/plans/2026-10-19/t01",
+          "added": true,
+          "after": {
+            "member": "m3",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-10-26/t01",
+          "added": true,
+          "after": {
+            "member": "m3",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w1/assignments/t01",
+          "added": true,
+          "after": {
+            "task": "t01",
+            "taskName": "Upstairs towels, bath mat and cloths",
+            "member": "m3",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "selected",
+            "completed": 0
+          }
         }
       ]
     }
