@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792937647036,
+    "updatedAt": 1792937998638,
     "schemaVersion": 2
   },
   "settings": {
@@ -18,7 +18,10 @@
     "deadlineHour": 0,
     "requiredTasks": {
       "m1": 3,
-      "m2": 3
+      "m2": 3,
+      "m3": 4,
+      "m4": 4,
+      "m5": 4
     },
     "assignedWeek": "w1"
   },
@@ -83,9 +86,9 @@
       "startWeek": 1,
       "claim": {
         "member": "m3",
+        "kind": "selected",
         "week": "w1",
-        "mandatory": true,
-        "kind": "selected"
+        "mandatory": true
       }
     },
     "t02": {
@@ -101,9 +104,9 @@
       "startWeek": 1,
       "claim": {
         "member": "m4",
+        "kind": "selected",
         "week": "w1",
-        "mandatory": true,
-        "kind": "selected"
+        "mandatory": true
       }
     },
     "t03": {
@@ -119,9 +122,9 @@
       "startWeek": 1,
       "claim": {
         "member": "m1",
+        "kind": "selected",
         "week": "w1",
-        "mandatory": true,
-        "kind": "selected"
+        "mandatory": true
       }
     },
     "t04": {
@@ -137,9 +140,9 @@
       "startWeek": 1,
       "claim": {
         "member": "m5",
+        "kind": "selected",
         "week": "w1",
-        "mandatory": true,
-        "kind": "selected"
+        "mandatory": true
       }
     },
     "t05": {
@@ -155,9 +158,9 @@
       "startWeek": 1,
       "claim": {
         "member": "m3",
+        "kind": "selected",
         "week": "w1",
-        "mandatory": true,
-        "kind": "selected"
+        "mandatory": true
       }
     },
     "t06": {
@@ -173,9 +176,9 @@
       "startWeek": 1,
       "claim": {
         "member": "m4",
+        "kind": "selected",
         "week": "w1",
-        "mandatory": true,
-        "kind": "selected"
+        "mandatory": true
       }
     },
     "t07": {
@@ -191,9 +194,9 @@
       "startWeek": 1,
       "claim": {
         "member": "m4",
+        "kind": "selected",
         "week": "w1",
-        "mandatory": true,
-        "kind": "selected"
+        "mandatory": true
       }
     },
     "t08": {
@@ -209,9 +212,9 @@
       "startWeek": 1,
       "claim": {
         "member": "m2",
+        "kind": "selected",
         "week": "w1",
-        "mandatory": true,
-        "kind": "selected"
+        "mandatory": true
       }
     },
     "t09": {
@@ -224,13 +227,7 @@
       "order": 9,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1,
-      "claim": {
-        "member": "m5",
-        "week": "w1",
-        "mandatory": true,
-        "kind": "automatic"
-      }
+      "startWeek": 1
     },
     "t10": {
       "name": "Clean the fridge",
@@ -242,13 +239,7 @@
       "order": 10,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1,
-      "claim": {
-        "member": "m3",
-        "week": "w1",
-        "mandatory": true,
-        "kind": "automatic"
-      }
+      "startWeek": 1
     },
     "t11": {
       "name": "Dishes",
@@ -263,9 +254,9 @@
       "startWeek": 1,
       "claim": {
         "member": "m5",
+        "kind": "selected",
         "week": "w1",
-        "mandatory": true,
-        "kind": "selected"
+        "mandatory": true
       }
     },
     "t12": {
@@ -278,13 +269,7 @@
       "order": 12,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1,
-      "claim": {
-        "member": "m4",
-        "week": "w1",
-        "mandatory": true,
-        "kind": "automatic"
-      }
+      "startWeek": 1
     },
     "t13": {
       "name": "Upstairs bathroom",
@@ -299,9 +284,9 @@
       "startWeek": 1,
       "claim": {
         "member": "m3",
+        "kind": "selected",
         "week": "w1",
-        "mandatory": true,
-        "kind": "selected"
+        "mandatory": true
       }
     },
     "t14": {
@@ -317,9 +302,9 @@
       "startWeek": 1,
       "claim": {
         "member": "m4",
+        "kind": "selected",
         "week": "w1",
-        "mandatory": true,
-        "kind": "selected"
+        "mandatory": true
       }
     },
     "t15": {
@@ -335,9 +320,9 @@
       "startWeek": 1,
       "claim": {
         "member": "m1",
+        "kind": "selected",
         "week": "w1",
-        "mandatory": true,
-        "kind": "selected"
+        "mandatory": true
       }
     },
     "t16": {
@@ -353,9 +338,9 @@
       "startWeek": 1,
       "claim": {
         "member": "m3",
+        "kind": "selected",
         "week": "w1",
-        "mandatory": true,
-        "kind": "selected"
+        "mandatory": true
       }
     },
     "t17": {
@@ -371,9 +356,9 @@
       "startWeek": 1,
       "claim": {
         "member": "m2",
+        "kind": "selected",
         "week": "w1",
-        "mandatory": true,
-        "kind": "selected"
+        "mandatory": true
       }
     },
     "t18": {
@@ -389,9 +374,9 @@
       "startWeek": 1,
       "claim": {
         "member": "m1",
+        "kind": "selected",
         "week": "w1",
-        "mandatory": true,
-        "kind": "selected"
+        "mandatory": true
       }
     },
     "t19": {
@@ -420,9 +405,9 @@
       "startWeek": 1,
       "claim": {
         "member": "m5",
+        "kind": "selected",
         "week": "w1",
-        "mandatory": true,
-        "kind": "selected"
+        "mandatory": true
       }
     },
     "t21": {
@@ -451,9 +436,9 @@
       "startWeek": 1,
       "claim": {
         "member": "m5",
+        "kind": "selected",
         "week": "w1",
-        "mandatory": true,
-        "kind": "selected"
+        "mandatory": true
       }
     },
     "t23": {
@@ -469,9 +454,9 @@
       "startWeek": 1,
       "claim": {
         "member": "m2",
+        "kind": "selected",
         "week": "w1",
-        "mandatory": true,
-        "kind": "selected"
+        "mandatory": true
       }
     },
     "t24": {
@@ -543,13 +528,7 @@
       "active": true,
       "order": 1792937646817,
       "every": 1,
-      "startWeek": 1,
-      "claim": {
-        "member": "m4",
-        "week": "w1",
-        "mandatory": true,
-        "kind": "automatic"
-      }
+      "startWeek": 1
     }
   },
   "completions": {},
@@ -826,26 +805,6 @@
           "kind": "selected",
           "completed": 0
         },
-        "t09": {
-          "task": "t09",
-          "taskName": "Pick up dog poop",
-          "member": "m5",
-          "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
-          "kind": "automatic",
-          "completed": 0
-        },
-        "t10": {
-          "task": "t10",
-          "taskName": "Clean the fridge",
-          "member": "m3",
-          "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
-          "kind": "automatic",
-          "completed": 0
-        },
         "t11": {
           "task": "t11",
           "taskName": "Dishes",
@@ -854,16 +813,6 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
-        },
-        "t12": {
-          "task": "t12",
-          "taskName": "Middle flight of stairs",
-          "member": "m4",
-          "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
-          "kind": "automatic",
           "completed": 0
         },
         "t13": {
@@ -954,16 +903,6 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
-        },
-        "tdeced27f-a83e-4896-88f0-eb3bd9266b94": {
-          "task": "tdeced27f-a83e-4896-88f0-eb3bd9266b94",
-          "taskName": "test",
-          "member": "m4",
-          "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
-          "kind": "automatic",
           "completed": 0
         }
       },
@@ -6156,6 +6095,116 @@
           "after": 1
         }
       ]
+    },
+    {
+      "id": "ed64cb72-0133-420f-a0a3-6eab25cf0a3c",
+      "at": 1792937998638,
+      "actor": "m4",
+      "admin": false,
+      "action": "weekly assignments",
+      "changes": [
+        {
+          "path": "/manualAssignmentsVersion",
+          "added": true,
+          "after": 1
+        },
+        {
+          "path": "/tasks/t09/claim",
+          "before": {
+            "member": "m5",
+            "week": "w1",
+            "mandatory": true,
+            "kind": "automatic"
+          },
+          "removed": true
+        },
+        {
+          "path": "/tasks/t10/claim",
+          "before": {
+            "member": "m3",
+            "week": "w1",
+            "mandatory": true,
+            "kind": "automatic"
+          },
+          "removed": true
+        },
+        {
+          "path": "/tasks/t12/claim",
+          "before": {
+            "member": "m4",
+            "week": "w1",
+            "mandatory": true,
+            "kind": "automatic"
+          },
+          "removed": true
+        },
+        {
+          "path": "/tasks/tdeced27f-a83e-4896-88f0-eb3bd9266b94/claim",
+          "before": {
+            "member": "m4",
+            "week": "w1",
+            "mandatory": true,
+            "kind": "automatic"
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w1/assignments/t09",
+          "before": {
+            "task": "t09",
+            "taskName": "Pick up dog poop",
+            "member": "m5",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "automatic",
+            "completed": 0
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w1/assignments/t10",
+          "before": {
+            "task": "t10",
+            "taskName": "Clean the fridge",
+            "member": "m3",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "automatic",
+            "completed": 0
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w1/assignments/t12",
+          "before": {
+            "task": "t12",
+            "taskName": "Middle flight of stairs",
+            "member": "m4",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "automatic",
+            "completed": 0
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w1/assignments/tdeced27f-a83e-4896-88f0-eb3bd9266b94",
+          "before": {
+            "task": "tdeced27f-a83e-4896-88f0-eb3bd9266b94",
+            "taskName": "test",
+            "member": "m4",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "automatic",
+            "completed": 0
+          },
+          "removed": true
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -6178,5 +6227,8 @@
       "notDue": [],
       "vacationSkipped": []
     }
-  }
+  },
+  "manualSlotsVersion": 1,
+  "fixedOwners": {},
+  "manualAssignmentsVersion": 1
 }
