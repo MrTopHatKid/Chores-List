@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792888571157,
+    "updatedAt": 1792888579259,
     "schemaVersion": 2
   },
   "settings": {
@@ -224,13 +224,7 @@
       "order": 9,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1,
-      "claim": {
-        "member": "m5",
-        "week": "w1",
-        "mandatory": true,
-        "kind": "bonus"
-      }
+      "startWeek": 1
     },
     "t10": {
       "name": "Clean the fridge",
@@ -559,9 +553,7 @@
     "m2": [],
     "m3": [],
     "m4": [],
-    "m5": [
-      "t09"
-    ]
+    "m5": []
   },
   "plans": {
     "2026-10-19": {
@@ -639,10 +631,6 @@
       }
     },
     "2026-10-26": {
-      "t09": {
-        "member": "m5",
-        "kind": "bonus"
-      },
       "t15": {
         "member": "m1",
         "kind": "selected"
@@ -801,16 +789,6 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
-        },
-        "t09": {
-          "task": "t09",
-          "taskName": "Pick up dog poop",
-          "member": "m5",
-          "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
-          "kind": "bonus",
           "completed": 0
         },
         "t11": {
@@ -5635,6 +5613,66 @@
           "removed": true
         }
       ]
+    },
+    {
+      "id": "45bea033-ee12-4d24-a24e-0c96d21811d9",
+      "at": 1792888579259,
+      "actor": "m5",
+      "admin": false,
+      "action": "return controlled bonus to random",
+      "changes": [
+        {
+          "path": "/tasks/t09/claim",
+          "before": {
+            "member": "m5",
+            "week": "w1",
+            "mandatory": true,
+            "kind": "bonus"
+          },
+          "removed": true
+        },
+        {
+          "path": "/bonusPreferences/m5",
+          "before": [
+            "t09"
+          ],
+          "after": []
+        },
+        {
+          "path": "/permanentBonus/t09",
+          "before": {
+            "member": "m5",
+            "controller": "m5",
+            "source": "controlled_gift",
+            "originalMember": "m5",
+            "createdAt": 1792888533102,
+            "updatedAt": 1792888533102
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-10-26/t09",
+          "before": {
+            "member": "m5",
+            "kind": "bonus"
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w1/assignments/t09",
+          "before": {
+            "task": "t09",
+            "taskName": "Pick up dog poop",
+            "member": "m5",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "bonus",
+            "completed": 0
+          },
+          "removed": true
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -6226,18 +6264,23 @@
       "reason": "return controlled bonus to random",
       "at": 1792888571156,
       "actor": "m4"
+    },
+    {
+      "week": "w1",
+      "task": "t09",
+      "before": {
+        "member": "m5",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "bonus"
+      },
+      "after": null,
+      "reason": "return controlled bonus to random",
+      "at": 1792888579259,
+      "actor": "m5"
     }
   ],
-  "permanentBonus": {
-    "t09": {
-      "member": "m5",
-      "controller": "m5",
-      "source": "controlled_gift",
-      "originalMember": "m5",
-      "createdAt": 1792888533102,
-      "updatedAt": 1792888533102
-    }
-  },
+  "permanentBonus": {},
   "bonusRequests": {},
   "schemaVersion": 2,
   "commitmentRulesVersion": 3,
