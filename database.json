@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792888549787,
+    "updatedAt": 1792888554637,
     "schemaVersion": 2
   },
   "settings": {
@@ -278,13 +278,7 @@
       "order": 12,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1,
-      "claim": {
-        "member": "m3",
-        "week": "w1",
-        "mandatory": true,
-        "kind": "bonus"
-      }
+      "startWeek": 1
     },
     "t13": {
       "name": "Upstairs bathroom",
@@ -569,9 +563,7 @@
   "bonusPreferences": {
     "m1": [],
     "m2": [],
-    "m3": [
-      "t12"
-    ],
+    "m3": [],
     "m4": [
       "t10"
     ],
@@ -665,10 +657,6 @@
       },
       "t09": {
         "member": "m5",
-        "kind": "bonus"
-      },
-      "t12": {
-        "member": "m3",
         "kind": "bonus"
       },
       "t15": {
@@ -859,16 +847,6 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
-        },
-        "t12": {
-          "task": "t12",
-          "taskName": "Middle flight of stairs",
-          "member": "m3",
-          "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
-          "kind": "bonus",
           "completed": 0
         },
         "t13": {
@@ -5555,6 +5533,66 @@
           "after": "bonus"
         }
       ]
+    },
+    {
+      "id": "7990019b-7ab5-44ca-9fa5-ccb292a90b31",
+      "at": 1792888554637,
+      "actor": "m3",
+      "admin": false,
+      "action": "return controlled bonus to random",
+      "changes": [
+        {
+          "path": "/tasks/t12/claim",
+          "before": {
+            "member": "m3",
+            "week": "w1",
+            "mandatory": true,
+            "kind": "bonus"
+          },
+          "removed": true
+        },
+        {
+          "path": "/bonusPreferences/m3",
+          "before": [
+            "t12"
+          ],
+          "after": []
+        },
+        {
+          "path": "/permanentBonus/t12",
+          "before": {
+            "member": "m3",
+            "controller": "m3",
+            "source": "controlled_gift",
+            "originalMember": "m3",
+            "createdAt": 1792888549786,
+            "updatedAt": 1792888549786
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-10-26/t12",
+          "before": {
+            "member": "m3",
+            "kind": "bonus"
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w1/assignments/t12",
+          "before": {
+            "task": "t12",
+            "taskName": "Middle flight of stairs",
+            "member": "m3",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "bonus",
+            "completed": 0
+          },
+          "removed": true
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -6118,6 +6156,20 @@
       "reason": "take bonus chore",
       "at": 1792888549786,
       "actor": "m3"
+    },
+    {
+      "week": "w1",
+      "task": "t12",
+      "before": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "bonus"
+      },
+      "after": null,
+      "reason": "return controlled bonus to random",
+      "at": 1792888554637,
+      "actor": "m3"
     }
   ],
   "permanentBonus": {
@@ -6136,14 +6188,6 @@
       "originalMember": "m5",
       "createdAt": 1792888533102,
       "updatedAt": 1792888533102
-    },
-    "t12": {
-      "member": "m3",
-      "controller": "m3",
-      "source": "controlled_gift",
-      "originalMember": "m3",
-      "createdAt": 1792888549786,
-      "updatedAt": 1792888549786
     }
   },
   "bonusRequests": {},
