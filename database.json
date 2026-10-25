@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1792888579259,
+    "updatedAt": 1792888618547,
     "schemaVersion": 2
   },
   "settings": {
@@ -224,7 +224,13 @@
       "order": 9,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1
+      "startWeek": 1,
+      "claim": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      }
     },
     "t10": {
       "name": "Clean the fridge",
@@ -236,7 +242,13 @@
       "order": 10,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1
+      "startWeek": 1,
+      "claim": {
+        "member": "m5",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      }
     },
     "t11": {
       "name": "Dishes",
@@ -266,7 +278,13 @@
       "order": 12,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1
+      "startWeek": 1,
+      "claim": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      }
     },
     "t13": {
       "name": "Upstairs bathroom",
@@ -890,6 +908,36 @@
           "workload": 2,
           "kind": "selected",
           "completed": 0
+        },
+        "t09": {
+          "task": "t09",
+          "taskName": "Pick up dog poop",
+          "member": "m3",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
+        },
+        "t10": {
+          "task": "t10",
+          "taskName": "Clean the fridge",
+          "member": "m5",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
+        },
+        "t12": {
+          "task": "t12",
+          "taskName": "Middle flight of stairs",
+          "member": "m3",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "automatic",
+          "completed": 0
         }
       },
       "excluded": {
@@ -927,19 +975,19 @@
     "minimum:w1:m4": {
       "message": "MK is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792884871097,
+      "at": 1792888618547,
       "resolved": false
     },
     "minimum:w1:m3": {
       "message": "AW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792884871097,
+      "at": 1792888618547,
       "resolved": false
     },
     "minimum:w1:m5": {
       "message": "MW is below the 7-slot minimum. Existing voluntary commitments or assignment restrictions prevented full coverage; review an authorized override.",
       "week": "w1",
-      "at": 1792884871097,
+      "at": 1792888618547,
       "resolved": false
     }
   },
@@ -5673,6 +5721,102 @@
           "removed": true
         }
       ]
+    },
+    {
+      "id": "ea1d9281-62ea-4f55-a64d-e0c7ab8b51fd",
+      "at": 1792888618547,
+      "actor": "m3",
+      "admin": true,
+      "action": "admin apply chosen tasks",
+      "changes": [
+        {
+          "path": "/tasks/t09/claim",
+          "added": true,
+          "after": {
+            "member": "m3",
+            "week": "w1",
+            "mandatory": true,
+            "kind": "automatic"
+          }
+        },
+        {
+          "path": "/tasks/t10/claim",
+          "added": true,
+          "after": {
+            "member": "m5",
+            "week": "w1",
+            "mandatory": true,
+            "kind": "automatic"
+          }
+        },
+        {
+          "path": "/tasks/t12/claim",
+          "added": true,
+          "after": {
+            "member": "m3",
+            "week": "w1",
+            "mandatory": true,
+            "kind": "automatic"
+          }
+        },
+        {
+          "path": "/weeks/w1/assignments/t09",
+          "added": true,
+          "after": {
+            "task": "t09",
+            "taskName": "Pick up dog poop",
+            "member": "m3",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "automatic",
+            "completed": 0
+          }
+        },
+        {
+          "path": "/weeks/w1/assignments/t10",
+          "added": true,
+          "after": {
+            "task": "t10",
+            "taskName": "Clean the fridge",
+            "member": "m5",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "automatic",
+            "completed": 0
+          }
+        },
+        {
+          "path": "/weeks/w1/assignments/t12",
+          "added": true,
+          "after": {
+            "task": "t12",
+            "taskName": "Middle flight of stairs",
+            "member": "m3",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "automatic",
+            "completed": 0
+          }
+        },
+        {
+          "path": "/alerts/minimum:w1:m4/at",
+          "before": 1792884871097,
+          "after": 1792888618547
+        },
+        {
+          "path": "/alerts/minimum:w1:m3/at",
+          "before": 1792884871097,
+          "after": 1792888618547
+        },
+        {
+          "path": "/alerts/minimum:w1:m5/at",
+          "before": 1792884871097,
+          "after": 1792888618547
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -6278,6 +6422,48 @@
       "reason": "return controlled bonus to random",
       "at": 1792888579259,
       "actor": "m5"
+    },
+    {
+      "week": "w1",
+      "task": "t09",
+      "before": null,
+      "after": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792888618547,
+      "actor": "m3"
+    },
+    {
+      "week": "w1",
+      "task": "t10",
+      "before": null,
+      "after": {
+        "member": "m5",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792888618547,
+      "actor": "m3"
+    },
+    {
+      "week": "w1",
+      "task": "t12",
+      "before": null,
+      "after": {
+        "member": "m3",
+        "week": "w1",
+        "mandatory": true,
+        "kind": "automatic"
+      },
+      "reason": "Admin applied saved chosen tasks",
+      "at": 1792888618547,
+      "actor": "m3"
     }
   ],
   "permanentBonus": {},
@@ -6285,14 +6471,14 @@
   "schemaVersion": 2,
   "commitmentRulesVersion": 3,
   "lastChosenTaskApplication": {
-    "at": 1792884871097,
-    "actor": "m4",
+    "at": 1792888618547,
+    "actor": "m3",
     "week": "w1",
     "weekStart": "2026-10-19",
     "report": {
-      "chosen": 19,
+      "chosen": 18,
       "startedPreserved": 0,
-      "automatic": 2,
+      "automatic": 3,
       "unassigned": 0,
       "conflicts": [],
       "notDue": [],
