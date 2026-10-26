@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1793048813765,
+    "updatedAt": 1793048831596,
     "schemaVersion": 2
   },
   "settings": {
@@ -251,13 +251,7 @@
       "order": 11,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1,
-      "claim": {
-        "member": "m5",
-        "kind": "selected",
-        "week": "w2",
-        "mandatory": true
-      }
+      "startWeek": 1
     },
     "t12": {
       "name": "Middle flight of stairs",
@@ -556,7 +550,6 @@
       "t02"
     ],
     "m5": [
-      "t11",
       "t20",
       "t04",
       "t22"
@@ -701,10 +694,6 @@
         "member": "m4",
         "kind": "selected"
       },
-      "t11": {
-        "member": "m5",
-        "kind": "selected"
-      },
       "t20": {
         "member": "m5",
         "kind": "selected"
@@ -773,10 +762,6 @@
       },
       "t02": {
         "member": "m4",
-        "kind": "selected"
-      },
-      "t11": {
-        "member": "m5",
         "kind": "selected"
       },
       "t20": {
@@ -1072,16 +1057,6 @@
           "task": "t08",
           "taskName": "Brush the dog",
           "member": "m2",
-          "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
-          "kind": "selected",
-          "completed": 0
-        },
-        "t11": {
-          "task": "t11",
-          "taskName": "Dishes",
-          "member": "m5",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -1657,7 +1632,7 @@
     },
     "m5": {
       "selected": [
-        "t11",
+        null,
         "t20",
         "t04",
         "t22"
@@ -8145,6 +8120,84 @@
           "path": "/settings/requiredTasks/m5",
           "before": 4,
           "after": 5
+        }
+      ]
+    },
+    {
+      "id": "7ded0992-6d12-493c-8805-6039423b2803",
+      "at": 1793048831596,
+      "actor": "m5",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t11/claim",
+          "before": {
+            "member": "m5",
+            "kind": "selected",
+            "week": "w2",
+            "mandatory": true
+          },
+          "removed": true
+        },
+        {
+          "path": "/preferences/m5",
+          "before": [
+            "t11",
+            "t20",
+            "t04",
+            "t22"
+          ],
+          "after": [
+            "t20",
+            "t04",
+            "t22"
+          ]
+        },
+        {
+          "path": "/slotLayout/m5/selected",
+          "before": [
+            "t11",
+            "t20",
+            "t04",
+            "t22"
+          ],
+          "after": [
+            null,
+            "t20",
+            "t04",
+            "t22"
+          ]
+        },
+        {
+          "path": "/plans/2026-10-26/t11",
+          "before": {
+            "member": "m5",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-11-02/t11",
+          "before": {
+            "member": "m5",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w2/assignments/t11",
+          "before": {
+            "task": "t11",
+            "taskName": "Dishes",
+            "member": "m5",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "selected",
+            "completed": 0
+          },
+          "removed": true
         }
       ]
     }
