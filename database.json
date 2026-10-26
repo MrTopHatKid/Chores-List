@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1793048862795,
+    "updatedAt": 1793048866428,
     "schemaVersion": 2
   },
   "settings": {
@@ -397,13 +397,7 @@
       "order": 23,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1,
-      "claim": {
-        "member": "m2",
-        "kind": "selected",
-        "week": "w2",
-        "mandatory": true
-      }
+      "startWeek": 1
     },
     "t24": {
       "name": "Rake / collect leaves",
@@ -480,9 +474,7 @@
   "completions": {},
   "preferences": {
     "m1": [],
-    "m2": [
-      "t23"
-    ],
+    "m2": [],
     "m3": [
       "t05",
       "t13",
@@ -580,10 +572,6 @@
       }
     },
     "2026-10-26": {
-      "t23": {
-        "member": "m2",
-        "kind": "selected"
-      },
       "t05": {
         "member": "m3",
         "kind": "selected"
@@ -618,10 +606,6 @@
       }
     },
     "2026-11-02": {
-      "t23": {
-        "member": "m2",
-        "kind": "selected"
-      },
       "t05": {
         "member": "m3",
         "kind": "selected"
@@ -935,16 +919,6 @@
           "task": "t16",
           "taskName": "Laundry machines and top",
           "member": "m3",
-          "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
-          "kind": "selected",
-          "completed": 0
-        },
-        "t23": {
-          "task": "t23",
-          "taskName": "Windows and sliding door",
-          "member": "m2",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -1398,7 +1372,7 @@
       "selected": [
         null,
         null,
-        "t23"
+        null
       ],
       "bonus": []
     },
@@ -8570,6 +8544,75 @@
           "before": {
             "task": "t17",
             "taskName": "Take out garbage and recycling",
+            "member": "m2",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "selected",
+            "completed": 0
+          },
+          "removed": true
+        }
+      ]
+    },
+    {
+      "id": "b673d0aa-0d3b-4a3f-822e-c9e3517efe3e",
+      "at": 1793048866428,
+      "actor": "m2",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t23/claim",
+          "before": {
+            "member": "m2",
+            "kind": "selected",
+            "week": "w2",
+            "mandatory": true
+          },
+          "removed": true
+        },
+        {
+          "path": "/preferences/m2",
+          "before": [
+            "t23"
+          ],
+          "after": []
+        },
+        {
+          "path": "/slotLayout/m2/selected",
+          "before": [
+            null,
+            null,
+            "t23"
+          ],
+          "after": [
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "path": "/plans/2026-10-26/t23",
+          "before": {
+            "member": "m2",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-11-02/t23",
+          "before": {
+            "member": "m2",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w2/assignments/t23",
+          "before": {
+            "task": "t23",
+            "taskName": "Windows and sliding door",
             "member": "m2",
             "difficulty": "Medium",
             "required": 1,
