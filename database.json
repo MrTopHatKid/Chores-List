@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1793048858938,
+    "updatedAt": 1793048862795,
     "schemaVersion": 2
   },
   "settings": {
@@ -323,13 +323,7 @@
       "order": 17,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1,
-      "claim": {
-        "member": "m2",
-        "kind": "selected",
-        "week": "w2",
-        "mandatory": true
-      }
+      "startWeek": 1
     },
     "t18": {
       "name": "Collect indoor garbage",
@@ -487,7 +481,6 @@
   "preferences": {
     "m1": [],
     "m2": [
-      "t17",
       "t23"
     ],
     "m3": [
@@ -587,10 +580,6 @@
       }
     },
     "2026-10-26": {
-      "t17": {
-        "member": "m2",
-        "kind": "selected"
-      },
       "t23": {
         "member": "m2",
         "kind": "selected"
@@ -629,10 +618,6 @@
       }
     },
     "2026-11-02": {
-      "t17": {
-        "member": "m2",
-        "kind": "selected"
-      },
       "t23": {
         "member": "m2",
         "kind": "selected"
@@ -950,16 +935,6 @@
           "task": "t16",
           "taskName": "Laundry machines and top",
           "member": "m3",
-          "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
-          "kind": "selected",
-          "completed": 0
-        },
-        "t17": {
-          "task": "t17",
-          "taskName": "Take out garbage and recycling",
-          "member": "m2",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -1422,7 +1397,7 @@
     "m2": {
       "selected": [
         null,
-        "t17",
+        null,
         "t23"
       ],
       "bonus": []
@@ -8523,6 +8498,78 @@
           "before": {
             "task": "t08",
             "taskName": "Brush the dog",
+            "member": "m2",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "selected",
+            "completed": 0
+          },
+          "removed": true
+        }
+      ]
+    },
+    {
+      "id": "b22357e3-7cdc-4c35-a405-86affd2c8fa1",
+      "at": 1793048862795,
+      "actor": "m2",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t17/claim",
+          "before": {
+            "member": "m2",
+            "kind": "selected",
+            "week": "w2",
+            "mandatory": true
+          },
+          "removed": true
+        },
+        {
+          "path": "/preferences/m2",
+          "before": [
+            "t17",
+            "t23"
+          ],
+          "after": [
+            "t23"
+          ]
+        },
+        {
+          "path": "/slotLayout/m2/selected",
+          "before": [
+            null,
+            "t17",
+            "t23"
+          ],
+          "after": [
+            null,
+            null,
+            "t23"
+          ]
+        },
+        {
+          "path": "/plans/2026-10-26/t17",
+          "before": {
+            "member": "m2",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-11-02/t17",
+          "before": {
+            "member": "m2",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w2/assignments/t17",
+          "before": {
+            "task": "t17",
+            "taskName": "Take out garbage and recycling",
             "member": "m2",
             "difficulty": "Medium",
             "required": 1,
