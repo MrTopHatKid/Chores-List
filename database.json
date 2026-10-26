@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1793049543520,
+    "updatedAt": 1793049786839,
     "schemaVersion": 2
   },
   "settings": {
@@ -227,7 +227,13 @@
       "order": 10,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1
+      "startWeek": 1,
+      "claim": {
+        "member": "m4",
+        "kind": "selected",
+        "week": "w2",
+        "mandatory": true
+      }
     },
     "t11": {
       "name": "Dishes",
@@ -492,7 +498,8 @@
       "t06",
       "t14",
       "t07",
-      "t02"
+      "t02",
+      "t10"
     ],
     "m5": []
   },
@@ -614,6 +621,10 @@
       "t02": {
         "member": "m4",
         "kind": "selected"
+      },
+      "t10": {
+        "member": "m4",
+        "kind": "selected"
       }
     },
     "2026-11-02": {
@@ -650,6 +661,10 @@
         "kind": "selected"
       },
       "t02": {
+        "member": "m4",
+        "kind": "selected"
+      },
+      "t10": {
         "member": "m4",
         "kind": "selected"
       }
@@ -944,6 +959,16 @@
           "task": "t08",
           "taskName": "Brush the dog x2",
           "member": "m3",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t10": {
+          "task": "t10",
+          "taskName": "Clean the fridge",
+          "member": "m4",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -1438,7 +1463,7 @@
         "t14",
         "t07",
         "t02",
-        null
+        "t10"
       ],
       "bonus": []
     },
@@ -8958,6 +8983,88 @@
             "completed": 0
           },
           "removed": true
+        }
+      ]
+    },
+    {
+      "id": "558bb3da-f98c-48d7-a7a8-2a773fedacb3",
+      "at": 1793049786839,
+      "actor": "m4",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t10/claim",
+          "added": true,
+          "after": {
+            "member": "m4",
+            "kind": "selected",
+            "week": "w2",
+            "mandatory": true
+          }
+        },
+        {
+          "path": "/preferences/m4",
+          "before": [
+            "t06",
+            "t14",
+            "t07",
+            "t02"
+          ],
+          "after": [
+            "t06",
+            "t14",
+            "t07",
+            "t02",
+            "t10"
+          ]
+        },
+        {
+          "path": "/slotLayout/m4/selected",
+          "before": [
+            "t06",
+            "t14",
+            "t07",
+            "t02",
+            null
+          ],
+          "after": [
+            "t06",
+            "t14",
+            "t07",
+            "t02",
+            "t10"
+          ]
+        },
+        {
+          "path": "/plans/2026-10-26/t10",
+          "added": true,
+          "after": {
+            "member": "m4",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-11-02/t10",
+          "added": true,
+          "after": {
+            "member": "m4",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w2/assignments/t10",
+          "added": true,
+          "after": {
+            "task": "t10",
+            "taskName": "Clean the fridge",
+            "member": "m4",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "selected",
+            "completed": 0
+          }
         }
       ]
     }
