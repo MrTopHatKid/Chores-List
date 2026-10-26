@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1793048866428,
+    "updatedAt": 1793048890139,
     "schemaVersion": 2
   },
   "settings": {
@@ -197,7 +197,13 @@
       "order": 8,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1
+      "startWeek": 1,
+      "claim": {
+        "member": "m3",
+        "kind": "selected",
+        "week": "w2",
+        "mandatory": true
+      }
     },
     "t09": {
       "name": "Pick up dog poop",
@@ -479,7 +485,8 @@
       "t05",
       "t13",
       "t16",
-      "t01"
+      "t01",
+      "t08"
     ],
     "m4": [
       "t06",
@@ -588,6 +595,10 @@
         "member": "m3",
         "kind": "selected"
       },
+      "t08": {
+        "member": "m3",
+        "kind": "selected"
+      },
       "t06": {
         "member": "m4",
         "kind": "selected"
@@ -619,6 +630,10 @@
         "kind": "selected"
       },
       "t01": {
+        "member": "m3",
+        "kind": "selected"
+      },
+      "t08": {
         "member": "m3",
         "kind": "selected"
       },
@@ -918,6 +933,16 @@
         "t16": {
           "task": "t16",
           "taskName": "Laundry machines and top",
+          "member": "m3",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t08": {
+          "task": "t08",
+          "taskName": "Brush the dog",
           "member": "m3",
           "difficulty": "Medium",
           "required": 1,
@@ -1389,7 +1414,8 @@
         "t05",
         "t13",
         "t16",
-        "t01"
+        "t01",
+        "t08"
       ],
       "bonus": []
     },
@@ -8621,6 +8647,87 @@
             "completed": 0
           },
           "removed": true
+        }
+      ]
+    },
+    {
+      "id": "0778f1ea-26a6-44b2-a4c0-a200cd110d39",
+      "at": 1793048890139,
+      "actor": "m3",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t08/claim",
+          "added": true,
+          "after": {
+            "member": "m3",
+            "kind": "selected",
+            "week": "w2",
+            "mandatory": true
+          }
+        },
+        {
+          "path": "/preferences/m3",
+          "before": [
+            "t05",
+            "t13",
+            "t16",
+            "t01"
+          ],
+          "after": [
+            "t05",
+            "t13",
+            "t16",
+            "t01",
+            "t08"
+          ]
+        },
+        {
+          "path": "/slotLayout/m3/selected",
+          "before": [
+            "t05",
+            "t13",
+            "t16",
+            "t01"
+          ],
+          "after": [
+            "t05",
+            "t13",
+            "t16",
+            "t01",
+            "t08"
+          ]
+        },
+        {
+          "path": "/plans/2026-10-26/t08",
+          "added": true,
+          "after": {
+            "member": "m3",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-11-02/t08",
+          "added": true,
+          "after": {
+            "member": "m3",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w2/assignments/t08",
+          "added": true,
+          "after": {
+            "task": "t08",
+            "taskName": "Brush the dog",
+            "member": "m3",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "selected",
+            "completed": 0
+          }
         }
       ]
     }
