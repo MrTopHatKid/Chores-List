@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1793049529629,
+    "updatedAt": 1793049543520,
     "schemaVersion": 2
   },
   "settings": {
@@ -119,13 +119,7 @@
       "order": 3,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1,
-      "claim": {
-        "member": "m4",
-        "kind": "selected",
-        "week": "w2",
-        "mandatory": true
-      }
+      "startWeek": 1
     },
     "t04": {
       "name": "Upstairs hallway",
@@ -498,8 +492,7 @@
       "t06",
       "t14",
       "t07",
-      "t02",
-      "t03"
+      "t02"
     ],
     "m5": []
   },
@@ -621,10 +614,6 @@
       "t02": {
         "member": "m4",
         "kind": "selected"
-      },
-      "t03": {
-        "member": "m4",
-        "kind": "selected"
       }
     },
     "2026-11-02": {
@@ -661,10 +650,6 @@
         "kind": "selected"
       },
       "t02": {
-        "member": "m4",
-        "kind": "selected"
-      },
-      "t03": {
         "member": "m4",
         "kind": "selected"
       }
@@ -959,16 +944,6 @@
           "task": "t08",
           "taskName": "Brush the dog x2",
           "member": "m3",
-          "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
-          "kind": "selected",
-          "completed": 0
-        },
-        "t03": {
-          "task": "t03",
-          "taskName": "Downstairs hallway",
-          "member": "m4",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -1463,7 +1438,7 @@
         "t14",
         "t07",
         "t02",
-        "t03"
+        null
       ],
       "bonus": []
     },
@@ -8901,6 +8876,88 @@
             "kind": "selected",
             "completed": 0
           }
+        }
+      ]
+    },
+    {
+      "id": "2c9b82b4-29d3-4118-831a-0425a4047d00",
+      "at": 1793049543520,
+      "actor": "m4",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t03/claim",
+          "before": {
+            "member": "m4",
+            "kind": "selected",
+            "week": "w2",
+            "mandatory": true
+          },
+          "removed": true
+        },
+        {
+          "path": "/preferences/m4",
+          "before": [
+            "t06",
+            "t14",
+            "t07",
+            "t02",
+            "t03"
+          ],
+          "after": [
+            "t06",
+            "t14",
+            "t07",
+            "t02"
+          ]
+        },
+        {
+          "path": "/slotLayout/m4/selected",
+          "before": [
+            "t06",
+            "t14",
+            "t07",
+            "t02",
+            "t03"
+          ],
+          "after": [
+            "t06",
+            "t14",
+            "t07",
+            "t02",
+            null
+          ]
+        },
+        {
+          "path": "/plans/2026-10-26/t03",
+          "before": {
+            "member": "m4",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-11-02/t03",
+          "before": {
+            "member": "m4",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w2/assignments/t03",
+          "before": {
+            "task": "t03",
+            "taskName": "Downstairs hallway",
+            "member": "m4",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "selected",
+            "completed": 0
+          },
+          "removed": true
         }
       ]
     }
