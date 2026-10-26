@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1793048837958,
+    "updatedAt": 1793048840301,
     "schemaVersion": 2
   },
   "settings": {
@@ -415,13 +415,7 @@
       "order": 22,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1,
-      "claim": {
-        "member": "m5",
-        "kind": "selected",
-        "week": "w2",
-        "mandatory": true
-      }
+      "startWeek": 1
     },
     "t23": {
       "name": "Windows and sliding door",
@@ -537,9 +531,7 @@
       "t07",
       "t02"
     ],
-    "m5": [
-      "t22"
-    ]
+    "m5": []
   },
   "bonusPreferences": {
     "m1": [],
@@ -679,10 +671,6 @@
       "t02": {
         "member": "m4",
         "kind": "selected"
-      },
-      "t22": {
-        "member": "m5",
-        "kind": "selected"
       }
     },
     "2026-11-02": {
@@ -740,10 +728,6 @@
       },
       "t02": {
         "member": "m4",
-        "kind": "selected"
-      },
-      "t22": {
-        "member": "m5",
         "kind": "selected"
       }
     }
@@ -1077,16 +1061,6 @@
           "task": "t18",
           "taskName": "Collect indoor garbage",
           "member": "m1",
-          "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
-          "kind": "selected",
-          "completed": 0
-        },
-        "t22": {
-          "task": "t22",
-          "taskName": "Dust shared areas",
-          "member": "m5",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -1585,7 +1559,7 @@
         null,
         null,
         null,
-        "t22"
+        null
       ],
       "bonus": []
     }
@@ -8290,6 +8264,77 @@
           "before": {
             "task": "t04",
             "taskName": "Upstairs hallway",
+            "member": "m5",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "selected",
+            "completed": 0
+          },
+          "removed": true
+        }
+      ]
+    },
+    {
+      "id": "b5013ff0-3876-40d1-bf4b-407169a478fc",
+      "at": 1793048840301,
+      "actor": "m5",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t22/claim",
+          "before": {
+            "member": "m5",
+            "kind": "selected",
+            "week": "w2",
+            "mandatory": true
+          },
+          "removed": true
+        },
+        {
+          "path": "/preferences/m5",
+          "before": [
+            "t22"
+          ],
+          "after": []
+        },
+        {
+          "path": "/slotLayout/m5/selected",
+          "before": [
+            null,
+            null,
+            null,
+            "t22"
+          ],
+          "after": [
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "path": "/plans/2026-10-26/t22",
+          "before": {
+            "member": "m5",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-11-02/t22",
+          "before": {
+            "member": "m5",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w2/assignments/t22",
+          "before": {
+            "task": "t22",
+            "taskName": "Dust shared areas",
             "member": "m5",
             "difficulty": "Medium",
             "required": 1,
