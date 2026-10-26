@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1793048853794,
+    "updatedAt": 1793048858938,
     "schemaVersion": 2
   },
   "settings": {
@@ -197,13 +197,7 @@
       "order": 8,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1,
-      "claim": {
-        "member": "m2",
-        "kind": "selected",
-        "week": "w2",
-        "mandatory": true
-      }
+      "startWeek": 1
     },
     "t09": {
       "name": "Pick up dog poop",
@@ -493,7 +487,6 @@
   "preferences": {
     "m1": [],
     "m2": [
-      "t08",
       "t17",
       "t23"
     ],
@@ -594,10 +587,6 @@
       }
     },
     "2026-10-26": {
-      "t08": {
-        "member": "m2",
-        "kind": "selected"
-      },
       "t17": {
         "member": "m2",
         "kind": "selected"
@@ -640,10 +629,6 @@
       }
     },
     "2026-11-02": {
-      "t08": {
-        "member": "m2",
-        "kind": "selected"
-      },
       "t17": {
         "member": "m2",
         "kind": "selected"
@@ -935,16 +920,6 @@
           "task": "t07",
           "taskName": "Kitchen floor",
           "member": "m4",
-          "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
-          "kind": "selected",
-          "completed": 0
-        },
-        "t08": {
-          "task": "t08",
-          "taskName": "Brush the dog",
-          "member": "m2",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -1446,7 +1421,7 @@
   "slotLayout": {
     "m2": {
       "selected": [
-        "t08",
+        null,
         "t17",
         "t23"
       ],
@@ -8475,6 +8450,80 @@
             "task": "t18",
             "taskName": "Collect indoor garbage",
             "member": "m1",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "selected",
+            "completed": 0
+          },
+          "removed": true
+        }
+      ]
+    },
+    {
+      "id": "2e706de4-60e7-49d9-9f70-786c8396a4b6",
+      "at": 1793048858938,
+      "actor": "m2",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t08/claim",
+          "before": {
+            "member": "m2",
+            "kind": "selected",
+            "week": "w2",
+            "mandatory": true
+          },
+          "removed": true
+        },
+        {
+          "path": "/preferences/m2",
+          "before": [
+            "t08",
+            "t17",
+            "t23"
+          ],
+          "after": [
+            "t17",
+            "t23"
+          ]
+        },
+        {
+          "path": "/slotLayout/m2/selected",
+          "before": [
+            "t08",
+            "t17",
+            "t23"
+          ],
+          "after": [
+            null,
+            "t17",
+            "t23"
+          ]
+        },
+        {
+          "path": "/plans/2026-10-26/t08",
+          "before": {
+            "member": "m2",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-11-02/t08",
+          "before": {
+            "member": "m2",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w2/assignments/t08",
+          "before": {
+            "task": "t08",
+            "taskName": "Brush the dog",
+            "member": "m2",
             "difficulty": "Medium",
             "required": 1,
             "workload": 2,
