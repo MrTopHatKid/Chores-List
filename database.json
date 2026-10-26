@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1793048831596,
+    "updatedAt": 1793048834448,
     "schemaVersion": 2
   },
   "settings": {
@@ -396,13 +396,7 @@
       "order": 20,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1,
-      "claim": {
-        "member": "m5",
-        "kind": "selected",
-        "week": "w2",
-        "mandatory": true
-      }
+      "startWeek": 1
     },
     "t21": {
       "name": "All bathroom mirrors",
@@ -550,7 +544,6 @@
       "t02"
     ],
     "m5": [
-      "t20",
       "t04",
       "t22"
     ]
@@ -694,10 +687,6 @@
         "member": "m4",
         "kind": "selected"
       },
-      "t20": {
-        "member": "m5",
-        "kind": "selected"
-      },
       "t04": {
         "member": "m5",
         "kind": "selected"
@@ -762,10 +751,6 @@
       },
       "t02": {
         "member": "m4",
-        "kind": "selected"
-      },
-      "t20": {
-        "member": "m5",
         "kind": "selected"
       },
       "t04": {
@@ -1117,16 +1102,6 @@
           "task": "t18",
           "taskName": "Collect indoor garbage",
           "member": "m1",
-          "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
-          "kind": "selected",
-          "completed": 0
-        },
-        "t20": {
-          "task": "t20",
-          "taskName": "Load the dishwasher & Unload the dishwasher",
-          "member": "m5",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -1633,7 +1608,7 @@
     "m5": {
       "selected": [
         null,
-        "t20",
+        null,
         "t04",
         "t22"
       ],
@@ -8190,6 +8165,82 @@
           "before": {
             "task": "t11",
             "taskName": "Dishes",
+            "member": "m5",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "selected",
+            "completed": 0
+          },
+          "removed": true
+        }
+      ]
+    },
+    {
+      "id": "d5694dc4-fe32-48c4-8318-fcc1818b27fa",
+      "at": 1793048834448,
+      "actor": "m5",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t20/claim",
+          "before": {
+            "member": "m5",
+            "kind": "selected",
+            "week": "w2",
+            "mandatory": true
+          },
+          "removed": true
+        },
+        {
+          "path": "/preferences/m5",
+          "before": [
+            "t20",
+            "t04",
+            "t22"
+          ],
+          "after": [
+            "t04",
+            "t22"
+          ]
+        },
+        {
+          "path": "/slotLayout/m5/selected",
+          "before": [
+            null,
+            "t20",
+            "t04",
+            "t22"
+          ],
+          "after": [
+            null,
+            null,
+            "t04",
+            "t22"
+          ]
+        },
+        {
+          "path": "/plans/2026-10-26/t20",
+          "before": {
+            "member": "m5",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-11-02/t20",
+          "before": {
+            "member": "m5",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w2/assignments/t20",
+          "before": {
+            "task": "t20",
+            "taskName": "Load the dishwasher & Unload the dishwasher",
             "member": "m5",
             "difficulty": "Medium",
             "required": 1,
