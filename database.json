@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1793048923003,
+    "updatedAt": 1793048979395,
     "schemaVersion": 2
   },
   "settings": {
@@ -357,7 +357,7 @@
       "archived": true
     },
     "t20": {
-      "name": "Load the dishwasher & Unload the dishwasher",
+      "name": "Load the dishwasher & Unload the dishwasher x2",
       "desc": "Load dirty dishes and start it if appropriate & Put clean dishes away.",
       "kind": "regular",
       "points": 2,
@@ -951,7 +951,14 @@
           "completed": 0
         }
       },
-      "excluded": {},
+      "excluded": {
+        "t20": {
+          "taskName": "Load the dishwasher & Unload the dishwasher x2",
+          "difficulty": "Medium",
+          "reason": "Change",
+          "category": "admin_exception"
+        }
+      },
       "bonusUsers": [],
       "generated": true,
       "closed": false,
@@ -1383,6 +1390,12 @@
       },
       "t19": {
         "reason": "Archived by admin",
+        "category": "admin_exception"
+      }
+    },
+    "2026-10-26": {
+      "t20": {
+        "reason": "Change",
         "category": "admin_exception"
       }
     }
@@ -8747,6 +8760,40 @@
           "path": "/weeks/w2/assignments/t08/taskName",
           "before": "Brush the dog",
           "after": "Brush the dog x2"
+        }
+      ]
+    },
+    {
+      "id": "f014a4f9-1414-4e0b-ba4d-a93aa0e001f2",
+      "at": 1793048979395,
+      "actor": "m3",
+      "admin": true,
+      "action": "edit chore",
+      "changes": [
+        {
+          "path": "/tasks/t20/name",
+          "before": "Load the dishwasher & Unload the dishwasher",
+          "after": "Load the dishwasher & Unload the dishwasher x2"
+        },
+        {
+          "path": "/weeks/w2/excluded/t20",
+          "added": true,
+          "after": {
+            "taskName": "Load the dishwasher & Unload the dishwasher x2",
+            "difficulty": "Medium",
+            "reason": "Change",
+            "category": "admin_exception"
+          }
+        },
+        {
+          "path": "/exceptions/2026-10-26",
+          "added": true,
+          "after": {
+            "t20": {
+              "reason": "Change",
+              "category": "admin_exception"
+            }
+          }
         }
       ]
     }
