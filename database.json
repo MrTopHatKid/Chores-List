@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1793013721119,
+    "updatedAt": 1793048813765,
     "schemaVersion": 2
   },
   "settings": {
@@ -19,9 +19,9 @@
     "requiredTasks": {
       "m1": 3,
       "m2": 3,
-      "m3": 4,
-      "m4": 4,
-      "m5": 4
+      "m3": 5,
+      "m4": 5,
+      "m5": 5
     },
     "assignedWeek": "w2"
   },
@@ -8121,6 +8121,30 @@
               "actor": "m3"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "346d238f-f597-47ce-9e16-479fd8cbb870",
+      "at": 1793048813765,
+      "actor": "m3",
+      "admin": true,
+      "action": "save slot counts",
+      "changes": [
+        {
+          "path": "/settings/requiredTasks/m3",
+          "before": 4,
+          "after": 5
+        },
+        {
+          "path": "/settings/requiredTasks/m4",
+          "before": 4,
+          "after": 5
+        },
+        {
+          "path": "/settings/requiredTasks/m5",
+          "before": 4,
+          "after": 5
         }
       ]
     }
