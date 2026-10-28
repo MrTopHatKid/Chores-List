@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1793227549506,
+    "updatedAt": 1793227583575,
     "schemaVersion": 2
   },
   "settings": {
@@ -240,7 +240,7 @@
       "desc": "Wash dishes that need handwashing and tidy the sink.",
       "kind": "regular",
       "points": 3,
-      "max": 1,
+      "max": 2,
       "active": true,
       "order": 11,
       "difficulty": "Medium",
@@ -990,6 +990,12 @@
         }
       },
       "excluded": {
+        "t11": {
+          "taskName": "Dishes",
+          "difficulty": "Medium",
+          "reason": "needed",
+          "category": "admin_exception"
+        },
         "t20": {
           "taskName": "Load the dishwasher & Unload the dishwasher x2",
           "difficulty": "Medium",
@@ -1433,6 +1439,10 @@
     },
     "2026-10-26": {
       "t20": {
+        "reason": "needed",
+        "category": "admin_exception"
+      },
+      "t11": {
         "reason": "needed",
         "category": "admin_exception"
       }
@@ -9156,6 +9166,38 @@
           "path": "/weeks/w2/assignments/t08/workload",
           "before": 2,
           "after": 4
+        }
+      ]
+    },
+    {
+      "id": "5ff0a05a-7b77-44ad-8d7b-fa11b7c0ddd2",
+      "at": 1793227583575,
+      "actor": "m3",
+      "admin": true,
+      "action": "edit chore",
+      "changes": [
+        {
+          "path": "/tasks/t11/max",
+          "before": 1,
+          "after": 2
+        },
+        {
+          "path": "/weeks/w2/excluded/t11",
+          "added": true,
+          "after": {
+            "taskName": "Dishes",
+            "difficulty": "Medium",
+            "reason": "needed",
+            "category": "admin_exception"
+          }
+        },
+        {
+          "path": "/exceptions/2026-10-26/t11",
+          "added": true,
+          "after": {
+            "reason": "needed",
+            "category": "admin_exception"
+          }
         }
       ]
     }
