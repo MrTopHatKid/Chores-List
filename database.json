@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1793224176562,
+    "updatedAt": 1793227529162,
     "schemaVersion": 2
   },
   "settings": {
@@ -367,7 +367,7 @@
       "desc": "Load dirty dishes and start it if appropriate & Put clean dishes away.",
       "kind": "regular",
       "points": 2,
-      "max": 1,
+      "max": 2,
       "active": true,
       "order": 20,
       "difficulty": "Medium",
@@ -993,7 +993,7 @@
         "t20": {
           "taskName": "Load the dishwasher & Unload the dishwasher x2",
           "difficulty": "Medium",
-          "reason": "Change",
+          "reason": "needed",
           "category": "admin_exception"
         }
       },
@@ -1433,7 +1433,7 @@
     },
     "2026-10-26": {
       "t20": {
-        "reason": "Change",
+        "reason": "needed",
         "category": "admin_exception"
       }
     }
@@ -9108,6 +9108,30 @@
           "path": "/weeks/w2/assignments/t13/completed",
           "before": 0,
           "after": 1
+        }
+      ]
+    },
+    {
+      "id": "a3cca14e-f1ae-429b-8104-6284269103ac",
+      "at": 1793227529162,
+      "actor": "m3",
+      "admin": true,
+      "action": "edit chore",
+      "changes": [
+        {
+          "path": "/tasks/t20/max",
+          "before": 1,
+          "after": 2
+        },
+        {
+          "path": "/weeks/w2/excluded/t20/reason",
+          "before": "Change",
+          "after": "needed"
+        },
+        {
+          "path": "/exceptions/2026-10-26/t20/reason",
+          "before": "Change",
+          "after": "needed"
         }
       ]
     }
