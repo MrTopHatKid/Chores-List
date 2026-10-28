@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1793227529162,
+    "updatedAt": 1793227549506,
     "schemaVersion": 2
   },
   "settings": {
@@ -192,7 +192,7 @@
       "desc": "Brush coat and tidy up loose fur.",
       "kind": "regular",
       "points": 2,
-      "max": 1,
+      "max": 2,
       "active": true,
       "order": 8,
       "difficulty": "Medium",
@@ -973,8 +973,8 @@
           "taskName": "Brush the dog x2",
           "member": "m3",
           "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
+          "required": 2,
+          "workload": 4,
           "kind": "selected",
           "completed": 0
         },
@@ -9134,6 +9134,30 @@
           "after": "needed"
         }
       ]
+    },
+    {
+      "id": "dfc649f3-a39f-4c8d-b9de-e1235ce3db68",
+      "at": 1793227549506,
+      "actor": "m3",
+      "admin": true,
+      "action": "edit chore",
+      "changes": [
+        {
+          "path": "/tasks/t08/max",
+          "before": 1,
+          "after": 2
+        },
+        {
+          "path": "/weeks/w2/assignments/t08/required",
+          "before": 1,
+          "after": 2
+        },
+        {
+          "path": "/weeks/w2/assignments/t08/workload",
+          "before": 2,
+          "after": 4
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -9155,6 +9179,25 @@
       },
       "reason": "edit chore",
       "at": 1793048923002,
+      "actor": "m3"
+    },
+    {
+      "week": "w2",
+      "task": "t08",
+      "before": {
+        "member": "m3",
+        "kind": "selected",
+        "week": "w2",
+        "mandatory": true
+      },
+      "after": {
+        "member": "m3",
+        "week": "w2",
+        "mandatory": true,
+        "kind": "admin"
+      },
+      "reason": "edit chore",
+      "at": 1793227549505,
       "actor": "m3"
     }
   ],
