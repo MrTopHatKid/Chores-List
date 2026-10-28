@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1793227583575,
+    "updatedAt": 1793227628061,
     "schemaVersion": 2
   },
   "settings": {
@@ -1444,6 +1444,10 @@
       },
       "t11": {
         "reason": "needed",
+        "category": "admin_exception"
+      },
+      "t19": {
+        "reason": "Archived by admin",
         "category": "admin_exception"
       }
     }
@@ -9196,6 +9200,23 @@
           "added": true,
           "after": {
             "reason": "needed",
+            "category": "admin_exception"
+          }
+        }
+      ]
+    },
+    {
+      "id": "9ff17616-fcdc-430e-8efb-9f4a7bce52cb",
+      "at": 1793227628061,
+      "actor": "m3",
+      "admin": true,
+      "action": "delete chore",
+      "changes": [
+        {
+          "path": "/exceptions/2026-10-26/t19",
+          "added": true,
+          "after": {
+            "reason": "Archived by admin",
             "category": "admin_exception"
           }
         }
