@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1793394345448,
+    "updatedAt": 1793394465110,
     "schemaVersion": 2
   },
   "settings": {
@@ -137,7 +137,13 @@
       "order": 4,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1
+      "startWeek": 1,
+      "claim": {
+        "member": "m1",
+        "kind": "selected",
+        "week": "w2",
+        "mandatory": true
+      }
     },
     "t05": {
       "name": "Air fryers, microwave and toaster",
@@ -524,7 +530,8 @@
   "preferences": {
     "m1": [
       "t18",
-      "t03"
+      "t03",
+      "t04"
     ],
     "m2": [],
     "m3": [
@@ -634,6 +641,10 @@
         "member": "m1",
         "kind": "selected"
       },
+      "t04": {
+        "member": "m1",
+        "kind": "selected"
+      },
       "t05": {
         "member": "m3",
         "kind": "selected"
@@ -681,6 +692,10 @@
         "kind": "selected"
       },
       "t03": {
+        "member": "m1",
+        "kind": "selected"
+      },
+      "t04": {
         "member": "m1",
         "kind": "selected"
       },
@@ -1044,6 +1059,16 @@
         "t03": {
           "task": "t03",
           "taskName": "Downstairs hallway",
+          "member": "m1",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t04": {
+          "task": "t04",
+          "taskName": "Upstairs hallway",
           "member": "m1",
           "difficulty": "Medium",
           "required": 1,
@@ -1533,7 +1558,7 @@
       "selected": [
         "t18",
         "t03",
-        null
+        "t04"
       ],
       "bonus": []
     },
@@ -9446,6 +9471,80 @@
           "after": {
             "task": "t03",
             "taskName": "Downstairs hallway",
+            "member": "m1",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "selected",
+            "completed": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "aa656ad2-c361-4bc6-b34a-24907920e38e",
+      "at": 1793394465110,
+      "actor": "m1",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t04/claim",
+          "added": true,
+          "after": {
+            "member": "m1",
+            "kind": "selected",
+            "week": "w2",
+            "mandatory": true
+          }
+        },
+        {
+          "path": "/preferences/m1",
+          "before": [
+            "t18",
+            "t03"
+          ],
+          "after": [
+            "t18",
+            "t03",
+            "t04"
+          ]
+        },
+        {
+          "path": "/slotLayout/m1/selected",
+          "before": [
+            "t18",
+            "t03",
+            null
+          ],
+          "after": [
+            "t18",
+            "t03",
+            "t04"
+          ]
+        },
+        {
+          "path": "/plans/2026-10-26/t04",
+          "added": true,
+          "after": {
+            "member": "m1",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-11-02/t04",
+          "added": true,
+          "after": {
+            "member": "m1",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w2/assignments/t04",
+          "added": true,
+          "after": {
+            "task": "t04",
+            "taskName": "Upstairs hallway",
             "member": "m1",
             "difficulty": "Medium",
             "required": 1,
