@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1793227811007,
+    "updatedAt": 1793394295963,
     "schemaVersion": 2
   },
   "settings": {
@@ -347,7 +347,13 @@
       "order": 18,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1
+      "startWeek": 1,
+      "claim": {
+        "member": "m1",
+        "kind": "selected",
+        "week": "w2",
+        "mandatory": true
+      }
     },
     "t19": {
       "name": "Load the dishwasher",
@@ -510,7 +516,9 @@
     }
   },
   "preferences": {
-    "m1": [],
+    "m1": [
+      "t18"
+    ],
     "m2": [],
     "m3": [
       "t05",
@@ -611,6 +619,10 @@
       }
     },
     "2026-10-26": {
+      "t18": {
+        "member": "m1",
+        "kind": "selected"
+      },
       "t05": {
         "member": "m3",
         "kind": "selected"
@@ -653,6 +665,10 @@
       }
     },
     "2026-11-02": {
+      "t18": {
+        "member": "m1",
+        "kind": "selected"
+      },
       "t05": {
         "member": "m3",
         "kind": "selected"
@@ -994,6 +1010,16 @@
           "task": "t10",
           "taskName": "Clean the fridge",
           "member": "m4",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t18": {
+          "task": "t18",
+          "taskName": "Collect indoor garbage",
+          "member": "m1",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -1480,7 +1506,7 @@
     },
     "m1": {
       "selected": [
-        null,
+        "t18",
         null,
         null
       ],
@@ -9261,6 +9287,75 @@
           "path": "/weeks/w2/assignments/t08/completed",
           "before": 0,
           "after": 1
+        }
+      ]
+    },
+    {
+      "id": "a1b41a77-0ba0-4c95-bb91-3755c50ed906",
+      "at": 1793394295963,
+      "actor": "m1",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t18/claim",
+          "added": true,
+          "after": {
+            "member": "m1",
+            "kind": "selected",
+            "week": "w2",
+            "mandatory": true
+          }
+        },
+        {
+          "path": "/preferences/m1",
+          "before": [],
+          "after": [
+            "t18"
+          ]
+        },
+        {
+          "path": "/slotLayout/m1/selected",
+          "before": [
+            null,
+            null,
+            null
+          ],
+          "after": [
+            "t18",
+            null,
+            null
+          ]
+        },
+        {
+          "path": "/plans/2026-10-26/t18",
+          "added": true,
+          "after": {
+            "member": "m1",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-11-02/t18",
+          "added": true,
+          "after": {
+            "member": "m1",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w2/assignments/t18",
+          "added": true,
+          "after": {
+            "task": "t18",
+            "taskName": "Collect indoor garbage",
+            "member": "m1",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "selected",
+            "completed": 0
+          }
         }
       ]
     }
