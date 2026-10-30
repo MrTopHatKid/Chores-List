@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1793394295963,
+    "updatedAt": 1793394345448,
     "schemaVersion": 2
   },
   "settings": {
@@ -119,7 +119,13 @@
       "order": 3,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1
+      "startWeek": 1,
+      "claim": {
+        "member": "m1",
+        "kind": "selected",
+        "week": "w2",
+        "mandatory": true
+      }
     },
     "t04": {
       "name": "Upstairs hallway",
@@ -517,7 +523,8 @@
   },
   "preferences": {
     "m1": [
-      "t18"
+      "t18",
+      "t03"
     ],
     "m2": [],
     "m3": [
@@ -623,6 +630,10 @@
         "member": "m1",
         "kind": "selected"
       },
+      "t03": {
+        "member": "m1",
+        "kind": "selected"
+      },
       "t05": {
         "member": "m3",
         "kind": "selected"
@@ -666,6 +677,10 @@
     },
     "2026-11-02": {
       "t18": {
+        "member": "m1",
+        "kind": "selected"
+      },
+      "t03": {
         "member": "m1",
         "kind": "selected"
       },
@@ -1019,6 +1034,16 @@
         "t18": {
           "task": "t18",
           "taskName": "Collect indoor garbage",
+          "member": "m1",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t03": {
+          "task": "t03",
+          "taskName": "Downstairs hallway",
           "member": "m1",
           "difficulty": "Medium",
           "required": 1,
@@ -1507,7 +1532,7 @@
     "m1": {
       "selected": [
         "t18",
-        null,
+        "t03",
         null
       ],
       "bonus": []
@@ -9349,6 +9374,78 @@
           "after": {
             "task": "t18",
             "taskName": "Collect indoor garbage",
+            "member": "m1",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "selected",
+            "completed": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "a295ca31-2f53-4c0d-bdd8-68f043f87ccf",
+      "at": 1793394345448,
+      "actor": "m1",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t03/claim",
+          "added": true,
+          "after": {
+            "member": "m1",
+            "kind": "selected",
+            "week": "w2",
+            "mandatory": true
+          }
+        },
+        {
+          "path": "/preferences/m1",
+          "before": [
+            "t18"
+          ],
+          "after": [
+            "t18",
+            "t03"
+          ]
+        },
+        {
+          "path": "/slotLayout/m1/selected",
+          "before": [
+            "t18",
+            null,
+            null
+          ],
+          "after": [
+            "t18",
+            "t03",
+            null
+          ]
+        },
+        {
+          "path": "/plans/2026-10-26/t03",
+          "added": true,
+          "after": {
+            "member": "m1",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-11-02/t03",
+          "added": true,
+          "after": {
+            "member": "m1",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w2/assignments/t03",
+          "added": true,
+          "after": {
+            "task": "t03",
+            "taskName": "Downstairs hallway",
             "member": "m1",
             "difficulty": "Medium",
             "required": 1,
