@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1793835072442,
+    "updatedAt": 1793835110181,
     "schemaVersion": 2
   },
   "settings": {
@@ -78,7 +78,7 @@
       "desc": "Wash and replace towels, bath mat and cleaning cloths.",
       "kind": "regular",
       "points": 2,
-      "max": 1,
+      "max": 3,
       "active": true,
       "order": 1,
       "difficulty": "Medium",
@@ -1245,8 +1245,8 @@
           "taskName": "Upstairs towels, bath mat and cloths",
           "member": "m3",
           "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
+          "required": 3,
+          "workload": 6,
           "kind": "selected",
           "completed": 0
         },
@@ -10902,6 +10902,30 @@
           "after": 1
         }
       ]
+    },
+    {
+      "id": "088b373c-6322-42c8-a9e8-b621b3ed7a9b",
+      "at": 1793835110181,
+      "actor": "m3",
+      "admin": true,
+      "action": "edit chore",
+      "changes": [
+        {
+          "path": "/tasks/t01/max",
+          "before": 1,
+          "after": 3
+        },
+        {
+          "path": "/weeks/w3/assignments/t01/required",
+          "before": 1,
+          "after": 3
+        },
+        {
+          "path": "/weeks/w3/assignments/t01/workload",
+          "before": 2,
+          "after": 6
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -10942,6 +10966,25 @@
       },
       "reason": "edit chore",
       "at": 1793227549505,
+      "actor": "m3"
+    },
+    {
+      "week": "w3",
+      "task": "t01",
+      "before": {
+        "member": "m3",
+        "kind": "selected",
+        "week": "w3",
+        "mandatory": true
+      },
+      "after": {
+        "member": "m3",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "admin"
+      },
+      "reason": "edit chore",
+      "at": 1793835110180,
       "actor": "m3"
     }
   ],
