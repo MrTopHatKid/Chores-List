@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1793661276717,
+    "updatedAt": 1793835067537,
     "schemaVersion": 2
   },
   "settings": {
@@ -585,6 +585,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1793661276715
+    },
+    "26288654-5d8c-4135-a323-753ea08e3289": {
+      "requestId": "26288654-5d8c-4135-a323-753ea08e3289",
+      "task": "t13",
+      "taskName": "Upstairs bathroom",
+      "member": "m3",
+      "memberName": "AW",
+      "week": "w3",
+      "weekStart": "2026-11-02",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1793835067536
     }
   },
   "preferences": {
@@ -1314,7 +1326,7 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
+          "completed": 1
         },
         "t14": {
           "task": "t14",
@@ -10814,6 +10826,36 @@
         },
         {
           "path": "/weeks/w3/assignments/t08/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "2ee56e0d-08db-4dcf-b04b-932f77fbd55f",
+      "at": 1793835067537,
+      "actor": "m3",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/26288654-5d8c-4135-a323-753ea08e3289",
+          "added": true,
+          "after": {
+            "requestId": "26288654-5d8c-4135-a323-753ea08e3289",
+            "task": "t13",
+            "taskName": "Upstairs bathroom",
+            "member": "m3",
+            "memberName": "AW",
+            "week": "w3",
+            "weekStart": "2026-11-02",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1793835067536
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t13/completed",
           "before": 0,
           "after": 1
         }
