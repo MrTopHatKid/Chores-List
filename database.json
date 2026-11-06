@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1794006160159,
+    "updatedAt": 1794006309694,
     "schemaVersion": 2
   },
   "settings": {
@@ -12168,6 +12168,14 @@
           }
         }
       ]
+    },
+    {
+      "id": "d668e370-111e-4ae7-adef-68bf6dbea8cd",
+      "at": 1794006309694,
+      "actor": "m5",
+      "admin": true,
+      "action": "edit person",
+      "changes": []
     }
   ],
   "vacationHistory": [],
