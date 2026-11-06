@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1794005259640,
+    "updatedAt": 1794005464047,
     "schemaVersion": 2
   },
   "settings": {
@@ -299,13 +299,7 @@
       "order": 14,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1,
-      "claim": {
-        "member": "m4",
-        "kind": "selected",
-        "week": "w3",
-        "mandatory": true
-      }
+      "startWeek": 1
     },
     "t15": {
       "name": "Bathtub / shower",
@@ -675,7 +669,6 @@
     ],
     "m4": [
       "t06",
-      "t14",
       "t07",
       "t02",
       "t10"
@@ -855,10 +848,6 @@
         "member": "m4",
         "kind": "selected"
       },
-      "t14": {
-        "member": "m4",
-        "kind": "selected"
-      },
       "t07": {
         "member": "m4",
         "kind": "selected"
@@ -906,10 +895,6 @@
         "kind": "selected"
       },
       "t06": {
-        "member": "m4",
-        "kind": "selected"
-      },
-      "t14": {
         "member": "m4",
         "kind": "selected"
       },
@@ -1387,16 +1372,6 @@
           "workload": 2,
           "kind": "selected",
           "completed": 1
-        },
-        "t14": {
-          "task": "t14",
-          "taskName": "Downstairs bathroom",
-          "member": "m4",
-          "difficulty": "Medium",
-          "required": 1,
-          "workload": 2,
-          "kind": "selected",
-          "completed": 0
         },
         "t16": {
           "task": "t16",
@@ -2114,7 +2089,7 @@
     "m4": {
       "selected": [
         "t06",
-        "t14",
+        null,
         "t07",
         "t02",
         "t10"
@@ -11092,6 +11067,88 @@
           "path": "/weeks/w3/assignments/t08/completed",
           "before": 1,
           "after": 2
+        }
+      ]
+    },
+    {
+      "id": "b910f962-38bb-4346-8dfc-f5771c493a35",
+      "at": 1794005464047,
+      "actor": "m4",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t14/claim",
+          "before": {
+            "member": "m4",
+            "kind": "selected",
+            "week": "w3",
+            "mandatory": true
+          },
+          "removed": true
+        },
+        {
+          "path": "/preferences/m4",
+          "before": [
+            "t06",
+            "t14",
+            "t07",
+            "t02",
+            "t10"
+          ],
+          "after": [
+            "t06",
+            "t07",
+            "t02",
+            "t10"
+          ]
+        },
+        {
+          "path": "/slotLayout/m4/selected",
+          "before": [
+            "t06",
+            "t14",
+            "t07",
+            "t02",
+            "t10"
+          ],
+          "after": [
+            "t06",
+            null,
+            "t07",
+            "t02",
+            "t10"
+          ]
+        },
+        {
+          "path": "/plans/2026-11-02/t14",
+          "before": {
+            "member": "m4",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/plans/2026-11-09/t14",
+          "before": {
+            "member": "m4",
+            "kind": "selected"
+          },
+          "removed": true
+        },
+        {
+          "path": "/weeks/w3/assignments/t14",
+          "before": {
+            "task": "t14",
+            "taskName": "Downstairs bathroom",
+            "member": "m4",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "selected",
+            "completed": 0
+          },
+          "removed": true
         }
       ]
     }
