@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1794005525962,
+    "updatedAt": 1794005543826,
     "schemaVersion": 2
   },
   "settings": {
@@ -503,7 +503,13 @@
       "active": true,
       "order": 1794005525740,
       "every": 1,
-      "startWeek": 3
+      "startWeek": 3,
+      "claim": {
+        "member": "m2",
+        "kind": "selected",
+        "week": "w3",
+        "mandatory": true
+      }
     }
   },
   "completions": {
@@ -670,7 +676,9 @@
       "t03",
       "t04"
     ],
-    "m2": [],
+    "m2": [
+      "t651e8468-e015-4cf4-ae6e-9b5a6c86dd45"
+    ],
     "m3": [
       "t05",
       "t13",
@@ -835,6 +843,10 @@
         "member": "m1",
         "kind": "selected"
       },
+      "t651e8468-e015-4cf4-ae6e-9b5a6c86dd45": {
+        "member": "m2",
+        "kind": "selected"
+      },
       "t05": {
         "member": "m3",
         "kind": "selected"
@@ -883,6 +895,10 @@
       },
       "t04": {
         "member": "m1",
+        "kind": "selected"
+      },
+      "t651e8468-e015-4cf4-ae6e-9b5a6c86dd45": {
+        "member": "m2",
         "kind": "selected"
       },
       "t05": {
@@ -1398,6 +1414,16 @@
           "task": "t18",
           "taskName": "Collect indoor garbage",
           "member": "m1",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t651e8468-e015-4cf4-ae6e-9b5a6c86dd45": {
+          "task": "t651e8468-e015-4cf4-ae6e-9b5a6c86dd45",
+          "taskName": "Basement Bathroom",
+          "member": "m2",
           "difficulty": "Medium",
           "required": 1,
           "workload": 2,
@@ -2073,7 +2099,7 @@
   "slotLayout": {
     "m2": {
       "selected": [
-        null,
+        "t651e8468-e015-4cf4-ae6e-9b5a6c86dd45",
         null,
         null
       ],
@@ -11183,6 +11209,75 @@
             "order": 1794005525740,
             "every": 1,
             "startWeek": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "67a34b87-c7d4-473a-8de1-a33d5c11802a",
+      "at": 1794005543826,
+      "actor": "m2",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/tasks/t651e8468-e015-4cf4-ae6e-9b5a6c86dd45/claim",
+          "added": true,
+          "after": {
+            "member": "m2",
+            "kind": "selected",
+            "week": "w3",
+            "mandatory": true
+          }
+        },
+        {
+          "path": "/preferences/m2",
+          "before": [],
+          "after": [
+            "t651e8468-e015-4cf4-ae6e-9b5a6c86dd45"
+          ]
+        },
+        {
+          "path": "/slotLayout/m2/selected",
+          "before": [
+            null,
+            null,
+            null
+          ],
+          "after": [
+            "t651e8468-e015-4cf4-ae6e-9b5a6c86dd45",
+            null,
+            null
+          ]
+        },
+        {
+          "path": "/plans/2026-11-02/t651e8468-e015-4cf4-ae6e-9b5a6c86dd45",
+          "added": true,
+          "after": {
+            "member": "m2",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/plans/2026-11-09/t651e8468-e015-4cf4-ae6e-9b5a6c86dd45",
+          "added": true,
+          "after": {
+            "member": "m2",
+            "kind": "selected"
+          }
+        },
+        {
+          "path": "/weeks/w3/assignments/t651e8468-e015-4cf4-ae6e-9b5a6c86dd45",
+          "added": true,
+          "after": {
+            "task": "t651e8468-e015-4cf4-ae6e-9b5a6c86dd45",
+            "taskName": "Basement Bathroom",
+            "member": "m2",
+            "difficulty": "Medium",
+            "required": 1,
+            "workload": 2,
+            "kind": "selected",
+            "completed": 0
           }
         }
       ]
