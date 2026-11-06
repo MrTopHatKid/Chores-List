@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1794005953437,
+    "updatedAt": 1794005991966,
     "schemaVersion": 2
   },
   "settings": {
@@ -348,7 +348,7 @@
       "desc": "Take household trash bags and recycling to the side of the house.",
       "kind": "regular",
       "points": 2,
-      "max": 1,
+      "max": 2,
       "active": true,
       "order": 17,
       "difficulty": "Medium",
@@ -1527,7 +1527,7 @@
         "t17": {
           "taskName": "Take out garbage around the house and recycling",
           "difficulty": "Medium",
-          "reason": "O",
+          "reason": "H",
           "category": "admin_exception"
         }
       },
@@ -2191,7 +2191,7 @@
     },
     "2026-11-02": {
       "t17": {
-        "reason": "O",
+        "reason": "H",
         "category": "admin_exception"
       }
     }
@@ -12060,6 +12060,30 @@
             "member": "m5",
             "kind": "selected"
           }
+        }
+      ]
+    },
+    {
+      "id": "0940248c-a440-45e5-8e2b-420581b3fba8",
+      "at": 1794005991966,
+      "actor": "m5",
+      "admin": true,
+      "action": "edit chore",
+      "changes": [
+        {
+          "path": "/tasks/t17/max",
+          "before": 1,
+          "after": 2
+        },
+        {
+          "path": "/weeks/w3/excluded/t17/reason",
+          "before": "O",
+          "after": "H"
+        },
+        {
+          "path": "/exceptions/2026-11-02/t17/reason",
+          "before": "O",
+          "after": "H"
         }
       ]
     }
