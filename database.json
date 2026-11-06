@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1794005991966,
+    "updatedAt": 1794006152330,
     "schemaVersion": 2
   },
   "settings": {
@@ -724,9 +724,7 @@
       "t02",
       "t10"
     ],
-    "m5": [
-      "t17"
-    ]
+    "m5": []
   },
   "bonusPreferences": {
     "m1": [],
@@ -993,10 +991,6 @@
       },
       "t10": {
         "member": "m4",
-        "kind": "selected"
-      },
-      "t17": {
-        "member": "m5",
         "kind": "selected"
       }
     }
@@ -2242,7 +2236,7 @@
     },
     "m5": {
       "selected": [
-        "t17",
+        null,
         null,
         null,
         null,
@@ -12084,6 +12078,47 @@
           "path": "/exceptions/2026-11-02/t17/reason",
           "before": "O",
           "after": "H"
+        }
+      ]
+    },
+    {
+      "id": "ecf0b5ed-3acd-45a3-841c-e43d7d6cf3a9",
+      "at": 1794006152330,
+      "actor": "m5",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/preferences/m5",
+          "before": [
+            "t17"
+          ],
+          "after": []
+        },
+        {
+          "path": "/slotLayout/m5/selected",
+          "before": [
+            "t17",
+            null,
+            null,
+            null,
+            null
+          ],
+          "after": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "path": "/plans/2026-11-09/t17",
+          "before": {
+            "member": "m5",
+            "kind": "selected"
+          },
+          "removed": true
         }
       ]
     }
