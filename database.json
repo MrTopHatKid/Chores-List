@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1794005680052,
+    "updatedAt": 1794005741168,
     "schemaVersion": 2
   },
   "settings": {
@@ -344,7 +344,7 @@
       "startWeek": 1
     },
     "t18": {
-      "name": "Collect indoor garbage",
+      "name": "Bring out the garbage to the curb on garbage day",
       "desc": "Empty garbage bins throughout the house and replace liners as needed.",
       "kind": "regular",
       "points": 3,
@@ -1427,7 +1427,7 @@
         },
         "t18": {
           "task": "t18",
-          "taskName": "Collect indoor garbage",
+          "taskName": "Bring out the garbage to the curb on garbage day",
           "member": "m1",
           "difficulty": "Medium",
           "required": 1,
@@ -11578,6 +11578,25 @@
           }
         }
       ]
+    },
+    {
+      "id": "9b024497-af2e-421e-9610-ae2f15e96ae1",
+      "at": 1794005741168,
+      "actor": "m2",
+      "admin": true,
+      "action": "edit chore",
+      "changes": [
+        {
+          "path": "/tasks/t18/name",
+          "before": "Collect indoor garbage",
+          "after": "Bring out the garbage to the curb on garbage day"
+        },
+        {
+          "path": "/weeks/w3/assignments/t18/taskName",
+          "before": "Collect indoor garbage",
+          "after": "Bring out the garbage to the curb on garbage day"
+        }
+      ]
     }
   ],
   "vacationHistory": [],
@@ -11638,6 +11657,25 @@
       "reason": "edit chore",
       "at": 1793835110180,
       "actor": "m3"
+    },
+    {
+      "week": "w3",
+      "task": "t18",
+      "before": {
+        "member": "m1",
+        "kind": "selected",
+        "week": "w3",
+        "mandatory": true
+      },
+      "after": {
+        "member": "m1",
+        "week": "w3",
+        "mandatory": true,
+        "kind": "admin"
+      },
+      "reason": "edit chore",
+      "at": 1794005741167,
+      "actor": "m2"
     }
   ],
   "permanentBonus": {},
