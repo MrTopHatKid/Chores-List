@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1794006309694,
+    "updatedAt": 1794006353115,
     "schemaVersion": 2
   },
   "settings": {
@@ -344,7 +344,7 @@
       }
     },
     "t17": {
-      "name": "Take out garbage around the house and recycling",
+      "name": "Take out garbage around the side of the house and recycling",
       "desc": "Take household trash bags and recycling to the side of the house.",
       "kind": "regular",
       "points": 2,
@@ -1525,9 +1525,9 @@
       },
       "excluded": {
         "t17": {
-          "taskName": "Take out garbage around the house and recycling",
+          "taskName": "Take out garbage around the side of the house and recycling",
           "difficulty": "Medium",
-          "reason": "H",
+          "reason": "I",
           "category": "admin_exception"
         }
       },
@@ -2191,7 +2191,7 @@
     },
     "2026-11-02": {
       "t17": {
-        "reason": "H",
+        "reason": "I",
         "category": "admin_exception"
       }
     }
@@ -12176,6 +12176,35 @@
       "admin": true,
       "action": "edit person",
       "changes": []
+    },
+    {
+      "id": "a888c5f8-c3ea-417c-8ccc-9b53d19cc874",
+      "at": 1794006353115,
+      "actor": "m5",
+      "admin": true,
+      "action": "edit chore",
+      "changes": [
+        {
+          "path": "/tasks/t17/name",
+          "before": "Take out garbage around the house and recycling",
+          "after": "Take out garbage around the side of the house and recycling"
+        },
+        {
+          "path": "/weeks/w3/excluded/t17/taskName",
+          "before": "Take out garbage around the house and recycling",
+          "after": "Take out garbage around the side of the house and recycling"
+        },
+        {
+          "path": "/weeks/w3/excluded/t17/reason",
+          "before": "H",
+          "after": "I"
+        },
+        {
+          "path": "/exceptions/2026-11-02/t17/reason",
+          "before": "H",
+          "after": "I"
+        }
+      ]
     }
   ],
   "vacationHistory": [],
