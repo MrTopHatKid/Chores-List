@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1794005823518,
+    "updatedAt": 1794005844939,
     "schemaVersion": 2
   },
   "settings": {
@@ -18,7 +18,7 @@
     "deadlineHour": 0,
     "requiredTasks": {
       "m1": 3,
-      "m2": 3,
+      "m2": 5,
       "m3": 5,
       "m4": 5,
       "m5": 5
@@ -42,7 +42,7 @@
         "from": "",
         "to": ""
       },
-      "chosenOnly": true
+      "chosenOnly": false
     },
     "m3": {
       "name": "AW",
@@ -11729,6 +11729,25 @@
             "kind": "selected",
             "completed": 0
           }
+        }
+      ]
+    },
+    {
+      "id": "d439c41a-297f-45f4-8a4a-fdb9f0c55abb",
+      "at": 1794005844939,
+      "actor": "m2",
+      "admin": true,
+      "action": "edit person",
+      "changes": [
+        {
+          "path": "/settings/requiredTasks/m2",
+          "before": 3,
+          "after": 5
+        },
+        {
+          "path": "/members/m2/chosenOnly",
+          "before": true,
+          "after": false
         }
       ]
     }
