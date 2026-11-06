@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1794005591899,
+    "updatedAt": 1794005680052,
     "schemaVersion": 2
   },
   "settings": {
@@ -332,8 +332,8 @@
       }
     },
     "t17": {
-      "name": "Take out garbage and recycling",
-      "desc": "Take household bins to the appropriate collection area.",
+      "name": "Take out garbage around the house and recycling",
+      "desc": "Take household trash bags and recycling to the side of the house.",
       "kind": "regular",
       "points": 2,
       "max": 1,
@@ -1456,7 +1456,14 @@
           "completed": 0
         }
       },
-      "excluded": {},
+      "excluded": {
+        "t17": {
+          "taskName": "Take out garbage around the house and recycling",
+          "difficulty": "Medium",
+          "reason": "O",
+          "category": "admin_exception"
+        }
+      },
       "bonusUsers": [],
       "generated": true,
       "closed": false,
@@ -2112,6 +2119,12 @@
       },
       "t19": {
         "reason": "Archived by admin",
+        "category": "admin_exception"
+      }
+    },
+    "2026-11-02": {
+      "t17": {
+        "reason": "O",
         "category": "admin_exception"
       }
     }
@@ -11524,6 +11537,45 @@
             "completed": 0
           },
           "removed": true
+        }
+      ]
+    },
+    {
+      "id": "d0d6ade4-1fdf-4e7e-9c69-03c0d4ec2567",
+      "at": 1794005680052,
+      "actor": "m2",
+      "admin": true,
+      "action": "edit chore",
+      "changes": [
+        {
+          "path": "/tasks/t17/name",
+          "before": "Take out garbage and recycling",
+          "after": "Take out garbage around the house and recycling"
+        },
+        {
+          "path": "/tasks/t17/desc",
+          "before": "Take household bins to the appropriate collection area.",
+          "after": "Take household trash bags and recycling to the side of the house."
+        },
+        {
+          "path": "/weeks/w3/excluded/t17",
+          "added": true,
+          "after": {
+            "taskName": "Take out garbage around the house and recycling",
+            "difficulty": "Medium",
+            "reason": "O",
+            "category": "admin_exception"
+          }
+        },
+        {
+          "path": "/exceptions/2026-11-02",
+          "added": true,
+          "after": {
+            "t17": {
+              "reason": "O",
+              "category": "admin_exception"
+            }
+          }
         }
       ]
     }
