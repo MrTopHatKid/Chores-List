@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1794005464047,
+    "updatedAt": 1794005525962,
     "schemaVersion": 2
   },
   "settings": {
@@ -493,6 +493,17 @@
       "order": 1792937646817,
       "every": 1,
       "startWeek": 1
+    },
+    "t651e8468-e015-4cf4-ae6e-9b5a6c86dd45": {
+      "name": "Basement Bathroom",
+      "desc": "Clean toilet, sink and counter; tidy up, clean mirrors without leaving streaks and replace toilet paper.",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "max": 1,
+      "active": true,
+      "order": 1794005525740,
+      "every": 1,
+      "startWeek": 3
     }
   },
   "completions": {
@@ -11149,6 +11160,30 @@
             "completed": 0
           },
           "removed": true
+        }
+      ]
+    },
+    {
+      "id": "89202791-2d61-4b46-b24c-7ba596a63bb0",
+      "at": 1794005525962,
+      "actor": "m4",
+      "admin": true,
+      "action": "add chore",
+      "changes": [
+        {
+          "path": "/tasks/t651e8468-e015-4cf4-ae6e-9b5a6c86dd45",
+          "added": true,
+          "after": {
+            "name": "Basement Bathroom",
+            "desc": "Clean toilet, sink and counter; tidy up, clean mirrors without leaving streaks and replace toilet paper.",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "max": 1,
+            "active": true,
+            "order": 1794005525740,
+            "every": 1,
+            "startWeek": 3
+          }
         }
       ]
     }
