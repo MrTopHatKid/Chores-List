@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1794005865531,
+    "updatedAt": 1794005953437,
     "schemaVersion": 2
   },
   "settings": {
@@ -724,7 +724,9 @@
       "t02",
       "t10"
     ],
-    "m5": []
+    "m5": [
+      "t17"
+    ]
   },
   "bonusPreferences": {
     "m1": [],
@@ -991,6 +993,10 @@
       },
       "t10": {
         "member": "m4",
+        "kind": "selected"
+      },
+      "t17": {
+        "member": "m5",
         "kind": "selected"
       }
     }
@@ -2236,6 +2242,7 @@
     },
     "m5": {
       "selected": [
+        "t17",
         null,
         null,
         null,
@@ -12012,6 +12019,46 @@
             "workload": 4,
             "kind": "selected",
             "completed": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "4d4c1309-06ee-452c-a974-eeb1146525d3",
+      "at": 1794005953437,
+      "actor": "m5",
+      "admin": false,
+      "action": "save task preference",
+      "changes": [
+        {
+          "path": "/preferences/m5",
+          "before": [],
+          "after": [
+            "t17"
+          ]
+        },
+        {
+          "path": "/slotLayout/m5/selected",
+          "before": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "after": [
+            "t17",
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "path": "/plans/2026-11-09/t17",
+          "added": true,
+          "after": {
+            "member": "m5",
+            "kind": "selected"
           }
         }
       ]
