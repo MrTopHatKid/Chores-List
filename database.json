@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1794005741168,
+    "updatedAt": 1794005788946,
     "schemaVersion": 2
   },
   "settings": {
@@ -516,6 +516,17 @@
         "week": "w3",
         "mandatory": true
       }
+    },
+    "t007fb3a8-7756-4471-8a6f-5b480842940a": {
+      "name": "Helping Dad",
+      "desc": "Help dad around the house with various chores",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "max": 1,
+      "active": true,
+      "order": 1794005788694,
+      "every": 1,
+      "startWeek": 3
     }
   },
   "completions": {
@@ -11595,6 +11606,30 @@
           "path": "/weeks/w3/assignments/t18/taskName",
           "before": "Collect indoor garbage",
           "after": "Bring out the garbage to the curb on garbage day"
+        }
+      ]
+    },
+    {
+      "id": "91267f40-aa3b-4661-b57a-44ae0842175d",
+      "at": 1794005788946,
+      "actor": "m2",
+      "admin": true,
+      "action": "add chore",
+      "changes": [
+        {
+          "path": "/tasks/t007fb3a8-7756-4471-8a6f-5b480842940a",
+          "added": true,
+          "after": {
+            "name": "Helping Dad",
+            "desc": "Help dad around the house with various chores",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "max": 1,
+            "active": true,
+            "order": 1794005788694,
+            "every": 1,
+            "startWeek": 3
+          }
         }
       ]
     }
