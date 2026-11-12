@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1794524365840,
+    "updatedAt": 1794524369279,
     "schemaVersion": 2
   },
   "settings": {
@@ -727,6 +727,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1794524365839
+    },
+    "4b1d1c8e-99cf-4263-a1a8-f3a0d7d3639d": {
+      "requestId": "4b1d1c8e-99cf-4263-a1a8-f3a0d7d3639d",
+      "task": "t16",
+      "taskName": "Laundry machines and top",
+      "member": "m3",
+      "memberName": "AW",
+      "week": "w4",
+      "weekStart": "2026-11-09",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1794524369278
     }
   },
   "preferences": {
@@ -1770,7 +1782,7 @@
           "required": 1,
           "workload": 2,
           "kind": "selected",
-          "completed": 0
+          "completed": 1
         },
         "t17": {
           "task": "t17",
@@ -13337,6 +13349,36 @@
         },
         {
           "path": "/weeks/w4/assignments/t13/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "276ac31d-08c7-4ea0-a6a5-a1570b6cfd34",
+      "at": 1794524369279,
+      "actor": "m3",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/4b1d1c8e-99cf-4263-a1a8-f3a0d7d3639d",
+          "added": true,
+          "after": {
+            "requestId": "4b1d1c8e-99cf-4263-a1a8-f3a0d7d3639d",
+            "task": "t16",
+            "taskName": "Laundry machines and top",
+            "member": "m3",
+            "memberName": "AW",
+            "week": "w4",
+            "weekStart": "2026-11-09",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1794524369278
+          }
+        },
+        {
+          "path": "/weeks/w4/assignments/t16/completed",
           "before": 0,
           "after": 1
         }
