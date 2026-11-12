@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1794524369279,
+    "updatedAt": 1794524851351,
     "schemaVersion": 2
   },
   "settings": {
@@ -739,6 +739,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1794524369278
+    },
+    "eb287eb8-02b0-4e8a-b256-f904c286778b": {
+      "requestId": "eb287eb8-02b0-4e8a-b256-f904c286778b",
+      "task": "t08",
+      "taskName": "Brush the dog x2",
+      "member": "m3",
+      "memberName": "AW",
+      "week": "w4",
+      "weekStart": "2026-11-09",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1794524851349
     }
   },
   "preferences": {
@@ -1732,7 +1744,7 @@
           "required": 2,
           "workload": 4,
           "kind": "selected",
-          "completed": 0
+          "completed": 1
         },
         "t10": {
           "task": "t10",
@@ -13379,6 +13391,36 @@
         },
         {
           "path": "/weeks/w4/assignments/t16/completed",
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    {
+      "id": "10619b4e-47d1-4e57-bbef-38323b2a255d",
+      "at": 1794524851351,
+      "actor": "m3",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/eb287eb8-02b0-4e8a-b256-f904c286778b",
+          "added": true,
+          "after": {
+            "requestId": "eb287eb8-02b0-4e8a-b256-f904c286778b",
+            "task": "t08",
+            "taskName": "Brush the dog x2",
+            "member": "m3",
+            "memberName": "AW",
+            "week": "w4",
+            "weekStart": "2026-11-09",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1794524851349
+          }
+        },
+        {
+          "path": "/weeks/w4/assignments/t08/completed",
           "before": 0,
           "after": 1
         }
