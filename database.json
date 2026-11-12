@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1794194037530,
+    "updatedAt": 1794484008246,
     "schemaVersion": 2
   },
   "settings": {
@@ -9,9 +9,9 @@
     "defaultQuota": 4,
     "paidPointMode": "points",
     "currency": "$",
-    "weekNo": 3,
-    "weekId": "w3",
-    "weekStart": "2026-11-02",
+    "weekNo": 4,
+    "weekId": "w4",
+    "weekStart": "2026-11-09",
     "autoReset": false,
     "resetWeekday": 1,
     "timezone": "America/Toronto",
@@ -23,7 +23,7 @@
       "m4": 5,
       "m5": 5
     },
-    "assignedWeek": "w3"
+    "assignedWeek": "w4"
   },
   "members": {
     "m1": {
@@ -87,7 +87,7 @@
       "claim": {
         "member": "m3",
         "kind": "selected",
-        "week": "w3",
+        "week": "w4",
         "mandatory": true
       }
     },
@@ -105,7 +105,7 @@
       "claim": {
         "member": "m4",
         "kind": "selected",
-        "week": "w3",
+        "week": "w4",
         "mandatory": true
       }
     },
@@ -123,7 +123,7 @@
       "claim": {
         "member": "m1",
         "kind": "selected",
-        "week": "w3",
+        "week": "w4",
         "mandatory": true
       }
     },
@@ -141,7 +141,7 @@
       "claim": {
         "member": "m1",
         "kind": "selected",
-        "week": "w3",
+        "week": "w4",
         "mandatory": true
       }
     },
@@ -159,7 +159,7 @@
       "claim": {
         "member": "m3",
         "kind": "selected",
-        "week": "w3",
+        "week": "w4",
         "mandatory": true
       }
     },
@@ -177,7 +177,7 @@
       "claim": {
         "member": "m4",
         "kind": "selected",
-        "week": "w3",
+        "week": "w4",
         "mandatory": true
       }
     },
@@ -195,7 +195,7 @@
       "claim": {
         "member": "m4",
         "kind": "selected",
-        "week": "w3",
+        "week": "w4",
         "mandatory": true
       }
     },
@@ -213,7 +213,7 @@
       "claim": {
         "member": "m3",
         "kind": "selected",
-        "week": "w3",
+        "week": "w4",
         "mandatory": true
       }
     },
@@ -243,7 +243,7 @@
       "claim": {
         "member": "m4",
         "kind": "selected",
-        "week": "w3",
+        "week": "w4",
         "mandatory": true
       }
     },
@@ -261,7 +261,7 @@
       "claim": {
         "member": "m2",
         "kind": "selected",
-        "week": "w3",
+        "week": "w4",
         "mandatory": true
       }
     },
@@ -291,7 +291,7 @@
       "claim": {
         "member": "m3",
         "kind": "selected",
-        "week": "w3",
+        "week": "w4",
         "mandatory": true
       }
     },
@@ -309,7 +309,7 @@
       "claim": {
         "member": "m2",
         "kind": "selected",
-        "week": "w3",
+        "week": "w4",
         "mandatory": true
       }
     },
@@ -339,7 +339,7 @@
       "claim": {
         "member": "m3",
         "kind": "selected",
-        "week": "w3",
+        "week": "w4",
         "mandatory": true
       }
     },
@@ -353,7 +353,13 @@
       "order": 17,
       "difficulty": "Medium",
       "every": 1,
-      "startWeek": 1
+      "startWeek": 1,
+      "claim": {
+        "member": "m5",
+        "kind": "selected",
+        "week": "w4",
+        "mandatory": true
+      }
     },
     "t18": {
       "name": "Bring out the garbage to the curb on garbage day",
@@ -369,7 +375,7 @@
       "claim": {
         "member": "m1",
         "kind": "selected",
-        "week": "w3",
+        "week": "w4",
         "mandatory": true
       }
     },
@@ -400,7 +406,7 @@
       "claim": {
         "member": "m2",
         "kind": "selected",
-        "week": "w3",
+        "week": "w4",
         "mandatory": true
       }
     },
@@ -525,7 +531,7 @@
       "claim": {
         "member": "m2",
         "kind": "selected",
-        "week": "w3",
+        "week": "w4",
         "mandatory": true
       }
     },
@@ -943,6 +949,76 @@
       }
     },
     "2026-11-09": {
+      "t18": {
+        "member": "m1",
+        "kind": "selected"
+      },
+      "t03": {
+        "member": "m1",
+        "kind": "selected"
+      },
+      "t04": {
+        "member": "m1",
+        "kind": "selected"
+      },
+      "t651e8468-e015-4cf4-ae6e-9b5a6c86dd45": {
+        "member": "m2",
+        "kind": "selected"
+      },
+      "t20": {
+        "member": "m2",
+        "kind": "selected"
+      },
+      "t14": {
+        "member": "m2",
+        "kind": "selected"
+      },
+      "t11": {
+        "member": "m2",
+        "kind": "selected"
+      },
+      "t05": {
+        "member": "m3",
+        "kind": "selected"
+      },
+      "t13": {
+        "member": "m3",
+        "kind": "selected"
+      },
+      "t16": {
+        "member": "m3",
+        "kind": "selected"
+      },
+      "t01": {
+        "member": "m3",
+        "kind": "selected"
+      },
+      "t08": {
+        "member": "m3",
+        "kind": "selected"
+      },
+      "t06": {
+        "member": "m4",
+        "kind": "selected"
+      },
+      "t07": {
+        "member": "m4",
+        "kind": "selected"
+      },
+      "t02": {
+        "member": "m4",
+        "kind": "selected"
+      },
+      "t10": {
+        "member": "m4",
+        "kind": "selected"
+      },
+      "t17": {
+        "member": "m5",
+        "kind": "selected"
+      }
+    },
+    "2026-11-16": {
       "t18": {
         "member": "m1",
         "kind": "selected"
@@ -1545,8 +1621,191 @@
       },
       "bonusUsers": [],
       "generated": true,
+      "closed": true,
+      "generatedAt": 1793624414147,
+      "closedAt": 1794484008241
+    },
+    "w4": {
+      "id": "w4",
+      "start": "2026-11-09",
+      "no": 4,
+      "assignments": {
+        "t01": {
+          "task": "t01",
+          "taskName": "Upstairs towels, bath mat and cloths",
+          "member": "m3",
+          "difficulty": "Medium",
+          "required": 3,
+          "workload": 6,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t02": {
+          "task": "t02",
+          "taskName": "Kitchen counters and table",
+          "member": "m4",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t03": {
+          "task": "t03",
+          "taskName": "Downstairs hallway",
+          "member": "m1",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t04": {
+          "task": "t04",
+          "taskName": "Upstairs hallway",
+          "member": "m1",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t05": {
+          "task": "t05",
+          "taskName": "Air fryers, microwave and toaster",
+          "member": "m3",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t06": {
+          "task": "t06",
+          "taskName": "Stove, fridge exterior and kitchen island",
+          "member": "m4",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t07": {
+          "task": "t07",
+          "taskName": "Kitchen floor",
+          "member": "m4",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t08": {
+          "task": "t08",
+          "taskName": "Brush the dog x2",
+          "member": "m3",
+          "difficulty": "Medium",
+          "required": 2,
+          "workload": 4,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t10": {
+          "task": "t10",
+          "taskName": "Clean the fridge",
+          "member": "m4",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t11": {
+          "task": "t11",
+          "taskName": "Dishes",
+          "member": "m2",
+          "difficulty": "Medium",
+          "required": 2,
+          "workload": 4,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t13": {
+          "task": "t13",
+          "taskName": "Upstairs bathroom",
+          "member": "m3",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t14": {
+          "task": "t14",
+          "taskName": "Downstairs bathroom",
+          "member": "m2",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t16": {
+          "task": "t16",
+          "taskName": "Laundry machines and top",
+          "member": "m3",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t17": {
+          "task": "t17",
+          "taskName": "Take out garbage around the side of the house and recycling",
+          "member": "m5",
+          "difficulty": "Medium",
+          "required": 2,
+          "workload": 4,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t18": {
+          "task": "t18",
+          "taskName": "Bring out the garbage to the curb on garbage day",
+          "member": "m1",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t20": {
+          "task": "t20",
+          "taskName": "Load the dishwasher & Unload the dishwasher x2",
+          "member": "m2",
+          "difficulty": "Medium",
+          "required": 2,
+          "workload": 4,
+          "kind": "selected",
+          "completed": 0
+        },
+        "t651e8468-e015-4cf4-ae6e-9b5a6c86dd45": {
+          "task": "t651e8468-e015-4cf4-ae6e-9b5a6c86dd45",
+          "taskName": "Basement Bathroom",
+          "member": "m2",
+          "difficulty": "Medium",
+          "required": 1,
+          "workload": 2,
+          "kind": "selected",
+          "completed": 0
+        }
+      },
+      "excluded": {},
+      "bonusUsers": [],
+      "generated": true,
       "closed": false,
-      "generatedAt": 1793624414147
+      "generatedAt": 1794484008241
     }
   },
   "incomplete": {
@@ -2172,6 +2431,184 @@
       "status": "excluded",
       "category": "admin_exception",
       "reason": "needed",
+      "events": []
+    },
+    "w3:t02": {
+      "id": "w3:t02",
+      "task": "t02",
+      "taskName": "Kitchen counters and table",
+      "member": "m4",
+      "memberName": "MK",
+      "week": "w3",
+      "weekStart": "2026-11-02",
+      "difficulty": "Medium",
+      "required": 1,
+      "completed": 0,
+      "status": "outstanding",
+      "category": "missed_active",
+      "events": []
+    },
+    "w3:t03": {
+      "id": "w3:t03",
+      "task": "t03",
+      "taskName": "Downstairs hallway",
+      "member": "m1",
+      "memberName": "JM",
+      "week": "w3",
+      "weekStart": "2026-11-02",
+      "difficulty": "Medium",
+      "required": 1,
+      "completed": 0,
+      "status": "outstanding",
+      "category": "missed_active",
+      "events": []
+    },
+    "w3:t04": {
+      "id": "w3:t04",
+      "task": "t04",
+      "taskName": "Upstairs hallway",
+      "member": "m1",
+      "memberName": "JM",
+      "week": "w3",
+      "weekStart": "2026-11-02",
+      "difficulty": "Medium",
+      "required": 1,
+      "completed": 0,
+      "status": "outstanding",
+      "category": "missed_active",
+      "events": []
+    },
+    "w3:t06": {
+      "id": "w3:t06",
+      "task": "t06",
+      "taskName": "Stove, fridge exterior and kitchen island",
+      "member": "m4",
+      "memberName": "MK",
+      "week": "w3",
+      "weekStart": "2026-11-02",
+      "difficulty": "Medium",
+      "required": 1,
+      "completed": 0,
+      "status": "outstanding",
+      "category": "missed_active",
+      "events": []
+    },
+    "w3:t07": {
+      "id": "w3:t07",
+      "task": "t07",
+      "taskName": "Kitchen floor",
+      "member": "m4",
+      "memberName": "MK",
+      "week": "w3",
+      "weekStart": "2026-11-02",
+      "difficulty": "Medium",
+      "required": 1,
+      "completed": 0,
+      "status": "outstanding",
+      "category": "missed_active",
+      "events": []
+    },
+    "w3:t10": {
+      "id": "w3:t10",
+      "task": "t10",
+      "taskName": "Clean the fridge",
+      "member": "m4",
+      "memberName": "MK",
+      "week": "w3",
+      "weekStart": "2026-11-02",
+      "difficulty": "Medium",
+      "required": 1,
+      "completed": 0,
+      "status": "outstanding",
+      "category": "missed_active",
+      "events": []
+    },
+    "w3:t18": {
+      "id": "w3:t18",
+      "task": "t18",
+      "taskName": "Bring out the garbage to the curb on garbage day",
+      "member": "m1",
+      "memberName": "JM",
+      "week": "w3",
+      "weekStart": "2026-11-02",
+      "difficulty": "Medium",
+      "required": 1,
+      "completed": 0,
+      "status": "outstanding",
+      "category": "missed_active",
+      "events": []
+    },
+    "w3:t651e8468-e015-4cf4-ae6e-9b5a6c86dd45": {
+      "id": "w3:t651e8468-e015-4cf4-ae6e-9b5a6c86dd45",
+      "task": "t651e8468-e015-4cf4-ae6e-9b5a6c86dd45",
+      "taskName": "Basement Bathroom",
+      "member": "m2",
+      "memberName": "KI",
+      "week": "w3",
+      "weekStart": "2026-11-02",
+      "difficulty": "Medium",
+      "required": 1,
+      "completed": 0,
+      "status": "outstanding",
+      "category": "missed_active",
+      "events": []
+    },
+    "w3:t20": {
+      "id": "w3:t20",
+      "task": "t20",
+      "taskName": "Load the dishwasher & Unload the dishwasher x2",
+      "member": "m2",
+      "memberName": "KI",
+      "week": "w3",
+      "weekStart": "2026-11-02",
+      "difficulty": "Medium",
+      "required": 2,
+      "completed": 0,
+      "status": "outstanding",
+      "category": "missed_active",
+      "events": []
+    },
+    "w3:t14": {
+      "id": "w3:t14",
+      "task": "t14",
+      "taskName": "Downstairs bathroom",
+      "member": "m2",
+      "memberName": "KI",
+      "week": "w3",
+      "weekStart": "2026-11-02",
+      "difficulty": "Medium",
+      "required": 1,
+      "completed": 0,
+      "status": "outstanding",
+      "category": "missed_active",
+      "events": []
+    },
+    "w3:t11": {
+      "id": "w3:t11",
+      "task": "t11",
+      "taskName": "Dishes",
+      "member": "m2",
+      "memberName": "KI",
+      "week": "w3",
+      "weekStart": "2026-11-02",
+      "difficulty": "Medium",
+      "required": 2,
+      "completed": 0,
+      "status": "outstanding",
+      "category": "missed_active",
+      "events": []
+    },
+    "w3:excluded:t17": {
+      "id": "w3:excluded:t17",
+      "task": "t17",
+      "taskName": "Take out garbage around the side of the house and recycling",
+      "member": "",
+      "week": "w3",
+      "weekStart": "2026-11-02",
+      "difficulty": "Medium",
+      "status": "excluded",
+      "category": "admin_exception",
+      "reason": "I",
       "events": []
     }
   },
@@ -12245,6 +12682,621 @@
           "path": "/weeks/w3/assignments/t01/completed",
           "before": 2,
           "after": 3
+        }
+      ]
+    },
+    {
+      "id": "f2a1da1e-45b1-4d7b-8a84-b68a91516d11",
+      "at": 1794484008246,
+      "actor": "m3",
+      "admin": false,
+      "action": "weekly assignments",
+      "changes": [
+        {
+          "path": "/settings/weekNo",
+          "before": 3,
+          "after": 4
+        },
+        {
+          "path": "/settings/weekId",
+          "before": "w3",
+          "after": "w4"
+        },
+        {
+          "path": "/settings/weekStart",
+          "before": "2026-11-02",
+          "after": "2026-11-09"
+        },
+        {
+          "path": "/settings/assignedWeek",
+          "before": "w3",
+          "after": "w4"
+        },
+        {
+          "path": "/tasks/t01/claim/week",
+          "before": "w3",
+          "after": "w4"
+        },
+        {
+          "path": "/tasks/t02/claim/week",
+          "before": "w3",
+          "after": "w4"
+        },
+        {
+          "path": "/tasks/t03/claim/week",
+          "before": "w3",
+          "after": "w4"
+        },
+        {
+          "path": "/tasks/t04/claim/week",
+          "before": "w3",
+          "after": "w4"
+        },
+        {
+          "path": "/tasks/t05/claim/week",
+          "before": "w3",
+          "after": "w4"
+        },
+        {
+          "path": "/tasks/t06/claim/week",
+          "before": "w3",
+          "after": "w4"
+        },
+        {
+          "path": "/tasks/t07/claim/week",
+          "before": "w3",
+          "after": "w4"
+        },
+        {
+          "path": "/tasks/t08/claim/week",
+          "before": "w3",
+          "after": "w4"
+        },
+        {
+          "path": "/tasks/t10/claim/week",
+          "before": "w3",
+          "after": "w4"
+        },
+        {
+          "path": "/tasks/t11/claim/week",
+          "before": "w3",
+          "after": "w4"
+        },
+        {
+          "path": "/tasks/t13/claim/week",
+          "before": "w3",
+          "after": "w4"
+        },
+        {
+          "path": "/tasks/t14/claim/week",
+          "before": "w3",
+          "after": "w4"
+        },
+        {
+          "path": "/tasks/t16/claim/week",
+          "before": "w3",
+          "after": "w4"
+        },
+        {
+          "path": "/tasks/t17/claim",
+          "added": true,
+          "after": {
+            "member": "m5",
+            "kind": "selected",
+            "week": "w4",
+            "mandatory": true
+          }
+        },
+        {
+          "path": "/tasks/t18/claim/week",
+          "before": "w3",
+          "after": "w4"
+        },
+        {
+          "path": "/tasks/t20/claim/week",
+          "before": "w3",
+          "after": "w4"
+        },
+        {
+          "path": "/tasks/t651e8468-e015-4cf4-ae6e-9b5a6c86dd45/claim/week",
+          "before": "w3",
+          "after": "w4"
+        },
+        {
+          "path": "/plans/2026-11-16",
+          "added": true,
+          "after": {
+            "t18": {
+              "member": "m1",
+              "kind": "selected"
+            },
+            "t03": {
+              "member": "m1",
+              "kind": "selected"
+            },
+            "t04": {
+              "member": "m1",
+              "kind": "selected"
+            },
+            "t651e8468-e015-4cf4-ae6e-9b5a6c86dd45": {
+              "member": "m2",
+              "kind": "selected"
+            },
+            "t20": {
+              "member": "m2",
+              "kind": "selected"
+            },
+            "t14": {
+              "member": "m2",
+              "kind": "selected"
+            },
+            "t11": {
+              "member": "m2",
+              "kind": "selected"
+            },
+            "t05": {
+              "member": "m3",
+              "kind": "selected"
+            },
+            "t13": {
+              "member": "m3",
+              "kind": "selected"
+            },
+            "t16": {
+              "member": "m3",
+              "kind": "selected"
+            },
+            "t01": {
+              "member": "m3",
+              "kind": "selected"
+            },
+            "t08": {
+              "member": "m3",
+              "kind": "selected"
+            },
+            "t06": {
+              "member": "m4",
+              "kind": "selected"
+            },
+            "t07": {
+              "member": "m4",
+              "kind": "selected"
+            },
+            "t02": {
+              "member": "m4",
+              "kind": "selected"
+            },
+            "t10": {
+              "member": "m4",
+              "kind": "selected"
+            },
+            "t17": {
+              "member": "m5",
+              "kind": "selected"
+            }
+          }
+        },
+        {
+          "path": "/weeks/w3/closed",
+          "before": false,
+          "after": true
+        },
+        {
+          "path": "/weeks/w3/closedAt",
+          "added": true,
+          "after": 1794484008241
+        },
+        {
+          "path": "/weeks/w4",
+          "added": true,
+          "after": {
+            "id": "w4",
+            "start": "2026-11-09",
+            "no": 4,
+            "assignments": {
+              "t01": {
+                "task": "t01",
+                "taskName": "Upstairs towels, bath mat and cloths",
+                "member": "m3",
+                "difficulty": "Medium",
+                "required": 3,
+                "workload": 6,
+                "kind": "selected",
+                "completed": 0
+              },
+              "t02": {
+                "task": "t02",
+                "taskName": "Kitchen counters and table",
+                "member": "m4",
+                "difficulty": "Medium",
+                "required": 1,
+                "workload": 2,
+                "kind": "selected",
+                "completed": 0
+              },
+              "t03": {
+                "task": "t03",
+                "taskName": "Downstairs hallway",
+                "member": "m1",
+                "difficulty": "Medium",
+                "required": 1,
+                "workload": 2,
+                "kind": "selected",
+                "completed": 0
+              },
+              "t04": {
+                "task": "t04",
+                "taskName": "Upstairs hallway",
+                "member": "m1",
+                "difficulty": "Medium",
+                "required": 1,
+                "workload": 2,
+                "kind": "selected",
+                "completed": 0
+              },
+              "t05": {
+                "task": "t05",
+                "taskName": "Air fryers, microwave and toaster",
+                "member": "m3",
+                "difficulty": "Medium",
+                "required": 1,
+                "workload": 2,
+                "kind": "selected",
+                "completed": 0
+              },
+              "t06": {
+                "task": "t06",
+                "taskName": "Stove, fridge exterior and kitchen island",
+                "member": "m4",
+                "difficulty": "Medium",
+                "required": 1,
+                "workload": 2,
+                "kind": "selected",
+                "completed": 0
+              },
+              "t07": {
+                "task": "t07",
+                "taskName": "Kitchen floor",
+                "member": "m4",
+                "difficulty": "Medium",
+                "required": 1,
+                "workload": 2,
+                "kind": "selected",
+                "completed": 0
+              },
+              "t08": {
+                "task": "t08",
+                "taskName": "Brush the dog x2",
+                "member": "m3",
+                "difficulty": "Medium",
+                "required": 2,
+                "workload": 4,
+                "kind": "selected",
+                "completed": 0
+              },
+              "t10": {
+                "task": "t10",
+                "taskName": "Clean the fridge",
+                "member": "m4",
+                "difficulty": "Medium",
+                "required": 1,
+                "workload": 2,
+                "kind": "selected",
+                "completed": 0
+              },
+              "t11": {
+                "task": "t11",
+                "taskName": "Dishes",
+                "member": "m2",
+                "difficulty": "Medium",
+                "required": 2,
+                "workload": 4,
+                "kind": "selected",
+                "completed": 0
+              },
+              "t13": {
+                "task": "t13",
+                "taskName": "Upstairs bathroom",
+                "member": "m3",
+                "difficulty": "Medium",
+                "required": 1,
+                "workload": 2,
+                "kind": "selected",
+                "completed": 0
+              },
+              "t14": {
+                "task": "t14",
+                "taskName": "Downstairs bathroom",
+                "member": "m2",
+                "difficulty": "Medium",
+                "required": 1,
+                "workload": 2,
+                "kind": "selected",
+                "completed": 0
+              },
+              "t16": {
+                "task": "t16",
+                "taskName": "Laundry machines and top",
+                "member": "m3",
+                "difficulty": "Medium",
+                "required": 1,
+                "workload": 2,
+                "kind": "selected",
+                "completed": 0
+              },
+              "t17": {
+                "task": "t17",
+                "taskName": "Take out garbage around the side of the house and recycling",
+                "member": "m5",
+                "difficulty": "Medium",
+                "required": 2,
+                "workload": 4,
+                "kind": "selected",
+                "completed": 0
+              },
+              "t18": {
+                "task": "t18",
+                "taskName": "Bring out the garbage to the curb on garbage day",
+                "member": "m1",
+                "difficulty": "Medium",
+                "required": 1,
+                "workload": 2,
+                "kind": "selected",
+                "completed": 0
+              },
+              "t20": {
+                "task": "t20",
+                "taskName": "Load the dishwasher & Unload the dishwasher x2",
+                "member": "m2",
+                "difficulty": "Medium",
+                "required": 2,
+                "workload": 4,
+                "kind": "selected",
+                "completed": 0
+              },
+              "t651e8468-e015-4cf4-ae6e-9b5a6c86dd45": {
+                "task": "t651e8468-e015-4cf4-ae6e-9b5a6c86dd45",
+                "taskName": "Basement Bathroom",
+                "member": "m2",
+                "difficulty": "Medium",
+                "required": 1,
+                "workload": 2,
+                "kind": "selected",
+                "completed": 0
+              }
+            },
+            "excluded": {},
+            "bonusUsers": [],
+            "generated": true,
+            "closed": false,
+            "generatedAt": 1794484008241
+          }
+        },
+        {
+          "path": "/incomplete/w3:t02",
+          "added": true,
+          "after": {
+            "id": "w3:t02",
+            "task": "t02",
+            "taskName": "Kitchen counters and table",
+            "member": "m4",
+            "memberName": "MK",
+            "week": "w3",
+            "weekStart": "2026-11-02",
+            "difficulty": "Medium",
+            "required": 1,
+            "completed": 0,
+            "status": "outstanding",
+            "category": "missed_active",
+            "events": []
+          }
+        },
+        {
+          "path": "/incomplete/w3:t03",
+          "added": true,
+          "after": {
+            "id": "w3:t03",
+            "task": "t03",
+            "taskName": "Downstairs hallway",
+            "member": "m1",
+            "memberName": "JM",
+            "week": "w3",
+            "weekStart": "2026-11-02",
+            "difficulty": "Medium",
+            "required": 1,
+            "completed": 0,
+            "status": "outstanding",
+            "category": "missed_active",
+            "events": []
+          }
+        },
+        {
+          "path": "/incomplete/w3:t04",
+          "added": true,
+          "after": {
+            "id": "w3:t04",
+            "task": "t04",
+            "taskName": "Upstairs hallway",
+            "member": "m1",
+            "memberName": "JM",
+            "week": "w3",
+            "weekStart": "2026-11-02",
+            "difficulty": "Medium",
+            "required": 1,
+            "completed": 0,
+            "status": "outstanding",
+            "category": "missed_active",
+            "events": []
+          }
+        },
+        {
+          "path": "/incomplete/w3:t06",
+          "added": true,
+          "after": {
+            "id": "w3:t06",
+            "task": "t06",
+            "taskName": "Stove, fridge exterior and kitchen island",
+            "member": "m4",
+            "memberName": "MK",
+            "week": "w3",
+            "weekStart": "2026-11-02",
+            "difficulty": "Medium",
+            "required": 1,
+            "completed": 0,
+            "status": "outstanding",
+            "category": "missed_active",
+            "events": []
+          }
+        },
+        {
+          "path": "/incomplete/w3:t07",
+          "added": true,
+          "after": {
+            "id": "w3:t07",
+            "task": "t07",
+            "taskName": "Kitchen floor",
+            "member": "m4",
+            "memberName": "MK",
+            "week": "w3",
+            "weekStart": "2026-11-02",
+            "difficulty": "Medium",
+            "required": 1,
+            "completed": 0,
+            "status": "outstanding",
+            "category": "missed_active",
+            "events": []
+          }
+        },
+        {
+          "path": "/incomplete/w3:t10",
+          "added": true,
+          "after": {
+            "id": "w3:t10",
+            "task": "t10",
+            "taskName": "Clean the fridge",
+            "member": "m4",
+            "memberName": "MK",
+            "week": "w3",
+            "weekStart": "2026-11-02",
+            "difficulty": "Medium",
+            "required": 1,
+            "completed": 0,
+            "status": "outstanding",
+            "category": "missed_active",
+            "events": []
+          }
+        },
+        {
+          "path": "/incomplete/w3:t18",
+          "added": true,
+          "after": {
+            "id": "w3:t18",
+            "task": "t18",
+            "taskName": "Bring out the garbage to the curb on garbage day",
+            "member": "m1",
+            "memberName": "JM",
+            "week": "w3",
+            "weekStart": "2026-11-02",
+            "difficulty": "Medium",
+            "required": 1,
+            "completed": 0,
+            "status": "outstanding",
+            "category": "missed_active",
+            "events": []
+          }
+        },
+        {
+          "path": "/incomplete/w3:t651e8468-e015-4cf4-ae6e-9b5a6c86dd45",
+          "added": true,
+          "after": {
+            "id": "w3:t651e8468-e015-4cf4-ae6e-9b5a6c86dd45",
+            "task": "t651e8468-e015-4cf4-ae6e-9b5a6c86dd45",
+            "taskName": "Basement Bathroom",
+            "member": "m2",
+            "memberName": "KI",
+            "week": "w3",
+            "weekStart": "2026-11-02",
+            "difficulty": "Medium",
+            "required": 1,
+            "completed": 0,
+            "status": "outstanding",
+            "category": "missed_active",
+            "events": []
+          }
+        },
+        {
+          "path": "/incomplete/w3:t20",
+          "added": true,
+          "after": {
+            "id": "w3:t20",
+            "task": "t20",
+            "taskName": "Load the dishwasher & Unload the dishwasher x2",
+            "member": "m2",
+            "memberName": "KI",
+            "week": "w3",
+            "weekStart": "2026-11-02",
+            "difficulty": "Medium",
+            "required": 2,
+            "completed": 0,
+            "status": "outstanding",
+            "category": "missed_active",
+            "events": []
+          }
+        },
+        {
+          "path": "/incomplete/w3:t14",
+          "added": true,
+          "after": {
+            "id": "w3:t14",
+            "task": "t14",
+            "taskName": "Downstairs bathroom",
+            "member": "m2",
+            "memberName": "KI",
+            "week": "w3",
+            "weekStart": "2026-11-02",
+            "difficulty": "Medium",
+            "required": 1,
+            "completed": 0,
+            "status": "outstanding",
+            "category": "missed_active",
+            "events": []
+          }
+        },
+        {
+          "path": "/incomplete/w3:t11",
+          "added": true,
+          "after": {
+            "id": "w3:t11",
+            "task": "t11",
+            "taskName": "Dishes",
+            "member": "m2",
+            "memberName": "KI",
+            "week": "w3",
+            "weekStart": "2026-11-02",
+            "difficulty": "Medium",
+            "required": 2,
+            "completed": 0,
+            "status": "outstanding",
+            "category": "missed_active",
+            "events": []
+          }
+        },
+        {
+          "path": "/incomplete/w3:excluded:t17",
+          "added": true,
+          "after": {
+            "id": "w3:excluded:t17",
+            "task": "t17",
+            "taskName": "Take out garbage around the side of the house and recycling",
+            "member": "",
+            "week": "w3",
+            "weekStart": "2026-11-02",
+            "difficulty": "Medium",
+            "status": "excluded",
+            "category": "admin_exception",
+            "reason": "I",
+            "events": []
+          }
         }
       ]
     }
