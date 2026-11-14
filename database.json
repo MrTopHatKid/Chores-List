@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1794525280245,
+    "updatedAt": 1794665886667,
     "schemaVersion": 2
   },
   "settings": {
@@ -2492,9 +2492,17 @@
       "difficulty": "Medium",
       "required": 1,
       "completed": 0,
-      "status": "outstanding",
+      "status": "forgiven",
       "category": "missed_active",
-      "events": []
+      "events": [
+        {
+          "at": 1794665886664,
+          "status": "forgiven",
+          "note": "Bulk forgiven by admin",
+          "member": "",
+          "actor": "m3"
+        }
+      ]
     },
     "w3:t03": {
       "id": "w3:t03",
@@ -2507,9 +2515,17 @@
       "difficulty": "Medium",
       "required": 1,
       "completed": 0,
-      "status": "outstanding",
+      "status": "forgiven",
       "category": "missed_active",
-      "events": []
+      "events": [
+        {
+          "at": 1794665886664,
+          "status": "forgiven",
+          "note": "Bulk forgiven by admin",
+          "member": "",
+          "actor": "m3"
+        }
+      ]
     },
     "w3:t04": {
       "id": "w3:t04",
@@ -2522,9 +2538,17 @@
       "difficulty": "Medium",
       "required": 1,
       "completed": 0,
-      "status": "outstanding",
+      "status": "forgiven",
       "category": "missed_active",
-      "events": []
+      "events": [
+        {
+          "at": 1794665886664,
+          "status": "forgiven",
+          "note": "Bulk forgiven by admin",
+          "member": "",
+          "actor": "m3"
+        }
+      ]
     },
     "w3:t06": {
       "id": "w3:t06",
@@ -2537,9 +2561,17 @@
       "difficulty": "Medium",
       "required": 1,
       "completed": 0,
-      "status": "outstanding",
+      "status": "forgiven",
       "category": "missed_active",
-      "events": []
+      "events": [
+        {
+          "at": 1794665886664,
+          "status": "forgiven",
+          "note": "Bulk forgiven by admin",
+          "member": "",
+          "actor": "m3"
+        }
+      ]
     },
     "w3:t07": {
       "id": "w3:t07",
@@ -2552,9 +2584,17 @@
       "difficulty": "Medium",
       "required": 1,
       "completed": 0,
-      "status": "outstanding",
+      "status": "forgiven",
       "category": "missed_active",
-      "events": []
+      "events": [
+        {
+          "at": 1794665886664,
+          "status": "forgiven",
+          "note": "Bulk forgiven by admin",
+          "member": "",
+          "actor": "m3"
+        }
+      ]
     },
     "w3:t10": {
       "id": "w3:t10",
@@ -2567,9 +2607,17 @@
       "difficulty": "Medium",
       "required": 1,
       "completed": 0,
-      "status": "outstanding",
+      "status": "forgiven",
       "category": "missed_active",
-      "events": []
+      "events": [
+        {
+          "at": 1794665886664,
+          "status": "forgiven",
+          "note": "Bulk forgiven by admin",
+          "member": "",
+          "actor": "m3"
+        }
+      ]
     },
     "w3:t18": {
       "id": "w3:t18",
@@ -2582,9 +2630,17 @@
       "difficulty": "Medium",
       "required": 1,
       "completed": 0,
-      "status": "outstanding",
+      "status": "forgiven",
       "category": "missed_active",
-      "events": []
+      "events": [
+        {
+          "at": 1794665886664,
+          "status": "forgiven",
+          "note": "Bulk forgiven by admin",
+          "member": "",
+          "actor": "m3"
+        }
+      ]
     },
     "w3:t651e8468-e015-4cf4-ae6e-9b5a6c86dd45": {
       "id": "w3:t651e8468-e015-4cf4-ae6e-9b5a6c86dd45",
@@ -2597,9 +2653,17 @@
       "difficulty": "Medium",
       "required": 1,
       "completed": 0,
-      "status": "outstanding",
+      "status": "forgiven",
       "category": "missed_active",
-      "events": []
+      "events": [
+        {
+          "at": 1794665886664,
+          "status": "forgiven",
+          "note": "Bulk forgiven by admin",
+          "member": "",
+          "actor": "m3"
+        }
+      ]
     },
     "w3:t20": {
       "id": "w3:t20",
@@ -2612,9 +2676,17 @@
       "difficulty": "Medium",
       "required": 2,
       "completed": 0,
-      "status": "outstanding",
+      "status": "forgiven",
       "category": "missed_active",
-      "events": []
+      "events": [
+        {
+          "at": 1794665886664,
+          "status": "forgiven",
+          "note": "Bulk forgiven by admin",
+          "member": "",
+          "actor": "m3"
+        }
+      ]
     },
     "w3:t14": {
       "id": "w3:t14",
@@ -2627,9 +2699,17 @@
       "difficulty": "Medium",
       "required": 1,
       "completed": 0,
-      "status": "outstanding",
+      "status": "forgiven",
       "category": "missed_active",
-      "events": []
+      "events": [
+        {
+          "at": 1794665886664,
+          "status": "forgiven",
+          "note": "Bulk forgiven by admin",
+          "member": "",
+          "actor": "m3"
+        }
+      ]
     },
     "w3:t11": {
       "id": "w3:t11",
@@ -2642,9 +2722,17 @@
       "difficulty": "Medium",
       "required": 2,
       "completed": 0,
-      "status": "outstanding",
+      "status": "forgiven",
       "category": "missed_active",
-      "events": []
+      "events": [
+        {
+          "at": 1794665886664,
+          "status": "forgiven",
+          "note": "Bulk forgiven by admin",
+          "member": "",
+          "actor": "m3"
+        }
+      ]
     },
     "w3:excluded:t17": {
       "id": "w3:excluded:t17",
@@ -13465,6 +13553,213 @@
           "path": "/weeks/w4/assignments/t05/completed",
           "before": 0,
           "after": 1
+        }
+      ]
+    },
+    {
+      "id": "15fccb4d-9b1f-4f1b-adb1-94aa9043ed2e",
+      "at": 1794665886667,
+      "actor": "m3",
+      "admin": true,
+      "action": "resolve incomplete",
+      "changes": [
+        {
+          "path": "/incomplete/w3:t02/status",
+          "before": "outstanding",
+          "after": "forgiven"
+        },
+        {
+          "path": "/incomplete/w3:t02/events",
+          "before": [],
+          "after": [
+            {
+              "at": 1794665886664,
+              "status": "forgiven",
+              "note": "Bulk forgiven by admin",
+              "member": "",
+              "actor": "m3"
+            }
+          ]
+        },
+        {
+          "path": "/incomplete/w3:t03/status",
+          "before": "outstanding",
+          "after": "forgiven"
+        },
+        {
+          "path": "/incomplete/w3:t03/events",
+          "before": [],
+          "after": [
+            {
+              "at": 1794665886664,
+              "status": "forgiven",
+              "note": "Bulk forgiven by admin",
+              "member": "",
+              "actor": "m3"
+            }
+          ]
+        },
+        {
+          "path": "/incomplete/w3:t04/status",
+          "before": "outstanding",
+          "after": "forgiven"
+        },
+        {
+          "path": "/incomplete/w3:t04/events",
+          "before": [],
+          "after": [
+            {
+              "at": 1794665886664,
+              "status": "forgiven",
+              "note": "Bulk forgiven by admin",
+              "member": "",
+              "actor": "m3"
+            }
+          ]
+        },
+        {
+          "path": "/incomplete/w3:t06/status",
+          "before": "outstanding",
+          "after": "forgiven"
+        },
+        {
+          "path": "/incomplete/w3:t06/events",
+          "before": [],
+          "after": [
+            {
+              "at": 1794665886664,
+              "status": "forgiven",
+              "note": "Bulk forgiven by admin",
+              "member": "",
+              "actor": "m3"
+            }
+          ]
+        },
+        {
+          "path": "/incomplete/w3:t07/status",
+          "before": "outstanding",
+          "after": "forgiven"
+        },
+        {
+          "path": "/incomplete/w3:t07/events",
+          "before": [],
+          "after": [
+            {
+              "at": 1794665886664,
+              "status": "forgiven",
+              "note": "Bulk forgiven by admin",
+              "member": "",
+              "actor": "m3"
+            }
+          ]
+        },
+        {
+          "path": "/incomplete/w3:t10/status",
+          "before": "outstanding",
+          "after": "forgiven"
+        },
+        {
+          "path": "/incomplete/w3:t10/events",
+          "before": [],
+          "after": [
+            {
+              "at": 1794665886664,
+              "status": "forgiven",
+              "note": "Bulk forgiven by admin",
+              "member": "",
+              "actor": "m3"
+            }
+          ]
+        },
+        {
+          "path": "/incomplete/w3:t18/status",
+          "before": "outstanding",
+          "after": "forgiven"
+        },
+        {
+          "path": "/incomplete/w3:t18/events",
+          "before": [],
+          "after": [
+            {
+              "at": 1794665886664,
+              "status": "forgiven",
+              "note": "Bulk forgiven by admin",
+              "member": "",
+              "actor": "m3"
+            }
+          ]
+        },
+        {
+          "path": "/incomplete/w3:t651e8468-e015-4cf4-ae6e-9b5a6c86dd45/status",
+          "before": "outstanding",
+          "after": "forgiven"
+        },
+        {
+          "path": "/incomplete/w3:t651e8468-e015-4cf4-ae6e-9b5a6c86dd45/events",
+          "before": [],
+          "after": [
+            {
+              "at": 1794665886664,
+              "status": "forgiven",
+              "note": "Bulk forgiven by admin",
+              "member": "",
+              "actor": "m3"
+            }
+          ]
+        },
+        {
+          "path": "/incomplete/w3:t20/status",
+          "before": "outstanding",
+          "after": "forgiven"
+        },
+        {
+          "path": "/incomplete/w3:t20/events",
+          "before": [],
+          "after": [
+            {
+              "at": 1794665886664,
+              "status": "forgiven",
+              "note": "Bulk forgiven by admin",
+              "member": "",
+              "actor": "m3"
+            }
+          ]
+        },
+        {
+          "path": "/incomplete/w3:t14/status",
+          "before": "outstanding",
+          "after": "forgiven"
+        },
+        {
+          "path": "/incomplete/w3:t14/events",
+          "before": [],
+          "after": [
+            {
+              "at": 1794665886664,
+              "status": "forgiven",
+              "note": "Bulk forgiven by admin",
+              "member": "",
+              "actor": "m3"
+            }
+          ]
+        },
+        {
+          "path": "/incomplete/w3:t11/status",
+          "before": "outstanding",
+          "after": "forgiven"
+        },
+        {
+          "path": "/incomplete/w3:t11/events",
+          "before": [],
+          "after": [
+            {
+              "at": 1794665886664,
+              "status": "forgiven",
+              "note": "Bulk forgiven by admin",
+              "member": "",
+              "actor": "m3"
+            }
+          ]
         }
       ]
     }
