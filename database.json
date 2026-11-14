@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": 1794669139370,
+    "updatedAt": 1794669145530,
     "schemaVersion": 2
   },
   "settings": {
@@ -775,6 +775,18 @@
       "kind": "regular",
       "difficulty": "Medium",
       "at": 1794669139366
+    },
+    "d271f816-6dda-434c-a59b-134611daf3a6": {
+      "requestId": "d271f816-6dda-434c-a59b-134611daf3a6",
+      "task": "t01",
+      "taskName": "Upstairs towels, bath mat and cloths",
+      "member": "m3",
+      "memberName": "AW",
+      "week": "w4",
+      "weekStart": "2026-11-09",
+      "kind": "regular",
+      "difficulty": "Medium",
+      "at": 1794669145530
     }
   },
   "preferences": {
@@ -1698,7 +1710,7 @@
           "required": 3,
           "workload": 6,
           "kind": "selected",
-          "completed": 1
+          "completed": 2
         },
         "t02": {
           "task": "t02",
@@ -13802,6 +13814,36 @@
           "path": "/weeks/w4/assignments/t01/completed",
           "before": 0,
           "after": 1
+        }
+      ]
+    },
+    {
+      "id": "af80e634-1d74-4629-9304-584c2328d880",
+      "at": 1794669145530,
+      "actor": "m3",
+      "admin": false,
+      "action": "complete chore",
+      "changes": [
+        {
+          "path": "/completions/d271f816-6dda-434c-a59b-134611daf3a6",
+          "added": true,
+          "after": {
+            "requestId": "d271f816-6dda-434c-a59b-134611daf3a6",
+            "task": "t01",
+            "taskName": "Upstairs towels, bath mat and cloths",
+            "member": "m3",
+            "memberName": "AW",
+            "week": "w4",
+            "weekStart": "2026-11-09",
+            "kind": "regular",
+            "difficulty": "Medium",
+            "at": 1794669145530
+          }
+        },
+        {
+          "path": "/weeks/w4/assignments/t01/completed",
+          "before": 1,
+          "after": 2
         }
       ]
     }
